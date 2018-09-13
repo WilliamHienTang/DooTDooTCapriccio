@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 169350294}
   - component: {fileID: 169350296}
   - component: {fileID: 169350295}
-  - component: {fileID: 169350297}
   m_Layer: 5
   m_Name: TapScreenText
   m_TagString: Untagged
@@ -191,17 +190,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 169350293}
   m_CullTransparentMesh: 0
---- !u!114 &169350297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 169350293}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52b8d8f7a61b284eb69adb5a9cbf59c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &250136519
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 485149805}
+  text: {fileID: 169350295}
   loadLevel: MainMenu
 --- !u!1 &485149802
 GameObject:
