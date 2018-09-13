@@ -16,20 +16,20 @@ public class ScreenFade : MonoBehaviour {
         enabled = false;
         background.canvasRenderer.SetAlpha(0.0f);
         FadeInImage();
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.75f);
         touches = 0;
         enabled = true;
     }
 
     void FadeInImage()
     {
-        background.CrossFadeAlpha(1.0f, 1.5f, false);
+        background.CrossFadeAlpha(1.0f, 0.75f, false);
     }
 	
 	// Update is called once per frame
 	void Update () {
         touches = Input.touchCount;
-        if (touches > 0)
+        if (touches > 0 || Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene(loadLevel);
         }

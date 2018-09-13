@@ -9,7 +9,6 @@ public class FadingText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         text = GetComponent<Text>();
-        //Debug.Log(text.text);
         StartFading();
 	}
 	
@@ -20,12 +19,12 @@ public class FadingText : MonoBehaviour {
             switch (text.color.a.ToString())
             {
                 case "0":
-                    StartCoroutine(FadeTextToFullAlpha(1.0f, text));
-                    yield return new WaitForSeconds(0.5f);
+                    StartCoroutine(FadeTextToFullAlpha(0.75f, text));
+                    yield return new WaitForSeconds(1.0f);
                     break;
                 case "1":
-                    StartCoroutine(FadeTextToZeroAlpha(1.0f, text));
-                    yield return new WaitForSeconds(0.5f);
+                    StartCoroutine(FadeTextToZeroAlpha(0.75f, text));
+                    yield return new WaitForSeconds(1.0f);
                     break;
             }
         }
@@ -53,7 +52,7 @@ public class FadingText : MonoBehaviour {
 
     void StartFading()
     {
-        StopCoroutine("Fade");
+        //StopCoroutine("Fade");
         StartCoroutine("Fade");
     }
 
