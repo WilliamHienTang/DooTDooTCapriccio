@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public void PlayGame()
+    public void LoadSongScreen()
     {
         SceneManager.LoadScene("ScoreScreen");
     }
 
-    public void QuitGame()
+    public void LoadTitleScreen()
     {
-        Application.Quit();
+        SceneManager.LoadScene("TitleScreen");
     }
 
 	// Use this for initialization
