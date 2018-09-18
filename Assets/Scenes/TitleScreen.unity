@@ -625,3 +625,54 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042351875}
   m_CullTransparentMesh: 0
+--- !u!1001 &1601625290
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 513.16974
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 256.56067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 37.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561905955480466, guid: 925a92cc111588442ac191735484354a, type: 2}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[2].name
+      value: Kimi
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 925a92cc111588442ac191735484354a, type: 2}
+  m_IsPrefabAsset: 0

@@ -11,9 +11,12 @@ public class TitleScreen : MonoBehaviour {
     public Text text;
     public string loadLevel;
     int touches;
+    bool enableTouch = true;
 
     IEnumerator Start()
     {
+        FindObjectOfType<AudioManager>().Play("Vivace");
+
         enabled = false;
         background.canvasRenderer.SetAlpha(0.0f);
         text.canvasRenderer.SetAlpha(0.0f);
@@ -38,28 +41,42 @@ public class TitleScreen : MonoBehaviour {
     // Start game after n text blinks
     IEnumerator BlinkText(int n)
     {
+        BlinkAudio();
+
         for (int i = 0; i < n; i++)
         {
             Color c = text.color;
             text.color = new Color(c.r, c.g, c.b, 0);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
             text.color = new Color(c.r, c.g, c.b, 1);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.1f);
         }
         StartGame();
     }
 
+    void BlinkAudio()
+    {
+        FindObjectOfType<AudioManager>().Play("skill_slot_open");
+    }
+    
+    void StopAudio()
+    {
+        FindObjectOfType<AudioManager>().Stop("Vivace");
+    }
+
     void StartGame()
     {
+        StopAudio();
         SceneManager.LoadScene(loadLevel);
     }
 
     // Update is called once per frame
     void Update () {
         touches = Input.touchCount;
-        if (touches > 0 || Input.GetMouseButtonDown(0))
+        if ((touches > 0 || Input.GetMouseButtonDown(0)) && enableTouch)
         {
-            StartCoroutine(BlinkText(4));
+            enableTouch = false;
+            StartCoroutine(BlinkText(6));
         }
 	}
 }
