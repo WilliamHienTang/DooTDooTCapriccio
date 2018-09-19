@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    public Image background;
+
     public void LoadSongScreen()
     {
-        StopAudio();
         SceneManager.LoadScene("ScoreScreen");
     }
 
     public void LoadTitleScreen()
     {
-        StopAudio();
         SceneManager.LoadScene("TitleScreen");
     }
 
@@ -22,9 +23,19 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("bubble2");
     }
 
-    void StopAudio()
+    public void StopAudio()
     {
         FindObjectOfType<AudioManager>().Stop("Kimi");
+    }
+
+    public void BlurBackground()
+    {
+        background.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+    }
+
+    public void SharpenBackground()
+    {
+        background.color = new Color(1.0f, 1.0f, 1.0f,1.0f);
     }
 
 	// Use this for initialization
