@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadSongScreen()
     {
-        SceneManager.LoadScene("ScoreScreen");
+        SceneManager.LoadScene("SongSelect");
     }
 
     public void LoadTitleScreen()
@@ -18,9 +18,14 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("TitleScreen");
     }
 
-    public void ButtonAudio()
+    public void ButtonAudio1()
     {
         FindObjectOfType<AudioManager>().Play("bubble2");
+    }
+
+    public void ButtonAudio2()
+    {
+        FindObjectOfType<AudioManager>().Play("reward");
     }
 
     public void StopAudio()

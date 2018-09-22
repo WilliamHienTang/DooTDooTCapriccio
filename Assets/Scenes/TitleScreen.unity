@@ -143,10 +143,10 @@ RectTransform:
   m_Father: {fileID: 250136523}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -185}
-  m_SizeDelta: {x: 187.9, y: 44}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 522.5, y: 80}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169350295
 MonoBehaviour:
@@ -632,6 +632,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 513.16974
@@ -667,6 +672,32 @@ Prefab:
     - target: {fileID: 1561905955480466, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[5].name
+      value: reward
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 73dc4dc451f9ba14cb5a6d5eaec49ccf, type: 3}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[5].group
+      value: 
+      objectReference: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e,
+        type: 2}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[5].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[5].pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925a92cc111588442ac191735484354a, type: 2}

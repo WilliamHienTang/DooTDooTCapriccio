@@ -11,9 +11,14 @@ public class ScoreScreen : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void ButtonAudio()
+    public void ButtonAudio1()
     {
         FindObjectOfType<AudioManager>().Play("bubble2");
+    }
+
+    public void ButtonAudio2()
+    {
+        FindObjectOfType<AudioManager>().Play("reward");
     }
 
     void StopAudio()
