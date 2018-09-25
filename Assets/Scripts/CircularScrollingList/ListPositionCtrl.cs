@@ -51,16 +51,12 @@ public class ListPositionCtrl : MonoBehaviour
 	// Positive: Curve to right (up); Negative: Curve to left (down).
 	[Range(-1.0f, 1.0f)]
 	public float angularity = 0.3f;
-	// Adjust the horizontal position in the VERTICAL mode or
-	// the vertical position in the HORIZONTAL mode.
-	// This value will be used in ListBox.update[X/Y]Position().
-	[Range(-1.0f, 1.0f)]
-	public float positionAdjust = -0.7f;
 	// Set the scale amount of the center listBox.
 	public float scaleFactor = 0.32f;
 	/*===============================*/
 
 	private bool _isTouchingDevice;
+    private bool idle;
 
 	// The canvas plane which the scrolling list is at.
 	private Canvas _parentCanvas;
@@ -87,9 +83,15 @@ public class ListPositionCtrl : MonoBehaviour
 	private Vector3 _deltaInputPos_L;
 	private int _numofSlideFrames;
 
-	// Store the calculation result of the sliding distance for aligning to the center.
-	// If its value is NaN, the distance haven't been calcuated yet.
-	private Vector3 _alignToCenterDistance;
+    // Input boundaries
+    public float leftBoundary;
+    public float rightBoundary;
+    public float topBoundary;
+    public float bottomBoundary;
+
+    // Store the calculation result of the sliding distance for aligning to the center.
+    // If its value is NaN, the distance haven't been calcuated yet.
+    private Vector3 _alignToCenterDistance;
 
 	void Awake()
 	{
@@ -141,61 +143,79 @@ public class ListPositionCtrl : MonoBehaviour
 		} else {
 			_storeInputPosition = delegate() { };	// Empty delegate function
 		}
+
+        idle = true;
 	}
 
 	void Update()
 	{
-		_storeInputPosition();
-	}
+        _storeInputPosition();
+    }
 
 	/* Store the position of mouse when the player clicks the left mouse button.
 	 */
 	void storeMousePosition()
 	{
-		if (Input.GetMouseButtonDown(0)) {
-			_lastInputPos_L = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
-			_lastInputPos_L /= _parentCanvas.scaleFactor;
-			_startInputPos_L = _lastInputPos_L;
-			_numofSlideFrames = 0;
-			// When the user starts to drag the list, all listBoxes stop free sliding.
-			foreach (ListBox listBox in listBoxes)
-				listBox.keepSliding = false;
-		} else if (Input.GetMouseButton(0)) {
-			_currentInputPos_L = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
-			_currentInputPos_L /= _parentCanvas.scaleFactor;
-			_deltaInputPos_L = _currentInputPos_L - _lastInputPos_L;
-			foreach (ListBox listbox in listBoxes)
-				listbox.updatePosition(_deltaInputPos_L);
+        if (Input.GetMouseButtonDown(0) && Input.mousePosition.x >= leftBoundary && Input.mousePosition.x <= rightBoundary)
+        {
+            idle = false;
+            _lastInputPos_L = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+            _lastInputPos_L /= _parentCanvas.scaleFactor;
+            _startInputPos_L = _lastInputPos_L;
+            _numofSlideFrames = 0;
+            // When the user starts to drag the list, all listBoxes stop free sliding.
+            foreach (ListBox listBox in listBoxes)
+                listBox.keepSliding = false;
+        }
+        else if (Input.GetMouseButton(0) && !idle)
+        {
+            _currentInputPos_L = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+            _currentInputPos_L /= _parentCanvas.scaleFactor;
+            _deltaInputPos_L = _currentInputPos_L - _lastInputPos_L;
+            foreach (ListBox listbox in listBoxes)
+                listbox.updatePosition(_deltaInputPos_L);
 
-			_lastInputPos_L = _currentInputPos_L;
-			++_numofSlideFrames;
-		} else if (Input.GetMouseButtonUp(0))
-			setSlidingEffect();
+            _lastInputPos_L = _currentInputPos_L;
+            ++_numofSlideFrames;
+        }
+        else if (Input.GetMouseButtonUp(0) && !idle)
+        {
+            idle = true;
+            setSlidingEffect();
+        }
 	}
 
 	/* Store the position of touching on the mobile.
 	 */
 	void storeFingerPosition()
 	{
-		if (Input.GetTouch(0).phase == TouchPhase.Began) {
-			_lastInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
-			_lastInputPos_L /= _parentCanvas.scaleFactor;
-			_startInputPos_L = _lastInputPos_L;
-			_numofSlideFrames = 0;
-			// When the user starts to drag the list, all listBoxes stop free sliding.
-			foreach (ListBox listBox in listBoxes)
-				listBox.keepSliding = false;
-		} else if (Input.GetTouch(0).phase == TouchPhase.Moved) {
-			_currentInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
-			_currentInputPos_L /= _parentCanvas.scaleFactor;
-			_deltaInputPos_L = _currentInputPos_L - _lastInputPos_L;
-			foreach (ListBox listbox in listBoxes)
-				listbox.updatePosition(_deltaInputPos_L);
+        if (Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x >= leftBoundary && Input.GetTouch(0).position.x <= rightBoundary)
+        {
+            idle = false;
+            _lastInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+            _lastInputPos_L /= _parentCanvas.scaleFactor;
+            _startInputPos_L = _lastInputPos_L;
+            _numofSlideFrames = 0;
+            // When the user starts to drag the list, all listBoxes stop free sliding.
+            foreach (ListBox listBox in listBoxes)
+                listBox.keepSliding = false;
+        }
+        else if (Input.GetTouch(0).phase == TouchPhase.Moved && !idle)
+        {
+            _currentInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+            _currentInputPos_L /= _parentCanvas.scaleFactor;
+            _deltaInputPos_L = _currentInputPos_L - _lastInputPos_L;
+            foreach (ListBox listbox in listBoxes)
+                listbox.updatePosition(_deltaInputPos_L);
 
-			_lastInputPos_L = _currentInputPos_L;
-			++_numofSlideFrames;
-		} else if (Input.GetTouch(0).phase == TouchPhase.Ended)
-			setSlidingEffect();
+            _lastInputPos_L = _currentInputPos_L;
+            ++_numofSlideFrames;
+        }
+        else if (Input.GetTouch(0).phase == TouchPhase.Ended && !idle)
+        {
+            idle = true;
+            setSlidingEffect();
+        }
 	}
 
 	/* If the touching is ended, calculate the distance to slide and
@@ -289,9 +309,47 @@ public class ListPositionCtrl : MonoBehaviour
 		return _alignToCenterDistance;
 	}
 
-	/* Divide each component of vector a by vector b.
+    /*
+    * Get the object of the centered ListBox.
+    * The centered ListBox is found by comparing which one is the closest
+    * to the center.
+    */
+    public ListBox getCenteredBox()
+    {
+        float minPosition = Mathf.Infinity;
+        float position;
+        ListBox candicateBox = null;
+        switch (direction)
+        {
+            case Direction.VERTICAL:
+                foreach (ListBox listBox in listBoxes)
+                {
+                    position = Mathf.Abs(listBox.transform.localPosition.y);
+                    if (position < minPosition)
+                    {
+                        minPosition = position;
+                        candicateBox = listBox;
+                    }
+                }
+                break;
+            case Direction.HORIZONTAL:
+                foreach (ListBox listBox in listBoxes)
+                {
+                    position = Mathf.Abs(listBox.transform.localPosition.x);
+                    if (position < minPosition)
+                    {
+                        minPosition = position;
+                        candicateBox = listBox;
+                    }
+                }
+                break;
+        }
+        return candicateBox;
+    }
+
+    /* Divide each component of vector a by vector b.
 	 */
-	Vector3 divideComponent(Vector3 a, Vector3 b)
+    Vector3 divideComponent(Vector3 a, Vector3 b)
 	{
 		return new Vector3(a.x / b.x, a.y / b.y, a.z / b.z);
 	}

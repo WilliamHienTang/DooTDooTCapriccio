@@ -22,7 +22,6 @@ public class ListBox : MonoBehaviour
 	private Vector2 _lowerBoundPos;
 	private Vector2 _upperBoundPos;
 	private Vector2 _shiftBoundPos;
-	private float _positionAdjust;
 
 	private Vector3 _slidingDistance;   // The sliding distance at each frame
 	private Vector3 _slidingDistanceLeft;
@@ -47,7 +46,6 @@ public class ListBox : MonoBehaviour
 		_lowerBoundPos = ListPositionCtrl.Instance.lowerBoundPos_L;
 		_upperBoundPos = ListPositionCtrl.Instance.upperBoundPos_L;
 		_shiftBoundPos = ListPositionCtrl.Instance.shiftBoundPos_L;
-		_positionAdjust = ListPositionCtrl.Instance.positionAdjust;
 
 		_originalLocalScale = transform.localScale;
 
@@ -204,9 +202,7 @@ public class ListBox : MonoBehaviour
 	void updateXPosition()
 	{
 		transform.localPosition = new Vector3(
-			_boxMaxPos.x * (_positionAdjust +
-			Mathf.Cos(transform.localPosition.y / _upperBoundPos.y * Mathf.PI / 2.0f)),
-			transform.localPosition.y, transform.localPosition.z);
+			_boxMaxPos.x * (Mathf.Cos(transform.localPosition.y / _upperBoundPos.y * Mathf.PI / 2.0f)),	transform.localPosition.y, transform.localPosition.z);
 		updateSize(_upperBoundPos.y, transform.localPosition.y);
 	}
 
@@ -216,9 +212,7 @@ public class ListBox : MonoBehaviour
 	{
 		transform.localPosition = new Vector3(
 			transform.localPosition.x,
-			_boxMaxPos.y * (_positionAdjust +
-			Mathf.Cos(transform.localPosition.x / _upperBoundPos.x * Mathf.PI / 2.0f)),
-			transform.localPosition.z);
+			_boxMaxPos.y * (Mathf.Cos(transform.localPosition.x / _upperBoundPos.x * Mathf.PI / 2.0f)),	transform.localPosition.z);
 		updateSize(_upperBoundPos.x, transform.localPosition.x);
 	}
 
