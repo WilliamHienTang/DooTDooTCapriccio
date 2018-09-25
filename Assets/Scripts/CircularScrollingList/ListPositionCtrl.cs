@@ -145,10 +145,22 @@ public class ListPositionCtrl : MonoBehaviour
 		}
 
         idle = true;
-	}
+    }
 
 	void Update()
 	{
+        getCenteredBox().setCenterSize();
+        foreach (ListBox listbox in listBoxes)
+        {
+            if (listbox.getCurrentContentID() == getCenteredBox().getCurrentContentID())
+            {
+                listbox.setCenter();
+            }
+            else
+            {
+                listbox.unsetCenter();
+            }
+        }
         _storeInputPosition();
     }
 
@@ -232,9 +244,9 @@ public class ListPositionCtrl : MonoBehaviour
 
 		if (alignToCenter) {
 			foreach (ListBox listbox in listBoxes) {
-				listbox.setSlidingDistance(deltaPos, fastSliding ? slidingFrames >> 1 : slidingFrames >> 2);
+                listbox.setSlidingDistance(deltaPos, fastSliding ? slidingFrames >> 1 : slidingFrames >> 2);
 				listbox.needToAlignToCenter = true;
-			}
+            }
 			// Make the distance uncalculated.
 			_alignToCenterDistance = new Vector3(float.NaN, float.NaN, 0.0f);
 		} else {

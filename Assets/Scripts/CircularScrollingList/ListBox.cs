@@ -35,6 +35,8 @@ public class ListBox : MonoBehaviour
 	public bool keepSliding { set { _keepSliding = value; } }
 	public bool needToAlignToCenter { set { _needToAlignToCenter = value; } }
 
+    public bool center;
+
 	/* Notice: ListBox will initialize its variables from ListPositionCtrl.
 	 * Make sure that the execution order of script ListPositionCtrl is prior to
 	 * ListBox.
@@ -80,7 +82,7 @@ public class ListBox : MonoBehaviour
 	 */
 	public void setSlidingDistance(Vector3 distance, int slidingFrames)
 	{
-		_keepSliding = true;
+        _keepSliding = true;
 		_slidingFramesLeft = slidingFrames;
 
 		_slidingDistanceLeft = distance;
@@ -271,9 +273,31 @@ public class ListBox : MonoBehaviour
 	 */
 	void updateSize(float smallest_at, float target_value)
 	{
-		transform.localScale = _originalLocalScale *
-			(1.0f + ListPositionCtrl.Instance.scaleFactor * Mathf.InverseLerp(smallest_at, 0.0f, Mathf.Abs(target_value)));
+        if (!center)
+        {
+            transform.localScale = _originalLocalScale *
+                (1.0f + ListPositionCtrl.Instance.scaleFactor * Mathf.InverseLerp(smallest_at, 0.0f, Mathf.Abs(target_value)));
+        }
+        else
+        {
+            setCenterSize();
+        }
 	}
+
+    public void setCenter()
+    {
+        center = true;
+    }
+
+    public void unsetCenter()
+    {
+        center = false;
+    }
+
+    public void setCenterSize()
+    {
+        transform.localScale = _originalLocalScale * 1.5f;
+    }
 
 	public int getCurrentContentID()
 	{
