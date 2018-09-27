@@ -33,9 +33,9 @@ public class TitleScreen : MonoBehaviour {
         {
             Color c = tapText.color;
             tapText.color = new Color(c.r, c.g, c.b, 0);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
             tapText.color = new Color(c.r, c.g, c.b, 1);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         StartGame();
     }

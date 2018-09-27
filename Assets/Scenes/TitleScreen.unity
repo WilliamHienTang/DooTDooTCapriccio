@@ -236,27 +236,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedImages:
-  - {fileID: 21300000, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300002, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300004, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300006, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300008, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300010, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300012, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300014, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300016, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300018, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300020, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300024, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300026, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300028, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300030, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300032, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300034, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300036, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300038, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300040, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
-  - {fileID: 21300042, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
+  - {fileID: 21300000, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300002, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300004, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300006, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300008, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300010, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300012, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300014, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300016, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300018, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300020, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300022, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300024, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300026, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300028, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300030, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300032, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300034, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300036, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300038, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300040, guid: 14498625851de064e9ced14f123620cc, type: 3}
+  - {fileID: 21300042, guid: 14498625851de064e9ced14f123620cc, type: 3}
   animateImageObj: {fileID: 1042351877}
 --- !u!114 &250136526
 MonoBehaviour:
@@ -529,8 +530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 120}
-  m_SizeDelta: {x: 360, y: 240}
+  m_AnchoredPosition: {x: 0, y: 109.5}
+  m_SizeDelta: {x: 500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &550297330
 MonoBehaviour:
@@ -561,8 +562,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294959104
-  m_fontColor: {r: 0, g: 0.87953043, b: 1, a: 1}
+    rgba: 4294952960
+  m_fontColor: {r: 0, g: 0.78431374, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -579,8 +580,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -709,16 +710,15 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Tap Screen
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 78b87654a345df64a806464234824411, type: 2}
-  m_sharedMaterial: {fileID: 21930655045888280, guid: 78b87654a345df64a806464234824411,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294959104
-  m_fontColor: {r: 0, g: 0.87953043, b: 1, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -863,7 +863,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 14c79b24214eb4a4a9478500cf2b3ba6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14498625851de064e9ced14f123620cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
