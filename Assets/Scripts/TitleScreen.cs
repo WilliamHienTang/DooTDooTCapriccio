@@ -8,7 +8,6 @@ using TMPro;
 
 public class TitleScreen : MonoBehaviour {
 
-    public Image background;
     public TextMeshProUGUI tapText;
     public string loadLevel;
     int touches;

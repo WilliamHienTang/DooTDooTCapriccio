@@ -44,8 +44,10 @@ public class MainMenu : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
         FindObjectOfType<AudioManager>().Play("Kimi");
+        float fadeTime = 0.5f / GameObject.Find("MainMenuCanvas").GetComponent<Fade>().BeginFade(-1);
+        yield return new WaitForSeconds(fadeTime);
     }
 	
 	// Update is called once per frame

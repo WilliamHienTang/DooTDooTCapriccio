@@ -27,9 +27,10 @@ public class SongSelect : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-		
-	}
+    IEnumerator Start () {
+        float fadeTime = 0.5f / GameObject.Find("SongSelectCanvas").GetComponent<Fade>().BeginFade(-1);
+        yield return new WaitForSeconds(fadeTime);
+    }
 	
 	// Update is called once per frame
 	void Update () {
