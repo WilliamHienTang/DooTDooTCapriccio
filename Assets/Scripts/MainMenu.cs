@@ -35,12 +35,12 @@ public class MainMenu : MonoBehaviour {
 
     public void BlurBackground()
     {
-        background.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+        background.color = new Color(0.2f, 0.2f, 0.2f, 1.0f);
     }
 
     public void SharpenBackground()
     {
-        background.color = new Color(1.0f, 1.0f, 1.0f,1.0f);
+        background.color = new Color(0.392f, 0.392f, 0.392f, 1.0f);
     }
 
 	// Use this for initialization
