@@ -44,14 +44,20 @@ public class TitleScreen : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("skill_slot_open");
     }
     
-    void StopAudio()
+    void StopMusic()
     {
-        FindObjectOfType<AudioManager>().Stop("vivace");
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+        Debug.Log(currentMusic);
+
+        if (currentMusic != null)
+        {
+            FindObjectOfType<AudioManager>().Stop(currentMusic);
+        }
     }
 
     void StartGame()
     {
-        StopAudio();
+        StopMusic();
         SceneManager.LoadScene(loadLevel);
     }
 

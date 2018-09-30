@@ -8,11 +8,13 @@ public class SongSelect : MonoBehaviour {
 
     public void LoadGame()
     {
+        StopMusic();
         SceneManager.LoadScene("ScoreScreen");
     }
 
     public void LoadMainMenu()
     {
+        StopMusic();
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -24,6 +26,16 @@ public class SongSelect : MonoBehaviour {
     public void ButtonAudio2()
     {
         FindObjectOfType<AudioManager>().Play("reward");
+    }
+
+    void StopMusic()
+    {
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+
+        if (currentMusic != null)
+        {
+            FindObjectOfType<AudioManager>().Stop(currentMusic);
+        }
     }
 
     // Use this for initialization

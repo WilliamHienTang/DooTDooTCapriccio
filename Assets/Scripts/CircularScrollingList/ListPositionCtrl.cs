@@ -173,10 +173,12 @@ public class ListPositionCtrl : MonoBehaviour
 
     void SetSongPreview(ListBox listbox)
     {
+        string currentMusic;
+
         switch (listbox.content.text)
         {
             case "TRUE - Soundscape":
-                string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+                currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
 
                 if (currentMusic != null)
                 {
@@ -187,9 +189,25 @@ public class ListPositionCtrl : MonoBehaviour
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
                 break;
             case "TRUE - Dream Solister":
+                currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+
+                if (currentMusic != null)
+                {
+                    FindObjectOfType<AudioManager>().Stop(currentMusic);
+                }
+                FindObjectOfType<AudioManager>().Play("soundscape_preview");
+
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = dream_solister;
                 break;
             case "ZAQ - Tutti!":
+                currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+
+                if (currentMusic != null)
+                {
+                    FindObjectOfType<AudioManager>().Stop(currentMusic);
+                }
+                FindObjectOfType<AudioManager>().Play("soundscape_preview");
+
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
                 break;
             default:

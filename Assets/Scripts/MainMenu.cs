@@ -10,11 +10,13 @@ public class MainMenu : MonoBehaviour {
 
     public void LoadSongScreen()
     {
+        StopMusic();
         SceneManager.LoadScene("SongSelect");
     }
 
     public void LoadTitleScreen()
     {
+        StopMusic();
         SceneManager.LoadScene("TitleScreen");
     }
 
@@ -28,9 +30,14 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("reward");
     }
 
-    public void StopAudio()
+    void StopMusic()
     {
-        FindObjectOfType<AudioManager>().Stop("kimi");
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+
+        if (currentMusic != null)
+        {
+            FindObjectOfType<AudioManager>().Stop(currentMusic);
+        }
     }
 
     public void BlurBackground()
