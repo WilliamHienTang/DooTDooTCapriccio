@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds;
     public static AudioManager instance;
+    public AudioMixer audioMixer;
 
     // Use this for initialization
     void Awake () {
@@ -58,7 +59,8 @@ public class AudioManager : MonoBehaviour {
 
     // Use this for initialization
     void Start(){
-
+        audioMixer.SetFloat("BGMVolume", PlayerPrefs.GetFloat("BGMVolume"));
+        audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
     }
 
     // Update is called once per frame

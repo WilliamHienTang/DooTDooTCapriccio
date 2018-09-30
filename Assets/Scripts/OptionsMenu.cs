@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class OptionsMenu : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class OptionsMenu : MonoBehaviour {
     public Slider GameSFXSlider;
     public Slider BGMSlider;
     public Slider SFXSlider;
+    public TextMeshProUGUI noteSpeed;
 
     public void SetSongVolume(float volume)
     {
@@ -40,8 +42,31 @@ public class OptionsMenu : MonoBehaviour {
         PlayerPrefs.Save();
     }
 
+    public void ChangeNoteSpeed(float speed)
+    {
+        PlayerPrefs.SetFloat("NoteSpeed", PlayerPrefs.GetFloat("NoteSpeed") + speed);
+
+        if (PlayerPrefs.GetFloat("NoteSpeed") > 10.0f)
+        {
+            PlayerPrefs.SetFloat("NoteSpeed", 1.0f);
+            noteSpeed.SetText("1.0");
+        }
+        else if (PlayerPrefs.GetFloat("NoteSpeed") < 1.0f)
+        {
+            PlayerPrefs.SetFloat("NoteSpeed", 10.0f);
+            noteSpeed.SetText("10.0");
+        }
+        else
+        {
+            noteSpeed.SetText(PlayerPrefs.GetFloat("NoteSpeed").ToString());
+        }
+
+        PlayerPrefs.Save();
+    }
+
     // Use this for initialization
     void Start () {
+        noteSpeed.text = PlayerPrefs.GetFloat("NoteSpeed").ToString();
         SongSlider.value = PlayerPrefs.GetFloat("SongVolume", SongSlider.value);
         GameSFXSlider.value = PlayerPrefs.GetFloat("GameSFXVolume", GameSFXSlider.value);
         BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", BGMSlider.value);
@@ -52,9 +77,9 @@ public class OptionsMenu : MonoBehaviour {
         audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
         PlayerPrefs.Save();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
