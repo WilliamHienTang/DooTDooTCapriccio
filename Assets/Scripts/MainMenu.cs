@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StopAudio()
     {
-        FindObjectOfType<AudioManager>().Stop("Kimi");
+        FindObjectOfType<AudioManager>().Stop("kimi");
     }
 
     public void BlurBackground()
@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	IEnumerator Start () {
-        FindObjectOfType<AudioManager>().Play("Kimi");
+        FindObjectOfType<AudioManager>().Play("kimi");
         float fadeTime = 0.5f / GameObject.Find("MainMenuCanvas").GetComponent<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }

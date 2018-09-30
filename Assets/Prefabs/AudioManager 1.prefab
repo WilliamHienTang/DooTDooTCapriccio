@@ -52,21 +52,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Vivace
+  - name: vivace
     clip: {fileID: 8300000, guid: 8cd4b9cd9284fd54a96bf7e6c8e28cea, type: 3}
-    group: {fileID: 0}
+    group: {fileID: 243231142363053088, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 1
     volume: 1
     pitch: 1
     source: {fileID: 0}
   - name: skill_slot_open
     clip: {fileID: 8300000, guid: 0f0b179bfff445347a57d61662af65f0, type: 3}
-    group: {fileID: 0}
+    group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
-    volume: 1
+    volume: 0.25
     pitch: 1
     source: {fileID: 0}
-  - name: Kimi
+  - name: kimi
     clip: {fileID: 8300000, guid: b36e6c87ef8902a4a8b6897a63a55861, type: 3}
     group: {fileID: 243231142363053088, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 1
@@ -80,10 +80,61 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: Kaiheitai
+  - name: kaiheitai
     clip: {fileID: 8300000, guid: 6ba99e40505799f4382d37866d6aed06, type: 3}
     group: {fileID: 243231142363053088, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 1
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: reward
+    clip: {fileID: 8300000, guid: 73dc4dc451f9ba14cb5a6d5eaec49ccf, type: 3}
+    group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: perfect
+    clip: {fileID: 8300000, guid: 9a857b5e0bd3e4348a347cbc19b88c34, type: 3}
+    group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: great
+    clip: {fileID: 8300000, guid: 35618bb9be78b314dbd5fef2175d8b36, type: 3}
+    group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: good
+    clip: {fileID: 8300000, guid: a7a76e99b13fbb34892f35885cab601c, type: 3}
+    group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: bad
+    clip: {fileID: 8300000, guid: 9682cf7cf5bdd334ba4c2ec5334ad57a, type: 3}
+    group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: soundscape_preview
+    clip: {fileID: 8300000, guid: 9246da741f1d36140a4ea15aefcee01f, type: 3}
+    group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: soundscape
+    clip: {fileID: 8300000, guid: e479ff5573dafa74181b34d131497c6b, type: 3}
+    group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+  currentMusic: 

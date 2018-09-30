@@ -48,6 +48,7 @@ public class ListBox : MonoBehaviour
 		_lowerBoundPos = ListPositionCtrl.Instance.lowerBoundPos_L;
 		_upperBoundPos = ListPositionCtrl.Instance.upperBoundPos_L;
 		_shiftBoundPos = ListPositionCtrl.Instance.shiftBoundPos_L;
+        center = false;
 
 		_originalLocalScale = transform.localScale;
 

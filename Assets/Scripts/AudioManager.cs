@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour {
     public Sound[] sounds;
     public static AudioManager instance;
     public AudioMixer audioMixer;
+    public string currentMusic;
 
     // Use this for initialization
     void Awake () {
@@ -44,6 +45,7 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Play();
+        currentMusic = name;
     }
 
     public void Stop(string name)
@@ -55,6 +57,12 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Stop();
+        currentMusic = null;
+    }
+
+    public string GetCurrentMusic()
+    {
+        return currentMusic;
     }
 
     // Use this for initialization

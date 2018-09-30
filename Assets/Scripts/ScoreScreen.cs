@@ -23,12 +23,12 @@ public class ScoreScreen : MonoBehaviour {
 
     void StopAudio()
     {
-        FindObjectOfType<AudioManager>().Stop("Kaiheitai");
+        FindObjectOfType<AudioManager>().Stop("kaiheitai");
     }
 
 	// Use this for initialization
 	IEnumerator Start () {
-        FindObjectOfType<AudioManager>().Play("Kaiheitai");
+        FindObjectOfType<AudioManager>().Play("kaiheitai");
         float fadeTime = 0.5f / GameObject.Find("ScoreScreenCanvas").GetComponent<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }

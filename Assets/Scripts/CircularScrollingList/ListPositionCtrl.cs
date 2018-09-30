@@ -38,6 +38,11 @@ public class ListPositionCtrl : MonoBehaviour
 	public ListBox[] listBoxes;
 	public Button[] buttons;
 
+    /* Song Images */
+    public Sprite soundscape;
+    public Sprite dream_solister;
+    public Sprite tutti;
+
 	/* Parameters */
 	public Direction direction = Direction.VERTICAL;
 	// Set the distance between each ListBox. The larger, the closer.
@@ -57,9 +62,10 @@ public class ListPositionCtrl : MonoBehaviour
 
 	private bool _isTouchingDevice;
     private bool idle;
+    private ListBox centeredBox;
 
-	// The canvas plane which the scrolling list is at.
-	private Canvas _parentCanvas;
+    // The canvas plane which the scrolling list is at.
+    private Canvas _parentCanvas;
 
 	// The constrains of position in the local space of the canvas plane.
 	private Vector2 _canvasMaxPos_L;
@@ -145,23 +151,50 @@ public class ListPositionCtrl : MonoBehaviour
 		}
 
         idle = true;
+        centeredBox = getCenteredBox();
+        centeredBox.setCenter();
+
+        SetSongPreview(centeredBox);
     }
 
 	void Update()
 	{
-        getCenteredBox().setCenterSize();
-        foreach (ListBox listbox in listBoxes)
+        if (centeredBox.getCurrentContentID() != getCenteredBox().getCurrentContentID())
         {
-            if (listbox.getCurrentContentID() == getCenteredBox().getCurrentContentID())
-            {
-                listbox.setCenter();
-            }
-            else
-            {
-                listbox.unsetCenter();
-            }
+            centeredBox.unsetCenter();
+            centeredBox = getCenteredBox();
+            centeredBox.setCenter();
+            SetSongPreview(centeredBox);
         }
+
+        centeredBox.setCenterSize();
         _storeInputPosition();
+    }
+
+    void SetSongPreview(ListBox listbox)
+    {
+        switch (listbox.content.text)
+        {
+            case "TRUE - Soundscape":
+                string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+
+                if (currentMusic != null)
+                {
+                    FindObjectOfType<AudioManager>().Stop(currentMusic);
+                }
+                FindObjectOfType<AudioManager>().Play("soundscape_preview");
+                
+                GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
+                break;
+            case "TRUE - Dream Solister":
+                GameObject.Find("SongImage").GetComponent<Image>().sprite = dream_solister;
+                break;
+            case "ZAQ - Tutti!":
+                GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
+                break;
+            default:
+                break;
+        }
     }
 
 	/* Store the position of mouse when the player clicks the left mouse button.
