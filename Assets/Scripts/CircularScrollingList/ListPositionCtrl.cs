@@ -40,7 +40,7 @@ public class ListPositionCtrl : MonoBehaviour
 
     /* Song Images */
     public Sprite soundscape;
-    public Sprite dream_solister;
+    public Sprite takarajima;
     public Sprite tutti;
 
 	/* Parameters */
@@ -188,16 +188,16 @@ public class ListPositionCtrl : MonoBehaviour
                 
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
                 break;
-            case "TRUE - Dream Solister":
+            case "T-Square - Takarajima":
                 currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
 
                 if (currentMusic != null)
                 {
                     FindObjectOfType<AudioManager>().Stop(currentMusic);
                 }
-                FindObjectOfType<AudioManager>().Play("soundscape_preview");
+                FindObjectOfType<AudioManager>().Play("takarajima_preview");
 
-                GameObject.Find("SongImage").GetComponent<Image>().sprite = dream_solister;
+                GameObject.Find("SongImage").GetComponent<Image>().sprite = takarajima;
                 break;
             case "ZAQ - Tutti!":
                 currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
@@ -206,7 +206,7 @@ public class ListPositionCtrl : MonoBehaviour
                 {
                     FindObjectOfType<AudioManager>().Stop(currentMusic);
                 }
-                FindObjectOfType<AudioManager>().Play("soundscape_preview");
+                FindObjectOfType<AudioManager>().Play("tutti_preview");
 
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
                 break;
