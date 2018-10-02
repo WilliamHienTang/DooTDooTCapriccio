@@ -4,9 +4,9 @@ C:/Users/William Tang/Documents/DooT! Capriccio/Build.apk
 SceneListBegin?
 Assets/Scenes/TitleScreen.unity
 Assets/Scenes/MainMenu.unity
-Assets/Scenes/ScoreScreen.unity
-Assets/Scenes/Game.unity
 Assets/Scenes/SongSelect.unity
+Assets/Scenes/Game.unity
+Assets/Scenes/ScoreScreen.unity
 SceneListEnd?
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 7b803eb2910e9b4cd5e521ae07b9f7d6 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -209,5 +209,5 @@ e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 d6847627ba7741c18a9d5258fc293648 Assembly-CSharp.dll:TMPro.Examples.VertexShakeA
 dd223b2cbb523615eee8980d99d61ddd Assembly-CSharp.dll:.EnvMapAnimator
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-f2cd2c97b8f097775a411c0f0fc6d170 Assembly-CSharp.dll:.ListPositionCtrl
+da6019f94bd8e8bac6b1d6e0b02c39b8 Assembly-CSharp.dll:.ListPositionCtrl
 e83e3a9cb8a4793d0e408eba8d4b4d32 Assembly-CSharp.dll:.AudioManager

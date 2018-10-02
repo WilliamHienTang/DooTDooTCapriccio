@@ -44,7 +44,9 @@ public class OptionsMenu : MonoBehaviour {
 
     public void ChangeNoteSpeed(float speed)
     {
-        PlayerPrefs.SetFloat("NoteSpeed", PlayerPrefs.GetFloat("NoteSpeed") + speed);
+        float newSpeed = PlayerPrefs.GetFloat("NoteSpeed") + speed;
+        newSpeed = RoundToTenth(newSpeed);
+        PlayerPrefs.SetFloat("NoteSpeed", newSpeed);
 
         if (PlayerPrefs.GetFloat("NoteSpeed") > 10.0f)
         {
@@ -58,10 +60,17 @@ public class OptionsMenu : MonoBehaviour {
         }
         else
         {
-            noteSpeed.SetText(PlayerPrefs.GetFloat("NoteSpeed").ToString());
+            noteSpeed.SetText(PlayerPrefs.GetFloat("NoteSpeed").ToString("F1"));
         }
 
         PlayerPrefs.Save();
+    }
+
+    float RoundToTenth(float number)
+    {
+        number *= 10;
+        number = Mathf.Round(number);
+        return number / 10;
     }
 
     // Use this for initialization

@@ -8,7 +8,7 @@ public class ScoreScreen : MonoBehaviour {
     public void LoadMainMenu()
     {
         StopAudio();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("SongSelect");
     }
 
     public void ButtonAudio1()
@@ -23,7 +23,12 @@ public class ScoreScreen : MonoBehaviour {
 
     void StopAudio()
     {
-        FindObjectOfType<AudioManager>().Stop("kaiheitai");
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+
+        if (currentMusic != null)
+        {
+            FindObjectOfType<AudioManager>().Stop(currentMusic);
+        }
     }
 
 	// Use this for initialization
