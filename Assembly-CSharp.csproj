@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\CircularScrollingList\ListPositionCtrl.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\ScoreScreen.cs" />
      <Compile Include="Assets\Scripts\SongSelect.cs" />
