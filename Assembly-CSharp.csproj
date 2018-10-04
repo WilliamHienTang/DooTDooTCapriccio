@@ -53,19 +53,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AnimateGIF.cs" />
-     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\CircularScrollingList\ListBank.cs" />
      <Compile Include="Assets\Scripts\CircularScrollingList\ListBox.cs" />
      <Compile Include="Assets\Scripts\CircularScrollingList\ListPositionCtrl.cs" />
-     <Compile Include="Assets\Scripts\Fade.cs" />
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Note.cs" />
-     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
-     <Compile Include="Assets\Scripts\ScoreScreen.cs" />
-     <Compile Include="Assets\Scripts\SongSelect.cs" />
-     <Compile Include="Assets\Scripts\Sound.cs" />
-     <Compile Include="Assets\Scripts\TitleScreen.cs" />
+     <Compile Include="Assets\Scripts\Game\Game.cs" />
+     <Compile Include="Assets\Scripts\Game\HitCollider.cs" />
+     <Compile Include="Assets\Scripts\Game\MissCollider.cs" />
+     <Compile Include="Assets\Scripts\Game\Note.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Other\AnimateGIF.cs" />
+     <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Other\Fade.cs" />
+     <Compile Include="Assets\Scripts\Other\Sound.cs" />
+     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\OptionsMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreScreen.cs" />
+     <Compile Include="Assets\Scripts\UI\SongSelect.cs" />
+     <Compile Include="Assets\Scripts\UI\TitleScreen.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
