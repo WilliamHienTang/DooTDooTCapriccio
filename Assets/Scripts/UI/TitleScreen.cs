@@ -47,7 +47,6 @@ public class TitleScreen : MonoBehaviour {
     void StopMusic()
     {
         string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
-        Debug.Log(currentMusic);
 
         if (currentMusic != null)
         {

@@ -7,13 +7,13 @@ public class HitCollider : MonoBehaviour {
     GameObject note;
     bool active;
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter(Collider other)
     {
         active = true;
-        note = collider.gameObject;
+        note = other.gameObject;
     }
 
-    void OnTriggerExit(Collider collider)
+    void OnTriggerExit(Collider other)
     {
         active = false;
     }
@@ -22,9 +22,16 @@ public class HitCollider : MonoBehaviour {
     {
         if (active)
         {
-            //FindObjectOfType<AudioManager>().Play("perfect");
+            HandlePress(note.GetComponent<Note>().GetScoreType());         
             Destroy(note);
+            active = false;
         }
+    }
+
+    public void HandlePress(string type)
+    {
+        //FindObjectOfType<AudioManager>().Play(type);
+        Destroy(note);
     }
 
     // Use this for initialization

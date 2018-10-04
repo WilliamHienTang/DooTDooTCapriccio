@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MissCollider : MonoBehaviour {
 
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter(Collider other)
     {
-        Destroy(collider.gameObject);
+        Destroy(other.gameObject);
     }
 
 	// Use this for initialization
