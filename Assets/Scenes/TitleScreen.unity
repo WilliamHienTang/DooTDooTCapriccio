@@ -1028,7 +1028,7 @@ Prefab:
     - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
         type: 2}
       propertyPath: sounds.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4427140809467812, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1153,7 +1153,7 @@ Prefab:
         type: 2}
       propertyPath: sounds.Array.data[15].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 1257855b8ed52a146835e5aecb25c5c1, type: 3}
+      objectReference: {fileID: 8300000, guid: 4aa7bbd259b1a0d4fb5960e5c1c4b099, type: 3}
     - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
         type: 2}
       propertyPath: sounds.Array.data[15].group
@@ -1183,6 +1183,32 @@ Prefab:
     - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
         type: 2}
       propertyPath: sounds.Array.data[12].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[16].name
+      value: bubble1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[16].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: aba07c0d0d9958d4faf1d0a44dad562d, type: 3}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[16].group
+      value: 
+      objectReference: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e,
+        type: 2}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[16].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924520401222286, guid: 925a92cc111588442ac191735484354a,
+        type: 2}
+      propertyPath: sounds.Array.data[16].pitch
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1235,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

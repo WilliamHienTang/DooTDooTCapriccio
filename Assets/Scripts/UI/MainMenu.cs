@@ -30,6 +30,11 @@ public class MainMenu : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("reward");
     }
 
+    public void ButtonAudio3()
+    {
+        FindObjectOfType<AudioManager>().Play("bubble1");
+    }
+
     void StopMusic()
     {
         string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
