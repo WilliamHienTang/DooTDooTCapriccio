@@ -6,6 +6,7 @@ public class HitCollider : MonoBehaviour {
 
     GameObject note;
     bool active;
+    public Transform wave;
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,16 +23,16 @@ public class HitCollider : MonoBehaviour {
     {
         if (active)
         {
-            HandlePress(note.GetComponent<Note>().GetScoreType());         
-            Destroy(note);
+            HandlePress(note.GetComponent<Note>().GetScoreType());
             active = false;
         }
     }
 
     public void HandlePress(string type)
     {
-        //FindObjectOfType<AudioManager>().Play(type);
+        FindObjectOfType<AudioManager>().Play(type);
         Destroy(note);
+        Instantiate(wave, transform.position, wave.rotation);
     }
 
     // Use this for initialization
