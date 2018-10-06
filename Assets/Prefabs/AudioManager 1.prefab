@@ -116,10 +116,10 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: bad
-    clip: {fileID: 8300000, guid: 9682cf7cf5bdd334ba4c2ec5334ad57a, type: 3}
+    clip: {fileID: 8300000, guid: f7839f945b2da234883de82ad51ea36d, type: 3}
     group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
-    volume: 1
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
   - name: soundscape_preview
@@ -136,5 +136,46 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: takarajima_preview
+    clip: {fileID: 8300000, guid: bc65050836a362a4fa93e5cde9ca324a, type: 3}
+    group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: takarajima
+    clip: {fileID: 8300000, guid: 66b08da4860964a419c3ed1580bc7a89, type: 3}
+    group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: tutti_preview
+    clip: {fileID: 8300000, guid: 97340d85119c52d44acad56022742e12, type: 3}
+    group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 1
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: tutti
+    clip: {fileID: 8300000, guid: 4aa7bbd259b1a0d4fb5960e5c1c4b099, type: 3}
+    group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: bubble1
+    clip: {fileID: 8300000, guid: aba07c0d0d9958d4faf1d0a44dad562d, type: 3}
+    group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: tap
+    clip: {fileID: 8300000, guid: 9682cf7cf5bdd334ba4c2ec5334ad57a, type: 3}
+    group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
-  currentMusic: 
