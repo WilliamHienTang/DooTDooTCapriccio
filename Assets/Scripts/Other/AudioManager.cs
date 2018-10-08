@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour {
     public Sound[] sounds;
     public static AudioManager instance;
     public AudioMixer audioMixer;
-    string currentMusic;
+    string currentBGM;
 
     // Use this for initialization
     void Awake () {
@@ -48,8 +48,19 @@ public class AudioManager : MonoBehaviour {
 
         if (s.loop)
         {
-            currentMusic = name;
+            currentBGM = name;
         }
+    }
+
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Song: " + name + " not found");
+            return;
+        }
+        s.source.Pause();
     }
 
     public void Stop(string name)
@@ -61,12 +72,12 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Stop();
-        currentMusic = null;
+        currentBGM = null;
     }
 
-    public string GetCurrentMusic()
+    public string GetCurrentBGM()
     {
-        return currentMusic;
+        return currentBGM;
     }
 
     // Use this for initialization

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public string songName;
     int[] noteLanes = {1, 2, 3, 4, 3, 2, 2, 3, 4, 1, 1, 2, 3, 2, 2, 3};
     int noteIndex = 0;
     bool timerReset = true;
@@ -52,9 +53,12 @@ public class GameManager : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
         PlayerPrefs.SetInt("Score", 0);
         PlayerPrefs.SetInt("Combo", 0);
+
+        yield return new WaitForSeconds(1.0f);
+        FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString("SelectedSong"));
     }
 	
 	// Update is called once per frame

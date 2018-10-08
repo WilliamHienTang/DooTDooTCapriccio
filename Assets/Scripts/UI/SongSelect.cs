@@ -30,7 +30,7 @@ public class SongSelect : MonoBehaviour {
 
     void StopMusic()
     {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
         if (currentMusic != null)
         {
@@ -40,7 +40,7 @@ public class SongSelect : MonoBehaviour {
 
     // Use this for initialization
     IEnumerator Start () {
-        float fadeTime = 0.5f / GameObject.Find("SongSelectCanvas").GetComponent<Fade>().BeginFade(-1);
+        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }
 	

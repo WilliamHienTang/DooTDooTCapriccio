@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
@@ -25,17 +24,6 @@ public class Game : MonoBehaviour {
         }
     }
 
-    public void PauseButton()
-    {
-        enabled = false;
-        SceneManager.LoadScene("SongSelect");
-    }
-
-    public void ButtonAudio()
-    {
-        FindObjectOfType<AudioManager>().Play("bubble2");
-    }
-
     // Use this for initialization
     void Start () {
 		
@@ -43,6 +31,11 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (FindObjectOfType<Pause>().IsPaused())
+        {
+            return;
+        }
+
         if (_isTouchingDevice)
         {
             for (int i = 0; i < Input.touchCount; i++)

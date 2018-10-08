@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour {
 
     void StopMusic()
     {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
         if (currentMusic != null)
         {
@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	IEnumerator Start () {
         FindObjectOfType<AudioManager>().Play("kimi");
-        float fadeTime = 0.5f / GameObject.Find("MainMenuCanvas").GetComponent<Fade>().BeginFade(-1);
+        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }
 	

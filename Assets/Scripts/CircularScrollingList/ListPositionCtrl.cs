@@ -173,42 +173,45 @@ public class ListPositionCtrl : MonoBehaviour
 
     void SetSongPreview(ListBox listbox)
     {
-        string currentMusic;
+        string currentBGM;
 
         switch (listbox.content.text)
         {
             case "TRUE - Soundscape":
-                currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+                currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
-                if (currentMusic != null)
+                if (currentBGM != null)
                 {
-                    FindObjectOfType<AudioManager>().Stop(currentMusic);
+                    FindObjectOfType<AudioManager>().Stop(currentBGM);
                 }
+
                 FindObjectOfType<AudioManager>().Play("soundscape_preview");
-                
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
+                PlayerPrefs.SetString("SelectedSong", "soundscape");
                 break;
             case "T-Square - Takarajima":
-                currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+                currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
-                if (currentMusic != null)
+                if (currentBGM != null)
                 {
-                    FindObjectOfType<AudioManager>().Stop(currentMusic);
+                    FindObjectOfType<AudioManager>().Stop(currentBGM);
                 }
-                FindObjectOfType<AudioManager>().Play("takarajima_preview");
 
+                FindObjectOfType<AudioManager>().Play("takarajima_preview");
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = takarajima;
+                PlayerPrefs.SetString("SelectedSong", "takarajima");
                 break;
             case "ZAQ - Tutti!":
-                currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+                currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
-                if (currentMusic != null)
+                if (currentBGM != null)
                 {
-                    FindObjectOfType<AudioManager>().Stop(currentMusic);
+                    FindObjectOfType<AudioManager>().Stop(currentBGM);
                 }
-                FindObjectOfType<AudioManager>().Play("tutti_preview");
 
+                FindObjectOfType<AudioManager>().Play("tutti_preview");
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
+                PlayerPrefs.SetString("SelectedSong", "tutti!");
                 break;
             default:
                 break;

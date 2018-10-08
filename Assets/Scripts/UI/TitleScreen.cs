@@ -17,7 +17,7 @@ public class TitleScreen : MonoBehaviour {
     {
         enabled = false;
         FindObjectOfType<AudioManager>().Play("vivace");
-        float fadeTime = 0.5f / GameObject.Find("TitleScreenCanvas").GetComponent<Fade>().BeginFade(-1);
+        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
         touches = 0;
         enabled = true;
@@ -46,7 +46,7 @@ public class TitleScreen : MonoBehaviour {
     
     void StopMusic()
     {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
         if (currentMusic != null)
         {

@@ -23,7 +23,7 @@ public class ScoreScreen : MonoBehaviour {
 
     void StopAudio()
     {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentMusic();
+        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
         if (currentMusic != null)
         {
