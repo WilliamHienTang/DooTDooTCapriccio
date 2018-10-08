@@ -5,10 +5,17 @@ using UnityEngine;
 public class HitCollider : MonoBehaviour {
 
     GameObject gameManager;
+    GameObject gameCanvas;
     GameObject note;
     bool active;
+
     public Transform tapParticle;
     public Transform hitParticle;
+
+    public GameObject perfectText;
+    public GameObject greatText;
+    public GameObject goodText;
+    public GameObject badText;
 
     void OnTriggerEnter(Collider other)
     {
@@ -47,21 +54,25 @@ public class HitCollider : MonoBehaviour {
 
         if (type == "perfect")
         {
+            Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(1000);
         }
         else if (type == "great")
         {
+            Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(750);
         }
         else if (type == "good")
         {
+            Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(500);
         }
         else if (type == "bad")
         {
+            Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(250);
         }
@@ -70,7 +81,8 @@ public class HitCollider : MonoBehaviour {
     // Use this for initialization
     void Start () {
         gameManager = GameObject.Find("GameManager");
-	}
+        gameCanvas = GameObject.Find("GameCanvas");
+    }
 	
 	// Update is called once per frame
 	void Update () {

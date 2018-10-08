@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator SpawnNote()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.25f);
 
         if(noteLanes[noteIndex] == 1)
         {
