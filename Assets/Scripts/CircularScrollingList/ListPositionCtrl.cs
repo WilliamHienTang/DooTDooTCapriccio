@@ -211,7 +211,7 @@ public class ListPositionCtrl : MonoBehaviour
 
                 FindObjectOfType<AudioManager>().Play("tutti_preview");
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
-                PlayerPrefs.SetString("SelectedSong", "tutti!");
+                PlayerPrefs.SetString("SelectedSong", "tutti");
                 break;
             default:
                 break;

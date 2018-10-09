@@ -59,6 +59,9 @@
      <Compile Include="Assets\Imports\Particlecollection_Free samples\Plugins\Effect\Editor\RenderEffectInspector.cs" />
      <Compile Include="Assets\Imports\Particlecollection_Free samples\Plugins\Effect\Editor\ShaderCustomEditor\ShaderMaterialsEditor.cs" />
      <Compile Include="Assets\Imports\Particlecollection_Free samples\Plugins\Effect\Editor\XUIUtils.cs" />
+     <Compile Include="Assets\Imports\Shapes2D\Editor\CustomHandles.cs" />
+     <Compile Include="Assets\Imports\Shapes2D\Editor\MenuItems.cs" />
+     <Compile Include="Assets\Imports\Shapes2D\Editor\ShapeEditor.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/William Tang/Documents/DooT! Capriccio/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

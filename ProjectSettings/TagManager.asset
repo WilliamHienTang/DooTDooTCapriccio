@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
+  - HoldNote
+  - ReleaseNote
   layers:
   - Default
   - TransparentFX
@@ -41,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 
+    uniqueID: 3475902127
+    locked: 0
+  - name: 
+    uniqueID: 902559469
+    locked: 0
+  - name: 
+    uniqueID: 2834919841
+    locked: 0
+  - name: 
+    uniqueID: 3911054567
     locked: 0
