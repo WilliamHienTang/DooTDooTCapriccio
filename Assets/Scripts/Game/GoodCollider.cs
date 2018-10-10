@@ -6,7 +6,7 @@ public class GoodCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note"))
+        if (other.CompareTag("Note") || other.CompareTag("ReleaseNote"))
         {
             other.gameObject.GetComponent<Note>().SetScoreType("good");
         }
@@ -14,7 +14,7 @@ public class GoodCollider : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Note"))
+        if (other.CompareTag("Note") || other.CompareTag("ReleaseNote"))
         {
             other.gameObject.GetComponent<Note>().SetScoreType("bad");
         }

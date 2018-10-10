@@ -64,6 +64,45 @@ public class Game : MonoBehaviour {
                     }
                 }
 
+                if (Physics.Raycast(ray, out hit) && (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved))
+                {
+                    if (hit.transform.name == "HitCollider1")
+                    {
+                        HitCollider1.GetComponent<HitCollider>().OnHold();
+                    }
+                    else if (hit.transform.name == "HitCollider2")
+                    {
+                        HitCollider2.GetComponent<HitCollider>().OnHold();
+                    }
+                    else if (hit.transform.name == "HitCollider3")
+                    {
+                        HitCollider3.GetComponent<HitCollider>().OnHold();
+                    }
+                    else if (hit.transform.name == "HitCollider4")
+                    {
+                        HitCollider4.GetComponent<HitCollider>().OnHold();
+                    }
+                }
+
+                if (Physics.Raycast(ray, out hit) && touch.phase == TouchPhase.Ended)
+                {
+                    if (hit.transform.name == "HitCollider1")
+                    {
+                        HitCollider1.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider2")
+                    {
+                        HitCollider2.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider3")
+                    {
+                        HitCollider3.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider4")
+                    {
+                        HitCollider4.GetComponent<HitCollider>().OnRelease();
+                    }
+                }
             }
         }
 
@@ -91,6 +130,58 @@ public class Game : MonoBehaviour {
                     else if (hit.transform.name == "HitCollider4")
                     {
                         HitCollider4.GetComponent<HitCollider>().OnPress();
+                    }
+                }
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.name == "HitCollider1")
+                    {
+                        HitCollider1.GetComponent<HitCollider>().OnHold();
+                    }
+                    else if (hit.transform.name == "HitCollider2")
+                    {
+                        HitCollider2.GetComponent<HitCollider>().OnHold();
+                    }
+                    else if (hit.transform.name == "HitCollider3")
+                    {
+                        HitCollider3.GetComponent<HitCollider>().OnHold();
+                    }
+                    else if (hit.transform.name == "HitCollider4")
+                    {
+                        HitCollider4.GetComponent<HitCollider>().OnHold();
+                    }
+                }
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.name == "HitCollider1")
+                    {
+                        HitCollider1.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider2")
+                    {
+                        HitCollider2.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider3")
+                    {
+                        HitCollider3.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider4")
+                    {
+                        HitCollider4.GetComponent<HitCollider>().OnRelease();
                     }
                 }
             }
