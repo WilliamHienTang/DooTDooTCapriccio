@@ -10,6 +10,8 @@
 		_DissolveWidth ("DissolveWidth", Range(0,0.1)) = 0.05
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_EmissionLM("Emission (Lightmapper)", Float) = 0
+		[Toggle] _DynamicEmissionLM("Dynamic Emission (Lightmapper)", Int) = 0
 	}
 	SubShader {
 		Tags { "Queue" = "Transparent" "RenderType" = "Transparent" } Blend SrcAlpha OneMinusSrcAlpha

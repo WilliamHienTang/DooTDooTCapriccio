@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Note
   - HoldNote
-  - ReleaseNote
+  - HeadNote
+  - TailNote
+  - HitCollider
   layers:
   - Default
   - TransparentFX

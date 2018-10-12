@@ -7,7 +7,7 @@ public class HitCollider : MonoBehaviour {
     GameObject gameManager;
     GameObject gameCanvas;
     GameObject note;
-    bool active;
+    bool hitHeadNote;
 
     public Transform tapParticle;
     public Transform hitParticle;
@@ -18,20 +18,39 @@ public class HitCollider : MonoBehaviour {
     public GameObject badText;
     public GameObject missText;
 
+    // Use this for initialization
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager");
+        gameCanvas = GameObject.Find("GameCanvas");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note") || other.CompareTag("ReleaseNote") || other.CompareTag("HoldNote"))
+        if (other.CompareTag("Note") || other.CompareTag("HeadNote") || other.CompareTag("TailNote"))
         {
-            active = true;
             note = other.gameObject;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Note") || other.CompareTag("ReleaseNote"))
+        if (other.CompareTag("Note") || other.CompareTag("TailNote"))
         {
-            active = false;
+            note = null;
+        }
+
+        else if (other.CompareTag("HeadNote"))
+        {
+            hitHeadNote = false;
+            GameObject holdLane = note.transform.parent.transform.Find("HoldLane").gameObject;
+            note = holdLane;
         }
     }
 
@@ -40,36 +59,67 @@ public class HitCollider : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("tap");
         Instantiate(tapParticle, transform.position, tapParticle.rotation);
 
-        if (active && note.CompareTag("Note"))
+        if (note == null)
         {
-            active = false;
+            return;
+        }
+
+        else if (note.CompareTag("Note") || note.CompareTag("TailNote"))
+        {
             HandleNote(note.GetComponent<Note>().GetScoreType());
+        }
+
+        else if (note.CompareTag("HeadNote"))
+        {
+            hitHeadNote = true;
+            GameObject holdLane = note.transform.parent.transform.Find("HoldLane").gameObject;
+            HandleNote(note.GetComponent<Note>().GetScoreType());
+            note = holdLane;
+        }
+
+        else if (note.CompareTag("HoldNote"))
+        {
+            DestroyHoldNote();
         }
     }
 
     public void OnRelease()
     {
-        if (active && note.CompareTag("ReleaseNote"))
+        if (note == null)
         {
-            active = false;
+            return;
+        }
+
+        else if (note.CompareTag("TailNote") && hitHeadNote)
+        {
             HandleNote(note.GetComponent<Note>().GetScoreType());
         }
 
-        else if (active && note.CompareTag("HoldNote"))
+        else if (note.CompareTag("HoldNote") && hitHeadNote)
         {
-            active = false;
-            Destroy(note.transform.parent.gameObject);
-            gameManager.GetComponent<GameManager>().ResetCombo();
-            Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            DestroyHoldNote();
         }
     }
 
     public void OnHold()
     {
-        if (active && note.CompareTag("HoldNote"))
+        if (note == null)
+        {
+            return;
+        }
+
+        else if (note.CompareTag("HoldNote"))
         {
             
         }
+    }
+
+    void DestroyHoldNote()
+    {
+        Destroy(note.transform.parent.gameObject);
+        gameManager.GetComponent<GameManager>().ResetCombo();
+        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        hitHeadNote = false;
     }
 
     void HandleNote(string type)
@@ -102,16 +152,5 @@ public class HitCollider : MonoBehaviour {
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(250);
         }
-    }
-
-    // Use this for initialization
-    void Start () {
-        gameManager = GameObject.Find("GameManager");
-        gameCanvas = GameObject.Find("GameCanvas");
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        
     }
 }

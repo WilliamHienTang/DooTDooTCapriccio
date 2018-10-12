@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114184581744134288}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Note
+  m_TagString: HeadNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 114222444678906722}
   m_Layer: 0
   m_Name: Tail
-  m_TagString: ReleaseNote
+  m_TagString: TailNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 65298959023370542}
   - component: {fileID: 54174241063660346}
   - component: {fileID: 114994654098029478}
+  - component: {fileID: 114218175563089970}
   m_Layer: 0
   m_Name: HoldLane
   m_TagString: HoldNote
@@ -420,7 +421,7 @@ Transform:
   m_GameObject: {fileID: 1852933715608740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 0.5, y: 0.0001, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.001, z: 2}
   m_Children: []
   m_Father: {fileID: 4788656985797828}
   m_RootOrder: 1
@@ -466,7 +467,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e30b4dac8bd6b2d4186828a8585de72c, type: 2}
+  - {fileID: 2100000, guid: 179555ab8bd66734b8c1ac67e84c7cbc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -548,7 +549,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.0000002, z: 0}
+  m_Size: {x: 1, y: 1, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65298959023370542
 BoxCollider:
@@ -560,7 +561,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65594003090215060
 BoxCollider:
@@ -572,7 +573,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.0000002, z: 0}
+  m_Size: {x: 1, y: 1, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114128406525664420
 MonoBehaviour:
@@ -699,6 +700,17 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
+--- !u!114 &114218175563089970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852933715608740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cf248c429bc5c4eb0396c842429f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114222444678906722
 MonoBehaviour:
   m_ObjectHideFlags: 1

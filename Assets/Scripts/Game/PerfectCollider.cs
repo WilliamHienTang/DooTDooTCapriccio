@@ -6,7 +6,7 @@ public class PerfectCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note") || other.CompareTag("ReleaseNote"))
+        if (other.CompareTag("Note") || other.CompareTag("HeadNote") || other.CompareTag("TailNote"))
         {
             other.gameObject.GetComponent<Note>().SetScoreType("perfect");
         }
@@ -14,7 +14,7 @@ public class PerfectCollider : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Note") || other.CompareTag("ReleaseNote"))
+        if (other.CompareTag("Note") || other.CompareTag("HeadNote") || other.CompareTag("TailNote"))
         {
             other.gameObject.GetComponent<Note>().SetScoreType("great");
         }

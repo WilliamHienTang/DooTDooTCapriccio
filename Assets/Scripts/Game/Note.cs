@@ -6,6 +6,21 @@ public class Note : MonoBehaviour {
 
     Rigidbody RB;
     string scoreType = null;
+    float velocity;
+
+    // Use this for initialization
+    void Start()
+    {
+        velocity = PlayerPrefs.GetFloat("NoteSpeed");
+        RB = GetComponent<Rigidbody>();
+        RB.velocity = new Vector3(0, 0, -velocity);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public void SetScoreType(string type)
     {
@@ -16,16 +31,4 @@ public class Note : MonoBehaviour {
     {
         return scoreType;
     }
-
-    // Use this for initialization
-    void Start () {
-        float velocity = PlayerPrefs.GetFloat("NoteSpeed");
-        RB = GetComponent<Rigidbody>();
-        RB.velocity = new Vector3(0, 0, -velocity);
-    }
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

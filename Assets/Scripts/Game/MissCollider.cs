@@ -10,9 +10,19 @@ public class MissCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        gameManager.GetComponent<GameManager>().ResetCombo();
-        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        if (other.CompareTag("TailNote"))
+        {
+            Destroy(other.transform.parent.gameObject);
+            gameManager.GetComponent<GameManager>().ResetCombo();
+            Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        }
+
+        else if(other.CompareTag("Note") || other.CompareTag("HeadNote"))
+        {
+            Destroy(other.gameObject);
+            gameManager.GetComponent<GameManager>().ResetCombo();
+            Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        }
     }
 
 	// Use this for initialization
