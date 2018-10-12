@@ -7,7 +7,6 @@ public class HitCollider : MonoBehaviour {
     GameObject gameManager;
     GameObject gameCanvas;
     GameObject note;
-    bool hitHeadNote;
 
     public Transform tapParticle;
     public Transform hitParticle;
@@ -48,9 +47,7 @@ public class HitCollider : MonoBehaviour {
 
         else if (other.CompareTag("HeadNote"))
         {
-            hitHeadNote = false;
-            GameObject holdLane = note.transform.parent.transform.Find("HoldLane").gameObject;
-            note = holdLane;
+            DestroyHoldNote();
         }
     }
 
@@ -64,22 +61,16 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
-        else if (note.CompareTag("Note") || note.CompareTag("TailNote"))
+        else if (note.CompareTag("Note"))
         {
             HandleNote(note.GetComponent<Note>().GetScoreType());
         }
 
         else if (note.CompareTag("HeadNote"))
         {
-            hitHeadNote = true;
             GameObject holdLane = note.transform.parent.transform.Find("HoldLane").gameObject;
             HandleNote(note.GetComponent<Note>().GetScoreType());
             note = holdLane;
-        }
-
-        else if (note.CompareTag("HoldNote"))
-        {
-            DestroyHoldNote();
         }
     }
 
@@ -90,12 +81,12 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
-        else if (note.CompareTag("TailNote") && hitHeadNote)
+        else if (note.CompareTag("TailNote"))
         {
             HandleNote(note.GetComponent<Note>().GetScoreType());
         }
 
-        else if (note.CompareTag("HoldNote") && hitHeadNote)
+        else if (note.CompareTag("HoldNote"))
         {
             DestroyHoldNote();
         }
@@ -119,7 +110,6 @@ public class HitCollider : MonoBehaviour {
         Destroy(note.transform.parent.gameObject);
         gameManager.GetComponent<GameManager>().ResetCombo();
         Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
-        hitHeadNote = false;
     }
 
     void HandleNote(string type)
