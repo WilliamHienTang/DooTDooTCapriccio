@@ -14,6 +14,7 @@ public class Dissolve : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+
         if (other.transform.name == "DissolveCollider")
         {
             enabled = true;
@@ -23,7 +24,6 @@ public class Dissolve : MonoBehaviour {
     // Use this for initialization
     void Start () {
         enabled = false;
-
         material = GetComponent<Renderer>().material;
         dissolveAmount = 0.0f;
         velocity = PlayerPrefs.GetFloat("NoteSpeed");
