@@ -34,8 +34,14 @@ public class HitCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note") || other.CompareTag("HeadNote") || other.CompareTag("TailNote"))
+        if (other.CompareTag("Note") || other.CompareTag("HeadNote"))
         {
+            note = other.gameObject;
+        }
+
+        else if (other.CompareTag("TailNote"))
+        {
+            StopLoopingParticle();
             note = other.gameObject;
         }
     }
@@ -86,8 +92,8 @@ public class HitCollider : MonoBehaviour {
 
         else if (note.CompareTag("TailNote"))
         {
-            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
             DestroyHoldNote();
+            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
         }
 
         else if (note.CompareTag("HoldNote"))
@@ -95,19 +101,6 @@ public class HitCollider : MonoBehaviour {
             DestroyHoldNote();
             MissNote();
         }
-    }
-
-    public void OnHold()
-    {
-        /*if (note == null)
-        {
-            return;
-        }
-
-        else if (note.CompareTag("HoldNote"))
-        {
-            
-        }*/
     }
 
     void DestroyHoldNote()
