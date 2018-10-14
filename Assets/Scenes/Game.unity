@@ -752,9 +752,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 4613942265039670, guid: b4e4160816933de47ad038017f193f0e,
+  tapParticle: {fileID: 1680057840919596, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 4855789123969292, guid: 457ce84ea2091964e8b15b2b88f155ab,
+  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+    type: 2}
+  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
@@ -891,9 +893,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 4613942265039670, guid: b4e4160816933de47ad038017f193f0e,
+  tapParticle: {fileID: 1680057840919596, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 4855789123969292, guid: 457ce84ea2091964e8b15b2b88f155ab,
+  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+    type: 2}
+  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
@@ -1779,9 +1783,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 4613942265039670, guid: b4e4160816933de47ad038017f193f0e,
+  tapParticle: {fileID: 1680057840919596, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 4855789123969292, guid: 457ce84ea2091964e8b15b2b88f155ab,
+  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+    type: 2}
+  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
@@ -4807,9 +4813,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 4613942265039670, guid: b4e4160816933de47ad038017f193f0e,
+  tapParticle: {fileID: 1680057840919596, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 4855789123969292, guid: 457ce84ea2091964e8b15b2b88f155ab,
+  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+    type: 2}
+  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}

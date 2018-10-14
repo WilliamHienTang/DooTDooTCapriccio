@@ -8,8 +8,10 @@ public class HitCollider : MonoBehaviour {
     GameObject gameCanvas;
     GameObject note;
 
-    public Transform tapParticle;
-    public Transform hitParticle;
+    public GameObject tapParticle;
+    public GameObject hitParticle;
+    public GameObject holdParticle;
+    GameObject holdParticleInstance;
 
     public GameObject perfectText;
     public GameObject greatText;
@@ -48,13 +50,14 @@ public class HitCollider : MonoBehaviour {
         else if (other.CompareTag("HeadNote"))
         {
             DestroyHoldNote();
+            MissNote();
         }
     }
 
     public void OnPress()
     {
         FindObjectOfType<AudioManager>().Play("tap");
-        Instantiate(tapParticle, transform.position, tapParticle.rotation);
+        Instantiate(tapParticle, transform.position, tapParticle.transform.rotation);
 
         if (note == null)
         {
@@ -63,13 +66,13 @@ public class HitCollider : MonoBehaviour {
 
         else if (note.CompareTag("Note"))
         {
-            HandleNote(note.GetComponent<Note>().GetScoreType());
+            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
         }
 
         else if (note.CompareTag("HeadNote"))
         {
             GameObject holdLane = note.transform.parent.transform.Find("HoldLane").gameObject;
-            HandleNote(note.GetComponent<Note>().GetScoreType());
+            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
             note = holdLane;
         }
     }
@@ -83,18 +86,20 @@ public class HitCollider : MonoBehaviour {
 
         else if (note.CompareTag("TailNote"))
         {
-            HandleNote(note.GetComponent<Note>().GetScoreType());
+            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
+            DestroyHoldNote();
         }
 
         else if (note.CompareTag("HoldNote"))
         {
             DestroyHoldNote();
+            MissNote();
         }
     }
 
     public void OnHold()
     {
-        if (note == null)
+        /*if (note == null)
         {
             return;
         }
@@ -102,41 +107,65 @@ public class HitCollider : MonoBehaviour {
         else if (note.CompareTag("HoldNote"))
         {
             
-        }
+        }*/
     }
 
     void DestroyHoldNote()
     {
         Destroy(note.transform.parent.gameObject);
+        StopLoopingParticle();
+    }
+
+    void StopLoopingParticle()
+    {
+        if (holdParticleInstance)
+        {
+            for (int i = 0; i < holdParticleInstance.transform.childCount; i++)
+            {
+                holdParticleInstance.transform.GetChild(i).GetComponent<ParticleSystem>().loop = false;
+            }
+        }
+    }
+
+    void MissNote()
+    {
         gameManager.GetComponent<GameManager>().ResetCombo();
         Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
     }
 
-    void HandleNote(string type)
+    void HandleNote(string scoreType, string noteType)
     {
-        FindObjectOfType<AudioManager>().Play(type);
+        FindObjectOfType<AudioManager>().Play(scoreType);
         Destroy(note);
-        Instantiate(hitParticle, transform.position, hitParticle.rotation);
 
-        if (type == "perfect")
+        if (noteType == "Note")
+        {
+            Instantiate(hitParticle, transform.position, hitParticle.transform.rotation);
+        }
+        else if (noteType == "HeadNote")
+        {
+            holdParticleInstance = Instantiate(holdParticle, transform.position, holdParticle.transform.rotation);
+        }
+
+        if (scoreType == "perfect")
         {
             Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(1000);
         }
-        else if (type == "great")
+        else if (scoreType == "great")
         {
             Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(750);
         }
-        else if (type == "good")
+        else if (scoreType == "good")
         {
             Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(500);
         }
-        else if (type == "bad")
+        else if (scoreType == "bad")
         {
             Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
