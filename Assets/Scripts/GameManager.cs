@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour {
         noteIndex++;
         timerReset = true;
 
-        Instantiate(noteObject, new Vector3(xPosition, 0.0f, 10.0f), noteObject.rotation);
-        //Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, 10.0f), holdNoteObject.rotation);
+        //Instantiate(noteObject, new Vector3(xPosition, 0.0f, 10.0f), noteObject.rotation);
+        Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, 10.0f), holdNoteObject.rotation);
     }
 
     public void IncreaseScore(int points)

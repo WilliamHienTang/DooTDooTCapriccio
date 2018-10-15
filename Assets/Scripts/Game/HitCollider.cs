@@ -11,6 +11,7 @@ public class HitCollider : MonoBehaviour {
     public GameObject tapParticle;
     public GameObject hitParticle;
     public GameObject holdParticle;
+    public GameObject missHoldParticle;
     GameObject holdParticleInstance;
 
     public GameObject perfectText;
@@ -55,6 +56,7 @@ public class HitCollider : MonoBehaviour {
 
         else if (other.CompareTag("HeadNote"))
         {
+            Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
             MissNote();
         }
@@ -98,6 +100,7 @@ public class HitCollider : MonoBehaviour {
 
         else if (note.CompareTag("HoldNote"))
         {
+            Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
             MissNote();
         }
