@@ -18,19 +18,23 @@ public class GameManager : MonoBehaviour {
 
         if(noteLanes[noteIndex] == 1)
         {
-            xPosition = -0.76f;
+            xPosition = -1.02f;
         }
         else if (noteLanes[noteIndex] == 2)
         {
-            xPosition = -0.254f;
+            xPosition = -0.51f;
         }
         else if (noteLanes[noteIndex] == 3)
         {
-            xPosition = 0.254f;
+            xPosition = 0f;
         }
         else if (noteLanes[noteIndex] == 4)
         {
-            xPosition = 0.76f;
+            xPosition = 0.51f;
+        }
+        else if (noteLanes[noteIndex] == 5)
+        {
+            xPosition = 1.02f;
         }
 
         noteIndex++;

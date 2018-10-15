@@ -10,6 +10,7 @@ public class Game : MonoBehaviour {
     public GameObject HitCollider2;
     public GameObject HitCollider3;
     public GameObject HitCollider4;
+    public GameObject HitCollider5;
 
     void Awake()
     {
@@ -62,6 +63,10 @@ public class Game : MonoBehaviour {
                     {
                         HitCollider4.GetComponent<HitCollider>().OnPress();
                     }
+                    else if (hit.transform.name == "HitCollider5")
+                    {
+                        HitCollider5.GetComponent<HitCollider>().OnPress();
+                    }
                 }
 
                 if (Physics.Raycast(ray, out hit) && touch.phase == TouchPhase.Ended)
@@ -81,6 +86,10 @@ public class Game : MonoBehaviour {
                     else if (hit.transform.name == "HitCollider4")
                     {
                         HitCollider4.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider5")
+                    {
+                        HitCollider5.GetComponent<HitCollider>().OnPress();
                     }
                 }
             }
@@ -111,6 +120,10 @@ public class Game : MonoBehaviour {
                     {
                         HitCollider4.GetComponent<HitCollider>().OnPress();
                     }
+                    else if (hit.transform.name == "HitCollider5")
+                    {
+                        HitCollider5.GetComponent<HitCollider>().OnPress();
+                    }
                 }
             }
 
@@ -136,6 +149,10 @@ public class Game : MonoBehaviour {
                     else if (hit.transform.name == "HitCollider4")
                     {
                         HitCollider4.GetComponent<HitCollider>().OnRelease();
+                    }
+                    else if (hit.transform.name == "HitCollider5")
+                    {
+                        HitCollider5.GetComponent<HitCollider>().OnPress();
                     }
                 }
             }
