@@ -91,7 +91,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - Color_7DCA2E9D: {r: 1, g: 1, b: 1, a: 0}
-    - _Color: {r: 0, g: 1, b: 0, a: 0.29411766}
+    - _Color: {r: 0, g: 1, b: 0, a: 0.19607843}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColour1: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeColour2: {r: 1, g: 1, b: 1, a: 1}
