@@ -84,6 +84,8 @@ public class AudioManager : MonoBehaviour {
     void Start(){
         audioMixer.SetFloat("BGMVolume", PlayerPrefs.GetFloat("BGMVolume"));
         audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+        audioMixer.SetFloat("SongVolume", PlayerPrefs.GetFloat("SongVolume"));
+        audioMixer.SetFloat("GameSFXVolume", PlayerPrefs.GetFloat("GameSFXVolume"));
     }
 
     // Update is called once per frame

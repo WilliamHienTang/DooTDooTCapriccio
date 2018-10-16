@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public string songName;
-    int[] noteLanes = {1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 1, 2, 3, 4, 3, 2, 1};
+    int[] noteLanes = {1, 5, 5, 4, 3, 2, 5, 2, 5, 4, 5, 2, 3, 5, 3, 5, 5};
     int noteIndex = 0;
     bool timerReset = true;
     float xPosition;
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator SpawnNote()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
 
         if(noteLanes[noteIndex] == 1)
         {
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour {
         noteIndex++;
         timerReset = true;
 
-        //Instantiate(noteObject, new Vector3(xPosition, 0.0f, 10.0f), noteObject.rotation);
-        Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, 10.0f), holdNoteObject.rotation);
+        Instantiate(noteObject, new Vector3(xPosition, 0.0f, 10.0f), noteObject.rotation);
+        //Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, 10.0f), holdNoteObject.rotation);
     }
 
     public void IncreaseScore(int points)

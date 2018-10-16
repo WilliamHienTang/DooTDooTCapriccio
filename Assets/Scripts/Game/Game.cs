@@ -89,7 +89,7 @@ public class Game : MonoBehaviour {
                     }
                     else if (hit.transform.name == "HitCollider5")
                     {
-                        HitCollider5.GetComponent<HitCollider>().OnPress();
+                        HitCollider5.GetComponent<HitCollider>().OnRelease();
                     }
                 }
             }
@@ -152,7 +152,7 @@ public class Game : MonoBehaviour {
                     }
                     else if (hit.transform.name == "HitCollider5")
                     {
-                        HitCollider5.GetComponent<HitCollider>().OnPress();
+                        HitCollider5.GetComponent<HitCollider>().OnRelease();
                     }
                 }
             }
