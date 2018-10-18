@@ -144,7 +144,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: takarajima
-    clip: {fileID: 8300000, guid: 66b08da4860964a419c3ed1580bc7a89, type: 3}
+    clip: {fileID: 8300000, guid: e4d075b73c5937a409ad131ec2f72e9d, type: 3}
     group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 1
@@ -158,7 +158,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: tutti
-    clip: {fileID: 8300000, guid: 4aa7bbd259b1a0d4fb5960e5c1c4b099, type: 3}
+    clip: {fileID: 8300000, guid: 7082ccdf15a0d1640be011956d7b3696, type: 3}
     group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 1

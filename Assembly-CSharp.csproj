@@ -123,6 +123,7 @@
      <Compile Include="Assets\Scripts\Game\HitCollider.cs" />
      <Compile Include="Assets\Scripts\Game\MissCollider.cs" />
      <Compile Include="Assets\Scripts\Game\Note.cs" />
+     <Compile Include="Assets\Scripts\Game\NoteSpawn.cs" />
      <Compile Include="Assets\Scripts\Game\Pause.cs" />
      <Compile Include="Assets\Scripts\Game\PerfectCollider.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerPrefsText.cs" />
