@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public Transform noteObject;
-    public Transform holdNoteObject;
     float velocityOffset;
-    readonly float songDelay = 3.0f;
+    readonly float songDelay = 5.0f;
     readonly float spawnDistance = 20.0f;
     bool flag = true;
+
+    public Transform noteObject;
+    public Transform holdNoteObject;
 
     // Use this for initialization
     IEnumerator Start()
@@ -29,8 +30,8 @@ public class GameManager : MonoBehaviour {
     {
         if (flag)
         {
-            InstantiateNote(4);
-            //InstantiateHoldNote(2, 1.0f);
+            //InstantiateNote(4);
+            InstantiateHoldNote(2, 5.0f);
         }
         flag = false;
     }
@@ -87,11 +88,11 @@ public class GameManager : MonoBehaviour {
         }
 
         Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, spawnDistance), holdNoteObject.rotation);
-        //GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
-        //holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
-        //holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
-        //GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
-        //holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length);
+        GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
+        holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
+        holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
+        GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
+        holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length);
     }
 
     public void IncreaseScore(int points)

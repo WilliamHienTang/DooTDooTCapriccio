@@ -11,7 +11,7 @@ public class Dissolve : MonoBehaviour {
     float duration;
     float dissolveCycle;
     float dissolveDelta;
-
+    
     void OnTriggerEnter(Collider other)
     {
 
