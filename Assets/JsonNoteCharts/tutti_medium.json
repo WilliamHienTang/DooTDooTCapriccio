@@ -1,0 +1,14 @@
+{
+  "Items": [
+    {
+      "spawnTime": 5.0,
+      "tailSpawnTime": 7.0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 6.0,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    }
+  ]
+}

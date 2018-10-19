@@ -1,24 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class NoteSpawn : MonoBehaviour {
+[Serializable]
+public class NoteSpawn {
     public float spawnTime;
     public float tailSpawnTime;
     public int laneIndex;
-
-    public float length;
-
-    // Use this for initialization
-    void Awake()
-    {
-        if (tailSpawnTime > 0)
-        {
-            length = PlayerPrefs.GetFloat("velocty") * (tailSpawnTime - spawnTime);
-        }
-        else
-        {
-            length = 0;
-        }
-    }
 }

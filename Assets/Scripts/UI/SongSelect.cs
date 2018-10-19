@@ -28,6 +28,27 @@ public class SongSelect : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play("reward");
     }
 
+    public void SetDifficulty(int difficulty)
+    {
+        switch (difficulty)
+        {
+            case 1:
+                PlayerPrefs.SetString("Difficulty", "easy");
+                break;
+            case 2:
+                PlayerPrefs.SetString("Difficulty", "medium");
+                break;
+            case 3:
+                PlayerPrefs.SetString("Difficulty", "hard");
+                break;
+            case 4:
+                PlayerPrefs.SetString("Difficulty", "expert");
+                break;
+            default:
+                break;
+        }
+    }
+
     void StopMusic()
     {
         string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();

@@ -1,39 +1,104 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class GameManager : MonoBehaviour {
 
-    float velocityOffset;
-    readonly float songDelay = 5.0f;
-    readonly float spawnDistance = 20.0f;
-    bool flag = true;
-
     public Transform noteObject;
     public Transform holdNoteObject;
+
+    float speedOffset;
+    float noteSpeed;
+    readonly float songDelay = 5.0f;
+    readonly float spawnDistance = 20.0f;
+    
+    string jsonPath;
+    string json;
+    NoteSpawn[] noteChart;
+    int chartIndex = 0;
+
+    float bpm = 94.0f;
+    float songTimer; // time in seconds that passed since the song started
+    float oldSongTimer;
+    float secPerBeat; // duration of a beat
+    float dsptimesong; // time in seconds at the start of the song
 
     // Use this for initialization
     IEnumerator Start()
     {
         enabled = false;
+
+        // initialize player prefs
         PlayerPrefs.SetInt("Score", 0);
         PlayerPrefs.SetInt("Combo", 0);
 
+        // load the note chart from the json file
+        jsonPath = Application.dataPath + "/JsonNoteCharts/" + PlayerPrefs.GetString("SelectedSong") + "_" + PlayerPrefs.GetString("Difficulty") + ".json";
+        json = File.ReadAllText(jsonPath);
+        noteChart = JsonHelper.FromJson<NoteSpawn>(json);
+
+        // initialize time tracking
+        secPerBeat = 60.0f / bpm;
+        dsptimesong = (float) AudioSettings.dspTime;
+
+        // play song and delay prior to spawning notes
         FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString("SelectedSong"));
-        velocityOffset = spawnDistance / PlayerPrefs.GetFloat("NoteSpeed");
-        yield return new WaitForSeconds(songDelay - velocityOffset);
+        noteSpeed = PlayerPrefs.GetFloat("NoteSpeed");
+        speedOffset = spawnDistance / noteSpeed;
+        yield return new WaitForSeconds(songDelay - speedOffset);
         enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (flag)
+        if (chartIndex >= noteChart.Length)
         {
-            //InstantiateNote(4);
-            InstantiateHoldNote(2, 5.0f);
+            return;
         }
-        flag = false;
+
+        songTimer = (float)(AudioSettings.dspTime - dsptimesong);
+        if (songTimer == oldSongTimer)
+        {
+            songTimer += Time.deltaTime; 
+        }
+        oldSongTimer = songTimer;
+
+        if ((noteChart[chartIndex].spawnTime - Time.deltaTime) <= songTimer)
+        {
+
+            if (noteChart[chartIndex].tailSpawnTime > 0)
+            {
+                float length = noteSpeed * (noteChart[chartIndex].tailSpawnTime - noteChart[chartIndex].spawnTime);
+                InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
+            }
+            else
+            {
+                InstantiateNote(noteChart[chartIndex].laneIndex);
+            }
+            chartIndex++;
+        }
+
+        if (chartIndex >= noteChart.Length)
+        {
+            return;
+        }
+
+        if ((noteChart[chartIndex].spawnTime - Time.deltaTime) <= songTimer)
+        {
+
+            if (noteChart[chartIndex].tailSpawnTime > 0)
+            {
+                float length = noteSpeed * (noteChart[chartIndex].tailSpawnTime - noteChart[chartIndex].spawnTime);
+                InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
+            }
+            else
+            {
+                InstantiateNote(noteChart[chartIndex].laneIndex);
+            }
+            chartIndex++;
+        }
     }
 
     void InstantiateNote(int laneIndex)
