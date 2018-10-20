@@ -16,51 +16,51 @@ public class OptionsMenu : MonoBehaviour {
 
     public void SetSongVolume(float volume)
     {
-        PlayerPrefs.SetFloat("SongVolume", volume);
-        audioMixer.SetFloat("SongVolume", PlayerPrefs.GetFloat("SongVolume"));
+        PlayerPrefs.SetFloat(Constants.songVolume, volume);
+        audioMixer.SetFloat(Constants.songVolume, PlayerPrefs.GetFloat(Constants.songVolume));
         PlayerPrefs.Save();
     }
 
     public void SetGameSFXVolume(float volume)
     {
-        PlayerPrefs.SetFloat("GameSFXVolume", volume);
-        audioMixer.SetFloat("GameSFXVolume", PlayerPrefs.GetFloat("GameSFXVolume"));
+        PlayerPrefs.SetFloat(Constants.gameSFXVolume, volume);
+        audioMixer.SetFloat(Constants.gameSFXVolume, PlayerPrefs.GetFloat(Constants.gameSFXVolume));
         PlayerPrefs.Save();
     }
 
     public void SetBGMVolume(float volume)
     {
-        PlayerPrefs.SetFloat("BGMVolume", volume);
-        audioMixer.SetFloat("BGMVolume", PlayerPrefs.GetFloat("BGMVolume"));
+        PlayerPrefs.SetFloat(Constants.BGMVolume, volume);
+        audioMixer.SetFloat(Constants.BGMVolume, PlayerPrefs.GetFloat(Constants.BGMVolume));
         PlayerPrefs.Save();
     }
 
     public void SetSFXVolume(float volume)
     {
-        PlayerPrefs.SetFloat("SFXVolume", volume);
-        audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+        PlayerPrefs.SetFloat(Constants.SFXVolume, volume);
+        audioMixer.SetFloat(Constants.SFXVolume, PlayerPrefs.GetFloat(Constants.SFXVolume));
         PlayerPrefs.Save();
     }
 
     public void ChangeNoteSpeed(float speed)
     {
-        float newSpeed = PlayerPrefs.GetFloat("NoteSpeed") + speed;
+        float newSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed) + speed;
         newSpeed = RoundToTenth(newSpeed);
-        PlayerPrefs.SetFloat("NoteSpeed", newSpeed);
+        PlayerPrefs.SetFloat(Constants.noteSpeed, newSpeed);
 
-        if (PlayerPrefs.GetFloat("NoteSpeed") > 10.0f)
+        if (PlayerPrefs.GetFloat(Constants.noteSpeed) > 10.0f)
         {
-            PlayerPrefs.SetFloat("NoteSpeed", 1.0f);
+            PlayerPrefs.SetFloat(Constants.noteSpeed, 1.0f);
             noteSpeed.SetText("1.0");
         }
-        else if (PlayerPrefs.GetFloat("NoteSpeed") < 1.0f)
+        else if (PlayerPrefs.GetFloat(Constants.noteSpeed) < 1.0f)
         {
-            PlayerPrefs.SetFloat("NoteSpeed", 10.0f);
+            PlayerPrefs.SetFloat(Constants.noteSpeed, 10.0f);
             noteSpeed.SetText("10.0");
         }
         else
         {
-            noteSpeed.SetText(PlayerPrefs.GetFloat("NoteSpeed").ToString("F1"));
+            noteSpeed.SetText(PlayerPrefs.GetFloat(Constants.noteSpeed).ToString("F1"));
         }
 
         PlayerPrefs.Save();
@@ -75,15 +75,11 @@ public class OptionsMenu : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        noteSpeed.text = PlayerPrefs.GetFloat("NoteSpeed").ToString();
-        SongSlider.value = PlayerPrefs.GetFloat("SongVolume", SongSlider.value);
-        GameSFXSlider.value = PlayerPrefs.GetFloat("GameSFXVolume", GameSFXSlider.value);
-        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume", BGMSlider.value);
-        SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume", SFXSlider.value);
-        audioMixer.SetFloat("SongVolume", PlayerPrefs.GetFloat("SongVolume"));
-        audioMixer.SetFloat("GameSFXVolume", PlayerPrefs.GetFloat("GameSFXVolume"));
-        audioMixer.SetFloat("BGMVolume", PlayerPrefs.GetFloat("BGMVolume"));
-        audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
+        noteSpeed.text = PlayerPrefs.GetFloat(Constants.noteSpeed).ToString();
+        SongSlider.value = PlayerPrefs.GetFloat(Constants.songVolume, SongSlider.value);
+        GameSFXSlider.value = PlayerPrefs.GetFloat(Constants.gameSFXVolume, GameSFXSlider.value);
+        BGMSlider.value = PlayerPrefs.GetFloat(Constants.BGMVolume, BGMSlider.value);
+        SFXSlider.value = PlayerPrefs.GetFloat(Constants.SFXVolume, SFXSlider.value);
         PlayerPrefs.Save();
     }
 

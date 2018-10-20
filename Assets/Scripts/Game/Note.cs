@@ -8,22 +8,21 @@ public class Note : MonoBehaviour {
     string scoreType = null;
     float noteSpeed;
     Vector3 initPosition;
-    Vector3 colliderPosition;
-    float colliderZPosition = 1.0f;
+    Vector3 activatorPosition;
     float distance;
 
-    float songTimer; // time in seconds that passed since the song started
+    float songTimer;
     float dsptimesong; // time in seconds at the start of the song
     float oldSongTimer;
 
     // Use this for initialization
     void Start()
     {
-        noteSpeed = PlayerPrefs.GetFloat("NoteSpeed");
         RB = GetComponent<Rigidbody>();
+        noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         initPosition = transform.position;
-        colliderPosition = new Vector3(initPosition.x, initPosition.y, colliderZPosition);
-        distance = (Mathf.Abs(colliderZPosition - initPosition.z));
+        activatorPosition = new Vector3(initPosition.x, initPosition.y, Constants.activatorZ);
+        distance = initPosition.z - Constants.activatorZ;
         dsptimesong = (float)AudioSettings.dspTime;
     }
 
@@ -43,7 +42,7 @@ public class Note : MonoBehaviour {
         }
         oldSongTimer = songTimer;
 
-        transform.position = Vector3.Lerp(initPosition, colliderPosition, (noteSpeed * songTimer / distance));   
+        transform.position = Vector3.Lerp(initPosition, activatorPosition, (noteSpeed * songTimer / distance));   
     }
 
     public void SetScoreType(string type)

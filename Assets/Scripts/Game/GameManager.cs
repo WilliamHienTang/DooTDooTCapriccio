@@ -8,10 +8,9 @@ public class GameManager : MonoBehaviour {
     public Transform noteObject;
     public Transform holdNoteObject;
 
+    string selectedSong;
     float speedOffset;
     float noteSpeed;
-    readonly float songDelay = 5.0f;
-    readonly float spawnZPosition = 20.0f;
     
     string jsonPath;
     string json;
@@ -30,11 +29,13 @@ public class GameManager : MonoBehaviour {
         enabled = false;
 
         // initialize player prefs
-        PlayerPrefs.SetInt("Score", 0);
-        PlayerPrefs.SetInt("Combo", 0);
+        PlayerPrefs.SetInt(Constants.score, 0);
+        PlayerPrefs.SetInt(Constants.combo, 0);
+        noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
+        selectedSong = PlayerPrefs.GetString(Constants.selectedSong);
 
         // load the note chart from the json file
-        jsonPath = Application.dataPath + "/JsonNoteCharts/" + PlayerPrefs.GetString("SelectedSong") + "_" + PlayerPrefs.GetString("Difficulty") + ".json";
+        jsonPath = Application.dataPath + "/JsonNoteCharts/" + selectedSong + "_" + PlayerPrefs.GetString(Constants.difficulty) + ".json";
         json = File.ReadAllText(jsonPath);
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
@@ -43,10 +44,9 @@ public class GameManager : MonoBehaviour {
         dsptimesong = (float) AudioSettings.dspTime;
 
         // play song and delay prior to spawning notes
-        FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString("SelectedSong"));
-        noteSpeed = PlayerPrefs.GetFloat("NoteSpeed");
-        speedOffset = spawnZPosition / noteSpeed;
-        yield return new WaitForSeconds(songDelay - speedOffset);
+        FindObjectOfType<AudioManager>().Play(selectedSong);
+        speedOffset = Constants.spawnZ / noteSpeed;
+        yield return new WaitForSeconds(Constants.songDelay - speedOffset);
         enabled = true;
     }
 
@@ -107,25 +107,25 @@ public class GameManager : MonoBehaviour {
         switch (laneIndex)
         {
             case 1:
-                xPosition = -1.02f;
+                xPosition = Constants.lane1X;
                 break;
             case 2:
-                xPosition = -0.51f;
+                xPosition = Constants.lane2X;
                 break;
             case 3:
-                xPosition = 0f;
+                xPosition = Constants.lane3X;
                 break;
             case 4:
-                xPosition = 0.51f;
+                xPosition = Constants.lane4X;
                 break;
             case 5:
-                xPosition = 1.02f;
+                xPosition = Constants.lane5X;
                 break;
             default:
                 return;
         }
 
-        Instantiate(noteObject, new Vector3(xPosition, 0.0f, spawnZPosition), noteObject.rotation);
+        Instantiate(noteObject, new Vector3(xPosition, 0.0f, Constants.spawnZ), noteObject.rotation);
     }
 
     void InstantiateHoldNote(int laneIndex, float length)
@@ -134,25 +134,25 @@ public class GameManager : MonoBehaviour {
         switch (laneIndex)
         {
             case 1:
-                xPosition = -1.02f;
+                xPosition = Constants.lane1X;
                 break;
             case 2:
-                xPosition = -0.51f;
+                xPosition = Constants.lane2X;
                 break;
             case 3:
-                xPosition = 0f;
+                xPosition = Constants.lane3X;
                 break;
             case 4:
-                xPosition = 0.51f;
+                xPosition = Constants.lane4X;
                 break;
             case 5:
-                xPosition = 1.02f;
+                xPosition = Constants.lane5X;
                 break;
             default:
                 return;
         }
 
-        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, spawnZPosition), holdNoteObject.rotation);
+        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, Constants.spawnZ), holdNoteObject.rotation);
         GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
         holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
@@ -162,16 +162,16 @@ public class GameManager : MonoBehaviour {
 
     public void IncreaseScore(int points)
     {
-        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + points);
+        PlayerPrefs.SetInt(Constants.score, PlayerPrefs.GetInt(Constants.score) + points);
     }
 
     public void IncreaseCombo()
     {
-        PlayerPrefs.SetInt("Combo", PlayerPrefs.GetInt("Combo") + 1);
+        PlayerPrefs.SetInt(Constants.combo, PlayerPrefs.GetInt(Constants.combo) + 1);
     }
 
     public void ResetCombo()
     {
-        PlayerPrefs.SetInt("Combo", 0);
+        PlayerPrefs.SetInt(Constants.combo, 0);
     }
 }

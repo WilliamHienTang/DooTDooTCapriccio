@@ -26,7 +26,7 @@ public class Dissolve : MonoBehaviour {
         enabled = false;
         material = GetComponent<Renderer>().material;
         dissolveAmount = 0.0f;
-        speed = PlayerPrefs.GetFloat("NoteSpeed");
+        speed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         length = GetComponent<Renderer>().bounds.size.z;
         duration = length / speed;
     }

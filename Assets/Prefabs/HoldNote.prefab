@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 114218175563089970}
   m_Layer: 0
   m_Name: HoldLane
-  m_TagString: HoldNote
+  m_TagString: HoldLane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

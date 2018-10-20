@@ -11,28 +11,28 @@ public class MainMenu : MonoBehaviour {
     public void LoadSongScreen()
     {
         StopMusic();
-        SceneManager.LoadScene("SongSelect");
+        SceneManager.LoadScene(Constants.songSelect);
     }
 
     public void LoadTitleScreen()
     {
         StopMusic();
-        SceneManager.LoadScene("TitleScreen");
+        SceneManager.LoadScene(Constants.titleScreen);
     }
 
     public void ButtonAudio1()
     {
-        FindObjectOfType<AudioManager>().Play("bubble2");
+        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
     }
 
     public void ButtonAudio2()
     {
-        FindObjectOfType<AudioManager>().Play("reward");
+        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
     }
 
     public void ButtonAudio3()
     {
-        FindObjectOfType<AudioManager>().Play("bubble1");
+        FindObjectOfType<AudioManager>().Play(Constants.button3SFX);
     }
 
     void StopMusic()
@@ -57,7 +57,7 @@ public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	IEnumerator Start () {
-        FindObjectOfType<AudioManager>().Play("kimi");
+        FindObjectOfType<AudioManager>().Play(Constants.kimiBGM);
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }

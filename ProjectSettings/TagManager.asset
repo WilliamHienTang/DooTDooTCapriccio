@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
-  - HoldNote
   - HeadNote
   - TailNote
   - HitCollider
+  - HoldLane
   layers:
   - Default
   - TransparentFX

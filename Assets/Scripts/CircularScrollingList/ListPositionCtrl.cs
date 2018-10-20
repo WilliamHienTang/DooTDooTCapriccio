@@ -185,9 +185,9 @@ public class ListPositionCtrl : MonoBehaviour
                     FindObjectOfType<AudioManager>().Stop(currentBGM);
                 }
 
-                FindObjectOfType<AudioManager>().Play("soundscape_preview");
+                FindObjectOfType<AudioManager>().Play(Constants.soundscapePreview);
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
-                PlayerPrefs.SetString("SelectedSong", "soundscape");
+                PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
                 break;
             case "T-Square - Takarajima":
                 currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
@@ -197,9 +197,9 @@ public class ListPositionCtrl : MonoBehaviour
                     FindObjectOfType<AudioManager>().Stop(currentBGM);
                 }
 
-                FindObjectOfType<AudioManager>().Play("takarajima_preview");
+                FindObjectOfType<AudioManager>().Play(Constants.takarajimaPreview);
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = takarajima;
-                PlayerPrefs.SetString("SelectedSong", "takarajima");
+                PlayerPrefs.SetString(Constants.selectedSong, Constants.takarajimaSong);
                 break;
             case "ZAQ - Tutti!":
                 currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
@@ -209,9 +209,9 @@ public class ListPositionCtrl : MonoBehaviour
                     FindObjectOfType<AudioManager>().Stop(currentBGM);
                 }
 
-                FindObjectOfType<AudioManager>().Play("tutti_preview");
+                FindObjectOfType<AudioManager>().Play(Constants.tuttiPreview);
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
-                PlayerPrefs.SetString("SelectedSong", "tutti");
+                PlayerPrefs.SetString(Constants.selectedSong, Constants.tuttiSong);
                 break;
             default:
                 break;

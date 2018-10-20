@@ -8,17 +8,17 @@ public class ScoreScreen : MonoBehaviour {
     public void LoadMainMenu()
     {
         StopAudio();
-        SceneManager.LoadScene("SongSelect");
+        SceneManager.LoadScene(Constants.scoreScreen);
     }
 
     public void ButtonAudio1()
     {
-        FindObjectOfType<AudioManager>().Play("bubble2");
+        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
     }
 
     public void ButtonAudio2()
     {
-        FindObjectOfType<AudioManager>().Play("reward");
+        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
     }
 
     void StopAudio()
@@ -33,7 +33,7 @@ public class ScoreScreen : MonoBehaviour {
 
 	// Use this for initialization
 	IEnumerator Start () {
-        FindObjectOfType<AudioManager>().Play("kaiheitai");
+        FindObjectOfType<AudioManager>().Play(Constants.kaiheitaiBGM);
         float fadeTime = 0.5f / GameObject.Find("ScoreScreenCanvas").GetComponent<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }

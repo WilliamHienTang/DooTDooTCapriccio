@@ -9,23 +9,23 @@ public class SongSelect : MonoBehaviour {
     public void LoadGame()
     {
         StopMusic();
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(Constants.game);
     }
 
     public void LoadMainMenu()
     {
         StopMusic();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Constants.mainMenu);
     }
 
     public void ButtonAudio1()
     {
-        FindObjectOfType<AudioManager>().Play("bubble2");
+        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
     }
 
     public void ButtonAudio2()
     {
-        FindObjectOfType<AudioManager>().Play("reward");
+        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
     }
 
     public void SetDifficulty(int difficulty)
@@ -33,16 +33,16 @@ public class SongSelect : MonoBehaviour {
         switch (difficulty)
         {
             case 1:
-                PlayerPrefs.SetString("Difficulty", "easy");
+                PlayerPrefs.SetString(Constants.difficulty, "easy");
                 break;
             case 2:
-                PlayerPrefs.SetString("Difficulty", "medium");
+                PlayerPrefs.SetString(Constants.difficulty, "medium");
                 break;
             case 3:
-                PlayerPrefs.SetString("Difficulty", "hard");
+                PlayerPrefs.SetString(Constants.difficulty, "hard");
                 break;
             case 4:
-                PlayerPrefs.SetString("Difficulty", "expert");
+                PlayerPrefs.SetString(Constants.difficulty, "expert");
                 break;
             default:
                 break;

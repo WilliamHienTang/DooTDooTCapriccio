@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Song: " + name + " not found");
+            Debug.LogWarning("Audio: " + name + " not found");
             return;
         }
         s.source.Pause();
@@ -68,7 +68,7 @@ public class AudioManager : MonoBehaviour {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Song: " + name + " not found");
+            Debug.LogWarning("Audio: " + name + " not found");
             return;
         }
         s.source.Stop();
@@ -82,10 +82,10 @@ public class AudioManager : MonoBehaviour {
 
     // Use this for initialization
     void Start(){
-        audioMixer.SetFloat("BGMVolume", PlayerPrefs.GetFloat("BGMVolume"));
-        audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume"));
-        audioMixer.SetFloat("SongVolume", PlayerPrefs.GetFloat("SongVolume"));
-        audioMixer.SetFloat("GameSFXVolume", PlayerPrefs.GetFloat("GameSFXVolume"));
+        audioMixer.SetFloat(Constants.BGMVolume, PlayerPrefs.GetFloat(Constants.BGMVolume));
+        audioMixer.SetFloat(Constants.SFXVolume, PlayerPrefs.GetFloat(Constants.SFXVolume));
+        audioMixer.SetFloat(Constants.songVolume, PlayerPrefs.GetFloat(Constants.songVolume));
+        audioMixer.SetFloat(Constants.gameSFXVolume, PlayerPrefs.GetFloat(Constants.gameSFXVolume));
     }
 
     // Update is called once per frame

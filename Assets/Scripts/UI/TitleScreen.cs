@@ -9,14 +9,13 @@ using TMPro;
 public class TitleScreen : MonoBehaviour {
 
     public TextMeshProUGUI tapText;
-    public string loadLevel;
     int touches;
     bool enableTouch = true;
 
     IEnumerator Start()
     {
         enabled = false;
-        FindObjectOfType<AudioManager>().Play("vivace");
+        FindObjectOfType<AudioManager>().Play(Constants.vivaceBGM);
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
         touches = 0;
@@ -41,7 +40,7 @@ public class TitleScreen : MonoBehaviour {
 
     void BlinkAudio()
     {
-        FindObjectOfType<AudioManager>().Play("skill_slot_open");
+        FindObjectOfType<AudioManager>().Play(Constants.tapScreenSFX);
     }
     
     void StopMusic()
@@ -57,7 +56,7 @@ public class TitleScreen : MonoBehaviour {
     void StartGame()
     {
         StopMusic();
-        SceneManager.LoadScene(loadLevel);
+        SceneManager.LoadScene(Constants.mainMenu);
     }
 
     // Update is called once per frame

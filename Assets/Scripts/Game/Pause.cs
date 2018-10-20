@@ -13,13 +13,13 @@ public class Pause : MonoBehaviour {
         pauseMenuUI.SetActive(false);
         isPaused = false;
         Time.timeScale = 1f;
-        FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString("SelectedSong"));
+        FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString(Constants.selectedSong));
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        FindObjectOfType<AudioManager>().Pause(PlayerPrefs.GetString("SelectedSong"));
+        FindObjectOfType<AudioManager>().Pause(PlayerPrefs.GetString(Constants.selectedSong));
         pauseMenuUI.SetActive(true);
         isPaused = true;
     }
@@ -30,22 +30,22 @@ public class Pause : MonoBehaviour {
         isPaused = false;
         Time.timeScale = 1f;
         StopMusic();
-        SceneManager.LoadScene("SongSelect");
+        SceneManager.LoadScene(Constants.songSelect);
     }
 
     void StopMusic()
     {
-        FindObjectOfType<AudioManager>().Stop(PlayerPrefs.GetString("SelectedSong"));
+        FindObjectOfType<AudioManager>().Stop(PlayerPrefs.GetString(Constants.selectedSong));
     }
 
     public void ButtonAudio1()
     {
-        FindObjectOfType<AudioManager>().Play("bubble2");
+        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
     }
 
     public void ButtonAudio2()
     {
-        FindObjectOfType<AudioManager>().Play("reward");
+        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
     }
 
     public bool IsPaused()

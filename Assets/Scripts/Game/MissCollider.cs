@@ -10,14 +10,14 @@ public class MissCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("TailNote"))
+        if (other.CompareTag(Constants.tailNoteTag))
         {
             Destroy(other.transform.parent.gameObject);
             gameManager.GetComponent<GameManager>().ResetCombo();
             Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
         }
 
-        else if(other.CompareTag("Note") || other.CompareTag("HeadNote"))
+        else if(other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag))
         {
             Destroy(other.gameObject);
             gameManager.GetComponent<GameManager>().ResetCombo();
