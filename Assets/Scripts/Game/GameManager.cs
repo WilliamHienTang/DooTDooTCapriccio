@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     float speedOffset;
     float noteSpeed;
     readonly float songDelay = 5.0f;
-    readonly float spawnDistance = 20.0f;
+    readonly float spawnZPosition = 20.0f;
     
     string jsonPath;
     string json;
@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour {
 
     float bpm = 94.0f;
     float songTimer; // time in seconds that passed since the song started
+    float dsptimesong; // time in seconds at the start of the song
     float oldSongTimer;
     float secPerBeat; // duration of a beat
-    float dsptimesong; // time in seconds at the start of the song
 
     // Use this for initialization
     IEnumerator Start()
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
         // play song and delay prior to spawning notes
         FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString("SelectedSong"));
         noteSpeed = PlayerPrefs.GetFloat("NoteSpeed");
-        speedOffset = spawnDistance / noteSpeed;
+        speedOffset = spawnZPosition / noteSpeed;
         yield return new WaitForSeconds(songDelay - speedOffset);
         enabled = true;
     }
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour {
                 return;
         }
 
-        Instantiate(noteObject, new Vector3(xPosition, 0.0f, spawnDistance), noteObject.rotation);
+        Instantiate(noteObject, new Vector3(xPosition, 0.0f, spawnZPosition), noteObject.rotation);
     }
 
     void InstantiateHoldNote(int laneIndex, float length)
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour {
                 return;
         }
 
-        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, spawnDistance), holdNoteObject.rotation);
+        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, spawnZPosition), holdNoteObject.rotation);
         GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
         holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
