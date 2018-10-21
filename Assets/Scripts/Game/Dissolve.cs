@@ -35,7 +35,6 @@ public class Dissolve : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         songTimer = (float)(AudioSettings.dspTime - dsptimesong);
-        Debug.Log(songTimer);
         if (songTimer == oldSongTimer)
         {
             songTimer += Time.deltaTime;

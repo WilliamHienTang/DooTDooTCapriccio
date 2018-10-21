@@ -120,7 +120,6 @@
      <Compile Include="Assets\Scripts\Game\GoodCollider.cs" />
      <Compile Include="Assets\Scripts\Game\GreatCollider.cs" />
      <Compile Include="Assets\Scripts\Game\HitCollider.cs" />
-     <Compile Include="Assets\Scripts\Game\MissCollider.cs" />
      <Compile Include="Assets\Scripts\Game\Note.cs" />
      <Compile Include="Assets\Scripts\Game\NoteSpawn.cs" />
      <Compile Include="Assets\Scripts\Game\Pause.cs" />

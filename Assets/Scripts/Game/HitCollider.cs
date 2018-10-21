@@ -111,9 +111,16 @@ public class HitCollider : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.tailNoteTag))
+        if (other.CompareTag(Constants.noteTag))
         {
-            note = null;
+            Destroy(other.gameObject);
+            MissNote();
+        }
+
+        else if (other.CompareTag(Constants.tailNoteTag))
+        {
+            Destroy(other.transform.parent.gameObject);
+            MissNote();
         }
 
         else if (other.CompareTag(Constants.headNoteTag))
