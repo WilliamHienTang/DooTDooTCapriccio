@@ -5,6 +5,7 @@ using System.IO;
 
 public class GameManager : MonoBehaviour {
 
+    public bool isTouchingDevice;
     public Transform noteObject;
     public Transform holdNoteObject;
 
@@ -22,6 +23,19 @@ public class GameManager : MonoBehaviour {
     float dsptimesong; // time in seconds at the start of the song
     float oldSongTimer;
     float secPerBeat; // duration of a beat
+
+    void Awake()
+    {
+        switch (Application.platform)
+        {
+            case RuntimePlatform.WindowsEditor:
+                isTouchingDevice = false;
+                break;
+            case RuntimePlatform.Android:
+                isTouchingDevice = true;
+                break;
+        }
+    }
 
     // Use this for initialization
     IEnumerator Start()

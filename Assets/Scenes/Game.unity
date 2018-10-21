@@ -816,6 +816,8 @@ MonoBehaviour:
     type: 2}
   missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
+  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+    type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
   greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
@@ -958,6 +960,8 @@ MonoBehaviour:
   holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+    type: 2}
+  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
@@ -1928,6 +1932,8 @@ MonoBehaviour:
     type: 2}
   missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
+  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+    type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
   greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
@@ -2471,6 +2477,8 @@ MonoBehaviour:
   holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+    type: 2}
+  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}
@@ -5412,6 +5420,8 @@ MonoBehaviour:
   holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
   missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+    type: 2}
+  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
   perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
     type: 2}

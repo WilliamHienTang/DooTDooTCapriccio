@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HitCollider : MonoBehaviour {
 
+    string name;
     GameObject gameManager;
     GameObject gameCanvas;
     GameObject note;
@@ -12,6 +13,7 @@ public class HitCollider : MonoBehaviour {
     public GameObject hitParticle;
     public GameObject holdParticle;
     public GameObject missHoldParticle;
+    public GameObject headTailParticle;
     GameObject holdParticleInstance;
 
     public GameObject perfectText;
@@ -25,12 +27,72 @@ public class HitCollider : MonoBehaviour {
     {
         gameManager = GameObject.Find("GameManager");
         gameCanvas = GameObject.Find("GameCanvas");
+        name = gameObject.name;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (FindObjectOfType<Pause>().IsPaused())
+        {
+            return;
+        }
 
+        if (gameManager.GetComponent<GameManager>().isTouchingDevice)
+        {
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch touch = Input.touches[i];
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.transform.name == name)
+                    {
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            OnPress();
+                        }
+                        else if (touch.phase == TouchPhase.Ended)
+                        {
+                            OnRelease();
+                        }
+                    }
+
+                    else
+                    {
+                        OutOfBound();
+                    }
+                }
+            }
+        }
+
+        else
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.name == name)
+                {
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        OnPress();
+                    }
+                    else if (Input.GetMouseButtonUp(0))
+                    {
+                        OnRelease();
+                    }
+                }
+
+                else
+                {
+                    OutOfBound();
+                }
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -106,6 +168,21 @@ public class HitCollider : MonoBehaviour {
         }
     }
 
+    public void OutOfBound()
+    {
+        if(note == null)
+        {
+            return;
+        }
+
+        if (note.CompareTag(Constants.holdLaneTag))
+        {
+            Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
+            DestroyHoldNote();
+            MissNote();
+        }
+    }
+
     void DestroyHoldNote()
     {
         Destroy(note.transform.parent.gameObject);
@@ -140,7 +217,12 @@ public class HitCollider : MonoBehaviour {
         }
         else if (noteType == Constants.headNoteTag)
         {
+            Instantiate(headTailParticle, transform.position, headTailParticle.transform.rotation);
             holdParticleInstance = Instantiate(holdParticle, transform.position, holdParticle.transform.rotation);
+        }
+        else if (noteType == Constants.tailNoteTag)
+        {
+            Instantiate(headTailParticle, transform.position, headTailParticle.transform.rotation);
         }
 
         if (scoreType == "perfect")

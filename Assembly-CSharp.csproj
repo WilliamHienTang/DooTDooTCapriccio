@@ -116,7 +116,6 @@
      <Compile Include="Assets\Scripts\Game\BadCollider.cs" />
      <Compile Include="Assets\Scripts\Game\Dissolve.cs" />
      <Compile Include="Assets\Scripts\Game\FloatingText.cs" />
-     <Compile Include="Assets\Scripts\Game\Game.cs" />
      <Compile Include="Assets\Scripts\Game\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\GoodCollider.cs" />
      <Compile Include="Assets\Scripts\Game\GreatCollider.cs" />
