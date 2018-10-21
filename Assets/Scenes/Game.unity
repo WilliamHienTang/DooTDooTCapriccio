@@ -2510,7 +2510,6 @@ GameObject:
   - component: {fileID: 932906018}
   - component: {fileID: 932906017}
   - component: {fileID: 932906021}
-  - component: {fileID: 932906022}
   - component: {fileID: 932906023}
   m_Layer: 5
   m_Name: GameCanvas
@@ -2611,22 +2610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 545058043}
   combo: {fileID: 1180464474}
---- !u!114 &932906022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 932906016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a931a182aac1f3b4da59948ff2013c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitCollider1: {fileID: 278711060}
-  HitCollider2: {fileID: 637411127}
-  HitCollider3: {fileID: 1983887251}
-  HitCollider4: {fileID: 144362878}
-  HitCollider5: {fileID: 924594106}
 --- !u!114 &932906023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2666,6 +2649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28063b1e03b27b64a9ee24c7c2a8cc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTouchingDevice: 0
   noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
   holdNoteObject: {fileID: 4788656985797828, guid: eb348f378cf7e594caec5cf7679c5e38,
     type: 2}

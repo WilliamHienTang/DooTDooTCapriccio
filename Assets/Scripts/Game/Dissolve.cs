@@ -5,18 +5,20 @@ using UnityEngine;
 public class Dissolve : MonoBehaviour {
 
     Material material;
-    float dissolveAmount;
-    float speed;
+    float noteSpeed;
     float length;
     float duration;
-    float dissolveCycle;
-    float dissolveDelta;
-    
+
+    float songTimer;
+    float dsptimesong; // time in seconds at the start of the song
+    float oldSongTimer;
+
     void OnTriggerEnter(Collider other)
     {
 
         if (other.transform.name == "DissolveCollider")
         {
+            dsptimesong = (float)AudioSettings.dspTime;
             enabled = true;
         }
     }
@@ -25,17 +27,21 @@ public class Dissolve : MonoBehaviour {
     void Start () {
         enabled = false;
         material = GetComponent<Renderer>().material;
-        dissolveAmount = 0.0f;
-        speed = PlayerPrefs.GetFloat(Constants.noteSpeed);
+        noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         length = GetComponent<Renderer>().bounds.size.z;
-        duration = length / speed;
+        duration = length / noteSpeed;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        dissolveCycle = duration / Time.deltaTime;
-        dissolveDelta = 1.0f / dissolveCycle;
-        dissolveAmount += dissolveDelta;
-        material.SetFloat("_DissolveAmount", dissolveAmount + dissolveDelta);
+        songTimer = (float)(AudioSettings.dspTime - dsptimesong);
+        Debug.Log(songTimer);
+        if (songTimer == oldSongTimer)
+        {
+            songTimer += Time.deltaTime;
+        }
+        oldSongTimer = songTimer;
+
+        material.SetFloat("_DissolveAmount", songTimer / duration);
     }
 }
