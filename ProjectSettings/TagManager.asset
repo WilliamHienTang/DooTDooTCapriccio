@@ -9,6 +9,7 @@ TagManager:
   - TailNote
   - HitCollider
   - HoldLane
+  - ScoreType
   layers:
   - Default
   - TransparentFX

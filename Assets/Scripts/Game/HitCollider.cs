@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HitCollider : MonoBehaviour {
 
@@ -114,21 +115,19 @@ public class HitCollider : MonoBehaviour {
         if (other.CompareTag(Constants.noteTag))
         {
             Destroy(other.gameObject);
-            MissNote();
         }
 
         else if (other.CompareTag(Constants.tailNoteTag))
         {
             Destroy(other.transform.parent.gameObject);
-            MissNote();
         }
 
         else if (other.CompareTag(Constants.headNoteTag))
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
-            MissNote();
         }
+        MissNote();
     }
 
     public void OnPress()
@@ -209,8 +208,9 @@ public class HitCollider : MonoBehaviour {
 
     void MissNote()
     {
+        Destroy(GameObject.FindWithTag(Constants.scoreType));
+        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
         gameManager.GetComponent<GameManager>().ResetCombo();
-        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
     }
 
     void HandleNote(string scoreType, string noteType)
@@ -234,25 +234,29 @@ public class HitCollider : MonoBehaviour {
 
         if (scoreType == "perfect")
         {
-            Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Destroy(GameObject.FindWithTag(Constants.scoreType));
+            Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.perfectScore);
         }
         else if (scoreType == "great")
         {
-            Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Destroy(GameObject.FindWithTag(Constants.scoreType));
+            Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.greatScore);
         }
         else if (scoreType == "good")
         {
-            Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Destroy(GameObject.FindWithTag(Constants.scoreType));
+            Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.goodScore);
         }
         else if (scoreType == "bad")
         {
-            Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 75.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Destroy(GameObject.FindWithTag(Constants.scoreType));
+            Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.badScore);
         }

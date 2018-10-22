@@ -46,6 +46,7 @@ public class Constants : MonoBehaviour {
     public const string headNoteTag = "HeadNote";
     public const string holdLaneTag = "HoldLane";
     public const string tailNoteTag = "TailNote";
+    public const string scoreType = "ScoreType";
 
     // Game variables
     public const float activatorZ = 1.0f;
