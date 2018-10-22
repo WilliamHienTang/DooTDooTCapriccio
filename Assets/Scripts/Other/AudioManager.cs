@@ -52,6 +52,21 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
+    public void PlayScheduled(string name, float time)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            return;
+        }
+        s.source.PlayScheduled(time);
+
+        if (s.loop)
+        {
+            currentBGM = name;
+        }
+    }
+
     public void Pause(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

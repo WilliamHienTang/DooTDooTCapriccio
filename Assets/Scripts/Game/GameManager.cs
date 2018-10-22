@@ -19,10 +19,8 @@ public class GameManager : MonoBehaviour {
     int chartIndex = 0;
 
     float bpm = 94.0f;
-    float songTimer; // time in seconds that passed since the song started
-    float dsptimesong; // time in seconds at the start of the song
-    float oldSongTimer;
-    float secPerBeat; // duration of a beat
+    float songTimer;
+    float startTime;
 
     void Awake()
     {
@@ -38,10 +36,8 @@ public class GameManager : MonoBehaviour {
     }
 
     // Use this for initialization
-    IEnumerator Start()
+    void Start()
     {
-        enabled = false;
-
         // initialize player prefs
         PlayerPrefs.SetInt(Constants.score, 0);
         PlayerPrefs.SetInt(Constants.combo, 0);
@@ -53,15 +49,13 @@ public class GameManager : MonoBehaviour {
         json = File.ReadAllText(jsonPath);
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
-        // initialize time tracking
-        secPerBeat = 60.0f / bpm;
-        dsptimesong = (float) AudioSettings.dspTime;
-
-        // play song and delay prior to spawning notes
-        FindObjectOfType<AudioManager>().Play(selectedSong);
+        // initialize time syncing variables
         speedOffset = Constants.spawnZ / noteSpeed;
-        yield return new WaitForSeconds(Constants.songDelay - speedOffset);
-        enabled = true;
+        startTime = (float)AudioSettings.dspTime;
+        songTimer = (float)(AudioSettings.dspTime - startTime);
+
+        // wait for speed offset before playing song
+        FindObjectOfType<AudioManager>().PlayScheduled(selectedSong, speedOffset);
     }
 
     // Update is called once per frame
@@ -72,13 +66,7 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        songTimer = (float)(AudioSettings.dspTime - dsptimesong);
-        if (songTimer == oldSongTimer)
-        {
-            songTimer += Time.deltaTime; 
-        }
-        oldSongTimer = songTimer;
-
+        songTimer = (float)(AudioSettings.dspTime - startTime);
         if ((noteChart[chartIndex].spawnTime - Time.deltaTime) <= songTimer)
         {
 

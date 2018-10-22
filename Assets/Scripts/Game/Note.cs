@@ -12,8 +12,7 @@ public class Note : MonoBehaviour {
     float distance;
 
     float songTimer;
-    float dsptimesong; // time in seconds at the start of the song
-    float oldSongTimer;
+    float startTime;
 
     // Use this for initialization
     void Start()
@@ -23,7 +22,7 @@ public class Note : MonoBehaviour {
         initPosition = transform.position;
         activatorPosition = new Vector3(initPosition.x, initPosition.y, Constants.activatorZ);
         distance = initPosition.z - Constants.activatorZ;
-        dsptimesong = (float)AudioSettings.dspTime;
+        startTime = (float)AudioSettings.dspTime;
     }
 
     // Update is called once per frame
@@ -35,13 +34,7 @@ public class Note : MonoBehaviour {
             enabled = false;
         }
 
-        songTimer = (float)(AudioSettings.dspTime - dsptimesong);
-        if (songTimer == oldSongTimer)
-        {
-            songTimer += Time.deltaTime;
-        }
-        oldSongTimer = songTimer;
-
+        songTimer = (float)(AudioSettings.dspTime - startTime);
         transform.position = Vector3.Lerp(initPosition, activatorPosition, (noteSpeed * songTimer / distance));   
     }
 
