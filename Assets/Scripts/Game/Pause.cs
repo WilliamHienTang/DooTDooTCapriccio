@@ -23,8 +23,8 @@ public class Pause : MonoBehaviour {
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        AudioListener.pause = false;
         isPaused = false;
+        AudioListener.pause = false;
         Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString(Constants.selectedSong));
     }
@@ -42,6 +42,7 @@ public class Pause : MonoBehaviour {
     {
         pauseMenuUI.SetActive(false);
         isPaused = false;
+        AudioListener.pause = false;
         Time.timeScale = 1f;
         StopMusic();
         SceneManager.LoadScene(Constants.songSelect);

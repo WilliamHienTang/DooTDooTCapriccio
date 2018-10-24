@@ -177,7 +177,7 @@ public class ListPositionCtrl : MonoBehaviour
 
         switch (listbox.content.text)
         {
-            case "TRUE - Soundscape":
+            case Constants.soundscapeTitle:
                 currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
                 if (currentBGM != null)
@@ -188,8 +188,9 @@ public class ListPositionCtrl : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play(Constants.soundscapePreview);
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
+                PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.soundscapeTitle);
                 break;
-            case "T-Square - Takarajima":
+            case Constants.takarajimaTitle:
                 currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
                 if (currentBGM != null)
@@ -200,8 +201,9 @@ public class ListPositionCtrl : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play(Constants.takarajimaPreview);
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = takarajima;
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.takarajimaSong);
+                PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.takarajimaTitle);
                 break;
-            case "ZAQ - Tutti!":
+            case Constants.tuttiTitle:
                 currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
 
                 if (currentBGM != null)
@@ -212,6 +214,7 @@ public class ListPositionCtrl : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play(Constants.tuttiPreview);
                 GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.tuttiSong);
+                PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.tuttiTitle);
                 break;
             default:
                 break;

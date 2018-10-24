@@ -1,22 +1,22 @@
 {
   "Items": [
     {
-      "spawnTime": 6,
-      "tailSpawnTime": 8,
+      "spawnTime": 5.42,
+      "tailSpawnTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 8,
+      "spawnTime": 6.7,
       "tailSpawnTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 9,
-      "tailSpawnTime": 9.5,
+      "spawnTime": 7.97,
+      "tailSpawnTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 11,
+      "spawnTime": 9.25,
       "tailSpawnTime": 0,
       "laneIndex": 2
     }

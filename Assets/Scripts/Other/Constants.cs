@@ -23,12 +23,17 @@ public class Constants : MonoBehaviour {
     public const string goodSFX = "good";
     public const string badSFX = "bad";
     public const string tapSFX = "tap";
+
+    // Songs
     public const string soundscapePreview = "soundscape_preview";
     public const string soundscapeSong = "soundscape";
+    public const string soundscapeTitle = "TRUE - Soundscape";
     public const string takarajimaPreview = "takarajima_preview";
     public const string takarajimaSong = "takarajima";
+    public const string takarajimaTitle = "T-Square - Takarajima";
     public const string tuttiPreview = "tutti_preview";
     public const string tuttiSong = "tutti";
+    public const string tuttiTitle = "ZAQ - Tutti!";
 
     // PlayerPrefs
     public const string noteSpeed = "NoteSpeed";
@@ -37,9 +42,18 @@ public class Constants : MonoBehaviour {
     public const string BGMVolume = "BGMVolume";
     public const string SFXVolume = "SFXVolume";
     public const string selectedSong = "SelectedSong";
+    public const string selectedSongTitle = "SelectedSongTitle";
     public const string difficulty = "Difficulty";
     public const string score = "Score";
     public const string combo = "Combo";
+    public const string highScore = "HighScore";
+    public const string maxCombo = "MaxCombo";
+    public const string perfects = "Perfects";
+    public const string greats = "Greats";
+    public const string goods = "Goods";
+    public const string bads = "Bads";
+    public const string misses = "Misses";
+    public const string notesHit = "NotesHit";
 
     // Tags
     public const string noteTag = "Note";
