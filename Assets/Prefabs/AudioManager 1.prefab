@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1561905955480466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 513.16974, y: 256.56067, z: 37.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: soundscape
-    clip: {fileID: 8300000, guid: ef31af0ecf461fd44a92db4a02f2db04, type: 3}
+    clip: {fileID: 8300000, guid: e479ff5573dafa74181b34d131497c6b, type: 3}
     group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 1
@@ -144,7 +144,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: takarajima
-    clip: {fileID: 8300000, guid: e4d075b73c5937a409ad131ec2f72e9d, type: 3}
+    clip: {fileID: 8300000, guid: 6a826b1fd63488a44b38303dc6495b99, type: 3}
     group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 1
@@ -158,7 +158,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: tutti
-    clip: {fileID: 8300000, guid: 7082ccdf15a0d1640be011956d7b3696, type: 3}
+    clip: {fileID: 8300000, guid: 4aa7bbd259b1a0d4fb5960e5c1c4b099, type: 3}
     group: {fileID: 243839928704036072, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 1

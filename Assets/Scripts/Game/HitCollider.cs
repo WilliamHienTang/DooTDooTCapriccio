@@ -5,7 +5,7 @@ using TMPro;
 
 public class HitCollider : MonoBehaviour {
 
-    string name;
+    string colliderName;
     GameObject gameManager;
     GameObject gameCanvas;
     GameObject note;
@@ -28,7 +28,7 @@ public class HitCollider : MonoBehaviour {
     {
         gameManager = GameObject.Find("GameManager");
         gameCanvas = GameObject.Find("GameCanvas");
-        name = gameObject.name;
+        colliderName = gameObject.name;
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class HitCollider : MonoBehaviour {
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (hit.transform.name == name)
+                    if (hit.transform.name == colliderName)
                     {
                         if (touch.phase == TouchPhase.Began)
                         {
@@ -76,7 +76,7 @@ public class HitCollider : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == name)
+                if (hit.transform.name == colliderName)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {

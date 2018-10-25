@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour {
     NoteSpawn[] noteChart;
     int chartIndex = 0;
 
-    float bpm = 94.0f;
     float songTimer;
     float startTime;
 
@@ -49,15 +48,16 @@ public class GameManager : MonoBehaviour {
         // initialize time syncing variables
         speedOffset = Constants.spawnZ / noteSpeed;
         startTime = (float)AudioSettings.dspTime;
-        songTimer = (float)(AudioSettings.dspTime - startTime);
 
-        // wait for speed offset before playing song
-        FindObjectOfType<AudioManager>().Play(selectedSong);
+        // play song
+        FindObjectOfType<AudioManager>().PlayScheduled(selectedSong, startTime + Constants.songDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
+        songTimer = (float)(AudioSettings.dspTime - startTime);
+
         if (chartIndex >= noteChart.Length)
         {
             StartCoroutine(EndGame());
@@ -65,11 +65,8 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        songTimer = (float)(AudioSettings.dspTime - startTime);
-        Debug.Log(songTimer);
-        if ((noteChart[chartIndex].spawnTime - speedOffset - Time.deltaTime) <= songTimer)
+        if ((noteChart[chartIndex].spawnTime - speedOffset) <= songTimer)
         {
-
             if (noteChart[chartIndex].tailSpawnTime > 0)
             {
                 float length = noteSpeed * (noteChart[chartIndex].tailSpawnTime - noteChart[chartIndex].spawnTime);
@@ -91,7 +88,6 @@ public class GameManager : MonoBehaviour {
 
         if ((noteChart[chartIndex].spawnTime - speedOffset - Time.deltaTime) <= songTimer)
         {
-
             if (noteChart[chartIndex].tailSpawnTime > 0)
             {
                 float length = noteSpeed * (noteChart[chartIndex].tailSpawnTime - noteChart[chartIndex].spawnTime);
@@ -209,7 +205,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(10.0f);
         FindObjectOfType<AudioManager>().Stop(selectedSong);
         SceneManager.LoadScene(Constants.scoreScreen);
     }
