@@ -42,7 +42,7 @@
     },
     {
       "spawnTime": 9.73,
-      "tailSpawnTime": 10.21,
+      "tailSpawnTime": 10.37,
       "laneIndex": 3
     },
     {
@@ -532,7 +532,7 @@
     },
     {
       "spawnTime": 86.48,
-      "tailSpawnTime": 87.12,
+      "tailSpawnTime": 87.28,
       "laneIndex": 3
     },
     {
@@ -554,6 +554,11 @@
       "spawnTime": 90.15,
       "tailSpawnTime": 90.63,
       "laneIndex": 5
+    },
+    {
+      "spawnTime": 90.95,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
     },
     {
       "spawnTime": 91.27,
