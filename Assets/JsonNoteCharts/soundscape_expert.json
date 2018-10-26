@@ -1,14 +1,14 @@
 {
   "Items": [
     {
-      "spawnTime": 5.0,
-      "tailSpawnTime": 7.0,
+      "spawnTime": 0,
+      "tailSpawnTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 6.0,
+      "spawnTime": 0,
       "tailSpawnTime": 0,
-      "laneIndex": 1
+      "laneIndex": 3
     }
   ]
 }

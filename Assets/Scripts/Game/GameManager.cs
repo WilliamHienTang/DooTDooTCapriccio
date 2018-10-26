@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        if ((noteChart[chartIndex].spawnTime - speedOffset) <= songTimer)
+        if ((noteChart[chartIndex].spawnTime - speedOffset + Time.deltaTime) <= songTimer)
         {
             if (noteChart[chartIndex].tailSpawnTime > 0)
             {
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        if ((noteChart[chartIndex].spawnTime - speedOffset - Time.deltaTime) <= songTimer)
+        if ((noteChart[chartIndex].spawnTime - speedOffset + Time.deltaTime) <= songTimer)
         {
             if (noteChart[chartIndex].tailSpawnTime > 0)
             {
