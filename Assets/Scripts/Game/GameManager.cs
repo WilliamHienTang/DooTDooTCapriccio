@@ -45,12 +45,12 @@ public class GameManager : MonoBehaviour {
         json = File.ReadAllText(jsonPath);
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
-        // initialize time syncing variables
-        speedOffset = Constants.spawnZ / noteSpeed;
-        startTime = (float)AudioSettings.dspTime;
-
         // play song
-        FindObjectOfType<AudioManager>().PlayScheduled(selectedSong, startTime + Constants.songDelay);
+        FindObjectOfType<AudioManager>().Play(selectedSong);
+
+        // initialize time syncing variables
+        speedOffset = (Constants.spawnZ - Constants.activatorZ) / noteSpeed;
+        startTime = (float)AudioSettings.dspTime;
     }
 
     // Update is called once per frame
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        if ((noteChart[chartIndex].spawnTime - speedOffset + Time.deltaTime) <= songTimer)
+        if ((noteChart[chartIndex].spawnTime - speedOffset) <= songTimer)
         {
             if (noteChart[chartIndex].tailSpawnTime > 0)
             {
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        if ((noteChart[chartIndex].spawnTime - speedOffset + Time.deltaTime) <= songTimer)
+        if ((noteChart[chartIndex].spawnTime - speedOffset) <= songTimer)
         {
             if (noteChart[chartIndex].tailSpawnTime > 0)
             {
