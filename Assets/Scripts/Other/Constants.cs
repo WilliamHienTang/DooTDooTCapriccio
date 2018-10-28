@@ -66,6 +66,8 @@ public class Constants : MonoBehaviour {
     public const float activatorZ = 1.0f;
     public const float spawnZ = 20.0f;
     public const float songDelay = 5.0f;
+    public const float maxNoteSpeed = 10.0f;
+    public const float minNoteSpeed = 5.0f;
 
     public const float lane1X = -1.02f;
     public const float lane2X = -0.51f;

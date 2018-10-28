@@ -48,15 +48,15 @@ public class OptionsMenu : MonoBehaviour {
         newSpeed = RoundToTenth(newSpeed);
         PlayerPrefs.SetFloat(Constants.noteSpeed, newSpeed);
 
-        if (PlayerPrefs.GetFloat(Constants.noteSpeed) > 10.0f)
+        if (PlayerPrefs.GetFloat(Constants.noteSpeed) > Constants.maxNoteSpeed)
         {
-            PlayerPrefs.SetFloat(Constants.noteSpeed, 1.0f);
-            noteSpeed.SetText("1.0");
+            PlayerPrefs.SetFloat(Constants.noteSpeed, Constants.minNoteSpeed);
+            noteSpeed.SetText(Constants.minNoteSpeed.ToString());
         }
-        else if (PlayerPrefs.GetFloat(Constants.noteSpeed) < 1.0f)
+        else if (PlayerPrefs.GetFloat(Constants.noteSpeed) < Constants.minNoteSpeed)
         {
-            PlayerPrefs.SetFloat(Constants.noteSpeed, 10.0f);
-            noteSpeed.SetText("10.0");
+            PlayerPrefs.SetFloat(Constants.noteSpeed, Constants.maxNoteSpeed);
+            noteSpeed.SetText(Constants.maxNoteSpeed.ToString());
         }
         else
         {
