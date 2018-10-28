@@ -597,13 +597,23 @@
     },
     {
       "spawnTime": 36.70,
-      "tailSpawnTime": 0,
+      "tailSpawnTime": 37.02,
       "laneIndex": 3
     },
     {
-      "spawnTime": 36.86,
+      "spawnTime": 37.02,
       "tailSpawnTime": 37.34,
       "laneIndex": 4
+    },
+    {
+      "spawnTime": 37.50,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 37.50,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
     },
     {
       "spawnTime": 37.65,
@@ -687,12 +697,12 @@
     },
     {
       "spawnTime": 41.32,
-      "tailSpawnTime": 0,
+      "tailSpawnTime": 41.80,
       "laneIndex": 1
     },
     {
       "spawnTime": 41.32,
-      "tailSpawnTime": 41.80,
+      "tailSpawnTime": 0,
       "laneIndex": 2
     },
     {
@@ -971,7 +981,7 @@
       "laneIndex": 1
     },
     {
-      "spawnTime": 58.08,
+      "spawnTime": 57.91,
       "tailSpawnTime": 58.40,
       "laneIndex": 1
     },
@@ -986,7 +996,7 @@
       "laneIndex": 5
     },
     {
-      "spawnTime": 58.88,
+      "spawnTime": 59.04,
       "tailSpawnTime": 0,
       "laneIndex": 4
     },
@@ -996,8 +1006,8 @@
       "laneIndex": 3
     },
     {
-      "spawnTime": 59.52,
-      "tailSpawnTime": 59.84,
+      "spawnTime": 59.68,
+      "tailSpawnTime": 60.00,
       "laneIndex": 1
     },
     {
@@ -1041,19 +1051,9 @@
       "laneIndex": 2
     },
     {
-      "spawnTime": 61.59,
-      "tailSpawnTime": 0,
-      "laneIndex": 5
-    },
-    {
-      "spawnTime": 61.91,
+      "spawnTime": 61.75,
       "tailSpawnTime": 0,
       "laneIndex": 1
-    },
-    {
-      "spawnTime": 61.91,
-      "tailSpawnTime": 0,
-      "laneIndex": 4
     },
     {
       "spawnTime": 62.23,
@@ -1336,7 +1336,7 @@
       "laneIndex": 3
     },
     {
-      "spawnTime": 77.07,
+      "spawnTime": 76.91,
       "tailSpawnTime": 0,
       "laneIndex": 3
     },
@@ -1587,7 +1587,7 @@
     },
     {
       "spawnTime": 94.14,
-      "tailSpawnTime": 97.02,
+      "tailSpawnTime": 97.50,
       "laneIndex": 4
     }
   ]
