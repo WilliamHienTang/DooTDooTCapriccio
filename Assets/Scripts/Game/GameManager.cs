@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour {
                 return;
         }
 
-        Instantiate(noteObject, new Vector3(xPosition, 0.0f, Constants.spawnZ), noteObject.rotation);
+        Instantiate(noteObject, new Vector3(xPosition, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
     }
 
     void InstantiateHoldNote(int laneIndex, float length)
@@ -152,10 +152,12 @@ public class GameManager : MonoBehaviour {
                 return;
         }
 
-        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, 0.0f, Constants.spawnZ), holdNoteObject.rotation);
+        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, holdNoteObject.transform.localPosition.y, Constants.spawnZ), holdNoteObject.rotation);
+
         GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
         holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
+
         GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
         holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length);
     }

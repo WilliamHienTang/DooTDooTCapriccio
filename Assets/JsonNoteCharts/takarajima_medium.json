@@ -1,13 +1,1043 @@
 {
   "Items": [
     {
-      "spawnTime": 5.0,
-      "tailSpawnTime": 7.0,
+      "spawnTime": 6.02,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 6.14,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 6.49,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 6.73,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 7.08,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 7.32,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 7.55,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 7.91,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 8.14,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 8.38,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 8.62,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 8.97,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 9.33,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 9.56,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 9.80,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 10.03,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 10.27,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 10.62,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 10.98,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 11.22,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 11.45,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 11.69,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 11.92,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 12.16,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 12.51,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 12.99,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 12.99,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 13.58,
+      "tailSpawnTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 6.0,
+      "spawnTime": 13.81,
       "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 14.05,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 14.29,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 14.64,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 15.00,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 15.23,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 15.47,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 15.70,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 15.94,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 16.18,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 16.53,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 16.88,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 17.12,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 17.36,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 17.59,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 17.83,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 18.07,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 18.42,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 18.77,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 19.01,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 19.25,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 19.60,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 19.84,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 20.07,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 20.19,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 20.43,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 20.78,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 21.02,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 21.02,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 21.49,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 21.49,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 21.96,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 22.44,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 22.91,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 22.91,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 23.26,
+      "tailSpawnTime": 23.97,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 23.97,
+      "tailSpawnTime": 24.33,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 24.80,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 24.80,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 25.39,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 25.74,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 26.33,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 26.33,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 26.81,
+      "tailSpawnTime": 27.75,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 27.75,
+      "tailSpawnTime": 28.34,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 28.70,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 28.70,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 29.17,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 29.52,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 29.52,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 30.11,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 30.59,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 30.94,
+      "tailSpawnTime": 31.53,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 31.53,
+      "tailSpawnTime": 32.00,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 32.59,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 32.59,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 32.95,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 32.95,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 33.30,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 33.30,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 33.89,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 33.89,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 34.37,
+      "tailSpawnTime": 35.31,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 35.78,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 35.78,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 36.25,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 36.73,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 37.32,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 37.67,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 38.26,
+      "tailSpawnTime": 39.21,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 40.03,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 40.51,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 41.10,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 41.45,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 41.92,
+      "tailSpawnTime": 42.87,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 43.81,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 44.17,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 44.76,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 45.11,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 45.70,
+      "tailSpawnTime": 46.65,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 47.59,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 47.95,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 48.42,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 48.89,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 49.48,
+      "tailSpawnTime": 50.43,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 51.37,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 51.73,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 52.32,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 52.67,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 53.26,
+      "tailSpawnTime": 54.21,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 55.15,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 55.51,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 56.10,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 56.45,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 56.25,
+      "tailSpawnTime": 57.87,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 58.81,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 59.29,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 59.88,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 60.23,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 60.70,
+      "tailSpawnTime": 61.65,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 62.71,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 63.07,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 63.66,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 64.01,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 64.48,
+      "tailSpawnTime": 65.43,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 65.90,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 66.49,
+      "tailSpawnTime": 66.85,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 67.44,
+      "tailSpawnTime": 67.79,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 68.38,
+      "tailSpawnTime": 68.74,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 68.97,
+      "tailSpawnTime": 69.92,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 70.27,
+      "tailSpawnTime": 70.62,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 70.98,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 71.22,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 71.81,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 72.16,
+      "tailSpawnTime": 74.05,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 74.76,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 75.11,
+      "tailSpawnTime": 75.59,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 75.94,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 76.41,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 76.88,
+      "tailSpawnTime": 77.48,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 77.95,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 78.30,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 78.66,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 79.01,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 79.37,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 79.84,
+      "tailSpawnTime": 81.25,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 81.73,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 82.08,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 82.67,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 83.14,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 83.62,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 84.33,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 84.56,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 85.03,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 85.51,
+      "tailSpawnTime": 85.98,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 86.45,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 86.92,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 87.40,
+      "tailSpawnTime": 88.81,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 89.29,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 89.76,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 90.23,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 90.59,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 91.18,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 91.53,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 92.00,
+      "tailSpawnTime": 92.59,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 93.07,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 93.42,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 93.77,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 94.48,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 94.84,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 95.43,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 95.78,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 96.25,
+      "tailSpawnTime": 0,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 96.85,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 97.08,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 97.79,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 98.26,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 98.74,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 99.56,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 100.15,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 100.51,
+      "tailSpawnTime": 101.10,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 101.57,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 101.92,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 102.51,
+      "tailSpawnTime": 103.70,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 104.40,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 104.76,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 105.35,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 105.94,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 106.29,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 106.65,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 107.12,
+      "tailSpawnTime": 107.71,
+      "laneIndex": 5
+    },
+    {
+      "spawnTime": 108.18,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 108.66,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 109.13,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 109.60,
+      "tailSpawnTime": 0,
+      "laneIndex": 3
+    },
+    {
+      "spawnTime": 110.07,
+      "tailSpawnTime": 0,
+      "laneIndex": 4
+    },
+    {
+      "spawnTime": 110.31,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 111.02,
+      "tailSpawnTime": 0,
+      "laneIndex": 2
+    },
+    {
+      "spawnTime": 111.25,
+      "tailSpawnTime": 0,
+      "laneIndex": 1
+    },
+    {
+      "spawnTime": 111.96,
+      "tailSpawnTime": 112.91,
       "laneIndex": 1
     }
   ]
