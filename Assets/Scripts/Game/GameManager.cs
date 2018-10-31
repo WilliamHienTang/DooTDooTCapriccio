@@ -70,11 +70,11 @@ public class GameManager : MonoBehaviour {
             if (noteChart[chartIndex].tailHitTime > 0)
             {
                 float length = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
-                InstantiateHoldNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].tailHitTime - speedOffset, noteChart[chartIndex].laneIndex, length);
+                InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
             }
             else
             {
-                InstantiateNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].laneIndex);
+                InstantiateNote(noteChart[chartIndex].laneIndex);
             }
             chartIndex++;
         }
@@ -91,17 +91,17 @@ public class GameManager : MonoBehaviour {
             if (noteChart[chartIndex].tailHitTime > 0)
             {
                 float length = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
-                InstantiateHoldNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].tailHitTime - speedOffset, noteChart[chartIndex].laneIndex, length);
+                InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
             }
             else
             {
-                InstantiateNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].laneIndex);
+                InstantiateNote(noteChart[chartIndex].laneIndex);
             }
             chartIndex++;
         }
     }
 
-    void InstantiateNote(float hitTime, int laneIndex)
+    void InstantiateNote(int laneIndex)
     {
         float xPosition;
         switch (laneIndex)
@@ -125,11 +125,10 @@ public class GameManager : MonoBehaviour {
                 return;
         }
 
-        Transform note = Instantiate(noteObject, new Vector3(xPosition, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
-        note.GetComponent<Note>().SetStartTime(hitTime);
+        Instantiate(noteObject, new Vector3(xPosition, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
     }
 
-    void InstantiateHoldNote(float headHitTime, float tailHitTime, int laneIndex, float length)
+    void InstantiateHoldNote(int laneIndex, float length)
     {
         float xPosition;
         switch (laneIndex)
@@ -155,21 +154,91 @@ public class GameManager : MonoBehaviour {
 
         Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, holdNoteObject.transform.localPosition.y, Constants.spawnZ), holdNoteObject.rotation);
 
-        GameObject headNote = holdNote.transform.Find("Head").gameObject;
-        headNote.GetComponent<Note>().SetStartTime(headHitTime);
-
         GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
         holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
 
         GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
         holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length);
-        tailNote.GetComponent<Note>().SetStartTime(tailHitTime);
     }
 
-    public float GetSongTimer()
+    void InstantiateDoubleNote(int lane1, int lane2, float length1, float length2)
     {
-        return songTimer;
+        float xPosition1;
+        switch (lane1)
+        {
+            case 1:
+                xPosition1 = Constants.lane1X;
+                break;
+            case 2:
+                xPosition1 = Constants.lane2X;
+                break;
+            case 3:
+                xPosition1 = Constants.lane3X;
+                break;
+            case 4:
+                xPosition1 = Constants.lane4X;
+                break;
+            case 5:
+                xPosition1 = Constants.lane5X;
+                break;
+            default:
+                return;
+        }
+
+        float xPosition2;
+        switch (lane2)
+        {
+            case 1:
+                xPosition2 = Constants.lane1X;
+                break;
+            case 2:
+                xPosition2 = Constants.lane2X;
+                break;
+            case 3:
+                xPosition2 = Constants.lane3X;
+                break;
+            case 4:
+                xPosition2 = Constants.lane4X;
+                break;
+            case 5:
+                xPosition2 = Constants.lane5X;
+                break;
+            default:
+                return;
+        }
+
+        if (length1 > 0)
+        {
+            Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition1, holdNoteObject.transform.localPosition.y, Constants.spawnZ), holdNoteObject.rotation);
+
+            GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
+            holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length1 / 2.0f);
+            holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length1);
+
+            GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
+            holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length1);
+        }
+        else
+        {
+            Instantiate(noteObject, new Vector3(xPosition1, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
+        }
+
+        if (length2 > 0)
+        {
+            Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition2, holdNoteObject.transform.localPosition.y, Constants.spawnZ), holdNoteObject.rotation);
+
+            GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
+            holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length2 / 2.0f);
+            holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length2);
+
+            GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
+            holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length2);
+        }
+        else
+        {
+            Instantiate(noteObject, new Vector3(xPosition2, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
+        }
     }
 
     public void IncreaseScore(int points, string scoreTypeCount)

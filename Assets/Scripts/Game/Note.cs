@@ -14,7 +14,6 @@ public class Note : MonoBehaviour {
 
     float songTimer;
     float dspStart;
-    public float startTime;
 
     // Use this for initialization
     void Start()
@@ -30,13 +29,7 @@ public class Note : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
-        /*if (gameManager.GetComponent<GameManager>().GetSongTimer() < startTime)
-        {
-            Debug.Log(gameManager.GetComponent<GameManager>().GetSongTimer());
-            return;   
-        }*/
-        
+    {        
         songTimer = (float)(AudioSettings.dspTime - dspStart);
 
         if ((noteSpeed * songTimer / distance) >= 1)
@@ -46,11 +39,6 @@ public class Note : MonoBehaviour {
         }
 
         transform.position = Vector3.Lerp(initPosition, activatorPosition, (noteSpeed * songTimer / distance));   
-    }
-
-    public void SetStartTime(float time)
-    {
-        startTime = time;
     }
 
     public void SetScoreType(string type)
