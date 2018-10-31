@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F29D7834-7AF8-BA37-20E9-093EB4B6E136}</ProjectGuid>
+    <ProjectGuid>{7EC0CBBD-1A66-32A6-DB40-343B5CD10661}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -109,9 +109,6 @@
      <Compile Include="Assets\Imports\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\Imports\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\Imports\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-     <Compile Include="Assets\Scripts\CircularScrollingList\ListBank.cs" />
-     <Compile Include="Assets\Scripts\CircularScrollingList\ListBox.cs" />
-     <Compile Include="Assets\Scripts\CircularScrollingList\ListPositionCtrl.cs" />
      <Compile Include="Assets\Scripts\Game\AutoDestroyParticleSystem.cs" />
      <Compile Include="Assets\Scripts\Game\BadCollider.cs" />
      <Compile Include="Assets\Scripts\Game\Dissolve.cs" />
@@ -131,6 +128,9 @@
      <Compile Include="Assets\Scripts\Other\Fade.cs" />
      <Compile Include="Assets\Scripts\Other\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\Other\Sound.cs" />
+     <Compile Include="Assets\Scripts\UI\CircularScrollingList\ListBank.cs" />
+     <Compile Include="Assets\Scripts\UI\CircularScrollingList\ListBox.cs" />
+     <Compile Include="Assets\Scripts\UI\CircularScrollingList\ListPositionCtrl.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\UI\ScoreScreen.cs" />
@@ -206,16 +206,16 @@
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\Imports\Shapes2D\Shaders\Polygon.cginc" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/William Tang/Documents/DooT! Capriccio/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/William Tang/Documents/Doot Doot Cappricio/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/William Tang/Documents/DooT! Capriccio/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/William Tang/Documents/Doot Doot Cappricio/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/William Tang/Documents/DooT! Capriccio/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/William Tang/Documents/Doot Doot Cappricio/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/William Tang/Documents/DooT! Capriccio/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/William Tang/Documents/Doot Doot Cappricio/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

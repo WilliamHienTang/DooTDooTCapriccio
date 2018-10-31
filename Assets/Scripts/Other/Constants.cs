@@ -35,6 +35,12 @@ public class Constants : MonoBehaviour {
     public const string tuttiSong = "tutti";
     public const string tuttiTitle = "ZAQ - Tutti!";
 
+    // Difficulties
+    public const string easy = "easy";
+    public const string medium = "medium";
+    public const string hard = "hard";
+    public const string expert = "expert";
+
     // PlayerPrefs
     public const string noteSpeed = "NoteSpeed";
     public const string songVolume = "SongVolume";

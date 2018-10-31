@@ -26,14 +26,13 @@ public class TitleScreen : MonoBehaviour {
     IEnumerator BlinkText(int n)
     {
         BlinkAudio();
-
         for (int i = 0; i < n; i++)
         {
             Color c = tapText.color;
             tapText.color = new Color(c.r, c.g, c.b, 0);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.075f);
             tapText.color = new Color(c.r, c.g, c.b, 1);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.075f);
         }
         StartGame();
     }
