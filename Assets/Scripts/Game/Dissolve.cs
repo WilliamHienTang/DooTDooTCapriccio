@@ -14,10 +14,10 @@ public class Dissolve : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
         if (other.transform.name == "DissolveCollider")
         {
             startTime = (float)AudioSettings.dspTime;
+            material.SetFloat("_DissolveAmount", Time.deltaTime / duration);
             enabled = true;
         }
     }
@@ -34,6 +34,6 @@ public class Dissolve : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         songTimer = (float)(AudioSettings.dspTime - startTime);
-        material.SetFloat("_DissolveAmount", songTimer / duration);
+        material.SetFloat("_DissolveAmount", (songTimer + Time.deltaTime) / duration);
     }
 }

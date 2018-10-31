@@ -8,7 +8,6 @@ public class Note : MonoBehaviour {
     string scoreType = null;
     float noteSpeed;
     Vector3 initPosition;
-    Vector3 activatorPosition;
     Vector3 followThroughPosition;
     float distance;
 
@@ -21,7 +20,6 @@ public class Note : MonoBehaviour {
         RB = GetComponent<Rigidbody>();
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         initPosition = transform.position;
-        //activatorPosition = new Vector3(initPosition.x, initPosition.y, Constants.activatorZ);
         followThroughPosition = new Vector3(initPosition.x, initPosition.y, Constants.followThroughZ);
         distance = initPosition.z - Constants.followThroughZ;
         dspStart = (float)AudioSettings.dspTime;
@@ -31,12 +29,6 @@ public class Note : MonoBehaviour {
     void Update()
     {        
         songTimer = (float)(AudioSettings.dspTime - dspStart);
-
-        /*if ((noteSpeed * songTimer / distance) >= 1)
-        {
-            
-        }*/
-
         transform.position = Vector3.Lerp(initPosition, followThroughPosition, (noteSpeed * songTimer / distance));   
     }
 
