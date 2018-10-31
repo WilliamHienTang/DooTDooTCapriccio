@@ -526,8 +526,8 @@
       "laneIndex": 2
     },
     {
-      "spawnTime": 2,
-      "tailSpawnTime": 40.74,
+      "spawnTime": 40.74,
+      "tailSpawnTime": 0,
       "laneIndex": 2
     },
     {
