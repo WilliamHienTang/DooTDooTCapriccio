@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
     int chartIndex = 0;
 
     float songTimer;
-    float startTime;
+    float dspStart;
 
     void Awake()
     {
@@ -50,13 +50,13 @@ public class GameManager : MonoBehaviour {
 
         // initialize time syncing variables
         speedOffset = (Constants.spawnZ - Constants.activatorZ) / noteSpeed;
-        startTime = (float)AudioSettings.dspTime;
+        dspStart = (float)AudioSettings.dspTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        songTimer = (float)(AudioSettings.dspTime - startTime);
+        songTimer = (float)(AudioSettings.dspTime - dspStart);
 
         if (chartIndex >= noteChart.Length)
         {
@@ -65,16 +65,16 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        if ((noteChart[chartIndex].spawnTime - speedOffset) <= songTimer)
+        if ((noteChart[chartIndex].headHitTime - speedOffset) <= songTimer)
         {
-            if (noteChart[chartIndex].tailSpawnTime > 0)
+            if (noteChart[chartIndex].tailHitTime > 0)
             {
-                float length = noteSpeed * (noteChart[chartIndex].tailSpawnTime - noteChart[chartIndex].spawnTime);
-                InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
+                float length = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
+                InstantiateHoldNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].tailHitTime - speedOffset, noteChart[chartIndex].laneIndex, length);
             }
             else
             {
-                InstantiateNote(noteChart[chartIndex].laneIndex);
+                InstantiateNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].laneIndex);
             }
             chartIndex++;
         }
@@ -86,22 +86,22 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        if ((noteChart[chartIndex].spawnTime - speedOffset) <= songTimer)
+        if ((noteChart[chartIndex].headHitTime - speedOffset) <= songTimer)
         {
-            if (noteChart[chartIndex].tailSpawnTime > 0)
+            if (noteChart[chartIndex].tailHitTime > 0)
             {
-                float length = noteSpeed * (noteChart[chartIndex].tailSpawnTime - noteChart[chartIndex].spawnTime);
-                InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
+                float length = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
+                InstantiateHoldNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].tailHitTime - speedOffset, noteChart[chartIndex].laneIndex, length);
             }
             else
             {
-                InstantiateNote(noteChart[chartIndex].laneIndex);
+                InstantiateNote(noteChart[chartIndex].headHitTime - speedOffset, noteChart[chartIndex].laneIndex);
             }
             chartIndex++;
         }
     }
 
-    void InstantiateNote(int laneIndex)
+    void InstantiateNote(float hitTime, int laneIndex)
     {
         float xPosition;
         switch (laneIndex)
@@ -125,10 +125,11 @@ public class GameManager : MonoBehaviour {
                 return;
         }
 
-        Instantiate(noteObject, new Vector3(xPosition, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
+        Transform note = Instantiate(noteObject, new Vector3(xPosition, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
+        note.GetComponent<Note>().SetStartTime(hitTime);
     }
 
-    void InstantiateHoldNote(int laneIndex, float length)
+    void InstantiateHoldNote(float headHitTime, float tailHitTime, int laneIndex, float length)
     {
         float xPosition;
         switch (laneIndex)
@@ -154,12 +155,21 @@ public class GameManager : MonoBehaviour {
 
         Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, holdNoteObject.transform.localPosition.y, Constants.spawnZ), holdNoteObject.rotation);
 
+        GameObject headNote = holdNote.transform.Find("Head").gameObject;
+        headNote.GetComponent<Note>().SetStartTime(headHitTime);
+
         GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
         holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
 
         GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
         holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length);
+        tailNote.GetComponent<Note>().SetStartTime(tailHitTime);
+    }
+
+    public float GetSongTimer()
+    {
+        return songTimer;
     }
 
     public void IncreaseScore(int points, string scoreTypeCount)

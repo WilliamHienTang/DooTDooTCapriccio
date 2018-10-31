@@ -5,7 +5,7 @@ using System;
 
 [Serializable]
 public class NoteSpawn {
-    public float spawnTime;
-    public float tailSpawnTime;
+    public float headHitTime;
+    public float tailHitTime;
     public int laneIndex;
 }

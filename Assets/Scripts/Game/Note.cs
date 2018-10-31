@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Note : MonoBehaviour {
 
+    GameObject gameManager;
     Rigidbody RB;
     string scoreType = null;
     float noteSpeed;
@@ -12,30 +13,44 @@ public class Note : MonoBehaviour {
     float distance;
 
     float songTimer;
-    float startTime;
+    float dspStart;
+    public float startTime;
 
     // Use this for initialization
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
         RB = GetComponent<Rigidbody>();
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         initPosition = transform.position;
         activatorPosition = new Vector3(initPosition.x, initPosition.y, Constants.activatorZ);
         distance = initPosition.z - Constants.activatorZ;
-        startTime = (float)AudioSettings.dspTime;
+        dspStart = (float)AudioSettings.dspTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*if (gameManager.GetComponent<GameManager>().GetSongTimer() < startTime)
+        {
+            Debug.Log(gameManager.GetComponent<GameManager>().GetSongTimer());
+            return;   
+        }*/
+        
+        songTimer = (float)(AudioSettings.dspTime - dspStart);
+
         if ((noteSpeed * songTimer / distance) >= 1)
         {
             RB.velocity = new Vector3(0, 0, -noteSpeed);
             enabled = false;
         }
 
-        songTimer = (float)(AudioSettings.dspTime - startTime);
         transform.position = Vector3.Lerp(initPosition, activatorPosition, (noteSpeed * songTimer / distance));   
+    }
+
+    public void SetStartTime(float time)
+    {
+        startTime = time;
     }
 
     public void SetScoreType(string type)

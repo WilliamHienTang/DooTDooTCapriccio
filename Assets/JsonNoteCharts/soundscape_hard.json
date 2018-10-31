@@ -1,1593 +1,1593 @@
 {
   "Items": [
     {
-      "spawnTime": 5.26,
-      "tailSpawnTime": 0,
+      "headHitTime": 5.26,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 5.26,
-      "tailSpawnTime": 0,
+      "headHitTime": 5.26,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 5.74,
-      "tailSpawnTime": 0,
+      "headHitTime": 5.74,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 5.74,
-      "tailSpawnTime": 0,
+      "headHitTime": 5.74,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 5.90,
-      "tailSpawnTime": 0,
+      "headHitTime": 5.90,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 6.06,
-      "tailSpawnTime": 0,
+      "headHitTime": 6.06,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 6.38,
-      "tailSpawnTime": 0,
+      "headHitTime": 6.38,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 6.38,
-      "tailSpawnTime": 0,
+      "headHitTime": 6.38,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 6.70,
-      "tailSpawnTime": 0,
+      "headHitTime": 6.70,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 6.70,
-      "tailSpawnTime": 0,
+      "headHitTime": 6.70,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 6.86,
-      "tailSpawnTime": 0,
+      "headHitTime": 6.86,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 7.18,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.18,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 7.18,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.18,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 7.50,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.50,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 7.50,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.50,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 7.65,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.65,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 7.81,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.81,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 7.97,
-      "tailSpawnTime": 0,
+      "headHitTime": 7.97,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 8.29,
-      "tailSpawnTime": 0,
+      "headHitTime": 8.29,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 8.45,
-      "tailSpawnTime": 0,
+      "headHitTime": 8.45,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 8.61,
-      "tailSpawnTime": 0,
+      "headHitTime": 8.61,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 8.93,
-      "tailSpawnTime": 0,
+      "headHitTime": 8.93,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 9.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 9.25,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 9.41,
-      "tailSpawnTime": 0,
+      "headHitTime": 9.41,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 9.73,
-      "tailSpawnTime": 10.21,
+      "headHitTime": 9.73,
+      "tailHitTime": 10.21,
       "laneIndex": 3
     },
     {
-      "spawnTime": 9.73,
-      "tailSpawnTime": 10.21,
+      "headHitTime": 9.73,
+      "tailHitTime": 10.21,
       "laneIndex": 4
     },
     {
-      "spawnTime": 10.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 10.53,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 10.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 10.53,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 10.85,
-      "tailSpawnTime": 11.17,
+      "headHitTime": 10.85,
+      "tailHitTime": 11.17,
       "laneIndex": 2
     },
     {
-      "spawnTime": 11.48,
-      "tailSpawnTime": 0,
+      "headHitTime": 11.48,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 11.48,
-      "tailSpawnTime": 0,
+      "headHitTime": 11.48,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 11.80,
-      "tailSpawnTime": 0,
+      "headHitTime": 11.80,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 12.12,
-      "tailSpawnTime": 0,
+      "headHitTime": 12.12,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 12.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 12.44,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 12.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 12.44,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 12.60,
-      "tailSpawnTime": 0,
+      "headHitTime": 12.60,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 12.60,
-      "tailSpawnTime": 0,
+      "headHitTime": 12.60,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 12.92,
-      "tailSpawnTime": 0,
+      "headHitTime": 12.92,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 13.08,
-      "tailSpawnTime": 14.04,
+      "headHitTime": 13.08,
+      "tailHitTime": 14.04,
       "laneIndex": 2
     },
     {
-      "spawnTime": 14.20,
-      "tailSpawnTime": 0,
+      "headHitTime": 14.20,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 14.36,
-      "tailSpawnTime": 14.68,
+      "headHitTime": 14.36,
+      "tailHitTime": 14.68,
       "laneIndex": 4
     },
     {
-      "spawnTime": 15.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 15.00,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 15.31,
-      "tailSpawnTime": 0,
+      "headHitTime": 15.31,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 15.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 15.95,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 15.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 15.95,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 16.11,
-      "tailSpawnTime": 0,
+      "headHitTime": 16.11,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 16.27,
-      "tailSpawnTime": 16.59,
+      "headHitTime": 16.27,
+      "tailHitTime": 16.59,
       "laneIndex": 4
     },
     {
-      "spawnTime": 16.75,
-      "tailSpawnTime": 0,
+      "headHitTime": 16.75,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 16.91,
-      "tailSpawnTime": 18.35,
+      "headHitTime": 16.91,
+      "tailHitTime": 18.35,
       "laneIndex": 3
     },
     {
-      "spawnTime": 16.91,
-      "tailSpawnTime": 18.35,
+      "headHitTime": 16.91,
+      "tailHitTime": 18.35,
       "laneIndex": 5
     },
     {
-      "spawnTime": 18.51,
-      "tailSpawnTime": 19.14,
+      "headHitTime": 18.51,
+      "tailHitTime": 19.14,
       "laneIndex": 2
     },
     {
-      "spawnTime": 19.14,
-      "tailSpawnTime": 19.46,
+      "headHitTime": 19.14,
+      "tailHitTime": 19.46,
       "laneIndex": 3
     },
     {
-      "spawnTime": 19.46,
-      "tailSpawnTime": 19.78,
+      "headHitTime": 19.46,
+      "tailHitTime": 19.78,
       "laneIndex": 1
     },
     {
-      "spawnTime": 19.78,
-      "tailSpawnTime": 20.10,
+      "headHitTime": 19.78,
+      "tailHitTime": 20.10,
       "laneIndex": 4
     },
     {
-      "spawnTime": 20.10,
-      "tailSpawnTime": 20.42,
+      "headHitTime": 20.10,
+      "tailHitTime": 20.42,
       "laneIndex": 3
     },
     {
-      "spawnTime": 20.74,
-      "tailSpawnTime": 0,
+      "headHitTime": 20.74,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 20.74,
-      "tailSpawnTime": 0,
+      "headHitTime": 20.74,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 21.06,
-      "tailSpawnTime": 0,
+      "headHitTime": 21.06,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 21.06,
-      "tailSpawnTime": 0,
+      "headHitTime": 21.06,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 21.38,
-      "tailSpawnTime": 0,
+      "headHitTime": 21.38,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 21.38,
-      "tailSpawnTime": 0,
+      "headHitTime": 21.38,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 21.70,
-      "tailSpawnTime": 22.02,
+      "headHitTime": 21.70,
+      "tailHitTime": 22.02,
       "laneIndex": 5
     },
     {
-      "spawnTime": 22.02,
-      "tailSpawnTime": 22.34,
+      "headHitTime": 22.02,
+      "tailHitTime": 22.34,
       "laneIndex": 4
     },
     {
-      "spawnTime": 22.97,
-      "tailSpawnTime": 0,
+      "headHitTime": 22.97,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 22.97,
-      "tailSpawnTime": 0,
+      "headHitTime": 22.97,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 23.29,
-      "tailSpawnTime": 0,
+      "headHitTime": 23.29,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 23.29,
-      "tailSpawnTime": 0,
+      "headHitTime": 23.29,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 23.61,
-      "tailSpawnTime": 0,
+      "headHitTime": 23.61,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 23.61,
-      "tailSpawnTime": 0,
+      "headHitTime": 23.61,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 24.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 24.25,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 24.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 24.25,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 24.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 24.57,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 24.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 24.57,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 24.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 24.89,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 24.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 24.89,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 25.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 25.53,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 25.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 25.53,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 25.85,
-      "tailSpawnTime": 0,
+      "headHitTime": 25.85,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 25.85,
-      "tailSpawnTime": 0,
+      "headHitTime": 25.85,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 26.17,
-      "tailSpawnTime": 0,
+      "headHitTime": 26.17,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 26.17,
-      "tailSpawnTime": 0,
+      "headHitTime": 26.17,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 26.48,
-      "tailSpawnTime": 0,
+      "headHitTime": 26.48,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 26.48,
-      "tailSpawnTime": 0,
+      "headHitTime": 26.48,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 26.80,
-      "tailSpawnTime": 0,
+      "headHitTime": 26.80,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 27.12,
-      "tailSpawnTime": 0,
+      "headHitTime": 27.12,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 27.44,
-      "tailSpawnTime": 28.72,
+      "headHitTime": 27.44,
+      "tailHitTime": 28.72,
       "laneIndex": 3
     },
     {
-      "spawnTime": 29.36,
-      "tailSpawnTime": 0,
+      "headHitTime": 29.36,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 29.36,
-      "tailSpawnTime": 0,
+      "headHitTime": 29.36,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 29.68,
-      "tailSpawnTime": 0,
+      "headHitTime": 29.68,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 29.68,
-      "tailSpawnTime": 0,
+      "headHitTime": 29.68,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 30.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.00,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 30.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.00,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 30.31,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.31,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 30.63,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.63,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 30.63,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.63,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 30.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.95,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 30.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 30.95,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 31.27,
-      "tailSpawnTime": 0,
+      "headHitTime": 31.27,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 31.59,
-      "tailSpawnTime": 0,
+      "headHitTime": 31.59,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 31.59,
-      "tailSpawnTime": 0,
+      "headHitTime": 31.59,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 31.91,
-      "tailSpawnTime": 0,
+      "headHitTime": 31.91,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 32.23,
-      "tailSpawnTime": 33.19,
+      "headHitTime": 32.23,
+      "tailHitTime": 33.19,
       "laneIndex": 2
     },
     {
-      "spawnTime": 32.23,
-      "tailSpawnTime": 33.19,
+      "headHitTime": 32.23,
+      "tailHitTime": 33.19,
       "laneIndex": 4
     },
     {
-      "spawnTime": 33.51,
-      "tailSpawnTime": 0,
+      "headHitTime": 33.51,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 33.82,
-      "tailSpawnTime": 0,
+      "headHitTime": 33.82,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 33.82,
-      "tailSpawnTime": 0,
+      "headHitTime": 33.82,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 34.14,
-      "tailSpawnTime": 0,
+      "headHitTime": 34.14,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 34.46,
-      "tailSpawnTime": 0,
+      "headHitTime": 34.46,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 34.46,
-      "tailSpawnTime": 0,
+      "headHitTime": 34.46,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 34.78,
-      "tailSpawnTime": 0,
+      "headHitTime": 34.78,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 35.10,
-      "tailSpawnTime": 0,
+      "headHitTime": 35.10,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 35.10,
-      "tailSpawnTime": 0,
+      "headHitTime": 35.10,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 35.42,
-      "tailSpawnTime": 0,
+      "headHitTime": 35.42,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 35.42,
-      "tailSpawnTime": 0,
+      "headHitTime": 35.42,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 35.74,
-      "tailSpawnTime": 0,
+      "headHitTime": 35.74,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 36.06,
-      "tailSpawnTime": 0,
+      "headHitTime": 36.06,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 36.06,
-      "tailSpawnTime": 0,
+      "headHitTime": 36.06,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 36.38,
-      "tailSpawnTime": 0,
+      "headHitTime": 36.38,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 36.38,
-      "tailSpawnTime": 0,
+      "headHitTime": 36.38,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 36.70,
-      "tailSpawnTime": 37.02,
+      "headHitTime": 36.70,
+      "tailHitTime": 37.02,
       "laneIndex": 3
     },
     {
-      "spawnTime": 37.02,
-      "tailSpawnTime": 37.34,
+      "headHitTime": 37.02,
+      "tailHitTime": 37.34,
       "laneIndex": 4
     },
     {
-      "spawnTime": 37.50,
-      "tailSpawnTime": 0,
+      "headHitTime": 37.50,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 37.50,
-      "tailSpawnTime": 0,
+      "headHitTime": 37.50,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 37.65,
-      "tailSpawnTime": 38.29,
+      "headHitTime": 37.65,
+      "tailHitTime": 38.29,
       "laneIndex": 5
     },
     {
-      "spawnTime": 38.93,
-      "tailSpawnTime": 0,
+      "headHitTime": 38.93,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 39.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 39.25,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 39.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 39.25,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 39.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 39.57,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 39.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 39.57,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 39.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 39.89,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 39.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 39.89,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 40.05,
-      "tailSpawnTime": 0,
+      "headHitTime": 40.05,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 40.21,
-      "tailSpawnTime": 0,
+      "headHitTime": 40.21,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 40.21,
-      "tailSpawnTime": 0,
+      "headHitTime": 40.21,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 40.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 40.53,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 40.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 40.53,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 40.85,
-      "tailSpawnTime": 0,
+      "headHitTime": 40.85,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 41.17,
-      "tailSpawnTime": 0,
+      "headHitTime": 41.17,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 41.17,
-      "tailSpawnTime": 0,
+      "headHitTime": 41.17,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 41.32,
-      "tailSpawnTime": 41.80,
+      "headHitTime": 41.32,
+      "tailHitTime": 41.80,
       "laneIndex": 1
     },
     {
-      "spawnTime": 41.32,
-      "tailSpawnTime": 0,
+      "headHitTime": 41.32,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 42.12,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.12,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 42.12,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.12,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 42.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.44,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 42.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.44,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 42.60,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.60,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 42.60,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.60,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 42.76,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.76,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 42.92,
-      "tailSpawnTime": 0,
+      "headHitTime": 42.92,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 43.08,
-      "tailSpawnTime": 44.04,
+      "headHitTime": 43.08,
+      "tailHitTime": 44.04,
       "laneIndex": 1
     },
     {
-      "spawnTime": 43.08,
-      "tailSpawnTime": 44.04,
+      "headHitTime": 43.08,
+      "tailHitTime": 44.04,
       "laneIndex": 3
     },
     {
-      "spawnTime": 44.36,
-      "tailSpawnTime": 0,
+      "headHitTime": 44.36,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 44.36,
-      "tailSpawnTime": 0,
+      "headHitTime": 44.36,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 44.68,
-      "tailSpawnTime": 0,
+      "headHitTime": 44.68,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 44.68,
-      "tailSpawnTime": 0,
+      "headHitTime": 44.68,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 45.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.00,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 45.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.00,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 45.31,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.31,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 45.31,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.31,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 45.63,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.63,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 45.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.95,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 45.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 45.95,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 46.27,
-      "tailSpawnTime": 0,
+      "headHitTime": 46.27,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 46.27,
-      "tailSpawnTime": 0,
+      "headHitTime": 46.27,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 46.59,
-      "tailSpawnTime": 0,
+      "headHitTime": 46.59,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 47.23,
-      "tailSpawnTime": 0,
+      "headHitTime": 47.23,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 47.23,
-      "tailSpawnTime": 0,
+      "headHitTime": 47.23,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 47.55,
-      "tailSpawnTime": 49.78,
+      "headHitTime": 47.55,
+      "tailHitTime": 49.78,
       "laneIndex": 4
     },
     {
-      "spawnTime": 47.55,
-      "tailSpawnTime": 49.78,
+      "headHitTime": 47.55,
+      "tailHitTime": 49.78,
       "laneIndex": 5
     },
     {
-      "spawnTime": 50.10,
-      "tailSpawnTime": 0,
+      "headHitTime": 50.10,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 50.26,
-      "tailSpawnTime": 51.70,
+      "headHitTime": 50.26,
+      "tailHitTime": 51.70,
       "laneIndex": 4
     },
     {
-      "spawnTime": 52.02,
-      "tailSpawnTime": 0,
+      "headHitTime": 52.02,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 52.34,
-      "tailSpawnTime": 0,
+      "headHitTime": 52.34,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 52.34,
-      "tailSpawnTime": 0,
+      "headHitTime": 52.34,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 52.65,
-      "tailSpawnTime": 0,
+      "headHitTime": 52.65,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 52.97,
-      "tailSpawnTime": 53.29,
+      "headHitTime": 52.97,
+      "tailHitTime": 53.29,
       "laneIndex": 3
     },
     {
-      "spawnTime": 52.97,
-      "tailSpawnTime": 53.29,
+      "headHitTime": 52.97,
+      "tailHitTime": 53.29,
       "laneIndex": 4
     },
     {
-      "spawnTime": 53.93,
-      "tailSpawnTime": 0,
+      "headHitTime": 53.93,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 53.93,
-      "tailSpawnTime": 0,
+      "headHitTime": 53.93,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 54.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 54.25,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 54.25,
-      "tailSpawnTime": 0,
+      "headHitTime": 54.25,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 54.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 54.57,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 54.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 54.89,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 54.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 54.89,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 55.21,
-      "tailSpawnTime": 0,
+      "headHitTime": 55.21,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 55.53,
-      "tailSpawnTime": 56.17,
+      "headHitTime": 55.53,
+      "tailHitTime": 56.17,
       "laneIndex": 1
     },
     {
-      "spawnTime": 56.48,
-      "tailSpawnTime": 0,
+      "headHitTime": 56.48,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 56.80,
-      "tailSpawnTime": 0,
+      "headHitTime": 56.80,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 56.80,
-      "tailSpawnTime": 0,
+      "headHitTime": 56.80,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 56.96,
-      "tailSpawnTime": 0,
+      "headHitTime": 56.96,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 56.96,
-      "tailSpawnTime": 0,
+      "headHitTime": 56.96,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 57.28,
-      "tailSpawnTime": 0,
+      "headHitTime": 57.28,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 57.28,
-      "tailSpawnTime": 0,
+      "headHitTime": 57.28,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 57.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 57.44,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 57.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 57.44,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 57.76,
-      "tailSpawnTime": 0,
+      "headHitTime": 57.76,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 57.91,
-      "tailSpawnTime": 58.40,
+      "headHitTime": 57.91,
+      "tailHitTime": 58.40,
       "laneIndex": 1
     },
     {
-      "spawnTime": 57.91,
-      "tailSpawnTime": 58.40,
+      "headHitTime": 57.91,
+      "tailHitTime": 58.40,
       "laneIndex": 3
     },
     {
-      "spawnTime": 58.72,
-      "tailSpawnTime": 0,
+      "headHitTime": 58.72,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 59.04,
-      "tailSpawnTime": 0,
+      "headHitTime": 59.04,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 59.20,
-      "tailSpawnTime": 0,
+      "headHitTime": 59.20,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 59.68,
-      "tailSpawnTime": 60.00,
+      "headHitTime": 59.68,
+      "tailHitTime": 60.00,
       "laneIndex": 1
     },
     {
-      "spawnTime": 60.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 60.00,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 60.31,
-      "tailSpawnTime": 0,
+      "headHitTime": 60.31,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 60.63,
-      "tailSpawnTime": 0,
+      "headHitTime": 60.63,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 60.63,
-      "tailSpawnTime": 0,
+      "headHitTime": 60.63,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 60.95,
-      "tailSpawnTime": 0,
+      "headHitTime": 60.95,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 61.27,
-      "tailSpawnTime": 0,
+      "headHitTime": 61.27,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 61.27,
-      "tailSpawnTime": 0,
+      "headHitTime": 61.27,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 61.59,
-      "tailSpawnTime": 0,
+      "headHitTime": 61.59,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 61.75,
-      "tailSpawnTime": 0,
+      "headHitTime": 61.75,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 62.23,
-      "tailSpawnTime": 0,
+      "headHitTime": 62.23,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 62.23,
-      "tailSpawnTime": 0,
+      "headHitTime": 62.23,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 62.55,
-      "tailSpawnTime": 0,
+      "headHitTime": 62.55,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 62.87,
-      "tailSpawnTime": 0,
+      "headHitTime": 62.87,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 63.19,
-      "tailSpawnTime": 64.14,
+      "headHitTime": 63.19,
+      "tailHitTime": 64.14,
       "laneIndex": 3
     },
     {
-      "spawnTime": 63.19,
-      "tailSpawnTime": 64.14,
+      "headHitTime": 63.19,
+      "tailHitTime": 64.14,
       "laneIndex": 5
     },
     {
-      "spawnTime": 64.30,
-      "tailSpawnTime": 64.78,
+      "headHitTime": 64.30,
+      "tailHitTime": 64.78,
       "laneIndex": 4
     },
     {
-      "spawnTime": 65.10,
-      "tailSpawnTime": 0,
+      "headHitTime": 65.10,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 65.42,
-      "tailSpawnTime": 0,
+      "headHitTime": 65.42,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 65.42,
-      "tailSpawnTime": 0,
+      "headHitTime": 65.42,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 65.74,
-      "tailSpawnTime": 66.70,
+      "headHitTime": 65.74,
+      "tailHitTime": 66.70,
       "laneIndex": 5
     },
     {
-      "spawnTime": 66.86,
-      "tailSpawnTime": 0,
+      "headHitTime": 66.86,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 67.02,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.02,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 67.34,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.34,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 67.34,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.34,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 67.65,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.65,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 67.65,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.65,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 67.97,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.97,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 67.97,
-      "tailSpawnTime": 0,
+      "headHitTime": 67.97,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 68.29,
-      "tailSpawnTime": 68.61,
+      "headHitTime": 68.29,
+      "tailHitTime": 68.61,
       "laneIndex": 1
     },
     {
-      "spawnTime": 68.29,
-      "tailSpawnTime": 68.61,
+      "headHitTime": 68.29,
+      "tailHitTime": 68.61,
       "laneIndex": 2
     },
     {
-      "spawnTime": 69.09,
-      "tailSpawnTime": 0,
+      "headHitTime": 69.09,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 69.41,
-      "tailSpawnTime": 0,
+      "headHitTime": 69.41,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 69.41,
-      "tailSpawnTime": 0,
+      "headHitTime": 69.41,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 69.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 69.57,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 69.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 69.57,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 70.05,
-      "tailSpawnTime": 0,
+      "headHitTime": 70.05,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 70.05,
-      "tailSpawnTime": 0,
+      "headHitTime": 70.05,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 70.37,
-      "tailSpawnTime": 0,
+      "headHitTime": 70.37,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 70.37,
-      "tailSpawnTime": 0,
+      "headHitTime": 70.37,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 70.69,
-      "tailSpawnTime": 0,
+      "headHitTime": 70.69,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 71.01,
-      "tailSpawnTime": 0,
+      "headHitTime": 71.01,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 71.17,
-      "tailSpawnTime": 71.48,
+      "headHitTime": 71.17,
+      "tailHitTime": 71.48,
       "laneIndex": 3
     },
     {
-      "spawnTime": 71.17,
-      "tailSpawnTime": 71.48,
+      "headHitTime": 71.17,
+      "tailHitTime": 71.48,
       "laneIndex": 4
     },
     {
-      "spawnTime": 71.64,
-      "tailSpawnTime": 0,
+      "headHitTime": 71.64,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 71.96,
-      "tailSpawnTime": 0,
+      "headHitTime": 71.96,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 72.12,
-      "tailSpawnTime": 73.08,
+      "headHitTime": 72.12,
+      "tailHitTime": 73.08,
       "laneIndex": 5
     },
     {
-      "spawnTime": 73.56,
-      "tailSpawnTime": 0,
+      "headHitTime": 73.56,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 73.56,
-      "tailSpawnTime": 0,
+      "headHitTime": 73.56,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 73.88,
-      "tailSpawnTime": 0,
+      "headHitTime": 73.88,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 73.88,
-      "tailSpawnTime": 0,
+      "headHitTime": 73.88,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 74.20,
-      "tailSpawnTime": 0,
+      "headHitTime": 74.20,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 74.20,
-      "tailSpawnTime": 0,
+      "headHitTime": 74.20,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 74.52,
-      "tailSpawnTime": 0,
+      "headHitTime": 74.52,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 74.52,
-      "tailSpawnTime": 0,
+      "headHitTime": 74.52,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 74.84,
-      "tailSpawnTime": 0,
+      "headHitTime": 74.84,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 74.84,
-      "tailSpawnTime": 0,
+      "headHitTime": 74.84,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 75.15,
-      "tailSpawnTime": 0,
+      "headHitTime": 75.15,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 75.15,
-      "tailSpawnTime": 0,
+      "headHitTime": 75.15,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 75.47,
-      "tailSpawnTime": 75.63,
+      "headHitTime": 75.47,
+      "tailHitTime": 75.63,
       "laneIndex": 3
     },
     {
-      "spawnTime": 75.47,
-      "tailSpawnTime": 75.63,
+      "headHitTime": 75.47,
+      "tailHitTime": 75.63,
       "laneIndex": 5
     },
     {
-      "spawnTime": 76.11,
-      "tailSpawnTime": 0,
+      "headHitTime": 76.11,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 76.11,
-      "tailSpawnTime": 0,
+      "headHitTime": 76.11,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 76.43,
-      "tailSpawnTime": 0,
+      "headHitTime": 76.43,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 76.43,
-      "tailSpawnTime": 0,
+      "headHitTime": 76.43,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 76.75,
-      "tailSpawnTime": 0,
+      "headHitTime": 76.75,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 76.91,
-      "tailSpawnTime": 0,
+      "headHitTime": 76.91,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 77.23,
-      "tailSpawnTime": 0,
+      "headHitTime": 77.23,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 77.23,
-      "tailSpawnTime": 0,
+      "headHitTime": 77.23,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 77.55,
-      "tailSpawnTime": 0,
+      "headHitTime": 77.55,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 77.55,
-      "tailSpawnTime": 0,
+      "headHitTime": 77.55,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 77.87,
-      "tailSpawnTime": 0,
+      "headHitTime": 77.87,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 77.87,
-      "tailSpawnTime": 0,
+      "headHitTime": 77.87,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 78.19,
-      "tailSpawnTime": 0,
+      "headHitTime": 78.19,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 78.19,
-      "tailSpawnTime": 0,
+      "headHitTime": 78.19,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 78.51,
-      "tailSpawnTime": 79.94,
+      "headHitTime": 78.51,
+      "tailHitTime": 79.94,
       "laneIndex": 4
     },
     {
-      "spawnTime": 78.51,
-      "tailSpawnTime": 79.94,
+      "headHitTime": 78.51,
+      "tailHitTime": 79.94,
       "laneIndex": 5
     },
     {
-      "spawnTime": 80.42,
-      "tailSpawnTime": 0,
+      "headHitTime": 80.42,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 80.58,
-      "tailSpawnTime": 0,
+      "headHitTime": 80.58,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 80.90,
-      "tailSpawnTime": 0,
+      "headHitTime": 80.90,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 81.06,
-      "tailSpawnTime": 82.65,
+      "headHitTime": 81.06,
+      "tailHitTime": 82.65,
       "laneIndex": 2
     },
     {
-      "spawnTime": 82.65,
-      "tailSpawnTime": 83.77,
+      "headHitTime": 82.65,
+      "tailHitTime": 83.77,
       "laneIndex": 5
     },
     {
-      "spawnTime": 83.93,
-      "tailSpawnTime": 0,
+      "headHitTime": 83.93,
+      "tailHitTime": 0,
       "laneIndex": 1
     },
     {
-      "spawnTime": 84.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 84.57,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 84.57,
-      "tailSpawnTime": 0,
+      "headHitTime": 84.57,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 84.89,
-      "tailSpawnTime": 0,
+      "headHitTime": 84.89,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 85.21,
-      "tailSpawnTime": 0,
+      "headHitTime": 85.21,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 85.21,
-      "tailSpawnTime": 0,
+      "headHitTime": 85.21,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 85.53,
-      "tailSpawnTime": 0,
+      "headHitTime": 85.53,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 85.69,
-      "tailSpawnTime": 85.85,
+      "headHitTime": 85.69,
+      "tailHitTime": 85.85,
       "laneIndex": 1
     },
     {
-      "spawnTime": 85.69,
-      "tailSpawnTime": 85.85,
+      "headHitTime": 85.69,
+      "tailHitTime": 85.85,
       "laneIndex": 3
     },
     {
-      "spawnTime": 86.01,
-      "tailSpawnTime": 0,
+      "headHitTime": 86.01,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 86.01,
-      "tailSpawnTime": 0,
+      "headHitTime": 86.01,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 86.32,
-      "tailSpawnTime": 87.28,
+      "headHitTime": 86.32,
+      "tailHitTime": 87.28,
       "laneIndex": 3
     },
     {
-      "spawnTime": 87.44,
-      "tailSpawnTime": 0,
+      "headHitTime": 87.44,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 87.76,
-      "tailSpawnTime": 0,
+      "headHitTime": 87.76,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 87.76,
-      "tailSpawnTime": 0,
+      "headHitTime": 87.76,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 87.92,
-      "tailSpawnTime": 0,
+      "headHitTime": 87.92,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 88.24,
-      "tailSpawnTime": 0,
+      "headHitTime": 88.24,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 88.24,
-      "tailSpawnTime": 0,
+      "headHitTime": 88.24,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 88.56,
-      "tailSpawnTime": 89.04,
+      "headHitTime": 88.56,
+      "tailHitTime": 89.04,
       "laneIndex": 4
     },
     {
-      "spawnTime": 89.04,
-      "tailSpawnTime": 89.36,
+      "headHitTime": 89.04,
+      "tailHitTime": 89.36,
       "laneIndex": 1
     },
     {
-      "spawnTime": 89.36,
-      "tailSpawnTime": 89.68,
+      "headHitTime": 89.36,
+      "tailHitTime": 89.68,
       "laneIndex": 2
     },
     {
-      "spawnTime": 89.84,
-      "tailSpawnTime": 0,
+      "headHitTime": 89.84,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 90.00,
-      "tailSpawnTime": 0,
+      "headHitTime": 90.00,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 90.15,
-      "tailSpawnTime": 90.63,
+      "headHitTime": 90.15,
+      "tailHitTime": 90.63,
       "laneIndex": 5
     },
     {
-      "spawnTime": 90.79,
-      "tailSpawnTime": 0,
+      "headHitTime": 90.79,
+      "tailHitTime": 0,
       "laneIndex": 4
     },
     {
-      "spawnTime": 90.95,
-      "tailSpawnTime": 91.27,
+      "headHitTime": 90.95,
+      "tailHitTime": 91.27,
       "laneIndex": 3
     },
     {
-      "spawnTime": 91.43,
-      "tailSpawnTime": 0,
+      "headHitTime": 91.43,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {
-      "spawnTime": 91.59,
-      "tailSpawnTime": 92.71,
+      "headHitTime": 91.59,
+      "tailHitTime": 92.71,
       "laneIndex": 1
     },
     {
-      "spawnTime": 91.59,
-      "tailSpawnTime": 92.71,
+      "headHitTime": 91.59,
+      "tailHitTime": 92.71,
       "laneIndex": 2
     },
     {
-      "spawnTime": 92.87,
-      "tailSpawnTime": 0,
+      "headHitTime": 92.87,
+      "tailHitTime": 0,
       "laneIndex": 3
     },
     {
-      "spawnTime": 92.87,
-      "tailSpawnTime": 0,
+      "headHitTime": 92.87,
+      "tailHitTime": 0,
       "laneIndex": 5
     },
     {
-      "spawnTime": 93.51,
-      "tailSpawnTime": 93.82,
+      "headHitTime": 93.51,
+      "tailHitTime": 93.82,
       "laneIndex": 1
     },
     {
-      "spawnTime": 93.51,
-      "tailSpawnTime": 93.82,
+      "headHitTime": 93.51,
+      "tailHitTime": 93.82,
       "laneIndex": 5
     },
     {
-      "spawnTime": 94.14,
-      "tailSpawnTime": 97.50,
+      "headHitTime": 94.14,
+      "tailHitTime": 97.50,
       "laneIndex": 3
     },
     {
-      "spawnTime": 94.14,
-      "tailSpawnTime": 97.50,
+      "headHitTime": 94.14,
+      "tailHitTime": 97.50,
       "laneIndex": 4
     }
   ]
