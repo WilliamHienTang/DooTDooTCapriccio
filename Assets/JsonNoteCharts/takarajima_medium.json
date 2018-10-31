@@ -851,8 +851,8 @@
       "laneIndex": 3
     },
     {
-      "headHitTime": 61.65,
-      "tailHitTime": 61.06,
+      "headHitTime": 61.06,
+      "tailHitTime": 61.65,
       "laneIndex": 2
     },
     {
@@ -891,7 +891,7 @@
       "laneIndex": 3
     },
     {
-      "headHitTime": 65.25,
+      "headHitTime": 64.25,
       "tailHitTime": 0,
       "laneIndex": 4
     },
@@ -1212,7 +1212,7 @@
     },
     {
       "headHitTime": 86.22,
-      "tailHitTime": 85.98,
+      "tailHitTime": 0,
       "laneIndex": 2
     },
     {

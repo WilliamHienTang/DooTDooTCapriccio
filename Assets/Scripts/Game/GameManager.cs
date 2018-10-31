@@ -65,10 +65,18 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
+        /*int lane1 = 0;
+        int lane2 = 0;
+        float length1 = 0; 
+        float length2 = 0;*/
+
         if ((noteChart[chartIndex].headHitTime - speedOffset) <= songTimer)
         {
+            //lane1 = noteChart[chartIndex].laneIndex;
+
             if (noteChart[chartIndex].tailHitTime > 0)
             {
+                //length1 = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
                 float length = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
                 InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
             }
@@ -88,8 +96,12 @@ public class GameManager : MonoBehaviour {
 
         if ((noteChart[chartIndex].headHitTime - speedOffset) <= songTimer)
         {
+            //lane2 = noteChart[chartIndex].laneIndex;
+
             if (noteChart[chartIndex].tailHitTime > 0)
             {
+                //length2 = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
+                
                 float length = noteSpeed * (noteChart[chartIndex].tailHitTime - noteChart[chartIndex].headHitTime);
                 InstantiateHoldNote(noteChart[chartIndex].laneIndex, length);
             }
@@ -183,7 +195,8 @@ public class GameManager : MonoBehaviour {
                 xPosition1 = Constants.lane5X;
                 break;
             default:
-                return;
+                xPosition1 = 0;
+                break; 
         }
 
         float xPosition2;
@@ -205,7 +218,8 @@ public class GameManager : MonoBehaviour {
                 xPosition2 = Constants.lane5X;
                 break;
             default:
-                return;
+                xPosition2 = 0;
+                break;
         }
 
         if (length1 > 0)
@@ -219,10 +233,11 @@ public class GameManager : MonoBehaviour {
             GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
             holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length1);
         }
-        else
+        else if (lane1 > 0)
         {
             Instantiate(noteObject, new Vector3(xPosition1, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
         }
+
 
         if (length2 > 0)
         {
@@ -235,7 +250,7 @@ public class GameManager : MonoBehaviour {
             GameObject tailNote = holdNote.transform.Find("Tail").gameObject;
             holdNote.transform.Find("Tail").localPosition = new Vector3(tailNote.transform.localPosition.x, tailNote.transform.localPosition.y, length2);
         }
-        else
+        else if (lane2 > 0)
         {
             Instantiate(noteObject, new Vector3(xPosition2, noteObject.transform.localPosition.y, Constants.spawnZ), noteObject.rotation);
         }

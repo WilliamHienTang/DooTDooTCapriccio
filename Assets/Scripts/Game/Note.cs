@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Note : MonoBehaviour {
 
-    GameObject gameManager;
     Rigidbody RB;
     string scoreType = null;
     float noteSpeed;
     Vector3 initPosition;
     Vector3 activatorPosition;
+    Vector3 followThroughPosition;
     float distance;
 
     float songTimer;
@@ -18,12 +18,12 @@ public class Note : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
         RB = GetComponent<Rigidbody>();
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         initPosition = transform.position;
-        activatorPosition = new Vector3(initPosition.x, initPosition.y, Constants.activatorZ);
-        distance = initPosition.z - Constants.activatorZ;
+        //activatorPosition = new Vector3(initPosition.x, initPosition.y, Constants.activatorZ);
+        followThroughPosition = new Vector3(initPosition.x, initPosition.y, Constants.followThroughZ);
+        distance = initPosition.z - Constants.followThroughZ;
         dspStart = (float)AudioSettings.dspTime;
     }
 
@@ -32,13 +32,12 @@ public class Note : MonoBehaviour {
     {        
         songTimer = (float)(AudioSettings.dspTime - dspStart);
 
-        if ((noteSpeed * songTimer / distance) >= 1)
+        /*if ((noteSpeed * songTimer / distance) >= 1)
         {
-            RB.velocity = new Vector3(0, 0, -noteSpeed);
-            enabled = false;
-        }
+            
+        }*/
 
-        transform.position = Vector3.Lerp(initPosition, activatorPosition, (noteSpeed * songTimer / distance));   
+        transform.position = Vector3.Lerp(initPosition, followThroughPosition, (noteSpeed * songTimer / distance));   
     }
 
     public void SetScoreType(string type)
