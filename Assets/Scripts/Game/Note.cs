@@ -29,7 +29,7 @@ public class Note : MonoBehaviour {
     void Update()
     {        
         songTimer = (float)(AudioSettings.dspTime - dspStart);
-        transform.position = Vector3.Lerp(initPosition, followThroughPosition, (noteSpeed * songTimer / distance));   
+        transform.position = Vector3.Lerp(initPosition, followThroughPosition, (noteSpeed * songTimer / distance));
     }
 
     public void SetScoreType(string type)
