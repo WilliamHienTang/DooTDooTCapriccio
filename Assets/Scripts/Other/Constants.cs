@@ -69,6 +69,8 @@ public class Constants : MonoBehaviour {
     public const string scoreType = "ScoreType";
 
     // Game variables
+    public const int scoreDigits = 7;
+
     public const float activatorZ = 1.0f;
     public const float spawnZ = 20.0f;
     public const float followThroughZ = -20.0f;

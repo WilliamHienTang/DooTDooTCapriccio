@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 250136520}
   - component: {fileID: 250136524}
   - component: {fileID: 250136526}
-  - component: {fileID: 250136525}
   m_Layer: 5
   m_Name: TitleScreenCanvas
   m_TagString: Untagged
@@ -222,33 +221,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tapText: {fileID: 857540508}
---- !u!114 &250136525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 250136519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77dd601b1f406684caf6ecc2e7831dd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animatedImages:
-  - {fileID: 21300000, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300002, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300004, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300006, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300008, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300010, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300012, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300014, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300016, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300018, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300020, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300022, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300024, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  - {fileID: 21300026, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
-  animateImageObj: {fileID: 1720164441}
 --- !u!114 &250136526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,7 +1016,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8fb65ec9a102d0343b798f54a9026c18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ec8cca88ed541d44b355b92f4ad4f30, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
