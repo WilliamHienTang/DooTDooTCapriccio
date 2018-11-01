@@ -37,6 +37,8 @@ public class TitleScreen : MonoBehaviour {
     // Start game after n text blinks
     IEnumerator BlinkText(int n)
     {
+        tapText.GetComponent<Animator>().enabled = false;
+
         BlinkAudio();
         for (int i = 0; i < n; i++)
         {
