@@ -116,10 +116,10 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: bad
-    clip: {fileID: 8300000, guid: f7839f945b2da234883de82ad51ea36d, type: 3}
+    clip: {fileID: 8300000, guid: 9682cf7cf5bdd334ba4c2ec5334ad57a, type: 3}
     group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
-    volume: 0.5
+    volume: 1
     pitch: 1
     source: {fileID: 0}
   - name: soundscape_preview

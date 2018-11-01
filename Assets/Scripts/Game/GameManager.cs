@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour {
     public Transform noteObject;
     public Transform holdNoteObject;
 
-    string selectedSong;
+    string song;
+    string difficulty;
     float speedOffset;
     float noteSpeed;
     
@@ -41,12 +42,12 @@ public class GameManager : MonoBehaviour {
         InitPlayerPrefs();
 
         // load the note chart from the json file
-        jsonPath = Application.dataPath + "/JsonNoteCharts/" + selectedSong + "_" + PlayerPrefs.GetString(Constants.difficulty) + ".json";
+        jsonPath = Application.dataPath + "/JsonNoteCharts/" + song + "_" + difficulty + ".json";
         json = File.ReadAllText(jsonPath);
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
         // play song
-        FindObjectOfType<AudioManager>().Play(selectedSong);
+        StartCoroutine(StartSong());
 
         // initialize time syncing variables
         speedOffset = (Constants.spawnZ - Constants.activatorZ) / noteSpeed;
@@ -60,7 +61,6 @@ public class GameManager : MonoBehaviour {
 
         if (chartIndex >= noteChart.Length)
         {
-            StartCoroutine(EndGame());
             enabled = false;
             return;
         }
@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour {
 
         if (chartIndex >= noteChart.Length)
         {
-            StartCoroutine(EndGame());
             enabled = false;
             return;
         }
@@ -270,9 +269,9 @@ public class GameManager : MonoBehaviour {
 
     public void ResetCombo()
     {
-        if (PlayerPrefs.GetInt(Constants.combo) > PlayerPrefs.GetInt(Constants.selectedSong + Constants.maxCombo))
+        if (PlayerPrefs.GetInt(Constants.combo) > PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo))
         {
-            PlayerPrefs.SetInt(Constants.selectedSong + Constants.maxCombo, PlayerPrefs.GetInt(Constants.combo));
+            PlayerPrefs.SetInt(song + difficulty + Constants.maxCombo, PlayerPrefs.GetInt(Constants.combo));
         }
 
         PlayerPrefs.SetInt(Constants.combo, 0);
@@ -286,23 +285,33 @@ public class GameManager : MonoBehaviour {
     void InitPlayerPrefs()
     {
         // initialize player prefs
+        noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
+        song = PlayerPrefs.GetString(Constants.selectedSong);
+        difficulty = PlayerPrefs.GetString(Constants.difficulty);
+
         PlayerPrefs.SetInt(Constants.score, 0);
         PlayerPrefs.SetInt(Constants.combo, 0);
-        PlayerPrefs.SetInt(Constants.selectedSong + Constants.maxCombo, 0);
+        PlayerPrefs.SetInt(song + difficulty + Constants.maxCombo, 0);
         PlayerPrefs.SetInt(Constants.perfects, 0);
         PlayerPrefs.SetInt(Constants.greats, 0);
         PlayerPrefs.SetInt(Constants.goods, 0);
         PlayerPrefs.SetInt(Constants.bads, 0);
         PlayerPrefs.SetInt(Constants.misses, 0);
         PlayerPrefs.SetInt(Constants.notesHit, 0);
-        noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
-        selectedSong = PlayerPrefs.GetString(Constants.selectedSong);
+    }
+
+
+    IEnumerator StartSong()
+    {
+        FindObjectOfType<AudioManager>().Play(song);
+        yield return new WaitForSeconds(FindObjectOfType<AudioManager>().GetClipLength(song));
+        StartCoroutine(EndGame());
     }
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(10.0f);
-        FindObjectOfType<AudioManager>().Stop(selectedSong);
+        yield return new WaitForSeconds(Constants.songDelay);
+        FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);
     }
 }

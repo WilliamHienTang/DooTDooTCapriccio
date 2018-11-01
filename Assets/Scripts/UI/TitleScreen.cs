@@ -14,12 +14,24 @@ public class TitleScreen : MonoBehaviour {
 
     IEnumerator Start()
     {
+        //DefaultSettings();
         enabled = false;
         FindObjectOfType<AudioManager>().Play(Constants.vivaceBGM);
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
         touches = 0;
         enabled = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        touches = Input.touchCount;
+        if ((touches > 0 || Input.GetMouseButtonDown(0)) && enableTouch)
+        {
+            enableTouch = false;
+            StartCoroutine(BlinkText(8));
+        }
     }
 
     // Start game after n text blinks
@@ -52,19 +64,16 @@ public class TitleScreen : MonoBehaviour {
         }
     }
 
+    void DefaultSettings()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat(Constants.noteSpeed, 7.5f);
+        PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
+    }
+
     void StartGame()
     {
         StopMusic();
         SceneManager.LoadScene(Constants.mainMenu);
     }
-
-    // Update is called once per frame
-    void Update () {
-        touches = Input.touchCount;
-        if ((touches > 0 || Input.GetMouseButtonDown(0)) && enableTouch)
-        {
-            enableTouch = false;
-            StartCoroutine(BlinkText(8));
-        }
-	}
 }

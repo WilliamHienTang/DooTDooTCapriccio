@@ -7,6 +7,7 @@ using TMPro;
 public class ScoreScreen : MonoBehaviour {
 
     public TextMeshProUGUI songName;
+    public TextMeshProUGUI difficultyText;
     public TextMeshProUGUI score;
     public TextMeshProUGUI highScore;
     public TextMeshProUGUI perfects;
@@ -17,10 +18,13 @@ public class ScoreScreen : MonoBehaviour {
     public TextMeshProUGUI notesHit;
     public TextMeshProUGUI maxCombo;
 
+    string song;
+    string difficulty;
+
     // Use this for initialization
     IEnumerator Start()
     {
-        SetPlayerPrefs();
+        InitPlayerPrefs();
 
         // play bgm and fade
         FindObjectOfType<AudioManager>().Play(Constants.kaiheitaiBGM);
@@ -60,29 +64,33 @@ public class ScoreScreen : MonoBehaviour {
         }
     }
 
-    void SetPlayerPrefs()
+    void InitPlayerPrefs()
     {
-        if (PlayerPrefs.GetInt(Constants.score) > PlayerPrefs.GetInt(Constants.selectedSong + Constants.highScore))
+        song = PlayerPrefs.GetString(Constants.selectedSong);
+        difficulty = PlayerPrefs.GetString(Constants.difficulty);
+
+        if (PlayerPrefs.GetInt(Constants.score) > PlayerPrefs.GetInt(song + difficulty + Constants.highScore))
         {
-            PlayerPrefs.SetInt(Constants.selectedSong + Constants.highScore, PlayerPrefs.GetInt(Constants.score));
+            PlayerPrefs.SetInt(song + difficulty + Constants.highScore, PlayerPrefs.GetInt(Constants.score));
         }
 
-        if (PlayerPrefs.GetInt(Constants.combo) > PlayerPrefs.GetInt(Constants.selectedSong + Constants.maxCombo))
+        if (PlayerPrefs.GetInt(Constants.combo) > PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo))
         {
-            PlayerPrefs.SetInt(Constants.selectedSong + Constants.maxCombo, PlayerPrefs.GetInt(Constants.combo));
+            PlayerPrefs.SetInt(song + difficulty + Constants.maxCombo, PlayerPrefs.GetInt(Constants.combo));
         }
 
         int noteCount = PlayerPrefs.GetInt(Constants.perfects) + PlayerPrefs.GetInt(Constants.greats) + PlayerPrefs.GetInt(Constants.goods) + PlayerPrefs.GetInt(Constants.bads) + PlayerPrefs.GetInt(Constants.misses);
 
         songName.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
+        difficultyText.text = difficulty.ToUpper();
         score.text = PlayerPrefs.GetInt(Constants.score).ToString();
-        highScore.text = PlayerPrefs.GetInt(Constants.selectedSong + Constants.highScore).ToString();
+        highScore.text = PlayerPrefs.GetInt(song + difficulty + Constants.highScore).ToString();
         perfects.text = PlayerPrefs.GetInt(Constants.perfects).ToString();
         greats.text = PlayerPrefs.GetInt(Constants.greats).ToString();
         goods.text = PlayerPrefs.GetInt(Constants.goods).ToString();
         bads.text = PlayerPrefs.GetInt(Constants.bads).ToString();
         misses.text = PlayerPrefs.GetInt(Constants.misses).ToString();
         notesHit.text = PlayerPrefs.GetInt(Constants.notesHit).ToString() + "/" + noteCount.ToString();
-        maxCombo.text = PlayerPrefs.GetInt(Constants.selectedSong + Constants.maxCombo).ToString();
+        maxCombo.text = PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo).ToString();
     }
 }

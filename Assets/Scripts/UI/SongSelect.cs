@@ -24,6 +24,7 @@ public class SongSelect : MonoBehaviour {
         hardColor = hardButton.GetComponent<Image>().color;
         expertColor = expertButton.GetComponent<Image>().color;
         SetDifficultyButton();
+
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }
