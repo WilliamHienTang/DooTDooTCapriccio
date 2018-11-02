@@ -7,12 +7,61 @@ using TMPro;
 
 public class OptionsMenu : MonoBehaviour {
 
+    public Button GameplaySettingsTab;
+    public Button GameSoundSettingsTab;
+    public Button SystemSettingsTab;
     public AudioMixer audioMixer;
     public Slider SongSlider;
     public Slider GameSFXSlider;
     public Slider BGMSlider;
     public Slider SFXSlider;
     public TextMeshProUGUI noteSpeed;
+
+    // Use this for initialization
+    void Start()
+    {
+        SetTab(1);
+        noteSpeed.text = PlayerPrefs.GetFloat(Constants.noteSpeed).ToString();
+        SongSlider.value = PlayerPrefs.GetFloat(Constants.songVolume, SongSlider.value);
+        GameSFXSlider.value = PlayerPrefs.GetFloat(Constants.gameSFXVolume, GameSFXSlider.value);
+        BGMSlider.value = PlayerPrefs.GetFloat(Constants.BGMVolume, BGMSlider.value);
+        SFXSlider.value = PlayerPrefs.GetFloat(Constants.SFXVolume, SFXSlider.value);
+        PlayerPrefs.Save();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void SetTab(int tabIndex)
+    {
+        Color color1 = GameplaySettingsTab.GetComponent<Image>().color;
+        Color color2 = GameSoundSettingsTab.GetComponent<Image>().color;
+        Color color3 = SystemSettingsTab.GetComponent<Image>().color;
+
+        switch (tabIndex)
+        {
+            case 1:
+                GameplaySettingsTab.GetComponent<Image>().color = new Color(color1.r, color1.g, color1.b, 1f);
+                GameSoundSettingsTab.GetComponent<Image>().color = new Color(color2.r, color2.g, color2.b, 0.5f);
+                SystemSettingsTab.GetComponent<Image>().color = new Color(color3.r, color3.g, color3.b, 0.5f);
+                break;
+            case 2:
+                GameplaySettingsTab.GetComponent<Image>().color = new Color(color1.r, color1.g, color1.b, 0.5f);
+                GameSoundSettingsTab.GetComponent<Image>().color = new Color(color2.r, color2.g, color2.b, 1f);
+                SystemSettingsTab.GetComponent<Image>().color = new Color(color3.r, color3.g, color3.b, 0.5f);
+                break;
+            case 3:
+                GameplaySettingsTab.GetComponent<Image>().color = new Color(color1.r, color1.g, color1.b, 0.5f);
+                GameSoundSettingsTab.GetComponent<Image>().color = new Color(color2.r, color2.g, color2.b, 0.5f);
+                SystemSettingsTab.GetComponent<Image>().color = new Color(color3.r, color3.g, color3.b, 1f);
+                break;
+            default:
+                break;
+        }
+    }
 
     public void SetSongVolume(float volume)
     {
@@ -72,19 +121,4 @@ public class OptionsMenu : MonoBehaviour {
         number = Mathf.Round(number);
         return number / 10;
     }
-
-    // Use this for initialization
-    void Start () {
-        noteSpeed.text = PlayerPrefs.GetFloat(Constants.noteSpeed).ToString();
-        SongSlider.value = PlayerPrefs.GetFloat(Constants.songVolume, SongSlider.value);
-        GameSFXSlider.value = PlayerPrefs.GetFloat(Constants.gameSFXVolume, GameSFXSlider.value);
-        BGMSlider.value = PlayerPrefs.GetFloat(Constants.BGMVolume, BGMSlider.value);
-        SFXSlider.value = PlayerPrefs.GetFloat(Constants.SFXVolume, SFXSlider.value);
-        PlayerPrefs.Save();
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Imports\_MK\MKGlowFree\Editor\MKGlowFreeEditor.cs" />
      <Compile Include="Assets\Imports\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+     <Compile Include="Assets\Imports\muip\Editor\ModernUI.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Editor\CustomHandles.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Editor\MenuItems.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Editor\ShapeEditor.cs" />

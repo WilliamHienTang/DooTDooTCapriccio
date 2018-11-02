@@ -30,7 +30,7 @@ public class TitleScreen : MonoBehaviour {
         if ((touches > 0 || Input.GetMouseButtonDown(0)) && enableTouch)
         {
             enableTouch = false;
-            StartCoroutine(BlinkText(8));
+            StartCoroutine(BlinkText(6));
         }
     }
 
