@@ -94,7 +94,6 @@
      <Compile Include="Assets\Imports\Shapes2D\Scripts\PolyMap.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Scripts\Shape.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Scripts\Shapes2DPrefs.cs" />
-     <Compile Include="Assets\Imports\Simple UI\Samples\IconPreview.cs" />
      <Compile Include="Assets\Imports\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Imports\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\Imports\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -208,7 +207,6 @@
      <None Include="Assets\Imports\muip\Read Me.txt" />
      <None Include="Assets\Imports\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\Imports\DissolveEmissionShader\DissolveEmission.shader" />
-     <None Include="Assets\Imports\Simple UI\Fonts\OFL.txt" />
      <None Include="Assets\Imports\Ultimate HUD Skins\Shaders\UI Blur.shader" />
      <None Include="Assets\Imports\_MK\MKGlowFree\Shader\Variants_SelectiveMode\Particle\MK_Particle Multiply.shader" />
      <None Include="Assets\Imports\_MK\MKGlowFree\Shader\Variants_SelectiveMode\Cutout\MK_Cutout-DiffuseBumpSpec.shader" />

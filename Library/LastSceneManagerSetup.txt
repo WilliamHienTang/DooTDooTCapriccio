@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Imports/Field - Complete Main Menu (Lite)/Free Demo.unity
+- path: Assets/Scenes/TitleScreen.unity
   isLoaded: 1
   isActive: 1
