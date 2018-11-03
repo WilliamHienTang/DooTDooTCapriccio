@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public Image background;
-
     public void LoadSongScreen()
     {
         StopMusic();
@@ -43,16 +41,6 @@ public class MainMenu : MonoBehaviour {
         {
             FindObjectOfType<AudioManager>().Stop(currentMusic);
         }
-    }
-
-    public void BlurBackground()
-    {
-        background.color = new Color(0.2f, 0.2f, 0.2f, 1.0f);
-    }
-
-    public void SharpenBackground()
-    {
-        background.color = new Color(0.392f, 0.392f, 0.392f, 1.0f);
     }
 
 	// Use this for initialization

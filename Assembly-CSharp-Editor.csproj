@@ -59,6 +59,7 @@
      <Compile Include="Assets\Imports\Shapes2D\Editor\CustomHandles.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Editor\MenuItems.cs" />
      <Compile Include="Assets\Imports\Shapes2D\Editor\ShapeEditor.cs" />
+     <Compile Include="Assets\Imports\Ultimate HUD Skins\3rd Party Assets\Radial Menu Framework\Scripts\Editor\RFM_RadialMenu_Editor.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/William Tang/Documents/Doot Doot Cappricio/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
