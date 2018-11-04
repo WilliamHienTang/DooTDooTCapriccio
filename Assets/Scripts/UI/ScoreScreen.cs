@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -9,6 +10,7 @@ public class ScoreScreen : MonoBehaviour {
     public GameObject scoreCanvas;
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
+    public GameObject difficultyBar;
     public TextMeshProUGUI score;
     public TextMeshProUGUI highScore;
     public TextMeshProUGUI perfects;
@@ -85,6 +87,7 @@ public class ScoreScreen : MonoBehaviour {
 
         songName.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
         difficultyText.text = difficulty.ToUpper();
+        SetDifficultyColor();
         score.text = AddLeadingScoreZeros(PlayerPrefs.GetInt(Constants.score));
         highScore.text = AddLeadingScoreZeros(PlayerPrefs.GetInt(song + difficulty + Constants.highScore));
         perfects.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.perfects));
@@ -92,7 +95,7 @@ public class ScoreScreen : MonoBehaviour {
         goods.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.goods));
         bads.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.bads));
         misses.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.misses));
-        notesHit.text = PlayerPrefs.GetInt(Constants.notesHit).ToString() + "/" + AddLeadingComboZeros(noteCount);
+        notesHit.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.notesHit)) + "/" + AddLeadingComboZeros(noteCount);
         maxCombo.text = AddLeadingComboZeros(PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo));
     }
 
@@ -104,9 +107,10 @@ public class ScoreScreen : MonoBehaviour {
         int numZeros = Constants.scoreDigits - scoreString.Length;
         for (int i = 0; i < numZeros; i++)
         {
-            zeros += "0";
+            zeros += "<color=#808080>0</color>";
         }
-        return zeros + scoreString;
+        scoreString = zeros + scoreString;
+        return scoreString;
     }
 
     string AddLeadingComboZeros(int combo)
@@ -117,8 +121,30 @@ public class ScoreScreen : MonoBehaviour {
         int numZeros = Constants.comboDigits - comboString.Length;
         for (int i = 0; i < numZeros; i++)
         {
-            zeros += "0";
+            zeros += "<color=#808080>0</color>";
         }
-        return zeros + comboString;
+        comboString = zeros + comboString;
+        return comboString;
+    }
+
+    void SetDifficultyColor()
+    {
+        switch (difficulty)
+        {
+            case Constants.easy:
+                difficultyBar.GetComponent<Image>().color = Constants.easyColor;
+                break;
+            case Constants.medium:
+                difficultyBar.GetComponent<Image>().color = Constants.mediumColor;
+                break;
+            case Constants.hard:
+                difficultyBar.GetComponent<Image>().color = Constants.hardColor;
+                break;
+            case Constants.expert:
+                difficultyBar.GetComponent<Image>().color = Constants.expertColor;
+                break;
+            default:
+                break;
+        }
     }
 }

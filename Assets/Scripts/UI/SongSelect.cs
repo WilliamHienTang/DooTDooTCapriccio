@@ -11,18 +11,9 @@ public class SongSelect : MonoBehaviour {
     public Button hardButton;
     public Button expertButton;
 
-    Color easyColor;
-    Color mediumColor;
-    Color hardColor;
-    Color expertColor;
-
     // Use this for initialization
     IEnumerator Start()
     {
-        easyColor = easyButton.GetComponent<Image>().color;
-        mediumColor = mediumButton.GetComponent<Image>().color;
-        hardColor = hardButton.GetComponent<Image>().color;
-        expertColor = expertButton.GetComponent<Image>().color;
         SetDifficultyButton();
 
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
@@ -87,7 +78,7 @@ public class SongSelect : MonoBehaviour {
         switch (PlayerPrefs.GetString(Constants.difficulty))
         {
             case Constants.easy:
-                easyButton.GetComponent<Image>().color = easyColor;
+                easyButton.GetComponent<Image>().color = Constants.easyColor;
                 mediumButton.GetComponent<Image>().color = grey;
                 hardButton.GetComponent<Image>().color = grey;
                 expertButton.GetComponent<Image>().color = grey;
@@ -95,7 +86,7 @@ public class SongSelect : MonoBehaviour {
 
             case Constants.medium:
                 easyButton.GetComponent<Image>().color = grey;
-                mediumButton.GetComponent<Image>().color = mediumColor;
+                mediumButton.GetComponent<Image>().color = Constants.mediumColor;
                 hardButton.GetComponent<Image>().color = grey;
                 expertButton.GetComponent<Image>().color = grey;
                 break;
@@ -103,7 +94,7 @@ public class SongSelect : MonoBehaviour {
             case Constants.hard:
                 easyButton.GetComponent<Image>().color = grey;
                 mediumButton.GetComponent<Image>().color = grey;
-                hardButton.GetComponent<Image>().color = hardColor;
+                hardButton.GetComponent<Image>().color = Constants.hardColor;
                 expertButton.GetComponent<Image>().color = grey;
                 break;
 
@@ -111,7 +102,7 @@ public class SongSelect : MonoBehaviour {
                 easyButton.GetComponent<Image>().color = grey;
                 mediumButton.GetComponent<Image>().color = grey;
                 hardButton.GetComponent<Image>().color = grey;
-                expertButton.GetComponent<Image>().color = expertColor;
+                expertButton.GetComponent<Image>().color = Constants.expertColor;
                 break;
             default:
                 break;

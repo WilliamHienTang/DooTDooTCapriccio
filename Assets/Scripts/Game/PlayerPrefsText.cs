@@ -27,7 +27,7 @@ public class PlayerPrefsText : MonoBehaviour {
         int numZeros = Constants.scoreDigits - scoreString.Length;
         for (int i = 0; i < numZeros; i++)
         {
-            zeros += "0";
+            zeros += "<color=#808080>0</color>";
         }
         return zeros + scoreString;
     }
