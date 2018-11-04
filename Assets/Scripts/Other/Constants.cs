@@ -70,6 +70,7 @@ public class Constants : MonoBehaviour {
 
     // Game variables
     public const int scoreDigits = 7;
+    public const int comboDigits = 4;
 
     public const float activatorZ = 1.0f;
     public const float spawnZ = 20.0f;

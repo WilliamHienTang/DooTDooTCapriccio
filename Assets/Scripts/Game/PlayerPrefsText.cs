@@ -12,11 +12,16 @@ public class PlayerPrefsText : MonoBehaviour {
     void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-        string scoreString = PlayerPrefs.GetInt(Constants.score).ToString();
-        string comboString = PlayerPrefs.GetInt(Constants.combo).ToString();
+        score.text = AddLeadingScoreZeros(PlayerPrefs.GetInt(Constants.score));
+        combo.text = PlayerPrefs.GetInt(Constants.combo).ToString();
+    }
+
+    string AddLeadingScoreZeros(int score)
+    {
+        string scoreString = score.ToString();
         string zeros = "";
 
         int numZeros = Constants.scoreDigits - scoreString.Length;
@@ -24,8 +29,6 @@ public class PlayerPrefsText : MonoBehaviour {
         {
             zeros += "0";
         }
-        score.text = zeros + scoreString;
-
-        combo.text = comboString;
+        return zeros + scoreString;
     }
 }

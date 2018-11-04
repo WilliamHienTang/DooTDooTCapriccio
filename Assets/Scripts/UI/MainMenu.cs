@@ -6,6 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    // Use this for initialization
+    IEnumerator Start()
+    {
+        FindObjectOfType<AudioManager>().Play(Constants.kimiBGM);
+        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
+        yield return new WaitForSeconds(fadeTime);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     public void LoadSongScreen()
     {
         StopMusic();
@@ -42,16 +56,4 @@ public class MainMenu : MonoBehaviour {
             FindObjectOfType<AudioManager>().Stop(currentMusic);
         }
     }
-
-	// Use this for initialization
-	IEnumerator Start () {
-        FindObjectOfType<AudioManager>().Play(Constants.kimiBGM);
-        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
-        yield return new WaitForSeconds(fadeTime);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
