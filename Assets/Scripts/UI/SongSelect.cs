@@ -11,7 +11,7 @@ public class SongSelect : MonoBehaviour {
     // Use this for initialization
     IEnumerator Start()
     {
-        difficultyPanel.GetComponent<AnimatePanel>().PlayAnimator();
+        InitDifficultyPanel();
 
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
@@ -69,6 +69,30 @@ public class SongSelect : MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    void InitDifficultyPanel()
+    {
+        string difficulty = PlayerPrefs.GetString(Constants.difficulty);
+
+        switch (difficulty)
+        {
+            case Constants.easy:
+                difficultyPanel.GetComponent<PanelHandler>().PanelAnim(0);
+                break;
+            case Constants.normal:
+                difficultyPanel.GetComponent<PanelHandler>().PanelAnim(1);
+                break;
+            case Constants.hard:
+                difficultyPanel.GetComponent<PanelHandler>().PanelAnim(2);
+                break;
+            case Constants.expert:
+                difficultyPanel.GetComponent<PanelHandler>().PanelAnim(3);
+                break;
+            default:
+                break;
+        }
+        difficultyPanel.GetComponent<AnimatePanel>().PlayAnimator();
     }
 
     void StopMusic()

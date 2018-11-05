@@ -27,7 +27,7 @@ public class PanelHandler : MonoBehaviour {
 
     [Header("SETTINGS")]
     public int currentPanelIndex = 0;
-    private int currentButtonlIndex = 0;
+    public int currentButtonIndex = 0;
 
     private Animator currentPanelAnimator;
     private Animator nextPanelAnimator;
@@ -37,7 +37,7 @@ public class PanelHandler : MonoBehaviour {
 
     void Start ()
     {
-        currentButton = buttons[currentButtonlIndex];
+        currentButton = buttons[currentButtonIndex];
         currentButtonAnimator = currentButton.GetComponent<Animator>();
         currentButtonAnimator.Play(buttonFadeIn);
     }
@@ -57,10 +57,10 @@ public class PanelHandler : MonoBehaviour {
             currentPanelAnimator.Play(panelFadeOut);
             nextPanelAnimator.Play(panelFadeIn);
 
-            currentButton = buttons[currentButtonlIndex];
+            currentButton = buttons[currentButtonIndex];
 
-            currentButtonlIndex = newPanel;
-            nextButton = buttons[currentButtonlIndex];
+            currentButtonIndex = newPanel;
+            nextButton = buttons[currentButtonIndex];
 
             currentButtonAnimator = currentButton.GetComponent<Animator>();
             nextButtonAnimator = nextButton.GetComponent<Animator>();
