@@ -37,11 +37,11 @@ public class Constants : MonoBehaviour {
 
     // Difficulties
     public const string easy = "easy";
-    public const string medium = "medium";
+    public const string normal = "normal";
     public const string hard = "hard";
     public const string expert = "expert";
-    public static Color easyColor = new Color(0, 100f/255f, 1);
-    public static Color mediumColor = new Color(0, 1, 0);
+    public static Color easyColor = new Color(0, 100f / 255f, 1);
+    public static Color normalColor = new Color(0, 200f / 255f, 0);
     public static Color hardColor = new Color(1, 150f / 255f, 0);
     public static Color expertColor = new Color(1, 0, 0);
 

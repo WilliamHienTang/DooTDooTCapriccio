@@ -6,15 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SongSelect : MonoBehaviour {
 
-    public Button easyButton;
-    public Button mediumButton;
-    public Button hardButton;
-    public Button expertButton;
+    public GameObject difficultyPanel;
 
     // Use this for initialization
     IEnumerator Start()
     {
-        SetDifficultyButton();
+        difficultyPanel.GetComponent<AnimatePanel>().PlayAnimator();
 
         float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
@@ -48,61 +45,26 @@ public class SongSelect : MonoBehaviour {
         FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
     }
 
+    public void ButtonAudio3()
+    {
+        FindObjectOfType<AudioManager>().Play(Constants.button3SFX);
+    }
+
     public void SetDifficulty(int difficulty)
     {
         switch (difficulty)
         {
             case 1:
-                PlayerPrefs.SetString(Constants.difficulty, "easy");
+                PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
                 break;
             case 2:
-                PlayerPrefs.SetString(Constants.difficulty, "medium");
+                PlayerPrefs.SetString(Constants.difficulty, Constants.normal);
                 break;
             case 3:
-                PlayerPrefs.SetString(Constants.difficulty, "hard");
+                PlayerPrefs.SetString(Constants.difficulty, Constants.hard);
                 break;
             case 4:
-                PlayerPrefs.SetString(Constants.difficulty, "expert");
-                break;
-            default:
-                break;
-        }
-
-        SetDifficultyButton();
-    }
-
-    void SetDifficultyButton()
-    {
-        Color grey = Color.grey;
-
-        switch (PlayerPrefs.GetString(Constants.difficulty))
-        {
-            case Constants.easy:
-                easyButton.GetComponent<Image>().color = Constants.easyColor;
-                mediumButton.GetComponent<Image>().color = grey;
-                hardButton.GetComponent<Image>().color = grey;
-                expertButton.GetComponent<Image>().color = grey;
-                break;
-
-            case Constants.medium:
-                easyButton.GetComponent<Image>().color = grey;
-                mediumButton.GetComponent<Image>().color = Constants.mediumColor;
-                hardButton.GetComponent<Image>().color = grey;
-                expertButton.GetComponent<Image>().color = grey;
-                break;
-
-            case Constants.hard:
-                easyButton.GetComponent<Image>().color = grey;
-                mediumButton.GetComponent<Image>().color = grey;
-                hardButton.GetComponent<Image>().color = Constants.hardColor;
-                expertButton.GetComponent<Image>().color = grey;
-                break;
-
-            case Constants.expert:
-                easyButton.GetComponent<Image>().color = grey;
-                mediumButton.GetComponent<Image>().color = grey;
-                hardButton.GetComponent<Image>().color = grey;
-                expertButton.GetComponent<Image>().color = Constants.expertColor;
+                PlayerPrefs.SetString(Constants.difficulty, Constants.expert);
                 break;
             default:
                 break;

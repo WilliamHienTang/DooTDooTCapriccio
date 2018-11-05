@@ -55,7 +55,12 @@ public class ScoreScreen : MonoBehaviour {
 
     public void ButtonAudio2()
     {
-        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
+        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
+    }
+
+    public void ButtonAudio3()
+    {
+        FindObjectOfType<AudioManager>().Play(Constants.button3SFX);
     }
 
     void StopAudio()
@@ -129,13 +134,14 @@ public class ScoreScreen : MonoBehaviour {
 
     void SetDifficultyColor()
     {
+        Debug.Log(difficulty);
         switch (difficulty)
         {
             case Constants.easy:
                 difficultyBar.GetComponent<Image>().color = Constants.easyColor;
                 break;
-            case Constants.medium:
-                difficultyBar.GetComponent<Image>().color = Constants.mediumColor;
+            case Constants.normal:
+                difficultyBar.GetComponent<Image>().color = Constants.normalColor;
                 break;
             case Constants.hard:
                 difficultyBar.GetComponent<Image>().color = Constants.hardColor;
