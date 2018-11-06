@@ -207,6 +207,7 @@ public class ListBox : MonoBehaviour
 		transform.localPosition = new Vector3(
 			_boxMaxPos.x * (Mathf.Cos(transform.localPosition.y / _upperBoundPos.y * Mathf.PI / 2.0f)),	transform.localPosition.y, transform.localPosition.z);
 		updateSize(_upperBoundPos.y, transform.localPosition.y);
+        updateColor();
 	}
 
 	/* Calculate the y position accroding to the x position.
@@ -217,6 +218,7 @@ public class ListBox : MonoBehaviour
 			transform.localPosition.x,
 			_boxMaxPos.y * (Mathf.Cos(transform.localPosition.x / _upperBoundPos.x * Mathf.PI / 2.0f)),	transform.localPosition.z);
 		updateSize(_upperBoundPos.x, transform.localPosition.x);
+        updateColor();
 	}
 
 	/* Check if the ListBox is beyond the upper or lower bound or not.
@@ -272,7 +274,7 @@ public class ListBox : MonoBehaviour
 
 	/* Scale the size of listBox accroding to the position.
 	 */
-	void updateSize(float smallest_at, float target_value)
+	public void updateSize(float smallest_at, float target_value)
 	{
         if (!center)
         {
@@ -298,6 +300,18 @@ public class ListBox : MonoBehaviour
     public void setCenterSize()
     {
         transform.localScale = _originalLocalScale * 1.5f;
+    }
+
+    public void updateColor()
+    {
+        if (center)
+        {
+            transform.GetComponent<Image>().color = Constants.gold;
+        }
+        else
+        {
+            transform.GetComponent<Image>().color = Color.grey;
+        }
     }
 
 	public int getCurrentContentID()

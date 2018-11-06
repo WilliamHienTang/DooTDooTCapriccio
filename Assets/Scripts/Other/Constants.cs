@@ -40,10 +40,14 @@ public class Constants : MonoBehaviour {
     public const string normal = "normal";
     public const string hard = "hard";
     public const string expert = "expert";
+
+    // Color
     public static Color easyColor = new Color(0, 100f / 255f, 1);
     public static Color normalColor = new Color(0, 200f / 255f, 0);
     public static Color hardColor = new Color(1, 150f / 255f, 0);
     public static Color expertColor = new Color(1, 0, 0);
+    public static Color blue = new Color(0, 150f/255f, 1);
+    public static Color gold = new Color(1, 200f/255f, 0);
 
     // PlayerPrefs
     public const string noteSpeed = "NoteSpeed";

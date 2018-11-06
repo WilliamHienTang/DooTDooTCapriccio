@@ -169,6 +169,7 @@ public class ListPositionCtrl : MonoBehaviour
         }
 
         centeredBox.setCenterSize();
+        centeredBox.updateColor();
         _storeInputPosition();
     }
 
