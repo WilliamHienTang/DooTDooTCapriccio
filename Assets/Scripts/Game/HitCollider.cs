@@ -225,7 +225,7 @@ public class HitCollider : MonoBehaviour {
     void MissNote()
     {
         clearScoreTypeText();
-        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
         gameManager.GetComponent<GameManager>().ResetCombo();
         gameManager.GetComponent<GameManager>().MissNote();
     }
@@ -252,28 +252,28 @@ public class HitCollider : MonoBehaviour {
         if (scoreType == Constants.perfectSFX)
         {
             clearScoreTypeText();
-            Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.perfectScore, Constants.perfects);
         }
         else if (scoreType == Constants.greatSFX)
         {
             clearScoreTypeText();
-            Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.greatScore, Constants.greats);
         }
         else if (scoreType == Constants.goodSFX)
         {
             clearScoreTypeText();
-            Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.goodScore, Constants.goods);
         }
         else if (scoreType == Constants.badSFX)
         {
             clearScoreTypeText();
-            Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+            Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.badScore, Constants.bads);
         }

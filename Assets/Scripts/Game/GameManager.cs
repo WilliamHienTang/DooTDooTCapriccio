@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour {
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
         // play song
-        StartCoroutine(StartSong());
+        FindObjectOfType<AudioManager>().Play(song);
 
         // initialize time syncing variables
         speedOffset = (Constants.spawnZ - Constants.activatorZ) / noteSpeed;
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour {
         if (chartIndex >= noteChart.Length)
         {
             enabled = false;
+            StartCoroutine(EndGame());
             return;
         }
 
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour {
         if (chartIndex >= noteChart.Length)
         {
             enabled = false;
+            StartCoroutine(EndGame());
             return;
         }
 
@@ -300,17 +302,9 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt(Constants.notesHit, 0);
     }
 
-
-    IEnumerator StartSong()
-    {
-        FindObjectOfType<AudioManager>().Play(song);
-        yield return new WaitForSeconds(FindObjectOfType<AudioManager>().GetClipLength(song));
-        StartCoroutine(EndGame());
-    }
-
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(Constants.songDelay);
+        yield return new WaitForSeconds(speedOffset + Constants.songDelay);
         FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);
     }

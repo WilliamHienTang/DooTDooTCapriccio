@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour {
 
+    public GameObject countdown1;
+    public GameObject countdown2;
+    public GameObject countdown3;
+
+    GameObject gameCanvas;
     bool isPaused = false;
-    public GameObject pauseMenuUI;
 
     // Use this for initialization
     void Start()
     {
-        
+        gameCanvas = GameObject.Find("GameCanvas");
     }
 
     // Update is called once per frame
@@ -20,27 +24,34 @@ public class Pause : MonoBehaviour {
 
     }
 
-    public void Resume()
+    public void ResumeGame()
     {
-        pauseMenuUI.SetActive(false);
+        StartCoroutine(CountdownResume());
+    }
+
+    public IEnumerator CountdownResume()
+    {
+        Instantiate(countdown3, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y + 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        yield return new WaitForSeconds(1);
+        Instantiate(countdown2, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y + 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        yield return new WaitForSeconds(1);
+        Instantiate(countdown1, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y + 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        yield return new WaitForSeconds(1);
+
         isPaused = false;
         AudioListener.pause = false;
-        Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString(Constants.selectedSong));
     }
 
     public void PauseGame()
     {
         AudioListener.pause = true;
-        Time.timeScale = 0f;
         FindObjectOfType<AudioManager>().Pause(PlayerPrefs.GetString(Constants.selectedSong));
-        pauseMenuUI.SetActive(true);
         isPaused = true;
     }
 
     public void LoadSongSelect()
     {
-        pauseMenuUI.SetActive(false);
         isPaused = false;
         AudioListener.pause = false;
         Time.timeScale = 1f;
