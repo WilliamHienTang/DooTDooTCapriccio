@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour {
     public GameObject countdown1;
     public GameObject countdown2;
     public GameObject countdown3;
+    public GameObject pauseButton;
 
     GameObject gameCanvas;
     bool isPaused = false;
@@ -22,6 +23,14 @@ public class Pause : MonoBehaviour {
     void Update()
     {
 
+    }
+
+    public void PauseGame()
+    {
+        AudioListener.pause = true;
+        FindObjectOfType<AudioManager>().Pause(PlayerPrefs.GetString(Constants.selectedSong));
+        isPaused = true;
+        pauseButton.SetActive(false);
     }
 
     public void ResumeGame()
@@ -41,13 +50,7 @@ public class Pause : MonoBehaviour {
         isPaused = false;
         AudioListener.pause = false;
         FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString(Constants.selectedSong));
-    }
-
-    public void PauseGame()
-    {
-        AudioListener.pause = true;
-        FindObjectOfType<AudioManager>().Pause(PlayerPrefs.GetString(Constants.selectedSong));
-        isPaused = true;
+        pauseButton.SetActive(true);
     }
 
     public void LoadSongSelect()

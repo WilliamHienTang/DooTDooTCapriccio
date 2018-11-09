@@ -3086,6 +3086,7 @@ MonoBehaviour:
   countdown1: {fileID: 1702987686404792, guid: fbf6979bf53285b48bfb36335a587a1f, type: 2}
   countdown2: {fileID: 1702987686404792, guid: b9500a793f9981d4fb96821cafdbe3f1, type: 2}
   countdown3: {fileID: 1702987686404792, guid: 9073a04b1bd8c3b47b9a36cee50f5bcd, type: 2}
+  pauseButton: {fileID: 1754404631}
 --- !u!1 &984561328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,7 +5508,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1754404636
@@ -6469,7 +6470,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 0
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2056496217

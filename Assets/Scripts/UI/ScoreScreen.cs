@@ -134,7 +134,6 @@ public class ScoreScreen : MonoBehaviour {
 
     void SetDifficultyColor()
     {
-        Debug.Log(difficulty);
         switch (difficulty)
         {
             case Constants.easy:
