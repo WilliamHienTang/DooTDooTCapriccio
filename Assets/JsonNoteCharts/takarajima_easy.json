@@ -23,7 +23,7 @@
     {
       "headHitTime": 7.79,
       "tailHitTime": 0,
-      "laneIndex": 5
+      "laneIndex": 4
     },
     {
       "headHitTime": 8.38,
@@ -726,7 +726,7 @@
       "laneIndex": 1
     },
     {
-      "headHitTime": 99.68,
+      "headHitTime": 99.56,
       "tailHitTime": 0,
       "laneIndex": 1
     },
