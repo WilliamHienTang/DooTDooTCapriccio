@@ -1313,7 +1313,7 @@
     {
       "headHitTime": 95.43,
       "tailHitTime": 0,
-      "laneIndex": 3
+      "laneIndex": 2
     },
     {
       "headHitTime": 95.43,
@@ -1454,6 +1454,11 @@
       "headHitTime": 102.51,
       "tailHitTime": 103.70,
       "laneIndex": 2
+    },
+    {
+      "headHitTime": 102.51,
+      "tailHitTime": 103.70,
+      "laneIndex": 4
     },
     {
       "headHitTime": 102.87,
