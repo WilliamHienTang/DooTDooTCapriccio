@@ -1246,6 +1246,11 @@
       "laneIndex": 1
     },
     {
+      "headHitTime": 55.53,
+      "tailHitTime": 0,
+      "laneIndex": 2
+    },
+    {
       "headHitTime": 55.85,
       "tailHitTime": 0,
       "laneIndex": 3
@@ -1306,12 +1311,12 @@
       "laneIndex": 1
     },
     {
-      "headHitTime": 57.91,
+      "headHitTime": 57.92,
       "tailHitTime": 58.40,
       "laneIndex": 1
     },
     {
-      "headHitTime": 57.91,
+      "headHitTime": 57.92,
       "tailHitTime": 58.40,
       "laneIndex": 3
     },
@@ -1564,11 +1569,6 @@
       "headHitTime": 69.41,
       "tailHitTime": 0,
       "laneIndex": 2
-    },
-    {
-      "headHitTime": 69.57,
-      "tailHitTime": 0,
-      "laneIndex": 1
     },
     {
       "headHitTime": 69.57,
