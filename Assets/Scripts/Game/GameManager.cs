@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public bool isTouchingDevice;
     public Transform noteObject;
     public Transform holdNoteObject;
+    public Transform doubleNoteObject;
 
     string song;
     string difficulty;
