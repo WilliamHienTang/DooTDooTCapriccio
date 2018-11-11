@@ -164,8 +164,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121373108933248}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.52, y: 0.01, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.51, y: 0.01, z: 1.5}
+  m_LocalScale: {x: 0.5, y: 0.45, z: 1}
   m_Children:
   - {fileID: 4874761573711270}
   - {fileID: 4528937144272224}
@@ -269,7 +269,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 0, g: 0.78431374, b: 1, a: 1}
+    _fillColor: {r: 0, g: 1, b: 1, a: 1}
     _fillColor2: {r: 0.78431374, g: 0, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -323,7 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b289db95db1c914b8997740770a6a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 0
 --- !u!114 &114448412465931782
 MonoBehaviour:
   m_ObjectHideFlags: 1
