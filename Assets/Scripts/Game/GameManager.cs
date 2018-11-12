@@ -351,6 +351,10 @@ public class GameManager : MonoBehaviour {
         GameObject note2 = doubleNote.transform.Find("Note2").gameObject;
         doubleNote.transform.Find("Note1").localPosition = new Vector3(xPosition1, note1.transform.localPosition.y, note1.transform.localPosition.z);
         doubleNote.transform.Find("Note2").localPosition = new Vector3(xPosition2, note2.transform.localPosition.y, note2.transform.localPosition.z);
+
+        note1.transform.parent = null;
+        note2.transform.parent = null;
+        Destroy(doubleNote);
     }
 
     void InstantiateDoubleTail(int lane1, int lane2)
@@ -407,6 +411,10 @@ public class GameManager : MonoBehaviour {
         GameObject tail2 = doubleTail.transform.Find("Tail2").gameObject;
         doubleTail.transform.Find("Tail1").localPosition = new Vector3(xPosition1, tail1.transform.localPosition.y, tail2.transform.localPosition.z);
         doubleTail.transform.Find("Tail2").localPosition = new Vector3(xPosition2, tail2.transform.localPosition.y, tail2.transform.localPosition.z);
+
+        tail1.transform.parent = null;
+        tail2.transform.parent = null;
+        Destroy(doubleTail);
     }
 
     void InstantiateDoubleHead(int lane1, int lane2, float length1, float length2)
@@ -471,6 +479,10 @@ public class GameManager : MonoBehaviour {
         GameObject holdLane2 = holdNote2.transform.Find("HoldLane").gameObject;
         holdNote2.transform.Find("HoldLane").localPosition = new Vector3(holdLane2.transform.localPosition.x, holdLane2.transform.localPosition.y, length2 / 2.0f);
         holdNote2.transform.Find("HoldLane").localScale = new Vector3(holdLane2.transform.localScale.x, holdLane2.transform.localScale.y, length2);
+
+        holdNote1.transform.parent = null;
+        holdNote2.transform.parent = null;
+        Destroy(doubleHead);
     }
 
     void InstantiateOneNoteOneTail(int lane1, int lane2, int tailLane)
@@ -522,20 +534,22 @@ public class GameManager : MonoBehaviour {
         }
 
         Transform oneNoteOneTail = Instantiate(oneNoteOneTailObject, new Vector3(oneNoteOneTailObject.transform.localPosition.x, oneNoteOneTailObject.transform.localPosition.y, Constants.spawnZ), oneNoteOneTailObject.rotation);
+        GameObject tail = oneNoteOneTail.transform.Find("Tail").gameObject;
+        GameObject note = oneNoteOneTail.transform.Find("Note").gameObject;
         if (tailLane == lane1)
         {
-            GameObject tail = oneNoteOneTail.transform.Find("Tail").gameObject;
-            GameObject note = oneNoteOneTail.transform.Find("Note").gameObject;
             oneNoteOneTail.transform.Find("Tail").localPosition = new Vector3(xPosition1, tail.transform.localPosition.y, tail.transform.localPosition.z);
             oneNoteOneTail.transform.Find("Note").localPosition = new Vector3(xPosition2, note.transform.localPosition.y, note.transform.localPosition.z);
         }
         else
         {
-            GameObject tail = oneNoteOneTail.transform.Find("Tail").gameObject;
-            GameObject note = oneNoteOneTail.transform.Find("Note").gameObject;
             oneNoteOneTail.transform.Find("Tail").localPosition = new Vector3(xPosition2, tail.transform.localPosition.y, tail.transform.localPosition.z);
             oneNoteOneTail.transform.Find("Note").localPosition = new Vector3(xPosition1, note.transform.localPosition.y, note.transform.localPosition.z);
         }
+
+        tail.transform.parent = null;
+        note.transform.parent = null;
+        Destroy(oneNoteOneTail);
     }
 
     void InstantiateOneNoteOneHead(int lane1, int lane2, int headLane, float length)
@@ -587,30 +601,26 @@ public class GameManager : MonoBehaviour {
         }
 
         Transform oneNoteOneHead = Instantiate(oneNoteOneHeadObject, new Vector3(oneNoteOneHeadObject.transform.localPosition.x, oneNoteOneHeadObject.transform.localPosition.y, Constants.spawnZ), oneNoteOneHeadObject.rotation);
+        GameObject note = oneNoteOneHead.transform.Find("Note").gameObject;
+        GameObject holdNote = oneNoteOneHead.transform.Find("HoldNote").gameObject;
+        GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         if (headLane == lane1)
         {
-            GameObject note = oneNoteOneHead.transform.Find("Note").gameObject;
             oneNoteOneHead.transform.Find("Note").localPosition = new Vector3(xPosition2, note.transform.localPosition.y, note.transform.localPosition.z);
-
-            GameObject holdNote = oneNoteOneHead.transform.Find("HoldNote").gameObject;
             oneNoteOneHead.transform.Find("HoldNote").localPosition = new Vector3(xPosition1, holdNote.transform.localPosition.y, holdNote.transform.localPosition.z);
-
-            GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
-            holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
-            holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
         }
         else
         {
-            GameObject note = oneNoteOneHead.transform.Find("Note").gameObject;
             oneNoteOneHead.transform.Find("Note").localPosition = new Vector3(xPosition1, note.transform.localPosition.y, note.transform.localPosition.z);
-
-            GameObject holdNote = oneNoteOneHead.transform.Find("HoldNote").gameObject;
             oneNoteOneHead.transform.Find("HoldNote").localPosition = new Vector3(xPosition2, holdNote.transform.localPosition.y, holdNote.transform.localPosition.z);
-
-            GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
-            holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
-            holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
         }
+
+        holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
+        holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
+
+        note.transform.parent = null;
+        holdNote.transform.parent = null;
+        Destroy(oneNoteOneHead);
     }
 
     void InstantiateOneHeadOneTail(int lane1, int lane2, int headLane, float length)
@@ -662,30 +672,26 @@ public class GameManager : MonoBehaviour {
         }
 
         Transform oneNoteOneTail = Instantiate(oneNoteOneTailObject, new Vector3(oneNoteOneTailObject.transform.localPosition.x, oneNoteOneTailObject.transform.localPosition.y, Constants.spawnZ), oneNoteOneTailObject.rotation);
+        GameObject tail = oneNoteOneTail.transform.Find("Tail").gameObject;
+        GameObject holdNote = oneNoteOneTail.transform.Find("HoldNote").gameObject;
+        GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
         if (headLane == lane1)
         {
-            GameObject tail = oneNoteOneTail.transform.Find("Tail").gameObject;
             oneNoteOneTail.transform.Find("Tail").localPosition = new Vector3(xPosition2, tail.transform.localPosition.y, tail.transform.localPosition.z);
-
-            GameObject holdNote = oneNoteOneTail.transform.Find("HoldNote").gameObject;
             oneNoteOneTail.transform.Find("HoldNote").localPosition = new Vector3(xPosition1, holdNote.transform.localPosition.y, holdNote.transform.localPosition.z);
-
-            GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
-            holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
-            holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
         }
         else
         {
-            GameObject tail = oneNoteOneTail.transform.Find("Tail").gameObject;
             oneNoteOneTail.transform.Find("Tail").localPosition = new Vector3(xPosition1, tail.transform.localPosition.y, tail.transform.localPosition.z);
-
-            GameObject holdNote = oneNoteOneTail.transform.Find("HoldNote").gameObject;
             oneNoteOneTail.transform.Find("HoldNote").localPosition = new Vector3(xPosition2, holdNote.transform.localPosition.y, holdNote.transform.localPosition.z);
-
-            GameObject holdLane = holdNote.transform.Find("HoldLane").gameObject;
-            holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
-            holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
         }
+
+        holdNote.transform.Find("HoldLane").localPosition = new Vector3(holdLane.transform.localPosition.x, holdLane.transform.localPosition.y, length / 2.0f);
+        holdNote.transform.Find("HoldLane").localScale = new Vector3(holdLane.transform.localScale.x, holdLane.transform.localScale.y, length);
+
+        tail.transform.parent = null;
+        holdNote.transform.parent = null;
+        Destroy(oneNoteOneTail);
     }
 
     public void IncreaseScore(int points, string scoreTypeCount)
