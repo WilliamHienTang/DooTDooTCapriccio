@@ -93,6 +93,11 @@ public class Constants : MonoBehaviour {
     public const float lane4X = 0.51f;
     public const float lane5X = 1.02f;
 
+    public const string perfect = "perfect";
+    public const string great = "great";
+    public const string good = "good";
+    public const string bad = "bad";
+
     public const int perfectScore = 1000;
     public const int greatScore = 750;
     public const int goodScore = 500;

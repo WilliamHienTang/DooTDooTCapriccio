@@ -8,7 +8,7 @@ public class BadCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType("bad");
+            other.gameObject.GetComponent<Note>().SetScoreType(Constants.bad);
         }
     }
 
@@ -19,14 +19,4 @@ public class BadCollider : MonoBehaviour {
             other.gameObject.GetComponent<Note>().SetScoreType(null);
         }
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

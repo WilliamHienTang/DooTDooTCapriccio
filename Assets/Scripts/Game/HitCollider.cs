@@ -22,7 +22,6 @@ public class HitCollider : MonoBehaviour {
     public GameObject goodText;
     public GameObject badText;
     public GameObject missText;
-    GameObject scoreTypeText;
 
     // Use this for initialization
     void Start()
@@ -249,28 +248,28 @@ public class HitCollider : MonoBehaviour {
             Instantiate(headTailParticle, transform.position, headTailParticle.transform.rotation);
         }
 
-        if (scoreType == Constants.perfectSFX)
+        if (scoreType == Constants.perfect)
         {
             ClearScoreTypeText();
             Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.perfectScore, Constants.perfects);
         }
-        else if (scoreType == Constants.greatSFX)
+        else if (scoreType == Constants.great)
         {
             ClearScoreTypeText();
             Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().IncreaseCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.greatScore, Constants.greats);
         }
-        else if (scoreType == Constants.goodSFX)
+        else if (scoreType == Constants.good)
         {
             ClearScoreTypeText();
             Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.goodScore, Constants.goods);
         }
-        else if (scoreType == Constants.badSFX)
+        else if (scoreType == Constants.bad)
         {
             ClearScoreTypeText();
             Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
