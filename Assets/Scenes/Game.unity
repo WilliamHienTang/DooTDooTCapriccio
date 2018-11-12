@@ -2076,7 +2076,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1561905955480466, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925a92cc111588442ac191735484354a, type: 2}
@@ -3116,20 +3116,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouchingDevice: 0
   noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
-  headNoteObject: {fileID: 0}
+  holdNoteObject: {fileID: 4788656985797828, guid: eb348f378cf7e594caec5cf7679c5e38,
+    type: 2}
   tailNoteObject: {fileID: 4020570833556650, guid: 1682cb2e304fa71469f45a37549c16c2,
     type: 2}
   doubleNoteObject: {fileID: 4183178135932062, guid: b8ea5e8d3fdd7454e8b5ce929d7de446,
     type: 2}
-  doubleHeadObject: {fileID: 4156614658465016, guid: 19df108dd4cf6034aa829269a75b4618,
+  doubleHoldObject: {fileID: 4156614658465016, guid: 19df108dd4cf6034aa829269a75b4618,
     type: 2}
   doubleTailObject: {fileID: 4900943778853544, guid: 3fd5d99b30332a84292310c8f7812baf,
     type: 2}
-  OneNoteOneTailObject: {fileID: 4655383284598546, guid: 93c3513a97539bf459958b6165a88527,
+  oneNoteOneTailObject: {fileID: 4655383284598546, guid: 93c3513a97539bf459958b6165a88527,
     type: 2}
-  OneNoteOneHeadObject: {fileID: 4153689188471008, guid: e8ce29e935909604c9505a5118289c1b,
+  oneNoteOneHoldObject: {fileID: 4153689188471008, guid: e8ce29e935909604c9505a5118289c1b,
     type: 2}
-  OneHeadOneTailObject: {fileID: 4426406528394686, guid: dd5405cd02fc6344493bb1b4847e079d,
+  oneHoldOneTailObject: {fileID: 4426406528394686, guid: dd5405cd02fc6344493bb1b4847e079d,
     type: 2}
 --- !u!4 &984561330
 Transform:

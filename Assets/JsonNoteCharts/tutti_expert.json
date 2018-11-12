@@ -6,9 +6,14 @@
       "laneIndex": 3
     },
     {
-      "headHitTime": 6.0,
+      "headHitTime": 5.0,
       "tailHitTime": 0,
       "laneIndex": 1
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 7.0,
+      "laneIndex": 3
     }
   ]
 }
