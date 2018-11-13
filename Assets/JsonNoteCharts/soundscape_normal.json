@@ -76,6 +76,16 @@
       "laneIndex": 4
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 10.53,
+      "laneIndex": 3
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 10.53,
+      "laneIndex": 4
+    },
+    {
       "headHitTime": 10.85,
       "tailHitTime": 0,
       "laneIndex": 2
@@ -107,6 +117,11 @@
     },
     {
       "headHitTime": 13.08,
+      "tailHitTime": 14.04,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 14.04,
       "laneIndex": 2
     },
@@ -147,6 +162,16 @@
     },
     {
       "headHitTime": 16.91,
+      "tailHitTime": 18.35,
+      "laneIndex": 5
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 18.35,
+      "laneIndex": 3
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 18.35,
       "laneIndex": 5
     },
@@ -192,6 +217,11 @@
     },
     {
       "headHitTime": 21.70,
+      "tailHitTime": 22.34,
+      "laneIndex": 5
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 22.34,
       "laneIndex": 5
     },
@@ -261,6 +291,11 @@
       "laneIndex": 3
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 28.72,
+      "laneIndex": 3
+    },
+    {
       "headHitTime": 29.36,
       "tailHitTime": 0,
       "laneIndex": 4
@@ -302,6 +337,16 @@
     },
     {
       "headHitTime": 32.23,
+      "tailHitTime": 33.19,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 33.19,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 33.19,
       "laneIndex": 4
     },
@@ -357,6 +402,11 @@
     },
     {
       "headHitTime": 36.70,
+      "tailHitTime": 37.02,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 37.02,
       "laneIndex": 4
     },
@@ -481,6 +531,16 @@
       "laneIndex": 3
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 44.04,
+      "laneIndex": 1
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 44.04,
+      "laneIndex": 3
+    },
+    {
       "headHitTime": 44.36,
       "tailHitTime": 0,
       "laneIndex": 1
@@ -556,12 +616,32 @@
       "laneIndex": 5
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 49.78,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 49.78,
+      "laneIndex": 5
+    },
+    {
       "headHitTime": 50.10,
       "tailHitTime": 51.70,
       "laneIndex": 2
     },
     {
       "headHitTime": 50.10,
+      "tailHitTime": 51.70,
+      "laneIndex": 3
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 51.70,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 51.70,
       "laneIndex": 3
     },
@@ -611,6 +691,11 @@
       "laneIndex": 1
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 56.17,
+      "laneIndex": 1
+    },
+    {
       "headHitTime": 56.80,
       "tailHitTime": 0,
       "laneIndex": 2
@@ -632,6 +717,11 @@
     },
     {
       "headHitTime": 57.92,
+      "tailHitTime": 58.40,
+      "laneIndex": 1
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 58.40,
       "laneIndex": 1
     },
@@ -703,20 +793,20 @@
     {
       "headHitTime": 63.19,
       "tailHitTime": 64.14,
-      "laneIndex": 4
+      "laneIndex": 5
     },
     {
-      "headHitTime": 63.19,
+      "headHitTime": 0,
       "tailHitTime": 64.14,
       "laneIndex": 5
     },
     {
       "headHitTime": 64.30,
       "tailHitTime": 64.78,
-      "laneIndex": 3
+      "laneIndex": 4
     },
     {
-      "headHitTime": 64.30,
+      "headHitTime": 0,
       "tailHitTime": 64.78,
       "laneIndex": 4
     },
@@ -732,6 +822,11 @@
     },
     {
       "headHitTime": 65.74,
+      "tailHitTime": 66.70,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 66.70,
       "laneIndex": 2
     },
@@ -826,7 +921,17 @@
       "laneIndex": 3
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 71.48,
+      "laneIndex": 3
+    },
+    {
       "headHitTime": 71.96,
+      "tailHitTime": 73.08,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 73.08,
       "laneIndex": 4
     },
@@ -966,6 +1071,16 @@
       "laneIndex": 5
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 79.94,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 79.94,
+      "laneIndex": 5
+    },
+    {
       "headHitTime": 80.42,
       "tailHitTime": 0,
       "laneIndex": 3
@@ -982,6 +1097,16 @@
     },
     {
       "headHitTime": 81.06,
+      "tailHitTime": 82.65,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 82.65,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 82.65,
       "laneIndex": 4
     },
@@ -1031,6 +1156,11 @@
       "laneIndex": 3
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 87.28,
+      "laneIndex": 3
+    },
+    {
       "headHitTime": 87.92,
       "tailHitTime": 0,
       "laneIndex": 5
@@ -1066,6 +1196,11 @@
       "laneIndex": 5
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 90.63,
+      "laneIndex": 5
+    },
+    {
       "headHitTime": 90.95,
       "tailHitTime": 91.27,
       "laneIndex": 2
@@ -1076,12 +1211,32 @@
       "laneIndex": 3
     },
     {
+      "headHitTime": 0,
+      "tailHitTime": 91.27,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 91.27,
+      "laneIndex": 3
+    },
+    {
       "headHitTime": 91.59,
       "tailHitTime": 92.87,
       "laneIndex": 1
     },
     {
       "headHitTime": 91.59,
+      "tailHitTime": 92.87,
+      "laneIndex": 2
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 92.87,
+      "laneIndex": 1
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 92.87,
       "laneIndex": 2
     },
@@ -1097,6 +1252,16 @@
     },
     {
       "headHitTime": 94.14,
+      "tailHitTime": 97.50,
+      "laneIndex": 4
+    },
+    {
+      "headHitTime": 0,
+      "tailHitTime": 97.50,
+      "laneIndex": 3
+    },
+    {
+      "headHitTime": 0,
       "tailHitTime": 97.50,
       "laneIndex": 4
     }
