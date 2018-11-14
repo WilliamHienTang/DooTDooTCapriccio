@@ -691,8 +691,8 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 0, g: 1, b: 0.19607843, a: 1}
-    _fillColor2: {r: 0, g: 0.39215687, b: 1, a: 1}
+    _fillColor: {r: 0, g: 1, b: 1, a: 1}
+    _fillColor2: {r: 0.78431374, g: 0, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
     _fillRotation: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 0, g: 1, b: 0.39215687, a: 1}
+    _fillColor: {r: 0, g: 0.78431374, b: 1, a: 1}
     _fillColor2: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 0, g: 1, b: 0.39215687, a: 1}
+    _fillColor: {r: 0, g: 0.78431374, b: 1, a: 1}
     _fillColor2: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -1305,8 +1305,8 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 0, g: 1, b: 0.19607843, a: 1}
-    _fillColor2: {r: 0, g: 0.39215687, b: 1, a: 1}
+    _fillColor: {r: 0, g: 1, b: 1, a: 1}
+    _fillColor2: {r: 0.78431374, g: 0, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
     _fillRotation: 0
