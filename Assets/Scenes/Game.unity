@@ -2076,7 +2076,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1561905955480466, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925a92cc111588442ac191735484354a, type: 2}
@@ -3115,6 +3115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTouchingDevice: 0
+  pauseButton: {fileID: 1754404631}
   noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
   holdNoteObject: {fileID: 4788656985797828, guid: eb348f378cf7e594caec5cf7679c5e38,
     type: 2}

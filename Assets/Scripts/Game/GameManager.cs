@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public bool isTouchingDevice;
+    public GameObject pauseButton;
+
     public Transform noteObject;
     public Transform holdNoteObject;
     public Transform tailNoteObject;
@@ -30,11 +32,11 @@ public class GameManager : MonoBehaviour {
     float songTimer;
     float dspStart;
 
-    Transform holdLaneInstance1;
-    Transform holdLaneInstance2;
-    Transform holdLaneInstance3;
-    Transform holdLaneInstance4;
-    Transform holdLaneInstance5;
+    Transform holdNoteInstance1;
+    Transform holdNoteInstance2;
+    Transform holdNoteInstance3;
+    Transform holdNoteInstance4;
+    Transform holdNoteInstance5;
 
     void Awake()
     {
@@ -264,23 +266,23 @@ public class GameManager : MonoBehaviour {
         }
 
         Transform tail = Instantiate(tailNoteObject, new Vector3(xPosition, tailNoteObject.localPosition.y, Constants.spawnZ), tailNoteObject.rotation);
-
+        
         switch (laneIndex)
         {
             case 1:
-                tail.parent = holdLaneInstance1;
+                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 2:
-                tail.parent = holdLaneInstance2;
+                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 3:
-                tail.parent = holdLaneInstance3;
+                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 4:
-                tail.parent = holdLaneInstance4;
+                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 5:
-                tail.parent = holdLaneInstance5;
+                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             default:
                 return;
@@ -319,19 +321,19 @@ public class GameManager : MonoBehaviour {
         switch (laneIndex)
         { 
             case 1:
-                holdLaneInstance1 = holdNote;
+                holdNoteInstance1 = holdNote;
                 break;
             case 2:
-                holdLaneInstance2 = holdNote;
+                holdNoteInstance2 = holdNote;
                 break;
             case 3:
-                holdLaneInstance3 = holdNote;
+                holdNoteInstance3 = holdNote;
                 break;
             case 4:
-                holdLaneInstance4 = holdNote;
+                holdNoteInstance4 = holdNote;
                 break;
             case 5:
-                holdLaneInstance5 = holdNote;
+                holdNoteInstance5 = holdNote;
                 break;
             default:
                 return;
@@ -392,11 +394,11 @@ public class GameManager : MonoBehaviour {
         note1.localPosition = new Vector3(xPosition1, note1.localPosition.y, note1.localPosition.z);
 
         Transform note2 = doubleNote.Find("Note2");
-        note2.localPosition = new Vector3(xPosition2, note2.localPosition.y, note2.localPosition.z);
+        note2.localPosition = new Vector3(xPosition2, note1.localPosition.y, note1.localPosition.z);
 
-        note1.parent = null;
-        note2.parent = null;
-        Destroy(doubleNote.gameObject);
+        Transform tether = doubleNote.Find("Tether");
+        tether.localPosition = new Vector3((xPosition2 + xPosition1) / 2.0f, tether.localPosition.y, note1.localPosition.z);
+        tether.localScale = new Vector3(Mathf.Abs(xPosition2 - xPosition1), tether.localScale.y, tether.localScale.z);
     }
 
     void InstantiateDoubleTail(int lane1, int lane2)
@@ -453,28 +455,28 @@ public class GameManager : MonoBehaviour {
         tail1.localPosition = new Vector3(xPosition1, tail1.localPosition.y, tail1.localPosition.z);
 
         Transform tail2 = doubleTail.Find("Tail2");
-        tail2.localPosition = new Vector3(xPosition2, tail2.localPosition.y, tail2.localPosition.z);
+        tail2.localPosition = new Vector3(xPosition2, tail1.localPosition.y, tail1.localPosition.z);
 
-        tail1.parent = null;
-        tail2.parent = null;
-        Destroy(doubleTail.gameObject);
+        Transform tether = doubleTail.Find("Tether");
+        tether.localPosition = new Vector3((xPosition2 + xPosition1) / 2.0f, tether.localPosition.y, tail1.localPosition.z);
+        tether.localScale = new Vector3(Mathf.Abs(xPosition2 - xPosition1), tether.localScale.y, tether.localScale.z);
 
         switch (lane1)
         {
             case 1:
-                tail1.parent = holdLaneInstance1;
+                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail1.gameObject);
                 break;
             case 2:
-                tail1.parent = holdLaneInstance2;
+                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail1.gameObject);
                 break;
             case 3:
-                tail1.parent = holdLaneInstance3;
+                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail1.gameObject);
                 break;
             case 4:
-                tail1.parent = holdLaneInstance4;
+                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail1.gameObject);
                 break;
             case 5:
-                tail1.parent = holdLaneInstance5;
+                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail1.gameObject);
                 break;
             default:
                 return;
@@ -483,19 +485,19 @@ public class GameManager : MonoBehaviour {
         switch (lane2)
         {
             case 1:
-                tail2.parent = holdLaneInstance1;
+                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail2.gameObject);
                 break;
             case 2:
-                tail2.parent = holdLaneInstance2;
+                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail2.gameObject);
                 break;
             case 3:
-                tail2.parent = holdLaneInstance3;
+                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail2.gameObject);
                 break;
             case 4:
-                tail2.parent = holdLaneInstance4;
+                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail2.gameObject);
                 break;
             case 5:
-                tail2.parent = holdLaneInstance5;
+                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail2.gameObject);
                 break;
             default:
                 return;
@@ -556,7 +558,7 @@ public class GameManager : MonoBehaviour {
         holdNote1.localPosition = new Vector3(xPosition1, holdNote1.localPosition.y, holdNote1.localPosition.z);
 
         Transform holdNote2 = doubleHead.Find("HoldNote2");
-        holdNote2.localPosition = new Vector3(xPosition2, holdNote2.localPosition.y, holdNote2.localPosition.z);
+        holdNote2.localPosition = new Vector3(xPosition2, holdNote1.localPosition.y, holdNote1.localPosition.z);
 
         Transform holdLane1 = holdNote1.Find("HoldLane");
         holdLane1.localPosition = new Vector3(holdLane1.localPosition.x, holdLane1.localPosition.y, length1 / 2.0f);
@@ -566,26 +568,26 @@ public class GameManager : MonoBehaviour {
         holdLane2.localPosition = new Vector3(holdLane2.localPosition.x, holdLane2.localPosition.y, length2 / 2.0f);
         holdLane2.localScale = new Vector3(holdLane2.localScale.x, holdLane2.localScale.y, length2);
 
-        holdNote1.parent = null;
-        holdNote2.parent = null;
-        Destroy(doubleHead.gameObject);
+        Transform tether = doubleHead.Find("Tether");
+        tether.localPosition = new Vector3((xPosition2 + xPosition1) / 2.0f, tether.localPosition.y, holdNote1.localPosition.z);
+        tether.localScale = new Vector3(Mathf.Abs(xPosition2 - xPosition1), tether.localScale.y, tether.localScale.z);
 
         switch (lane1)
         {
             case 1:
-                holdLaneInstance1 = holdNote1;
+                holdNoteInstance1 = holdNote1;
                 break;
             case 2:
-                holdLaneInstance2 = holdNote1;
+                holdNoteInstance2 = holdNote1;
                 break;
             case 3:
-                holdLaneInstance3 = holdNote1;
+                holdNoteInstance3 = holdNote1;
                 break;
             case 4:
-                holdLaneInstance4 = holdNote1;
+                holdNoteInstance4 = holdNote1;
                 break;
             case 5:
-                holdLaneInstance5 = holdNote1;
+                holdNoteInstance5 = holdNote1;
                 break;
             default:
                 return;
@@ -594,19 +596,19 @@ public class GameManager : MonoBehaviour {
         switch (lane2)
         {
             case 1:
-                holdLaneInstance1 = holdNote2;
+                holdNoteInstance1 = holdNote2;
                 break;
             case 2:
-                holdLaneInstance2 = holdNote2;
+                holdNoteInstance2 = holdNote2;
                 break;
             case 3:
-                holdLaneInstance3 = holdNote2;
+                holdNoteInstance3 = holdNote2;
                 break;
             case 4:
-                holdLaneInstance4 = holdNote2;
+                holdNoteInstance4 = holdNote2;
                 break;
             case 5:
-                holdLaneInstance5 = holdNote2;
+                holdNoteInstance5 = holdNote2;
                 break;
             default:
                 return;
@@ -667,28 +669,28 @@ public class GameManager : MonoBehaviour {
         note.localPosition = new Vector3(noteXPosition, note.localPosition.y, note.localPosition.z);
 
         Transform tail = oneNoteOneTail.Find("Tail");
-        tail.localPosition = new Vector3(tailXPosition, tail.localPosition.y, tail.localPosition.z);
+        tail.localPosition = new Vector3(tailXPosition, note.localPosition.y, note.localPosition.z);
 
-        note.parent = null;
-        tail.parent = null;
-        Destroy(oneNoteOneTail.gameObject);
+        Transform tether = oneNoteOneTail.Find("Tether");
+        tether.localPosition = new Vector3((tailXPosition + noteXPosition) / 2.0f, tether.localPosition.y, note.localPosition.z);
+        tether.localScale = new Vector3(Mathf.Abs(tailXPosition - noteXPosition), tether.localScale.y, tether.localScale.z);
 
         switch (tailLane)
         {
             case 1:
-                tail.parent = holdLaneInstance1;
+                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 2:
-                tail.parent = holdLaneInstance2;
+                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 3:
-                tail.parent = holdLaneInstance3;
+                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 4:
-                tail.parent = holdLaneInstance4;
+                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 5:
-                tail.parent = holdLaneInstance5;
+                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             default:
                 return;
@@ -749,32 +751,32 @@ public class GameManager : MonoBehaviour {
         note.localPosition = new Vector3(noteXPosition, note.localPosition.y, note.localPosition.z);
 
         Transform holdNote = oneNoteOneHold.Find("HoldNote");
-        holdNote.localPosition = new Vector3(holdXPosition, holdNote.localPosition.y, holdNote.localPosition.z);
+        holdNote.localPosition = new Vector3(holdXPosition, note.localPosition.y, note.localPosition.z);
 
         Transform holdLane = holdNote.Find("HoldLane");
         holdLane.localPosition = new Vector3(holdLane.localPosition.x, holdLane.localPosition.y, length / 2.0f);
         holdLane.localScale = new Vector3(holdLane.localScale.x, holdLane.localScale.y, length);
 
-        note.parent = null;
-        holdNote.parent = null;
-        Destroy(oneNoteOneHold.gameObject);
+        Transform tether = oneNoteOneHold.Find("Tether");
+        tether.localPosition = new Vector3((holdXPosition + noteXPosition) / 2.0f, tether.localPosition.y, note.localPosition.z);
+        tether.localScale = new Vector3(Mathf.Abs(holdXPosition - noteXPosition), tether.localScale.y, tether.localScale.z);
 
         switch (holdNoteLane)
         {
             case 1:
-                holdLaneInstance1 = holdNote;
+                holdNoteInstance1 = holdNote;
                 break;
             case 2:
-                holdLaneInstance2 = holdNote;
+                holdNoteInstance2 = holdNote;
                 break;
             case 3:
-                holdLaneInstance3 = holdNote;
+                holdNoteInstance3 = holdNote;
                 break;
             case 4:
-                holdLaneInstance4 = holdNote;
+                holdNoteInstance4 = holdNote;
                 break;
             case 5:
-                holdLaneInstance5 = holdNote;
+                holdNoteInstance5 = holdNote;
                 break;
             default:
                 return;
@@ -835,32 +837,32 @@ public class GameManager : MonoBehaviour {
         tail.localPosition = new Vector3(tailXPosition, tail.localPosition.y, tail.localPosition.z);
 
         Transform holdNote = oneHoldOneTail.Find("HoldNote");
-        holdNote.localPosition = new Vector3(holdXPosition, holdNote.localPosition.y, holdNote.localPosition.z);
+        holdNote.localPosition = new Vector3(holdXPosition, tail.localPosition.y, tail.localPosition.z);
 
         Transform holdLane = holdNote.Find("HoldLane");
         holdLane.localPosition = new Vector3(holdLane.localPosition.x, holdLane.localPosition.y, length / 2.0f);
         holdLane.localScale = new Vector3(holdLane.localScale.x, holdLane.localScale.y, length);
 
-        tail.parent = null;
-        holdNote.parent = null;
-        Destroy(oneHoldOneTail.gameObject);
+        Transform tether = oneHoldOneTail.Find("Tether");
+        tether.localPosition = new Vector3((tailXPosition + holdXPosition) / 2.0f, tether.localPosition.y, tail.localPosition.z);
+        tether.localScale = new Vector3(Mathf.Abs(tailXPosition - holdXPosition), tether.localScale.y, tether.localScale.z);
 
         switch (holdNoteLane)
         {
             case 1:
-                holdLaneInstance1 = holdNote;
+                holdNoteInstance1 = holdNote;
                 break;
             case 2:
-                holdLaneInstance2 = holdNote;
+                holdNoteInstance2 = holdNote;
                 break;
             case 3:
-                holdLaneInstance3 = holdNote;
+                holdNoteInstance3 = holdNote;
                 break;
             case 4:
-                holdLaneInstance4 = holdNote;
+                holdNoteInstance4 = holdNote;
                 break;
             case 5:
-                holdLaneInstance5 = holdNote;
+                holdNoteInstance5 = holdNote;
                 break;
             default:
                 return;
@@ -869,19 +871,19 @@ public class GameManager : MonoBehaviour {
         switch (tailLane)
         {
             case 1:
-                tail.parent = holdLaneInstance1;
+                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 2:
-                tail.parent = holdLaneInstance2;
+                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 3:
-                tail.parent = holdLaneInstance3;
+                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 4:
-                tail.parent = holdLaneInstance4;
+                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 5:
-                tail.parent = holdLaneInstance5;
+                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             default:
                 return;
@@ -935,6 +937,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EndGame()
     {
+        pauseButton.SetActive(false);
         yield return new WaitForSeconds(speedOffset + Constants.songDelay);
         FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);

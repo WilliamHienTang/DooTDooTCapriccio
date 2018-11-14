@@ -55,10 +55,10 @@ GameObject:
   - component: {fileID: 4611295640918860}
   - component: {fileID: 33189276171341710}
   - component: {fileID: 23221962001214806}
-  - component: {fileID: 114744371212446214}
+  - component: {fileID: 114328745922657234}
   m_Layer: 0
   m_Name: Tether
-  m_TagString: Untagged
+  m_TagString: Tether
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4153689188471008}
+  - component: {fileID: 114031347235806182}
   m_Layer: 0
   m_Name: OneNoteOneHold
   m_TagString: Untagged
@@ -125,7 +126,6 @@ GameObject:
   - component: {fileID: 23834912519060932}
   - component: {fileID: 65637352707622922}
   - component: {fileID: 54730857246997646}
-  - component: {fileID: 114848614913326278}
   - component: {fileID: 114425955422820768}
   m_Layer: 0
   m_Name: HoldLane
@@ -279,6 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4746616307685480}
+  - component: {fileID: 114175729431114814}
   m_Layer: 0
   m_Name: HoldNote
   m_TagString: Untagged
@@ -736,6 +737,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114031347235806182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246294558068814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3ca67f7deb1a3409b506ba430344f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114175729431114814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1827053113724440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211a64c18dcfb8c4ea1b13f3174cafc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114187410499424568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -864,8 +887,8 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 1, b: 0, a: 1}
-    _fillColor2: {r: 1, g: 0, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+    _fillColor2: {r: 0, g: 0.39215687, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
     _fillRotation: 0
@@ -916,6 +939,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b289db95db1c914b8997740770a6a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114328745922657234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1218317602380610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114425955422820768
@@ -1125,7 +1159,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.39215687, a: 1}
     _fillColor2: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -1182,7 +1216,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.39215687, a: 1}
     _fillColor2: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -1239,8 +1273,8 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 1, b: 0, a: 1}
-    _fillColor2: {r: 1, g: 0, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+    _fillColor2: {r: 0, g: 0.39215687, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
     _fillRotation: 0
@@ -1282,28 +1316,6 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
---- !u!114 &114744371212446214
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1218317602380610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b289db95db1c914b8997740770a6a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114848614913326278
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505344698550350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b289db95db1c914b8997740770a6a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114881978767155908
 MonoBehaviour:
   m_ObjectHideFlags: 1

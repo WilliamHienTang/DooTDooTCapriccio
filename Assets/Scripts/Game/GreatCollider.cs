@@ -8,7 +8,7 @@ public class GreatCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType(Constants.great);
+            other.gameObject.GetComponent<NoteScore>().SetScoreType(Constants.great);
         }
     }
 
@@ -16,7 +16,7 @@ public class GreatCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType(Constants.good);
+            other.gameObject.GetComponent<NoteScore>().SetScoreType(Constants.good);
         }
     }
 }

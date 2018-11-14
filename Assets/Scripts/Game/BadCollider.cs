@@ -8,7 +8,7 @@ public class BadCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType(Constants.bad);
+            other.gameObject.GetComponent<NoteScore>().SetScoreType(Constants.bad);
         }
     }
 
@@ -16,7 +16,7 @@ public class BadCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType(null);
+            other.gameObject.GetComponent<NoteScore>().SetScoreType(null);
         }
     }
 }

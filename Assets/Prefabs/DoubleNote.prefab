@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4183178135932062}
+  - component: {fileID: 114886238006544660}
   m_Layer: 0
   m_Name: DoubleNote
   m_TagString: Untagged
@@ -71,10 +72,10 @@ GameObject:
   - component: {fileID: 33900911141320998}
   - component: {fileID: 23989831184002654}
   - component: {fileID: 54076226296862952}
-  - component: {fileID: 114243865514984064}
+  - component: {fileID: 114346550947238538}
   m_Layer: 0
   m_Name: Tether
-  m_TagString: Untagged
+  m_TagString: Tether
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,8 +173,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4336347295999220}
-  - component: {fileID: 54005560267306484}
   - component: {fileID: 65463028407870610}
+  - component: {fileID: 54065921609033632}
   - component: {fileID: 114663945034321050}
   m_Layer: 0
   m_Name: Note1
@@ -275,8 +276,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4839656913291636}
-  - component: {fileID: 54674297590023066}
   - component: {fileID: 65550663926095384}
+  - component: {fileID: 54955522573006492}
   - component: {fileID: 114488229424399576}
   m_Layer: 0
   m_Name: Note2
@@ -550,7 +551,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210930655945764}
   m_Mesh: {fileID: 4300000, guid: f31387981a16f9e40b52e92a153eb91b, type: 3}
---- !u!54 &54005560267306484
+--- !u!54 &54065921609033632
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,7 +581,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!54 &54674297590023066
+--- !u!54 &54955522573006492
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -690,8 +691,8 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 1, b: 0, a: 1}
-    _fillColor2: {r: 1, g: 0, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+    _fillColor2: {r: 0, g: 0.39215687, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
     _fillRotation: 0
@@ -790,17 +791,6 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
---- !u!114 &114243865514984064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1210930655945764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b289db95db1c914b8997740770a6a0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114264352885250038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -815,7 +805,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.39215687, a: 1}
     _fillColor2: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -858,6 +848,17 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
+--- !u!114 &114346550947238538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1210930655945764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114348647773087466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -872,7 +873,7 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 0.5019608, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.39215687, a: 1}
     _fillColor2: {r: 0.94509804, g: 0.76862746, b: 0.05882353, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
@@ -1279,6 +1280,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b289db95db1c914b8997740770a6a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114886238006544660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028967428904728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3ca67f7deb1a3409b506ba430344f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114924794960951580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1293,8 +1305,8 @@ MonoBehaviour:
   settings:
     _blur: 0
     _endAngle: 360
-    _fillColor: {r: 1, g: 1, b: 0, a: 1}
-    _fillColor2: {r: 1, g: 0, b: 0, a: 1}
+    _fillColor: {r: 0, g: 1, b: 0.19607843, a: 1}
+    _fillColor2: {r: 0, g: 0.39215687, b: 1, a: 1}
     _fillOffset: {x: 0, y: 0}
     _fillPathLoops: 0
     _fillRotation: 0

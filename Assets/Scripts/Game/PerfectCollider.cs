@@ -8,7 +8,7 @@ public class PerfectCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType(Constants.perfect);
+            other.gameObject.GetComponent<NoteScore>().SetScoreType(Constants.perfect);
         }
     }
 
@@ -16,7 +16,7 @@ public class PerfectCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.GetComponent<Note>().SetScoreType(Constants.great);
+            other.gameObject.GetComponent<NoteScore>().SetScoreType(Constants.great);
         }
     }
 }

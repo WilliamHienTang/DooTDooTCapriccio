@@ -5,11 +5,6 @@ using TMPro;
 
 public class HitCollider : MonoBehaviour {
 
-    string colliderName;
-    GameObject gameManager;
-    GameObject gameCanvas;
-    GameObject note;
-
     public GameObject tapParticle;
     public GameObject hitParticle;
     public GameObject holdParticle;
@@ -22,6 +17,11 @@ public class HitCollider : MonoBehaviour {
     public GameObject goodText;
     public GameObject badText;
     public GameObject missText;
+
+    string colliderName;
+    GameObject gameManager;
+    GameObject gameCanvas;
+    GameObject note;
 
     // Use this for initialization
     void Start()
@@ -112,14 +112,9 @@ public class HitCollider : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(Constants.noteTag))
+        if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.tailNoteTag))
         {
             Destroy(other.gameObject);
-        }
-
-        else if (other.CompareTag(Constants.tailNoteTag))
-        {
-            Destroy(other.transform.parent.gameObject);
         }
 
         else if (other.CompareTag(Constants.headNoteTag))
@@ -127,6 +122,7 @@ public class HitCollider : MonoBehaviour {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
         }
+
         MissNote();
     }
 
@@ -142,13 +138,13 @@ public class HitCollider : MonoBehaviour {
 
         else if (note.CompareTag(Constants.noteTag))
         {
-            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
+            HandleNote(note.GetComponent<NoteScore>().GetScoreType(), note.tag);
         }
 
         else if (note.CompareTag(Constants.headNoteTag))
         {
-            GameObject holdLane = note.transform.parent.transform.Find("HoldLane").gameObject;
-            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
+            HandleNote(note.GetComponent<NoteScore>().GetScoreType(), note.tag);
+            GameObject holdLane = note.transform.parent.Find("HoldLane").gameObject;
             note = holdLane;
         }
     }
@@ -162,8 +158,7 @@ public class HitCollider : MonoBehaviour {
 
         else if (note.CompareTag(Constants.tailNoteTag))
         {
-            DestroyHoldNote();
-            HandleNote(note.GetComponent<Note>().GetScoreType(), note.tag);
+            HandleNote(note.GetComponent<NoteScore>().GetScoreType(), note.tag);
         }
 
         else if (note.CompareTag(Constants.holdLaneTag))
@@ -196,6 +191,7 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
+        note.transform.parent.GetComponent<HoldNote>().DestroyTail();
         Destroy(note.transform.parent.gameObject);
         StopLoopingParticle();
     }
@@ -208,16 +204,6 @@ public class HitCollider : MonoBehaviour {
             {
                 holdParticleInstance.transform.GetChild(i).GetComponent<ParticleSystem>().loop = false;
             }
-        }
-    }
-
-    void ClearScoreTypeText()
-    {
-        GameObject[] scoreTypeTexts = GameObject.FindGameObjectsWithTag(Constants.scoreType);
-
-        for (int i = 0; i < scoreTypeTexts.Length; i++)
-        {
-            Destroy(scoreTypeTexts[i]);
         }
     }
 
@@ -275,6 +261,16 @@ public class HitCollider : MonoBehaviour {
             Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
             gameManager.GetComponent<GameManager>().ResetCombo();
             gameManager.GetComponent<GameManager>().IncreaseScore(Constants.badScore, Constants.bads);
+        }
+    }
+
+    void ClearScoreTypeText()
+    { 
+        GameObject[] scoreTypeTexts = GameObject.FindGameObjectsWithTag(Constants.scoreType);
+
+        for (int i = 0; i < scoreTypeTexts.Length; i++)
+        {
+            Destroy(scoreTypeTexts[i]);
         }
     }
 }
