@@ -69,10 +69,49 @@ public class GameManager : MonoBehaviour {
         dspStart = (float)AudioSettings.dspTime;
     }
 
+    void WriteJson()
+    {
+        string jsonChart = JsonHelper.ToJson<NoteSpawn>(noteChart, true);
+        string newPath = Application.dataPath + "/JsonNoteCharts/" + "test" + ".json";
+        File.WriteAllText(jsonPath, jsonChart);
+        Debug.Log("done");
+    }
+
+    float RoundToHundreth(float number)
+    {
+        number *= 100;
+        number = Mathf.Round(number);
+        return number / 100;
+    }
+
+    void Json()
+    {
+        if (chartIndex >= noteChart.Length)
+        {
+            WriteJson();
+            enabled = false;
+            return;
+        }
+
+        if (noteChart[chartIndex].headHitTime > 0)
+        {
+            noteChart[chartIndex].headHitTime = noteChart[chartIndex].headHitTime + 5.0f;
+            noteChart[chartIndex].headHitTime = RoundToHundreth(noteChart[chartIndex].headHitTime);
+        }
+        if (noteChart[chartIndex].tailHitTime > 0)
+        {
+            noteChart[chartIndex].tailHitTime = noteChart[chartIndex].tailHitTime + 5.0f;
+            noteChart[chartIndex].tailHitTime = RoundToHundreth(noteChart[chartIndex].tailHitTime);
+        }
+        chartIndex++;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        songTimer = (float)(AudioSettings.dspTime - dspStart);
+        Json();
+
+        /*songTimer = (float)(AudioSettings.dspTime - dspStart);
 
         if (chartIndex >= noteChart.Length)
         {
@@ -135,7 +174,7 @@ public class GameManager : MonoBehaviour {
             chartIndex++;
         }
 
-        InstantiateNotes(lane1, lane2, length1, length2, tail1, tail2);
+        InstantiateNotes(lane1, lane2, length1, length2, tail1, tail2);*/
     }
 
     void InstantiateNotes(int lane1, int lane2, float length1, float length2, bool tail1, bool tail2)
@@ -938,7 +977,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator EndGame()
     {
         pauseButton.SetActive(false);
-        yield return new WaitForSeconds(speedOffset + Constants.songDelay);
+        yield return new WaitForSeconds(speedOffset + Constants.songDelay / 2.0f);
         FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);
     }

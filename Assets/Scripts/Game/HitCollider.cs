@@ -115,6 +115,7 @@ public class HitCollider : MonoBehaviour {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.tailNoteTag))
         {
             Destroy(other.gameObject);
+            MissNote();
         }
 
         else if (other.CompareTag(Constants.headNoteTag))
@@ -122,8 +123,6 @@ public class HitCollider : MonoBehaviour {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
         }
-
-        MissNote();
     }
 
     public void OnPress()
@@ -165,7 +164,6 @@ public class HitCollider : MonoBehaviour {
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
-            MissNote();
         }
     }
 
@@ -180,7 +178,6 @@ public class HitCollider : MonoBehaviour {
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
-            MissNote();
         }
     }
 
@@ -194,6 +191,7 @@ public class HitCollider : MonoBehaviour {
         note.transform.parent.GetComponent<HoldNote>().DestroyTail();
         Destroy(note.transform.parent.gameObject);
         StopLoopingParticle();
+        MissNote();
     }
 
     void StopLoopingParticle()
