@@ -109,9 +109,9 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Json();
+        //Json();
 
-        /*songTimer = (float)(AudioSettings.dspTime - dspStart);
+        songTimer = (float)(AudioSettings.dspTime - dspStart);
 
         if (chartIndex >= noteChart.Length)
         {
@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour {
             chartIndex++;
         }
 
-        InstantiateNotes(lane1, lane2, length1, length2, tail1, tail2);*/
+        InstantiateNotes(lane1, lane2, length1, length2, tail1, tail2);
     }
 
     void InstantiateNotes(int lane1, int lane2, float length1, float length2, bool tail1, bool tail2)
@@ -977,7 +977,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator EndGame()
     {
         pauseButton.SetActive(false);
-        yield return new WaitForSeconds(speedOffset + Constants.songDelay / 2.0f);
+        yield return new WaitForSeconds(speedOffset + Constants.songDelay);
         FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);
     }

@@ -169,12 +169,12 @@ public class HitCollider : MonoBehaviour {
 
     public void OutOfBound()
     {
-        if(note == null)
+        if (note == null)
         {
             return;
         }
 
-        if (note.CompareTag(Constants.holdLaneTag))
+        else if (note.CompareTag(Constants.holdLaneTag))
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
@@ -188,10 +188,13 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
-        note.transform.parent.GetComponent<HoldNote>().DestroyTail();
-        Destroy(note.transform.parent.gameObject);
-        StopLoopingParticle();
-        MissNote();
+        else if (note.CompareTag(Constants.headNoteTag) || note.CompareTag(Constants.holdLaneTag))
+        {
+            note.transform.parent.GetComponent<HoldNote>().DestroyTail();
+            Destroy(note.transform.parent.gameObject);
+            StopLoopingParticle();
+            MissNote();
+        }
     }
 
     void StopLoopingParticle()
