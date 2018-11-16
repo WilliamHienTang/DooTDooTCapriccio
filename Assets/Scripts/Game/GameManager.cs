@@ -69,48 +69,9 @@ public class GameManager : MonoBehaviour {
         dspStart = (float)AudioSettings.dspTime;
     }
 
-    void WriteJson()
-    {
-        string jsonChart = JsonHelper.ToJson<NoteSpawn>(noteChart, true);
-        string newPath = Application.dataPath + "/JsonNoteCharts/" + "test" + ".json";
-        File.WriteAllText(jsonPath, jsonChart);
-        Debug.Log("done");
-    }
-
-    float RoundToHundreth(float number)
-    {
-        number *= 100;
-        number = Mathf.Round(number);
-        return number / 100;
-    }
-
-    void Json()
-    {
-        if (chartIndex >= noteChart.Length)
-        {
-            WriteJson();
-            enabled = false;
-            return;
-        }
-
-        if (noteChart[chartIndex].headHitTime > 0)
-        {
-            noteChart[chartIndex].headHitTime = noteChart[chartIndex].headHitTime + 5.0f;
-            noteChart[chartIndex].headHitTime = RoundToHundreth(noteChart[chartIndex].headHitTime);
-        }
-        if (noteChart[chartIndex].tailHitTime > 0)
-        {
-            noteChart[chartIndex].tailHitTime = noteChart[chartIndex].tailHitTime + 5.0f;
-            noteChart[chartIndex].tailHitTime = RoundToHundreth(noteChart[chartIndex].tailHitTime);
-        }
-        chartIndex++;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        //Json();
-
         songTimer = (float)(AudioSettings.dspTime - dspStart);
 
         if (chartIndex >= noteChart.Length)
@@ -980,5 +941,41 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(speedOffset + Constants.songDelay);
         FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);
+    }
+
+    void WriteJson()
+    {
+        string jsonChart = JsonHelper.ToJson<NoteSpawn>(noteChart, true);
+        File.WriteAllText(jsonPath, jsonChart);
+        Debug.Log("done");
+    }
+
+    float RoundToHundreth(float number)
+    {
+        number *= 100;
+        number = Mathf.Round(number);
+        return number / 100;
+    }
+
+    void OffsetChart(float offset)
+    {
+        if (chartIndex >= noteChart.Length)
+        {
+            WriteJson();
+            enabled = false;
+            return;
+        }
+
+        if (noteChart[chartIndex].headHitTime > 0)
+        {
+            noteChart[chartIndex].headHitTime = noteChart[chartIndex].headHitTime + offset;
+            noteChart[chartIndex].headHitTime = RoundToHundreth(noteChart[chartIndex].headHitTime);
+        }
+        if (noteChart[chartIndex].tailHitTime > 0)
+        {
+            noteChart[chartIndex].tailHitTime = noteChart[chartIndex].tailHitTime + offset;
+            noteChart[chartIndex].tailHitTime = RoundToHundreth(noteChart[chartIndex].tailHitTime);
+        }
+        chartIndex++;
     }
 }

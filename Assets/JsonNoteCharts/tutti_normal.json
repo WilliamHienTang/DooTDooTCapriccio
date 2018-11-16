@@ -478,12 +478,12 @@
         {
             "headHitTime": 40.869998931884769,
             "tailHitTime": 43.040000915527347,
-            "laneIndex": 2
+            "laneIndex": 1
         },
         {
             "headHitTime": 40.869998931884769,
             "tailHitTime": 43.040000915527347,
-            "laneIndex": 3
+            "laneIndex": 2
         },
         {
             "headHitTime": 0.0,
@@ -1111,7 +1111,7 @@
             "laneIndex": 3
         },
         {
-            "headHitTime": 86.27999877929688,
+            "headHitTime": 86.17999877929688,
             "tailHitTime": 86.63999938964844,
             "laneIndex": 3
         },
