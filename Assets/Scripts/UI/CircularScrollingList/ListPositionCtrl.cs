@@ -37,6 +37,8 @@ public class ListPositionCtrl : MonoBehaviour
 	/* Containers */
 	public ListBox[] listBoxes;
 	public Button[] buttons;
+    public GameObject songPanel;
+    public Image songImage;
 
     /* Song Images */
     public Sprite soundscape;
@@ -150,12 +152,7 @@ public class ListPositionCtrl : MonoBehaviour
 			_storeInputPosition = delegate() { };	// Empty delegate function
 		}
 
-        idle = true;
-        centeredBox = getCenteredBox();
-        centeredBox.setCenter();
-
-        SetSongPreview(centeredBox);
-        setSlidingEffect();
+        InitialPreview();
     }
 
 	void Update()
@@ -173,6 +170,14 @@ public class ListPositionCtrl : MonoBehaviour
         _storeInputPosition();
     }
 
+    void InitialPreview()
+    {
+        idle = true;
+        centeredBox = getCenteredBox();
+        centeredBox.setCenter();
+        SetSongPreview(centeredBox);
+    }
+
     void SetSongPreview(ListBox listbox)
     {
         string currentBGM;
@@ -188,7 +193,7 @@ public class ListPositionCtrl : MonoBehaviour
                 }
 
                 FindObjectOfType<AudioManager>().Play(Constants.soundscapePreview);
-                GameObject.Find("SongImage").GetComponent<Image>().sprite = soundscape;
+                songImage.sprite = soundscape;
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
                 PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.soundscapeTitle);
                 break;
@@ -201,7 +206,7 @@ public class ListPositionCtrl : MonoBehaviour
                 }
 
                 FindObjectOfType<AudioManager>().Play(Constants.takarajimaPreview);
-                GameObject.Find("SongImage").GetComponent<Image>().sprite = takarajima;
+                songImage.sprite = takarajima;
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.takarajimaSong);
                 PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.takarajimaTitle);
                 break;
@@ -214,7 +219,7 @@ public class ListPositionCtrl : MonoBehaviour
                 }
 
                 FindObjectOfType<AudioManager>().Play(Constants.tuttiPreview);
-                GameObject.Find("SongImage").GetComponent<Image>().sprite = tutti;
+                songImage.sprite = tutti;
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.tuttiSong);
                 PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.tuttiTitle);
                 break;

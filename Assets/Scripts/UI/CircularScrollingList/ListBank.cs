@@ -1,8 +1,6 @@
 ﻿/* Store the contents for ListBoxes to display.
  */
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class ListBank : MonoBehaviour
 {
@@ -13,7 +11,38 @@ public class ListBank : MonoBehaviour
 	void Awake()
 	{
 		Instance = this;
-	}
+        CircularReorder();
+    }
+
+    void CircularReorder()
+    {
+        string song = PlayerPrefs.GetString(Constants.selectedSongTitle);
+        if (song == null)
+        {
+            return;
+        }
+
+        int songIndex = 0;
+        for(int i = 0; i < contents.Length; i++)
+        {
+              if (contents[i] == song)
+              {
+                    songIndex = i;
+              }
+        }
+
+        string[] temp = (string[]) contents.Clone();
+
+        for (int i = songIndex; i < contents.Length; i++)
+        {
+            contents[i - songIndex] = temp[i];
+        }
+
+        for (int i = 0; i < songIndex; i++)
+        {
+            contents[contents.Length - songIndex + i] = temp[i]; 
+        }
+    }
 
 	public string getListContent(int index)
 	{

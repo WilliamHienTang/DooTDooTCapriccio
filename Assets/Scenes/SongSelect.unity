@@ -6850,6 +6850,21 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.78431374
       objectReference: {fileID: 0}
+    - target: {fileID: 114965002966138906, guid: 9dae2d937312b744ba1388fdc4fd2e51,
+        type: 2}
+      propertyPath: songPanel
+      value: 
+      objectReference: {fileID: 1423901077}
+    - target: {fileID: 114965002966138906, guid: 9dae2d937312b744ba1388fdc4fd2e51,
+        type: 2}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1503932305}
+    - target: {fileID: 114965002966138906, guid: 9dae2d937312b744ba1388fdc4fd2e51,
+        type: 2}
+      propertyPath: songImage
+      value: 
+      objectReference: {fileID: 1266810168}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dae2d937312b744ba1388fdc4fd2e51, type: 2}
   m_IsPrefabAsset: 0
