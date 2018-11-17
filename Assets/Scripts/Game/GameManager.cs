@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
     public bool isTouchingDevice;
     public GameObject pauseButton;
+    public GameObject pregameObjects;
     public Image songImage;
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
@@ -930,12 +931,26 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt(Constants.misses, PlayerPrefs.GetInt(Constants.misses) + 1);
     }
 
+    IEnumerator DestroyPregameObjects()
+    {
+        yield return new WaitForSeconds(Constants.songDelay / 2.0f);
+        Destroy(pregameObjects);
+    }
+
+    IEnumerator EnablePauseButton()
+    {
+        yield return new WaitForSeconds(Constants.songDelay / 2.0f + 1.0f);
+        pauseButton.SetActive(true);
+    }
+
     void InitSongInfo()
     {
         difficultyText.text = difficulty.ToUpper();
         SetDifficultyColor();
         songName.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
         SetSongImage();
+        StartCoroutine(DestroyPregameObjects());
+        StartCoroutine(EnablePauseButton());
     }
 
     void SetSongImage()
