@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 
     public bool isTouchingDevice;
     public GameObject pauseButton;
+    public Image songImage;
+    public TextMeshProUGUI songName;
+    public TextMeshProUGUI difficultyText;
+    public GameObject difficultyBar;
+
+    // Song Images
+    public Sprite soundscape;
+    public Sprite takarajima;
+    public Sprite tutti;
 
     public Transform noteObject;
     public Transform holdNoteObject;
@@ -54,7 +65,9 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        FindObjectOfType<Fade>().BeginFade(-1);
         InitPlayerPrefs();
+        InitSongInfo();
 
         // load the note chart from the json file
         jsonPath = Application.dataPath + "/JsonNoteCharts/" + song + "_" + difficulty + ".json";
@@ -915,6 +928,53 @@ public class GameManager : MonoBehaviour {
     public void MissNote()
     {
         PlayerPrefs.SetInt(Constants.misses, PlayerPrefs.GetInt(Constants.misses) + 1);
+    }
+
+    void InitSongInfo()
+    {
+        difficultyText.text = difficulty.ToUpper();
+        SetDifficultyColor();
+        songName.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
+        SetSongImage();
+    }
+
+    void SetSongImage()
+    {
+        switch (song)
+        {
+            case Constants.soundscapeSong:
+                songImage.sprite = soundscape;
+                break;
+            case Constants.takarajimaSong:
+                songImage.sprite = takarajima;
+                break;
+            case Constants.tuttiSong:
+                songImage.sprite = tutti;
+                break;
+            default:
+                return;
+        }
+    }
+
+    void SetDifficultyColor()
+    {
+        switch (difficulty)
+        {
+            case Constants.easy:
+                difficultyBar.GetComponent<Image>().color = Constants.easyColor;
+                break;
+            case Constants.normal:
+                difficultyBar.GetComponent<Image>().color = Constants.normalColor;
+                break;
+            case Constants.hard:
+                difficultyBar.GetComponent<Image>().color = Constants.hardColor;
+                break;
+            case Constants.expert:
+                difficultyBar.GetComponent<Image>().color = Constants.expertColor;
+                break;
+            default:
+                break;
+        }
     }
 
     void InitPlayerPrefs()
