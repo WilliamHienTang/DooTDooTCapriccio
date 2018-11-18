@@ -939,7 +939,7 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator EnablePauseButton()
     {
-        yield return new WaitForSeconds(Constants.songDelay / 2.0f + 1.0f);
+        yield return new WaitForSeconds(Constants.songDelay - 2.0f);
         pauseButton.SetActive(true);
     }
 
