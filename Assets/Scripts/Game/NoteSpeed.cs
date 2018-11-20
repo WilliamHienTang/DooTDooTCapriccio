@@ -33,4 +33,9 @@ public class NoteSpeed : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    public void Stop()
+    {
+        enabled = false;
+    }
 }
