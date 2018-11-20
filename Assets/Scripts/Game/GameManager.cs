@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
     public GameObject difficultyBar;
+    public GameObject gameCanvas;
+    public GameObject notePlatform;
 
     // Song Images
     public Sprite soundscape;
@@ -31,6 +33,15 @@ public class GameManager : MonoBehaviour {
     public Transform oneNoteOneHoldObject;
     public Transform oneHoldOneTailObject;
 
+    public GameObject fireworksParticle;
+    public GameObject fireworksText;
+
+    Transform holdNoteInstance1;
+    Transform holdNoteInstance2;
+    Transform holdNoteInstance3;
+    Transform holdNoteInstance4;
+    Transform holdNoteInstance5;
+
     string song;
     string difficulty;
     float speedOffset;
@@ -43,12 +54,6 @@ public class GameManager : MonoBehaviour {
 
     float songTimer;
     float dspStart;
-
-    Transform holdNoteInstance1;
-    Transform holdNoteInstance2;
-    Transform holdNoteInstance3;
-    Transform holdNoteInstance4;
-    Transform holdNoteInstance5;
 
     void Awake()
     {
@@ -71,7 +76,7 @@ public class GameManager : MonoBehaviour {
         InitSongInfo();
 
         // load the note chart from the json file
-        jsonPath = Application.dataPath + "/JsonNoteCharts/" + song + "_" + difficulty + ".json";
+        jsonPath = Application.dataPath + "/Notecharts/" + song + "_" + difficulty + ".json";
         json = File.ReadAllText(jsonPath);
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
@@ -87,7 +92,7 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         songTimer = (float)(AudioSettings.dspTime - dspStart);
-
+        
         if (chartIndex >= noteChart.Length)
         {
             enabled = false;
@@ -933,13 +938,13 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator DestroyPregameObjects()
     {
-        yield return new WaitForSeconds(Constants.songDelay / 2.0f);
+        yield return new WaitForSeconds(5.0f);
         Destroy(pregameObjects);
     }
 
     IEnumerator EnablePauseButton()
     {
-        yield return new WaitForSeconds(Constants.songDelay - 2.0f);
+        yield return new WaitForSeconds(8.0f);
         pauseButton.SetActive(true);
     }
 
@@ -1013,9 +1018,33 @@ public class GameManager : MonoBehaviour {
     IEnumerator EndGame()
     {
         pauseButton.SetActive(false);
-        yield return new WaitForSeconds(speedOffset + Constants.songDelay);
+        yield return new WaitForSeconds(speedOffset + 3.0f);
+        StartCoroutine(SetOffFireworks(10));
+        yield return new WaitForSeconds(3.0f);
         FindObjectOfType<AudioManager>().Stop(song);
         SceneManager.LoadScene(Constants.scoreScreen);
+    }
+
+    IEnumerator SetOffFireworks(int numOfParticles)
+    {
+        notePlatform.SetActive(false);
+        GameObject fireworks = Instantiate(fireworksParticle, new Vector3(fireworksParticle.transform.localPosition.x, fireworksParticle.transform.localPosition.y, fireworksParticle.transform.localPosition.z), fireworksParticle.transform.rotation);
+        fireworks.transform.localScale = new Vector3(fireworksParticle.transform.localScale.x * 2, fireworksParticle.transform.localScale.x * 2, fireworksParticle.transform.localScale.x * 2);
+
+        GameObject text = Instantiate(fireworksText, gameCanvas.transform.position, Quaternion.identity, gameCanvas.transform);
+        if (PlayerPrefs.GetInt(Constants.misses) == 0 && PlayerPrefs.GetInt(Constants.bads) == 0 && PlayerPrefs.GetInt(Constants.goods) == 0)
+        {
+            text.GetComponent<TextMeshProUGUI>().text = "FULL COMBO";
+        }
+
+        float duration = fireworksParticle.GetComponent<ParticleSystem>().main.duration / 4.0f;
+        FindObjectOfType<AudioManager>().Play(Constants.fireworks);
+
+        for (int i = 0; i < numOfParticles; i++)
+        {
+            Instantiate(fireworksParticle, new Vector3(Random.Range(-2f, 2f), Random.Range(-1f, 0.5f), fireworksParticle.transform.localPosition.z), fireworksParticle.transform.rotation);
+            yield return new WaitForSeconds(duration);
+        }
     }
 
     void WriteJson()

@@ -19,8 +19,8 @@ public class HitCollider : MonoBehaviour {
     public GameObject missText;
 
     string colliderName;
-    GameObject gameManager;
-    GameObject gameCanvas;
+    public GameObject gameManager;
+    public GameObject gameCanvas;
     GameObject note;
 
     // Use this for initialization

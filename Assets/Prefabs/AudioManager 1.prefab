@@ -59,7 +59,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: skill_slot_open
+  - name: tapscreen
     clip: {fileID: 8300000, guid: 0f0b179bfff445347a57d61662af65f0, type: 3}
     group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: bubble2
+  - name: button1
     clip: {fileID: 8300000, guid: 3dbf34813c4fbfc4287514d47b35e417, type: 3}
     group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
-  - name: reward
+  - name: button2
     clip: {fileID: 8300000, guid: 73dc4dc451f9ba14cb5a6d5eaec49ccf, type: 3}
     group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
-  - name: bubble1
+  - name: button3
     clip: {fileID: 8300000, guid: aba07c0d0d9958d4faf1d0a44dad562d, type: 3}
     group: {fileID: 243258956152294202, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
@@ -176,6 +176,13 @@ MonoBehaviour:
     group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
     loop: 0
     volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+  - name: fireworks
+    clip: {fileID: 8300000, guid: 8de3feb1fd92c9640aba9d855290dadd, type: 3}
+    group: {fileID: 243766416985935426, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}
+    loop: 0
+    volume: 1
     pitch: 1
     source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 3e556694c4e850645b9bf0c72d07d89e, type: 2}

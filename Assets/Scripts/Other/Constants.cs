@@ -12,17 +12,18 @@ public class Constants : MonoBehaviour {
 
     // Audio
     public const string vivaceBGM = "vivace";
-    public const string tapScreenSFX = "skill_slot_open";
+    public const string tapScreenSFX = "tapscreen";
     public const string kimiBGM = "kimi";
-    public const string button1SFX = "bubble2";
-    public const string button2SFX = "reward";
-    public const string button3SFX = "bubble1";
+    public const string button1SFX = "button1";
+    public const string button2SFX = "button2";
+    public const string button3SFX = "button3";
     public const string kaiheitaiBGM = "kaiheitai";
     public const string perfectSFX = "perfect";
     public const string greatSFX = "great";
     public const string goodSFX = "good";
     public const string badSFX = "bad";
     public const string tapSFX = "tap";
+    public const string fireworks = "fireworks";
 
     // Songs
     public const string soundscapePreview = "soundscape_preview";

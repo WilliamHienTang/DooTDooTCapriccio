@@ -1135,6 +1135,8 @@ MonoBehaviour:
   goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
   badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
   missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+  gameManager: {fileID: 984561328}
+  gameCanvas: {fileID: 932906016}
 --- !u!1 &245075951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1282,8 @@ MonoBehaviour:
   goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
   badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
   missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+  gameManager: {fileID: 984561328}
+  gameCanvas: {fileID: 932906016}
 --- !u!1 &302623717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,6 +2548,8 @@ MonoBehaviour:
   goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
   badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
   missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+  gameManager: {fileID: 984561328}
+  gameCanvas: {fileID: 932906016}
 --- !u!1001 &710858672
 Prefab:
   m_ObjectHideFlags: 0
@@ -3545,6 +3551,8 @@ MonoBehaviour:
   goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
   badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
   missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+  gameManager: {fileID: 984561328}
+  gameCanvas: {fileID: 932906016}
 --- !u!65 &924594109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3717,6 +3725,8 @@ MonoBehaviour:
   songName: {fileID: 4049858}
   difficultyText: {fileID: 20620072}
   difficultyBar: {fileID: 1158134748}
+  gameCanvas: {fileID: 932906016}
+  notePlatform: {fileID: 744317974}
   soundscape: {fileID: 21300000, guid: 22a3fcc7dcee12341b166d3ab6ae59c2, type: 3}
   takarajima: {fileID: 21300000, guid: c40b00414117ea242816a4dc77f1a11b, type: 3}
   tutti: {fileID: 21300000, guid: 995ef06b7d06ac44585aac77e6308b14, type: 3}
@@ -3736,6 +3746,10 @@ MonoBehaviour:
   oneNoteOneHoldObject: {fileID: 4153689188471008, guid: e8ce29e935909604c9505a5118289c1b,
     type: 2}
   oneHoldOneTailObject: {fileID: 4426406528394686, guid: dd5405cd02fc6344493bb1b4847e079d,
+    type: 2}
+  fireworksParticle: {fileID: 1055455296818186, guid: e72ea83b236a2f14ca72b9e191c4f94b,
+    type: 2}
+  fireworksText: {fileID: 1843090105003852, guid: e534b3217b95e204ca221f0444115848,
     type: 2}
 --- !u!4 &984561330
 Transform:
@@ -7304,6 +7318,8 @@ MonoBehaviour:
   goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
   badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
   missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+  gameManager: {fileID: 984561328}
+  gameCanvas: {fileID: 932906016}
 --- !u!1 &2014367701
 GameObject:
   m_ObjectHideFlags: 0
