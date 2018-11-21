@@ -183,6 +183,7 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
+            Destroy(heldNoteInstance);
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
         }
