@@ -107,22 +107,22 @@ public class ScoreScreen : MonoBehaviour {
         switch (PlayerPrefs.GetString(Constants.scoreRank))
         {
             case "SS":
-                scoreRank.transform.Find("SSRank").gameObject.SetActive(true);
+                scoreRank.transform.Find("RankSS").gameObject.SetActive(true);
                 break;
             case "S":
-                scoreRank.transform.Find("SRank").gameObject.SetActive(true);
+                scoreRank.transform.Find("RankS").gameObject.SetActive(true);
                 break;
             case "A":
-                scoreRank.transform.Find("ARank").gameObject.SetActive(true);
+                scoreRank.transform.Find("RankA").gameObject.SetActive(true);
                 break;
             case "B":
-                scoreRank.transform.Find("BRank").gameObject.SetActive(true);
+                scoreRank.transform.Find("RankB").gameObject.SetActive(true);
                 break;
             case "C":
-                scoreRank.transform.Find("CRank").gameObject.SetActive(true);
+                scoreRank.transform.Find("RankC").gameObject.SetActive(true);
                 break;
             case "F":
-                scoreRank.transform.Find("FRank").gameObject.SetActive(true);
+                scoreRank.transform.Find("RankF").gameObject.SetActive(true);
                 break;
             default:
                 break;

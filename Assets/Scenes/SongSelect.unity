@@ -2202,7 +2202,7 @@ GameObject:
   - component: {fileID: 503784738}
   - component: {fileID: 503784737}
   m_Layer: 5
-  m_Name: SSRank
+  m_Name: RankSS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2511,7 +2511,7 @@ GameObject:
   - component: {fileID: 599398408}
   - component: {fileID: 599398407}
   m_Layer: 5
-  m_Name: BRank
+  m_Name: RankB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3936,12 +3936,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyPanel: {fileID: 1056906158}
-  SSRank: {fileID: 503784735}
-  SRank: {fileID: 1936435941}
-  ARank: {fileID: 1990881606}
-  BRank: {fileID: 599398405}
-  CRank: {fileID: 1614915591}
-  FRank: {fileID: 1477159399}
+  RankSS: {fileID: 503784735}
+  RankS: {fileID: 1936435941}
+  RankA: {fileID: 1990881606}
+  RankB: {fileID: 599398405}
+  RankC: {fileID: 1614915591}
+  RankF: {fileID: 1477159399}
 --- !u!114 &890758292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7427,7 +7427,7 @@ GameObject:
   - component: {fileID: 1477159402}
   - component: {fileID: 1477159401}
   m_Layer: 5
-  m_Name: FRank
+  m_Name: RankF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8402,7 +8402,7 @@ GameObject:
   - component: {fileID: 1614915594}
   - component: {fileID: 1614915593}
   m_Layer: 5
-  m_Name: CRank
+  m_Name: RankC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9793,7 +9793,7 @@ GameObject:
   - component: {fileID: 1936435944}
   - component: {fileID: 1936435943}
   m_Layer: 5
-  m_Name: SRank
+  m_Name: RankS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10280,7 +10280,7 @@ GameObject:
   - component: {fileID: 1990881609}
   - component: {fileID: 1990881608}
   m_Layer: 5
-  m_Name: ARank
+  m_Name: RankA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
