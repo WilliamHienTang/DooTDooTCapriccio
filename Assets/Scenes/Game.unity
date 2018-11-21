@@ -3724,13 +3724,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouchingDevice: 0
   pauseButton: {fileID: 1754404631}
-  pregameObjects: {fileID: 1747445288}
-  songImage: {fileID: 1241923286}
   songName: {fileID: 4049858}
   difficultyText: {fileID: 20620072}
-  difficultyBar: {fileID: 1158134748}
-  gameCanvas: {fileID: 932906016}
+  gameCanvas: {fileID: 932906020}
   notePlatform: {fileID: 744317974}
+  increaseScoreText: {fileID: 224544184222929922, guid: ca0e6c4997880d744b87cba83ae41915,
+    type: 2}
+  pregameObjects: {fileID: 1747445288}
+  songImage: {fileID: 1241923286}
+  difficultyBar: {fileID: 1158134748}
   soundscape: {fileID: 21300000, guid: 22a3fcc7dcee12341b166d3ab6ae59c2, type: 3}
   takarajima: {fileID: 21300000, guid: c40b00414117ea242816a4dc77f1a11b, type: 3}
   tutti: {fileID: 21300000, guid: 995ef06b7d06ac44585aac77e6308b14, type: 3}

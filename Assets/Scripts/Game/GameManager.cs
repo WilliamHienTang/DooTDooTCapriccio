@@ -9,20 +9,26 @@ using TMPro;
 public class GameManager : MonoBehaviour {
 
     public bool isTouchingDevice;
+
+    // Game objects
     public GameObject pauseButton;
-    public GameObject pregameObjects;
-    public Image songImage;
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
-    public GameObject difficultyBar;
-    public GameObject gameCanvas;
+    public Transform gameCanvas;
     public GameObject notePlatform;
+    public Transform increaseScoreText;
 
-    // Song Images
+    // Pregame objects
+    public GameObject pregameObjects;
+    public Image songImage;
+    public GameObject difficultyBar;
+
+    // Song images
     public Sprite soundscape;
     public Sprite takarajima;
     public Sprite tutti;
 
+    // Note objects
     public Transform noteObject;
     public Transform holdNoteObject;
     public Transform tailNoteObject;
@@ -32,29 +38,30 @@ public class GameManager : MonoBehaviour {
     public Transform oneNoteOneTailObject;
     public Transform oneNoteOneHoldObject;
     public Transform oneHoldOneTailObject;
-
-    public GameObject fireworksParticle;
-    public GameObject fireworksText;
-
     Transform holdNoteInstance1;
     Transform holdNoteInstance2;
     Transform holdNoteInstance3;
     Transform holdNoteInstance4;
     Transform holdNoteInstance5;
 
+    // Postgame objects
+    public GameObject fireworksParticle;
+    public GameObject fireworksText;
+
+    // Song variables
     string song;
     string difficulty;
     int noteCount;
     float speedOffset;
     float noteSpeed;
-    
+    float songTimer;
+    float dspStart;
+
+    // Notechart variables
     string jsonPath;
     string json;
     NoteSpawn[] noteChart;
     int chartIndex = 0;
-
-    float songTimer;
-    float dspStart;
 
     void Awake()
     {
@@ -915,6 +922,8 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt(Constants.score, PlayerPrefs.GetInt(Constants.score) + points);
         PlayerPrefs.SetInt(Constants.notesHit, PlayerPrefs.GetInt(Constants.notesHit) + 1);
         PlayerPrefs.SetInt(scoreTypeCount, PlayerPrefs.GetInt(scoreTypeCount) + 1);
+        Transform increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 185f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        increaseScoreInstance.GetComponent<TextMeshProUGUI>().text = "+" + points.ToString();
     }
 
     public void IncreaseCombo()
@@ -1125,7 +1134,7 @@ public class GameManager : MonoBehaviour {
         GameObject fireworks = Instantiate(fireworksParticle, new Vector3(fireworksParticle.transform.localPosition.x, fireworksParticle.transform.localPosition.y, fireworksParticle.transform.localPosition.z), fireworksParticle.transform.rotation);
         fireworks.transform.localScale = new Vector3(fireworksParticle.transform.localScale.x * 2, fireworksParticle.transform.localScale.x * 2, fireworksParticle.transform.localScale.x * 2);
 
-        GameObject text = Instantiate(fireworksText, gameCanvas.transform.position, Quaternion.identity, gameCanvas.transform);
+        GameObject text = Instantiate(fireworksText, gameCanvas.position, Quaternion.identity, gameCanvas);
         if (PlayerPrefs.GetInt(Constants.perfects) + PlayerPrefs.GetInt(Constants.greats) == noteCount)
         {
             text.GetComponent<TextMeshProUGUI>().text = "FULL COMBO";
