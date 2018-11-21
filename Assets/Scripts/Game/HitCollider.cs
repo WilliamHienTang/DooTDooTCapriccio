@@ -125,6 +125,7 @@ public class HitCollider : MonoBehaviour {
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
             DestroyHoldNote();
+            MissNote();
         }
     }
 

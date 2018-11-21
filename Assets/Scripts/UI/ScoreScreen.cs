@@ -20,6 +20,7 @@ public class ScoreScreen : MonoBehaviour {
     public TextMeshProUGUI misses;
     public TextMeshProUGUI notesHit;
     public TextMeshProUGUI maxCombo;
+    public GameObject scoreRank;
 
     string song;
     string difficulty;
@@ -102,6 +103,30 @@ public class ScoreScreen : MonoBehaviour {
         misses.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.misses));
         notesHit.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.notesHit)) + "/" + AddLeadingComboZeros(noteCount);
         maxCombo.text = AddLeadingComboZeros(PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo));
+
+        switch (PlayerPrefs.GetString(Constants.scoreRank))
+        {
+            case "SS":
+                scoreRank.transform.Find("SSRank").gameObject.SetActive(true);
+                break;
+            case "S":
+                scoreRank.transform.Find("SRank").gameObject.SetActive(true);
+                break;
+            case "A":
+                scoreRank.transform.Find("ARank").gameObject.SetActive(true);
+                break;
+            case "B":
+                scoreRank.transform.Find("BRank").gameObject.SetActive(true);
+                break;
+            case "C":
+                scoreRank.transform.Find("CRank").gameObject.SetActive(true);
+                break;
+            case "F":
+                scoreRank.transform.Find("FRank").gameObject.SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 
     string AddLeadingScoreZeros(int score)

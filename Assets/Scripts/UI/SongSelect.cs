@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 public class SongSelect : MonoBehaviour {
 
     public GameObject difficultyPanel;
+    public GameObject SSRank;
+    public GameObject SRank;
+    public GameObject ARank;
+    public GameObject BRank;
+    public GameObject CRank;
+    public GameObject FRank;
 
     // Use this for initialization
     IEnumerator Start()
@@ -20,7 +26,68 @@ public class SongSelect : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        string song = PlayerPrefs.GetString(Constants.selectedSong);
+        string difficulty = PlayerPrefs.GetString(Constants.difficulty);
 
+        switch (PlayerPrefs.GetString(song + difficulty + Constants.highRank))
+        {
+            case "SS":
+                SSRank.SetActive(true);
+                SRank.SetActive(false);
+                ARank.SetActive(false);
+                BRank.SetActive(false);
+                CRank.SetActive(false);
+                FRank.SetActive(false);
+                break;
+            case "S":
+                SSRank.SetActive(false);
+                SRank.SetActive(true);
+                ARank.SetActive(false);
+                BRank.SetActive(false);
+                CRank.SetActive(false);
+                FRank.SetActive(false);
+                break;
+            case "A":
+                SSRank.SetActive(false);
+                SRank.SetActive(false);
+                ARank.SetActive(true);
+                BRank.SetActive(false);
+                CRank.SetActive(false);
+                FRank.SetActive(false);
+                break;
+            case "B":
+                SSRank.SetActive(false);
+                SRank.SetActive(false);
+                ARank.SetActive(false);
+                BRank.SetActive(true);
+                CRank.SetActive(false);
+                FRank.SetActive(false);
+                break;
+            case "C":
+                SSRank.SetActive(false);
+                SRank.SetActive(false);
+                ARank.SetActive(false);
+                BRank.SetActive(false);
+                CRank.SetActive(true);
+                FRank.SetActive(false);
+                break;
+            case "F":
+                SSRank.SetActive(false);
+                SRank.SetActive(false);
+                ARank.SetActive(false);
+                BRank.SetActive(false);
+                CRank.SetActive(false);
+                FRank.SetActive(true);
+                break;
+            default:
+                SSRank.SetActive(false);
+                SRank.SetActive(false);
+                ARank.SetActive(false);
+                BRank.SetActive(false);
+                CRank.SetActive(false);
+                FRank.SetActive(false);
+                break;
+        }
     }
 
     public void LoadGame()

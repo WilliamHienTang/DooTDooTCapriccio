@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour {
 
     string song;
     string difficulty;
+    int noteCount;
     float speedOffset;
     float noteSpeed;
     
@@ -1003,6 +1004,7 @@ public class GameManager : MonoBehaviour {
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
         song = PlayerPrefs.GetString(Constants.selectedSong);
         difficulty = PlayerPrefs.GetString(Constants.difficulty);
+        noteCount = PlayerPrefs.GetInt(song + difficulty + Constants.noteCount);
 
         PlayerPrefs.SetInt(Constants.score, 0);
         PlayerPrefs.SetInt(Constants.combo, 0);
@@ -1015,6 +1017,97 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt(Constants.notesHit, 0);
     }
 
+    void SetScoreRank()
+    {
+        float rank = (float)PlayerPrefs.GetInt(Constants.score) / (float)(noteCount * Constants.perfectScore);
+
+        if (PlayerPrefs.GetInt(Constants.perfects) == noteCount)
+        {
+            PlayerPrefs.SetString(Constants.scoreRank, "SS");
+        }
+        else if (PlayerPrefs.GetInt(Constants.perfects) + PlayerPrefs.GetInt(Constants.greats) == noteCount)
+        {
+            PlayerPrefs.SetString(Constants.scoreRank, "S");
+        }
+        else if (rank >= Constants.rankA)
+        {
+            PlayerPrefs.SetString(Constants.scoreRank, "A");
+        }
+        else if (rank >= Constants.rankB)
+        {
+            PlayerPrefs.SetString(Constants.scoreRank, "B");
+        }
+        else if (rank >= Constants.rankC)
+        {
+            PlayerPrefs.SetString(Constants.scoreRank, "C");
+        }
+        else
+        {
+            PlayerPrefs.SetString(Constants.scoreRank, "F");
+        }
+
+        SetHighRank();
+    }
+
+    void SetHighRank()
+    {
+        int scoreRank = 0;
+        int highRank = 0;
+
+        switch (PlayerPrefs.GetString(Constants.scoreRank))
+        {
+            case "SS":
+                scoreRank = 6;
+                break;
+            case "S":
+                scoreRank = 5;
+                break;
+            case "A":
+                scoreRank = 4;
+                break;
+            case "B":
+                scoreRank = 3;
+                break;
+            case "C":
+                scoreRank = 2;
+                break;
+            case "F":
+                scoreRank = 1;
+                break;
+            default:
+                break;
+        }
+
+        switch (PlayerPrefs.GetString(song + difficulty + Constants.highRank))
+        {
+            case "SS":
+                highRank = 6;
+                break;
+            case "S":
+                highRank = 5;
+                break;
+            case "A":
+                highRank = 4;
+                break;
+            case "B":
+                highRank = 3;
+                break;
+            case "C":
+                highRank = 2;
+                break;
+            case "F":
+                scoreRank = 1;
+                break;
+            default:
+                break;
+        }
+
+        if (scoreRank > highRank)
+        {
+            PlayerPrefs.SetString(song + difficulty + Constants.highRank, PlayerPrefs.GetString(Constants.scoreRank));
+        }
+    }
+
     IEnumerator EndGame()
     {
         pauseButton.SetActive(false);
@@ -1022,6 +1115,7 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(SetOffFireworks(10));
         yield return new WaitForSeconds(3.0f);
         FindObjectOfType<AudioManager>().Stop(song);
+        SetScoreRank();
         SceneManager.LoadScene(Constants.scoreScreen);
     }
 
@@ -1032,7 +1126,7 @@ public class GameManager : MonoBehaviour {
         fireworks.transform.localScale = new Vector3(fireworksParticle.transform.localScale.x * 2, fireworksParticle.transform.localScale.x * 2, fireworksParticle.transform.localScale.x * 2);
 
         GameObject text = Instantiate(fireworksText, gameCanvas.transform.position, Quaternion.identity, gameCanvas.transform);
-        if (PlayerPrefs.GetInt(Constants.misses) == 0 && PlayerPrefs.GetInt(Constants.bads) == 0 && PlayerPrefs.GetInt(Constants.goods) == 0)
+        if (PlayerPrefs.GetInt(Constants.perfects) + PlayerPrefs.GetInt(Constants.greats) == noteCount)
         {
             text.GetComponent<TextMeshProUGUI>().text = "FULL COMBO";
         }

@@ -36,11 +36,30 @@ public class Constants : MonoBehaviour {
     public const string tuttiSong = "tutti";
     public const string tuttiTitle = "ZAQ - Tutti!";
 
+    // Note counts
+    public const int soundscapeEasyNoteCount = 131;
+    public const int soundscapeNormalNoteCount = 246;
+    public const int soundscapeHardNoteCount = 381;
+    public const int soundscapeExpertNoteCount = 526;
+    public const int takarajimaEasyNoteCount = 193;
+    public const int takarajimaNormalNoteCount = 363;
+    public const int takarajimaHardNoteCount = 487;
+    public const int takarajimaExpertNoteCount = 647;
+    public const int tuttiEasyNoteCount = 135;
+    public const int tuttiNormalNoteCount = 264;
+    public const int tuttiHardNoteCount = 413;
+    public const int tuttiExpertNoteCount = 597;
+
+    // Score ranks
+    public const float rankA = 0.85f;
+    public const float rankB = 0.7f;
+    public const float rankC = 0.5f;
+
     // Difficulties
-    public const string easy = "easy";
-    public const string normal = "normal";
-    public const string hard = "hard";
-    public const string expert = "expert";
+    public const string easy = "Easy";
+    public const string normal = "Normal";
+    public const string hard = "Hard";
+    public const string expert = "Expert";
 
     // Color
     public static Color easyColor = new Color(0, 100f / 255f, 1);
@@ -63,6 +82,9 @@ public class Constants : MonoBehaviour {
     public const string combo = "Combo";
     public const string highScore = "HighScore";
     public const string maxCombo = "MaxCombo";
+    public const string noteCount = "NoteCount";
+    public const string scoreRank = "ScoreRank";
+    public const string highRank = "HighRank";
     public const string perfects = "Perfects";
     public const string greats = "Greats";
     public const string goods = "Goods";
