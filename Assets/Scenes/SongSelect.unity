@@ -2064,7 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3835,6 +3835,7 @@ GameObject:
   - component: {fileID: 890758287}
   - component: {fileID: 890758291}
   - component: {fileID: 890758292}
+  - component: {fileID: 890758293}
   m_Layer: 5
   m_Name: SongSelectCanvas
   m_TagString: Untagged
@@ -3887,9 +3888,9 @@ Canvas:
   m_GameObject: {fileID: 890758286}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1243673208}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3958,6 +3959,19 @@ MonoBehaviour:
   drawDepth: -1000
   alpha: 1
   fadeDir: -1
+--- !u!114 &890758293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890758286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495f9b709e0ec2f4cab62b3b7a1843f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasTapParticle: {fileID: 4953554541548902, guid: 56104531242150f4392b91aa964c33ca,
+    type: 2}
 --- !u!1 &891595782
 GameObject:
   m_ObjectHideFlags: 0
@@ -5499,8 +5513,8 @@ Camera:
   m_GameObject: {fileID: 1243673206}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
