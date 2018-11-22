@@ -11,6 +11,7 @@ public static class JsonHelper
         return wrapper.Items;
     }
 
+    // No new lines
     public static string ToJson<T>(T[] array)
     {
         Wrapper<T> wrapper = new Wrapper<T>();
@@ -18,6 +19,7 @@ public static class JsonHelper
         return JsonUtility.ToJson(wrapper);
     }
 
+    // New lines separating objects
     public static string ToJson<T>(T[] array, bool prettyPrint)
     {
         Wrapper<T> wrapper = new Wrapper<T>();

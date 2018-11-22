@@ -103,6 +103,7 @@ public class Constants : MonoBehaviour {
     public const int scoreDigits = 7;
     public const int comboDigits = 4;
 
+    // Timing and game object positions
     public const float activatorZ = 1.0f;
     public const float spawnZ = 50.0f;
     public const float followThroughZ = -50.0f;
@@ -110,17 +111,20 @@ public class Constants : MonoBehaviour {
     public const float maxNoteSpeed = 10.0f;
     public const float minNoteSpeed = 5.0f;
 
+    // Note lane positions
     public const float lane1X = -1.02f;
     public const float lane2X = -0.51f;
     public const float lane3X = 0f;
     public const float lane4X = 0.51f;
     public const float lane5X = 1.02f;
 
+    // Score types
     public const string perfect = "perfect";
     public const string great = "great";
     public const string good = "good";
     public const string bad = "bad";
 
+    // Score type values
     public const int perfectScore = 1000;
     public const int greatScore = 750;
     public const int goodScore = 500;

@@ -14,19 +14,13 @@ public class CanvasTap : MonoBehaviour {
             case RuntimePlatform.WindowsEditor:
                 isTouchingDevice = false;
                 break;
-            case RuntimePlatform.Android:
+            default:
                 isTouchingDevice = true;
                 break;
         }
     }
-
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
 	
-	// Update is called once per frame
+	// Instantiate canvas tap particle at touch position
 	void Update ()
     {
         if (isTouchingDevice)

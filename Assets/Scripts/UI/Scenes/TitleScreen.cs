@@ -8,57 +8,84 @@ using TMPro;
 
 public class TitleScreen : MonoBehaviour {
 
+    AudioManager audioManager;
     public TextMeshProUGUI tapText;
-    int touches;
-    bool enableTouch = true;
+    bool isTouchingDevice;
+
+    void Awake()
+    {
+        switch (Application.platform)
+        {
+            case RuntimePlatform.WindowsEditor:
+                isTouchingDevice = false;
+                break;
+            default:
+                isTouchingDevice = true;
+                break;
+        }
+    }
 
     IEnumerator Start()
     {
         //DefaultSettings();
         enabled = false;
-        FindObjectOfType<AudioManager>().Play(Constants.vivaceBGM);
-        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
+
+        // Play BGM
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play(Constants.vivaceBGM);
+
+        // Fade in scene
+        float fadeTime = FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
-        touches = 0;
+
         enabled = true;
     }
 
-    // Update is called once per frame
+    // Load main menu on screen touch
     void Update()
     {
-        touches = Input.touchCount;
-        if ((touches > 0 || Input.GetMouseButtonDown(0)) && enableTouch)
+        if (isTouchingDevice)
         {
-            enableTouch = false;
-            StartCoroutine(BlinkText(6));
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                enabled = false;
+                StartCoroutine(LoadMainMenu(6));
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                enabled = false;
+                StartCoroutine(LoadMainMenu(6));
+            }
         }
     }
 
-    // Start game after n text blinks
-    IEnumerator BlinkText(int n)
+    // Load main menu after text blinks
+    IEnumerator LoadMainMenu(int blinks)
     {
         tapText.GetComponent<Animator>().enabled = false;
+        audioManager.Play(Constants.tapScreenSFX);
 
-        BlinkAudio();
-        for (int i = 0; i < n; i++)
+        // text blink by alternating alpha
+        Color c = tapText.color;
+        for (int i = 0; i < blinks; i++)
         {
-            Color c = tapText.color;
             tapText.color = new Color(c.r, c.g, c.b, 0);
             yield return new WaitForSeconds(0.075f);
             tapText.color = new Color(c.r, c.g, c.b, 1);
             yield return new WaitForSeconds(0.075f);
         }
-        StartGame();
-    }
 
-    void BlinkAudio()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.tapScreenSFX);
+        StopMusic();
+        SceneManager.LoadScene(Constants.mainMenu);
     }
     
+    // Stop the BGM
     void StopMusic()
     {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
+        string currentMusic = audioManager.GetCurrentBGM();
 
         if (currentMusic != null)
         {
@@ -66,12 +93,15 @@ public class TitleScreen : MonoBehaviour {
         }
     }
 
+    // Reinit player prefs
     void DefaultSettings()
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat(Constants.noteSpeed, 7.5f);
         PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
+        PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
 
+        // Init song note counts
         PlayerPrefs.SetInt("soundscapeEasyNoteCount", Constants.soundscapeEasyNoteCount);
         PlayerPrefs.SetInt("soundscapeNormalNoteCount", Constants.soundscapeNormalNoteCount);
         PlayerPrefs.SetInt("soundscapeHardNoteCount", Constants.soundscapeHardNoteCount);
@@ -84,11 +114,5 @@ public class TitleScreen : MonoBehaviour {
         PlayerPrefs.SetInt("tuttiNormalNoteCount", Constants.tuttiNormalNoteCount);
         PlayerPrefs.SetInt("tuttiHardNoteCount", Constants.tuttiHardNoteCount);
         PlayerPrefs.SetInt("tuttiExpertNoteCount", Constants.tuttiExpertNoteCount);
-    }
-
-    void StartGame()
-    {
-        StopMusic();
-        SceneManager.LoadScene(Constants.mainMenu);
     }
 }

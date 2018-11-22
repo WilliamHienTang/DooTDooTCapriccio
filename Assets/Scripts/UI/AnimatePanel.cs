@@ -14,6 +14,7 @@ public class AnimatePanel : MonoBehaviour {
     [Header("SETTINGS")]
     private bool isOn = false;
 
+    // Show/hide panel
     public void PlayAnimator()
     {
         if (isOn == true)
