@@ -4337,12 +4337,6 @@ MonoBehaviour:
   difficultyText: {fileID: 20620072}
   gameCanvas: {fileID: 932906020}
   notePlatform: {fileID: 744317974}
-  pregameObjects: {fileID: 1747445288}
-  songImage: {fileID: 1241923286}
-  difficultyBar: {fileID: 1158134748}
-  soundscape: {fileID: 21300000, guid: 22a3fcc7dcee12341b166d3ab6ae59c2, type: 3}
-  takarajima: {fileID: 21300000, guid: c40b00414117ea242816a4dc77f1a11b, type: 3}
-  tutti: {fileID: 21300000, guid: 995ef06b7d06ac44585aac77e6308b14, type: 3}
   noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
   holdNoteObject: {fileID: 4788656985797828, guid: eb348f378cf7e594caec5cf7679c5e38,
     type: 2}
@@ -7638,6 +7632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1747445289}
+  - component: {fileID: 1747445290}
   m_Layer: 0
   m_Name: Pregame
   m_TagString: Untagged
@@ -7665,6 +7660,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1747445290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747445288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61816aa01e267d44a85fe8540e351c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundscape: {fileID: 21300000, guid: 22a3fcc7dcee12341b166d3ab6ae59c2, type: 3}
+  takarajima: {fileID: 21300000, guid: c40b00414117ea242816a4dc77f1a11b, type: 3}
+  tutti: {fileID: 21300000, guid: 995ef06b7d06ac44585aac77e6308b14, type: 3}
 --- !u!1 &1754404631
 GameObject:
   m_ObjectHideFlags: 0

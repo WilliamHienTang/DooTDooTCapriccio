@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreBar : MonoBehaviour {
 
     Slider scoreBarSlider;
-    public Transform fill;
+    Image fill;
     Color colorA;
     Color colorB;
     Color colorC;
@@ -20,6 +20,7 @@ public class ScoreBar : MonoBehaviour {
 
 	void Start () {
         scoreBarSlider = transform.GetComponent<Slider>();
+        fill = transform.Find("Fill Area").Find("Fill").GetComponent<Image>();
         colorA = new Color(1, 0, 0);
         colorB = new Color(0, 1, 0);
         colorC = new Color(1, 50f/255f, 0);
@@ -40,11 +41,11 @@ public class ScoreBar : MonoBehaviour {
         {
             fill.GetComponent<Image>().color = colorA;
         }
-        else if (scoreRank > Constants.rankA)
+        else if (scoreRank > Constants.rankB)
         {
             fill.GetComponent<Image>().color = colorB;
         }
-        else if (scoreRank > Constants.rankA)
+        else if (scoreRank > Constants.rankC)
         {
             fill.GetComponent<Image>().color = colorC;
         }

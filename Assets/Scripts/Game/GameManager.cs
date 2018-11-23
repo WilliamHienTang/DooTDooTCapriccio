@@ -14,16 +14,7 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI difficultyText;
     public Transform gameCanvas;
     public GameObject notePlatform;
-
-    // Pregame objects
-    public GameObject pregameObjects;
-    public Image songImage;
-    public GameObject difficultyBar;
-
-    // Song images
-    public Sprite soundscape;
-    public Sprite takarajima;
-    public Sprite tutti;
+    AudioManager audioManager;
 
     // Note objects
     public Transform noteObject;
@@ -73,7 +64,8 @@ public class GameManager : MonoBehaviour {
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
         // play song
-        FindObjectOfType<AudioManager>().Play(song);
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play(song);
 
         // initialize time syncing variables
         speedOffset = (Constants.spawnZ - Constants.activatorZ) / noteSpeed;
@@ -901,12 +893,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    IEnumerator DestroyPregameObjects()
-    {
-        yield return new WaitForSeconds(5.0f);
-        Destroy(pregameObjects);
-    }
-
     IEnumerator EnablePauseButton()
     {
         yield return new WaitForSeconds(8.0f);
@@ -916,50 +902,8 @@ public class GameManager : MonoBehaviour {
     void InitSongInfo()
     {
         difficultyText.text = difficulty.ToUpper();
-        SetDifficultyColor();
         songName.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
-        SetSongImage();
-        StartCoroutine(DestroyPregameObjects());
         StartCoroutine(EnablePauseButton());
-    }
-
-    void SetSongImage()
-    {
-        switch (song)
-        {
-            case Constants.soundscapeSong:
-                songImage.sprite = soundscape;
-                break;
-            case Constants.takarajimaSong:
-                songImage.sprite = takarajima;
-                break;
-            case Constants.tuttiSong:
-                songImage.sprite = tutti;
-                break;
-            default:
-                return;
-        }
-    }
-
-    void SetDifficultyColor()
-    {
-        switch (difficulty)
-        {
-            case Constants.easy:
-                difficultyBar.GetComponent<Image>().color = Constants.easyColor;
-                break;
-            case Constants.normal:
-                difficultyBar.GetComponent<Image>().color = Constants.normalColor;
-                break;
-            case Constants.hard:
-                difficultyBar.GetComponent<Image>().color = Constants.hardColor;
-                break;
-            case Constants.expert:
-                difficultyBar.GetComponent<Image>().color = Constants.expertColor;
-                break;
-            default:
-                break;
-        }
     }
 
     void InitPlayerPrefs()
@@ -1078,7 +1022,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(speedOffset + 3.0f);
         StartCoroutine(SetOffFireworks(10));
         yield return new WaitForSeconds(3.0f);
-        FindObjectOfType<AudioManager>().Stop(song);
+        audioManager.Stop(song);
         SetScoreRank();
         SceneManager.LoadScene(Constants.scoreScreen);
     }
@@ -1096,7 +1040,7 @@ public class GameManager : MonoBehaviour {
         }
 
         float duration = fireworksParticle.GetComponent<ParticleSystem>().main.duration / 4.0f;
-        FindObjectOfType<AudioManager>().Play(Constants.fireworks);
+        audioManager.Play(Constants.fireworks);
 
         for (int i = 0; i < numOfParticles; i++)
         {
