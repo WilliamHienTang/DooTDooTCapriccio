@@ -5,35 +5,46 @@ using TMPro;
 
 public class HitCollider : MonoBehaviour {
 
-    public GameObject tapParticle;
-    public GameObject hitParticle;
-    public GameObject holdParticle;
-    public GameObject missHoldParticle;
-    public GameObject headTailParticle;
-    GameObject holdParticleInstance;
+    bool isTouchingDevice;
+    public ScoreManager scoreManager;
+    public Transform gameCanvas;
+    AudioManager audioManager;
 
-    public GameObject perfectText;
-    public GameObject greatText;
-    public GameObject goodText;
-    public GameObject badText;
-    public GameObject missText;
+    // Particles
+    public Transform tapParticle;
+    public Transform hitParticle;
+    public Transform holdParticle;
+    public Transform missHoldParticle;
+    public Transform headTailParticle;
+
+    // Note and particle instances
+    Transform noteInstance;
+    Transform holdParticleInstance;
+    Transform heldNoteInstance;
+    public Transform heldNote;
 
     string colliderName;
-    public GameObject gameManager;
-    public GameObject gameCanvas;
-    public Transform heldNote;
-    GameObject heldNoteInstance;
-    GameObject noteInstance;
 
-    // Use this for initialization
+    void Awake()
+    {
+        switch (Application.platform)
+        {
+            case RuntimePlatform.WindowsEditor:
+                isTouchingDevice = false;
+                break;
+            default:
+                isTouchingDevice = true;
+                break;
+        }
+    }
+
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
-        gameCanvas = GameObject.Find("GameCanvas");
+        audioManager = FindObjectOfType<AudioManager>();
         colliderName = gameObject.name;
     }
 
-    // Update is called once per frame
+    // Determine collider presses, holds, and releases
     void Update()
     {
         if (FindObjectOfType<Pause>().IsPaused())
@@ -41,7 +52,7 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
-        if (gameManager.GetComponent<GameManager>().isTouchingDevice)
+        if (isTouchingDevice)
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
@@ -98,21 +109,24 @@ public class HitCollider : MonoBehaviour {
         }
     }
 
+    // Assign noteInstance to the note entering the collider
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.headNoteTag))
         {
-            noteInstance = other.gameObject;
+            noteInstance = other.transform;
         }
 
+        // Destroy the hold lane
         else if (other.CompareTag(Constants.tailNoteTag))
         {
-            Destroy(heldNoteInstance);
+            Destroy(heldNoteInstance.gameObject);
             StopLoopingParticle();
-            noteInstance = other.gameObject;
+            noteInstance = other.transform;
         }
     }
 
+    // Notes exiting the collider are considered misses
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.tailNoteTag))
@@ -121,17 +135,19 @@ public class HitCollider : MonoBehaviour {
             MissNote();
         }
 
+        // Destroy the hold note altogether
         else if (other.CompareTag(Constants.headNoteTag))
         {
-            Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
+            Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
             DestroyHoldNote();
             MissNote();
         }
     }
 
+    // Score notes pressed
     public void OnPress()
     {
-        FindObjectOfType<AudioManager>().Play(Constants.tapSFX);
+        audioManager.Play(Constants.tapSFX);
         Instantiate(tapParticle, transform.position, tapParticle.transform.rotation);
 
         if (noteInstance == null)
@@ -141,18 +157,23 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.noteTag))
         {
-            HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType(), noteInstance.tag);
+            Instantiate(hitParticle, transform.position, hitParticle.rotation);
+            HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
         }
 
+        // Activate hold note
         else if (noteInstance.CompareTag(Constants.headNoteTag))
         {
-            HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType(), noteInstance.tag);
-            GameObject holdLane = noteInstance.transform.parent.Find("HoldLane").gameObject;
+            Instantiate(headTailParticle, transform.position, headTailParticle.rotation);
+            holdParticleInstance = Instantiate(holdParticle, transform.position, holdParticle.rotation);
+            HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
+            Transform holdLane = noteInstance.parent.Find("HoldLane");
             noteInstance = holdLane;
-            heldNoteInstance = Instantiate(heldNote, new Vector3(transform.position.x, heldNote.position.y, transform.position.z), heldNote.rotation).gameObject;
+            heldNoteInstance = Instantiate(heldNote, new Vector3(transform.position.x, heldNote.position.y, transform.position.z), heldNote.rotation);
         }
     }
 
+    // Score tail releases and destroy hold note releases
     public void OnRelease()
     {
         if (noteInstance == null)
@@ -162,18 +183,19 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.tailNoteTag))
         {
-            Destroy(heldNoteInstance);
-            HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType(), noteInstance.tag);
+            Instantiate(headTailParticle, transform.position, headTailParticle.rotation);
+            HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
         }
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            Destroy(heldNoteInstance);
-            Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
+            Destroy(heldNoteInstance.gameObject);
+            Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
             DestroyHoldNote();
         }
     }
-
+    
+    // Miss for leaving collider bounds during hold note
     public void OutOfBound()
     {
         if (noteInstance == null)
@@ -183,8 +205,8 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            Destroy(heldNoteInstance);
-            Instantiate(missHoldParticle, transform.position, missHoldParticle.transform.rotation);
+            Destroy(heldNoteInstance.gameObject);
+            Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
             DestroyHoldNote();
         }
     }
@@ -198,88 +220,56 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.headNoteTag) || noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            noteInstance.transform.parent.GetComponent<HoldNote>().DestroyTail();
-            Destroy(noteInstance.transform.parent.gameObject);
+            noteInstance.parent.GetComponent<HoldNote>().DestroyTail();
+            Destroy(noteInstance.parent.gameObject);
             StopLoopingParticle();
             MissNote();
         }
     }
 
+    // Stop the looping particle of a hold note
     void StopLoopingParticle()
     {
         if (holdParticleInstance)
         {
-            for (int i = 0; i < holdParticleInstance.transform.childCount; i++)
+            for (int i = 0; i < holdParticleInstance.childCount; i++)
             {
-                holdParticleInstance.transform.GetChild(i).GetComponent<ParticleSystem>().loop = false;
+                holdParticleInstance.GetChild(i).GetComponent<ParticleSystem>().loop = false;
             }
         }
     }
 
     void MissNote()
     {
-        ClearScoreTypeText();
-        Instantiate(missText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
-        gameManager.GetComponent<GameManager>().ResetCombo();
-        gameManager.GetComponent<GameManager>().MissNote();
+        scoreManager.ResetCombo();
+        scoreManager.MissNote();
     }
 
-    void HandleNote(string scoreType, string noteType)
+    // Increase score based on score type
+    void HandleNote(string scoreType)
     {
-        FindObjectOfType<AudioManager>().Play(scoreType);
-        Destroy(noteInstance);
-
-        if (noteType == Constants.noteTag)
-        {
-            Instantiate(hitParticle, transform.position, hitParticle.transform.rotation);
-        }
-        else if (noteType == Constants.headNoteTag)
-        {
-            Instantiate(headTailParticle, transform.position, headTailParticle.transform.rotation);
-            holdParticleInstance = Instantiate(holdParticle, transform.position, holdParticle.transform.rotation);
-        }
-        else if (noteType == Constants.tailNoteTag)
-        {
-            Instantiate(headTailParticle, transform.position, headTailParticle.transform.rotation);
-        }
+        audioManager.Play(scoreType);
+        Destroy(noteInstance.gameObject);
 
         if (scoreType == Constants.perfect)
         {
-            ClearScoreTypeText();
-            Instantiate(perfectText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
-            gameManager.GetComponent<GameManager>().IncreaseCombo();
-            gameManager.GetComponent<GameManager>().IncreaseScore(Constants.perfectScore, Constants.perfects);
+            scoreManager.IncreaseCombo();
+            scoreManager.IncreaseScore(Constants.perfectScore, Constants.perfects);
         }
         else if (scoreType == Constants.great)
         {
-            ClearScoreTypeText();
-            Instantiate(greatText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
-            gameManager.GetComponent<GameManager>().IncreaseCombo();
-            gameManager.GetComponent<GameManager>().IncreaseScore(Constants.greatScore, Constants.greats);
+            scoreManager.IncreaseCombo();
+            scoreManager.IncreaseScore(Constants.greatScore, Constants.greats);
         }
         else if (scoreType == Constants.good)
         {
-            ClearScoreTypeText();
-            Instantiate(goodText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
-            gameManager.GetComponent<GameManager>().ResetCombo();
-            gameManager.GetComponent<GameManager>().IncreaseScore(Constants.goodScore, Constants.goods);
+            scoreManager.ResetCombo();
+            scoreManager.IncreaseScore(Constants.goodScore, Constants.goods);
         }
         else if (scoreType == Constants.bad)
         {
-            ClearScoreTypeText();
-            Instantiate(badText, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y - 25.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
-            gameManager.GetComponent<GameManager>().ResetCombo();
-            gameManager.GetComponent<GameManager>().IncreaseScore(Constants.badScore, Constants.bads);
-        }
-    }
-
-    void ClearScoreTypeText()
-    { 
-        GameObject[] scoreTypeTexts = GameObject.FindGameObjectsWithTag(Constants.scoreType);
-
-        for (int i = 0; i < scoreTypeTexts.Length; i++)
-        {
-            Destroy(scoreTypeTexts[i]);
+            scoreManager.ResetCombo();
+            scoreManager.IncreaseScore(Constants.badScore, Constants.bads);
         }
     }
 }

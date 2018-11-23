@@ -133,6 +133,7 @@
      <Compile Include="Assets\Scripts\Game\PerfectCollider.cs" />
      <Compile Include="Assets\Scripts\Game\ScoreBar.cs" />
      <Compile Include="Assets\Scripts\Game\ScoreComboText.cs" />
+     <Compile Include="Assets\Scripts\Game\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Other\ButtonAudio.cs" />
      <Compile Include="Assets\Scripts\Other\Constants.cs" />

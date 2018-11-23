@@ -8,15 +8,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour {
 
-    public bool isTouchingDevice;
-
     // Game objects
     public GameObject pauseButton;
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
     public Transform gameCanvas;
     public GameObject notePlatform;
-    public Transform increaseScoreText;
 
     // Pregame objects
     public GameObject pregameObjects;
@@ -62,19 +59,6 @@ public class GameManager : MonoBehaviour {
     string json;
     NoteSpawn[] noteChart;
     int chartIndex = 0;
-
-    void Awake()
-    {
-        switch (Application.platform)
-        {
-            case RuntimePlatform.WindowsEditor:
-                isTouchingDevice = false;
-                break;
-            case RuntimePlatform.Android:
-                isTouchingDevice = true;
-                break;
-        }
-    }
 
     // Use this for initialization
     void Start()
@@ -915,35 +899,6 @@ public class GameManager : MonoBehaviour {
             default:
                 return;
         }
-    }
-
-    public void IncreaseScore(int points, string scoreTypeCount)
-    {
-        PlayerPrefs.SetInt(Constants.score, PlayerPrefs.GetInt(Constants.score) + points);
-        PlayerPrefs.SetInt(Constants.notesHit, PlayerPrefs.GetInt(Constants.notesHit) + 1);
-        PlayerPrefs.SetInt(scoreTypeCount, PlayerPrefs.GetInt(scoreTypeCount) + 1);
-        Transform increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 130.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
-        increaseScoreInstance.GetComponent<TextMeshProUGUI>().text = "+" + points.ToString();
-    }
-
-    public void IncreaseCombo()
-    {
-        PlayerPrefs.SetInt(Constants.combo, PlayerPrefs.GetInt(Constants.combo) + 1);
-    }
-
-    public void ResetCombo()
-    {
-        if (PlayerPrefs.GetInt(Constants.combo) > PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo))
-        {
-            PlayerPrefs.SetInt(song + difficulty + Constants.maxCombo, PlayerPrefs.GetInt(Constants.combo));
-        }
-
-        PlayerPrefs.SetInt(Constants.combo, 0);
-    }
-
-    public void MissNote()
-    {
-        PlayerPrefs.SetInt(Constants.misses, PlayerPrefs.GetInt(Constants.misses) + 1);
     }
 
     IEnumerator DestroyPregameObjects()

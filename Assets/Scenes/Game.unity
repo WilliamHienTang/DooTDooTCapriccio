@@ -1207,24 +1207,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 1519928617991668, guid: f400a0c08aee75a44975ab169a9291e9,
+  scoreManager: {fileID: 984561332}
+  gameCanvas: {fileID: 932906020}
+  tapParticle: {fileID: 4063195140575862, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+  hitParticle: {fileID: 4162121562176622, guid: e3a7abbaefb495f448fefd17d8db7a6d,
     type: 2}
-  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
+  holdParticle: {fileID: 4063346327126272, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
-  missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+  missHoldParticle: {fileID: 4187559745322188, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
-  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+  headTailParticle: {fileID: 4699810978945486, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
-  perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
-    type: 2}
-  greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
-  goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
-  badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
-  missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
-  gameManager: {fileID: 984561328}
-  gameCanvas: {fileID: 932906016}
   heldNote: {fileID: 4819483802109032, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
 --- !u!1 &245075951
 GameObject:
@@ -1355,24 +1349,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 1519928617991668, guid: f400a0c08aee75a44975ab169a9291e9,
+  scoreManager: {fileID: 984561332}
+  gameCanvas: {fileID: 932906020}
+  tapParticle: {fileID: 4063195140575862, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+  hitParticle: {fileID: 4162121562176622, guid: e3a7abbaefb495f448fefd17d8db7a6d,
     type: 2}
-  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
+  holdParticle: {fileID: 4063346327126272, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
-  missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+  missHoldParticle: {fileID: 4187559745322188, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
-  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+  headTailParticle: {fileID: 4699810978945486, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
-  perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
-    type: 2}
-  greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
-  goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
-  badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
-  missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
-  gameManager: {fileID: 984561328}
-  gameCanvas: {fileID: 932906016}
   heldNote: {fileID: 4819483802109032, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
 --- !u!1 &302623717
 GameObject:
@@ -3012,24 +3000,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 1519928617991668, guid: f400a0c08aee75a44975ab169a9291e9,
+  scoreManager: {fileID: 984561332}
+  gameCanvas: {fileID: 932906020}
+  tapParticle: {fileID: 4063195140575862, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+  hitParticle: {fileID: 4162121562176622, guid: e3a7abbaefb495f448fefd17d8db7a6d,
     type: 2}
-  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
+  holdParticle: {fileID: 4063346327126272, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
-  missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+  missHoldParticle: {fileID: 4187559745322188, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
-  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+  headTailParticle: {fileID: 4699810978945486, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
-  perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
-    type: 2}
-  greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
-  goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
-  badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
-  missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
-  gameManager: {fileID: 984561328}
-  gameCanvas: {fileID: 932906016}
   heldNote: {fileID: 4819483802109032, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
 --- !u!1 &687788031
 GameObject:
@@ -4147,24 +4129,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 1519928617991668, guid: f400a0c08aee75a44975ab169a9291e9,
+  scoreManager: {fileID: 984561332}
+  gameCanvas: {fileID: 932906020}
+  tapParticle: {fileID: 4063195140575862, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+  hitParticle: {fileID: 4162121562176622, guid: e3a7abbaefb495f448fefd17d8db7a6d,
     type: 2}
-  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
+  holdParticle: {fileID: 4063346327126272, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
-  missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+  missHoldParticle: {fileID: 4187559745322188, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
-  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+  headTailParticle: {fileID: 4699810978945486, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
-  perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
-    type: 2}
-  greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
-  goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
-  badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
-  missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
-  gameManager: {fileID: 984561328}
-  gameCanvas: {fileID: 932906016}
   heldNote: {fileID: 4819483802109032, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
 --- !u!65 &924594109
 BoxCollider:
@@ -4192,6 +4168,7 @@ GameObject:
   - component: {fileID: 932906021}
   - component: {fileID: 932906023}
   - component: {fileID: 932906022}
+  - component: {fileID: 932906024}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -4315,6 +4292,18 @@ MonoBehaviour:
   countdown2: {fileID: 1702987686404792, guid: b9500a793f9981d4fb96821cafdbe3f1, type: 2}
   countdown3: {fileID: 1702987686404792, guid: 9073a04b1bd8c3b47b9a36cee50f5bcd, type: 2}
   pauseButton: {fileID: 1754404631}
+--- !u!114 &932906024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 932906016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b697a280c4008443a9db84a0d38e6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: c6dc0837de51ba54c86100a651992fd5, type: 3}
 --- !u!1 &984561328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,7 +4313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984561330}
   - component: {fileID: 984561329}
-  - component: {fileID: 984561331}
+  - component: {fileID: 984561332}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4343,14 +4332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28063b1e03b27b64a9ee24c7c2a8cc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isTouchingDevice: 0
   pauseButton: {fileID: 1754404631}
   songName: {fileID: 4049858}
   difficultyText: {fileID: 20620072}
   gameCanvas: {fileID: 932906020}
   notePlatform: {fileID: 744317974}
-  increaseScoreText: {fileID: 224544184222929922, guid: ca0e6c4997880d744b87cba83ae41915,
-    type: 2}
   pregameObjects: {fileID: 1747445288}
   songImage: {fileID: 1241923286}
   difficultyBar: {fileID: 1158134748}
@@ -4391,7 +4377,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &984561331
+--- !u!114 &984561332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4399,10 +4385,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 984561328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b697a280c4008443a9db84a0d38e6ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c57033f2ec43134e9931708ced1de23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeOutTexture: {fileID: 2800000, guid: c6dc0837de51ba54c86100a651992fd5, type: 3}
+  gameCanvas: {fileID: 932906020}
+  perfectText: {fileID: 114256200058897020, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
+    type: 2}
+  greatText: {fileID: 114286230128968870, guid: e06caa5f76e76464ba1621b9014de6c8,
+    type: 2}
+  goodText: {fileID: 114851622414826022, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
+  badText: {fileID: 114123422414462994, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
+  missText: {fileID: 114947327968310802, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+  increaseScoreText: {fileID: 114419505824678616, guid: ca0e6c4997880d744b87cba83ae41915,
+    type: 2}
 --- !u!1 &991475797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,7 +4721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.29411766}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6918,7 +6913,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 81d8f1c03af408444b144062cc9db40d, type: 2}
+  m_Material: {fileID: 2100000, guid: 789065d7408afda40a4615a2a06d41f2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -8569,24 +8564,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b74bbba2d67d14e807629054466158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapParticle: {fileID: 1519928617991668, guid: f400a0c08aee75a44975ab169a9291e9,
+  scoreManager: {fileID: 984561332}
+  gameCanvas: {fileID: 932906020}
+  tapParticle: {fileID: 4063195140575862, guid: f400a0c08aee75a44975ab169a9291e9,
     type: 2}
-  hitParticle: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d,
+  hitParticle: {fileID: 4162121562176622, guid: e3a7abbaefb495f448fefd17d8db7a6d,
     type: 2}
-  holdParticle: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b,
+  holdParticle: {fileID: 4063346327126272, guid: 40deebf4540cf46439298018544fef7b,
     type: 2}
-  missHoldParticle: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337,
+  missHoldParticle: {fileID: 4187559745322188, guid: fe3bb93b151364d4b83c915e44f11337,
     type: 2}
-  headTailParticle: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a,
+  headTailParticle: {fileID: 4699810978945486, guid: 516f686be4a20c8408a7f3aae0dbed6a,
     type: 2}
-  perfectText: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a,
-    type: 2}
-  greatText: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
-  goodText: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
-  badText: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
-  missText: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
-  gameManager: {fileID: 984561328}
-  gameCanvas: {fileID: 932906016}
   heldNote: {fileID: 4819483802109032, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
 --- !u!1 &1996303127
 GameObject:
