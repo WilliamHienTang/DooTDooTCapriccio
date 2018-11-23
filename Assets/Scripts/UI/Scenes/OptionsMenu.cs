@@ -14,7 +14,7 @@ public class OptionsMenu : MonoBehaviour {
     public Slider SFXSlider;
     public TextMeshProUGUI noteSpeed;
 
-    // Use this for initialization
+    // Init UI values
     void Start()
     {
         noteSpeed.text = PlayerPrefs.GetFloat(Constants.noteSpeed).ToString();
@@ -25,12 +25,7 @@ public class OptionsMenu : MonoBehaviour {
         PlayerPrefs.Save();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // Slider value setting functions
     public void SetSongVolume(float volume)
     {
         PlayerPrefs.SetFloat(Constants.songVolume, volume);
@@ -65,6 +60,7 @@ public class OptionsMenu : MonoBehaviour {
         newSpeed = RoundToTenth(newSpeed);
         PlayerPrefs.SetFloat(Constants.noteSpeed, newSpeed);
 
+        // Wrapping value around max and min note speed
         if (PlayerPrefs.GetFloat(Constants.noteSpeed) > Constants.maxNoteSpeed)
         {
             PlayerPrefs.SetFloat(Constants.noteSpeed, Constants.minNoteSpeed);
@@ -79,8 +75,6 @@ public class OptionsMenu : MonoBehaviour {
         {
             noteSpeed.SetText(PlayerPrefs.GetFloat(Constants.noteSpeed).ToString("F1"));
         }
-
-        PlayerPrefs.Save();
     }
 
     float RoundToTenth(float number)

@@ -167,6 +167,7 @@
      <Compile Include="Assets\Scripts\Game\PlayerPrefsText.cs" />
      <Compile Include="Assets\Scripts\Game\ScoreBar.cs" />
      <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Other\ButtonAudio.cs" />
      <Compile Include="Assets\Scripts\Other\Constants.cs" />
      <Compile Include="Assets\Scripts\Other\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\Other\Sound.cs" />

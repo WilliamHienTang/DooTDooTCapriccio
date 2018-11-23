@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SongSelect : MonoBehaviour {
 
+    AudioManager audioManager;
+
     public GameObject difficultyPanel;
     public GameObject RankSS;
     public GameObject RankS;
@@ -18,8 +20,10 @@ public class SongSelect : MonoBehaviour {
     IEnumerator Start()
     {
         InitDifficultyPanel();
+        audioManager = FindObjectOfType<AudioManager>();
 
-        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
+        // Fade in scene
+        float fadeTime = FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }
 
@@ -92,29 +96,14 @@ public class SongSelect : MonoBehaviour {
 
     public void LoadGame()
     {
-        StopMusic();
+        audioManager.StopBGM();
         SceneManager.LoadScene(Constants.game);
     }
 
     public void LoadMainMenu()
     {
-        StopMusic();
+        audioManager.StopBGM();
         SceneManager.LoadScene(Constants.mainMenu);
-    }
-
-    public void ButtonAudio1()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
-    }
-
-    public void ButtonAudio2()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
-    }
-
-    public void ButtonAudio3()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button3SFX);
     }
 
     public void SetDifficulty(int difficulty)
@@ -160,15 +149,5 @@ public class SongSelect : MonoBehaviour {
                 break;
         }
         difficultyPanel.GetComponent<AnimatePanel>().PlayAnimator();
-    }
-
-    void StopMusic()
-    {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
-
-        if (currentMusic != null)
-        {
-            FindObjectOfType<AudioManager>().Stop(currentMusic);
-        }
     }
 }

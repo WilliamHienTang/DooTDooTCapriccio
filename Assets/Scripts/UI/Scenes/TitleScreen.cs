@@ -8,8 +8,9 @@ using TMPro;
 
 public class TitleScreen : MonoBehaviour {
 
-    AudioManager audioManager;
     public TextMeshProUGUI tapText;
+    AudioManager audioManager;
+    string BGM;
     bool isTouchingDevice;
 
     void Awake()
@@ -32,7 +33,8 @@ public class TitleScreen : MonoBehaviour {
 
         // Play BGM
         audioManager = FindObjectOfType<AudioManager>();
-        audioManager.Play(Constants.vivaceBGM);
+        BGM = Constants.vivaceBGM;
+        audioManager.Play(BGM);
 
         // Fade in scene
         float fadeTime = FindObjectOfType<Fade>().BeginFade(-1);
@@ -78,19 +80,8 @@ public class TitleScreen : MonoBehaviour {
             yield return new WaitForSeconds(0.075f);
         }
 
-        StopMusic();
+        audioManager.StopBGM();
         SceneManager.LoadScene(Constants.mainMenu);
-    }
-    
-    // Stop the BGM
-    void StopMusic()
-    {
-        string currentMusic = audioManager.GetCurrentBGM();
-
-        if (currentMusic != null)
-        {
-            FindObjectOfType<AudioManager>().Stop(currentMusic);
-        }
     }
 
     // Reinit player prefs

@@ -1,16 +1,4 @@
-﻿/* Get inputs and assgin the delta distance to all ListBoxes.
- *
- * There are three controling modes:
- * 1. Free moving: Move ListBoxes by finger or mouse.
- *    You don't know where the ListBox will stop at.
- * 2. Align to center: It's the same as free moving.
- *    However, there is always a ListBox positioning at the center.
- * 3. Control by button: Control ListBoxes by UI buttons.
- *    There is always a ListBox positioning at the center.
- *
- * Author: LanKuDot <airlanser@gmail.com>
- */
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ListPositionCtrl : MonoBehaviour
@@ -21,6 +9,7 @@ public class ListPositionCtrl : MonoBehaviour
 		HORIZONTAL
 	};
 
+    AudioManager audioManager;
 	public static ListPositionCtrl Instance;
 
 	/*========== Settings ==========*/
@@ -120,6 +109,8 @@ public class ListPositionCtrl : MonoBehaviour
 	 */
 	void Start()
 	{
+        audioManager = FindObjectOfType<AudioManager>();
+
 		/* The the reference of canvas plane */
 		_parentCanvas = GetComponentInParent<Canvas>();
 
@@ -180,49 +171,38 @@ public class ListPositionCtrl : MonoBehaviour
 
     void SetSongPreview(ListBox listbox)
     {
-        string currentBGM;
-
         switch (listbox.content.text)
         {
             case Constants.soundscapeTitle:
-                currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
+                audioManager.StopBGM();
+                audioManager.Play(Constants.soundscapePreview);
 
-                if (currentBGM != null)
-                {
-                    FindObjectOfType<AudioManager>().Stop(currentBGM);
-                }
-
-                FindObjectOfType<AudioManager>().Play(Constants.soundscapePreview);
                 songImage.sprite = soundscape;
+
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
                 PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.soundscapeTitle);
                 break;
+
             case Constants.takarajimaTitle:
-                currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
+                audioManager.StopBGM();
+                audioManager.Play(Constants.takarajimaPreview);
 
-                if (currentBGM != null)
-                {
-                    FindObjectOfType<AudioManager>().Stop(currentBGM);
-                }
-
-                FindObjectOfType<AudioManager>().Play(Constants.takarajimaPreview);
                 songImage.sprite = takarajima;
+
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.takarajimaSong);
                 PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.takarajimaTitle);
                 break;
+
             case Constants.tuttiTitle:
-                currentBGM = FindObjectOfType<AudioManager>().GetCurrentBGM();
+                audioManager.StopBGM();
+                audioManager.Play(Constants.tuttiPreview);
 
-                if (currentBGM != null)
-                {
-                    FindObjectOfType<AudioManager>().Stop(currentBGM);
-                }
-
-                FindObjectOfType<AudioManager>().Play(Constants.tuttiPreview);
                 songImage.sprite = tutti;
+
                 PlayerPrefs.SetString(Constants.selectedSong, Constants.tuttiSong);
                 PlayerPrefs.SetString(Constants.selectedSongTitle, Constants.tuttiTitle);
                 break;
+
             default:
                 break;
         }

@@ -7,6 +7,8 @@ using TMPro;
 
 public class ScoreScreen : MonoBehaviour {
 
+    AudioManager audioManager;
+
     public GameObject scoreCanvas;
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
@@ -31,9 +33,12 @@ public class ScoreScreen : MonoBehaviour {
         scoreCanvas.GetComponent<AnimatePanel>().PlayAnimator();
         InitText();
 
-        // play bgm and fade
-        FindObjectOfType<AudioManager>().Play(Constants.kaiheitaiBGM);
-        float fadeTime = 0.5f / GameObject.Find("ScoreScreenCanvas").GetComponent<Fade>().BeginFade(-1);
+        // Play BGM
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play(Constants.kaiheitaiBGM);
+
+        // Fade in scene
+        float fadeTime = FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
     }
 
@@ -45,33 +50,8 @@ public class ScoreScreen : MonoBehaviour {
 
     public void LoadMainMenu()
     {
-        StopAudio();
+        audioManager.StopBGM();
         SceneManager.LoadScene(Constants.mainMenu);
-    }
-
-    public void ButtonAudio1()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
-    }
-
-    public void ButtonAudio2()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
-    }
-
-    public void ButtonAudio3()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button3SFX);
-    }
-
-    void StopAudio()
-    {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
-
-        if (currentMusic != null)
-        {
-            FindObjectOfType<AudioManager>().Stop(currentMusic);
-        }
     }
 
     void InitText()

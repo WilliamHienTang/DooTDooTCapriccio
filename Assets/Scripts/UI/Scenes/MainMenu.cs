@@ -6,54 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    // Use this for initialization
+    AudioManager audioManager;
+    string BGM;
+
     IEnumerator Start()
     {
-        FindObjectOfType<AudioManager>().Play(Constants.kimiBGM);
-        float fadeTime = 0.5f / FindObjectOfType<Fade>().BeginFade(-1);
-        yield return new WaitForSeconds(fadeTime);
-    }
+        // Play BGM
+        audioManager = FindObjectOfType<AudioManager>();
+        BGM = Constants.kimiBGM;
+        audioManager.Play(BGM);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Fade in scene
+        float fadeTime = FindObjectOfType<Fade>().BeginFade(-1);
+        yield return new WaitForSeconds(fadeTime);
     }
 
     public void LoadSongScreen()
     {
-        StopMusic();
+        audioManager.StopBGM();
         SceneManager.LoadScene(Constants.songSelect);
     }
 
     public void LoadTitleScreen()
     {
-        StopMusic();
+        audioManager.StopBGM();
         SceneManager.LoadScene(Constants.titleScreen);
-    }
-
-    public void ButtonAudio1()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
-    }
-
-    public void ButtonAudio2()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
-    }
-
-    public void ButtonAudio3()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button3SFX);
-    }
-
-    void StopMusic()
-    {
-        string currentMusic = FindObjectOfType<AudioManager>().GetCurrentBGM();
-
-        if (currentMusic != null)
-        {
-            FindObjectOfType<AudioManager>().Stop(currentMusic);
-        }
     }
 }

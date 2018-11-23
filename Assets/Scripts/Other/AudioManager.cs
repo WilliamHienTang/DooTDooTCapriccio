@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour {
     public static AudioManager instance;
     public AudioMixer audioMixer;
     string currentBGM;
-
-    // Use this for initialization
+    
+    // Init audiomanager and sounds
     void Awake () {
 
         if (instance == null)
@@ -106,11 +106,14 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Stop();
-        currentBGM = null;
     }
 
-    public string GetCurrentBGM()
+    public void StopBGM()  
     {
-        return currentBGM;
+        if (currentBGM != null)
+        {
+            Stop(currentBGM);
+            currentBGM = null;
+        }
     }
 }
