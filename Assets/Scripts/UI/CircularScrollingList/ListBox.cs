@@ -35,7 +35,7 @@ public class ListBox : MonoBehaviour
 	public bool keepSliding { set { _keepSliding = value; } }
 	public bool needToAlignToCenter { set { _needToAlignToCenter = value; } }
 
-    public bool center;
+    public bool isCenter;
 
 	/* Notice: ListBox will initialize its variables from ListPositionCtrl.
 	 * Make sure that the execution order of script ListPositionCtrl is prior to
@@ -48,7 +48,7 @@ public class ListBox : MonoBehaviour
 		_lowerBoundPos = ListPositionCtrl.Instance.lowerBoundPos_L;
 		_upperBoundPos = ListPositionCtrl.Instance.upperBoundPos_L;
 		_shiftBoundPos = ListPositionCtrl.Instance.shiftBoundPos_L;
-        center = false;
+        isCenter = false;
 
 		_originalLocalScale = transform.localScale;
 
@@ -276,7 +276,7 @@ public class ListBox : MonoBehaviour
 	 */
 	public void updateSize(float smallest_at, float target_value)
 	{
-        if (!center)
+        if (!isCenter)
         {
             transform.localScale = _originalLocalScale *
                 (1.0f + ListPositionCtrl.Instance.scaleFactor * Mathf.InverseLerp(smallest_at, 0.0f, Mathf.Abs(target_value)));
@@ -289,12 +289,12 @@ public class ListBox : MonoBehaviour
 
     public void setCenter()
     {
-        center = true;
+        isCenter = true;
     }
 
     public void unsetCenter()
     {
-        center = false;
+        isCenter = false;
     }
 
     public void setCenterSize()
@@ -304,7 +304,7 @@ public class ListBox : MonoBehaviour
 
     public void updateColor()
     {
-        if (center)
+        if (isCenter)
         {
             transform.GetComponent<Image>().color = Constants.gold;
         }

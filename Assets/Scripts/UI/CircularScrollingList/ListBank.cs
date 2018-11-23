@@ -5,7 +5,6 @@ using UnityEngine;
 public class ListBank : MonoBehaviour
 {
 	public static ListBank Instance;
-
 	public string[] contents;
 
 	void Awake()
@@ -14,6 +13,7 @@ public class ListBank : MonoBehaviour
         CircularReorder();
     }
 
+    // Reorder contents so that the selected song is the first element
     void CircularReorder()
     {
         string song = PlayerPrefs.GetString(Constants.selectedSongTitle);

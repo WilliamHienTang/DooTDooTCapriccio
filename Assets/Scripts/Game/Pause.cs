@@ -5,30 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour {
 
+    Transform gameCanvas;
+    AudioManager audioManager;
+
     public GameObject countdown1;
     public GameObject countdown2;
     public GameObject countdown3;
     public GameObject pauseButton;
 
-    GameObject gameCanvas;
     bool isPaused = false;
 
-    // Use this for initialization
     void Start()
     {
-        gameCanvas = GameObject.Find("GameCanvas");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        gameCanvas = transform;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void PauseGame()
     {
         AudioListener.pause = true;
-        FindObjectOfType<AudioManager>().Pause(PlayerPrefs.GetString(Constants.selectedSong));
+        audioManager.Pause(PlayerPrefs.GetString(Constants.selectedSong));
         isPaused = true;
         pauseButton.SetActive(false);
     }
@@ -38,18 +34,19 @@ public class Pause : MonoBehaviour {
         StartCoroutine(CountdownResume());
     }
 
+    // Resume game after 3s countdown
     public IEnumerator CountdownResume()
     {
-        Instantiate(countdown3, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y + 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        Instantiate(countdown3, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 50.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         yield return new WaitForSeconds(1);
-        Instantiate(countdown2, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y + 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        Instantiate(countdown2, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 50.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         yield return new WaitForSeconds(1);
-        Instantiate(countdown1, new Vector3(gameCanvas.transform.position.x, gameCanvas.transform.position.y + 50.0f, gameCanvas.transform.position.z), Quaternion.identity, gameCanvas.transform);
+        Instantiate(countdown1, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 50.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         yield return new WaitForSeconds(1);
 
         isPaused = false;
         AudioListener.pause = false;
-        FindObjectOfType<AudioManager>().Play(PlayerPrefs.GetString(Constants.selectedSong));
+        audioManager.Play(PlayerPrefs.GetString(Constants.selectedSong));
         pauseButton.SetActive(true);
     }
 
@@ -57,24 +54,8 @@ public class Pause : MonoBehaviour {
     {
         isPaused = false;
         AudioListener.pause = false;
-        Time.timeScale = 1f;
-        StopMusic();
+        audioManager.Stop(PlayerPrefs.GetString(Constants.selectedSong));
         SceneManager.LoadScene(Constants.songSelect);
-    }
-
-    void StopMusic()
-    {
-        FindObjectOfType<AudioManager>().Stop(PlayerPrefs.GetString(Constants.selectedSong));
-    }
-
-    public void ButtonAudio1()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button1SFX);
-    }
-
-    public void ButtonAudio2()
-    {
-        FindObjectOfType<AudioManager>().Play(Constants.button2SFX);
     }
 
     public bool IsPaused()

@@ -3720,8 +3720,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 932906023}
-        m_MethodName: ButtonAudio1
+      - m_Target: {fileID: 932906022}
+        m_MethodName: ButtonAudio2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4191,6 +4191,7 @@ GameObject:
   - component: {fileID: 932906017}
   - component: {fileID: 932906021}
   - component: {fileID: 932906023}
+  - component: {fileID: 932906022}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -4288,6 +4289,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 545058043}
   combo: {fileID: 1180464474}
+--- !u!114 &932906022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 932906016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7485978e4381284694f396d82397466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &932906023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5321,7 +5333,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1561905955480466, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925a92cc111588442ac191735484354a, type: 2}

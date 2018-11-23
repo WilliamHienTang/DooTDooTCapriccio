@@ -8,9 +8,9 @@ using TMPro;
 
 public class TitleScreen : MonoBehaviour {
 
-    public TextMeshProUGUI tapText;
     AudioManager audioManager;
     string BGM;
+    public TextMeshProUGUI tapText;
     bool isTouchingDevice;
 
     void Awake()
@@ -91,19 +91,5 @@ public class TitleScreen : MonoBehaviour {
         PlayerPrefs.SetFloat(Constants.noteSpeed, 7.5f);
         PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
         PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
-
-        // Init song note counts
-        PlayerPrefs.SetInt("soundscapeEasyNoteCount", Constants.soundscapeEasyNoteCount);
-        PlayerPrefs.SetInt("soundscapeNormalNoteCount", Constants.soundscapeNormalNoteCount);
-        PlayerPrefs.SetInt("soundscapeHardNoteCount", Constants.soundscapeHardNoteCount);
-        PlayerPrefs.SetInt("soundscapeExpertNoteCount", Constants.soundscapeExpertNoteCount);
-        PlayerPrefs.SetInt("takarajimaEasyNoteCount", Constants.takarajimaEasyNoteCount);
-        PlayerPrefs.SetInt("takarajimaNormalNoteCount", Constants.takarajimaNormalNoteCount);
-        PlayerPrefs.SetInt("takarajimaHardNoteCount", Constants.takarajimaHardNoteCount);
-        PlayerPrefs.SetInt("takarajimaExpertNoteCount", Constants.takarajimaExpertNoteCount);
-        PlayerPrefs.SetInt("tuttiEasyNoteCount", Constants.tuttiEasyNoteCount);
-        PlayerPrefs.SetInt("tuttiNormalNoteCount", Constants.tuttiNormalNoteCount);
-        PlayerPrefs.SetInt("tuttiHardNoteCount", Constants.tuttiHardNoteCount);
-        PlayerPrefs.SetInt("tuttiExpertNoteCount", Constants.tuttiExpertNoteCount);
     }
 }

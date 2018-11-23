@@ -12,7 +12,7 @@ public class ScoreScreen : MonoBehaviour {
     public GameObject scoreCanvas;
     public TextMeshProUGUI songName;
     public TextMeshProUGUI difficultyText;
-    public GameObject difficultyBar;
+    public Image difficultyBar;
     public TextMeshProUGUI score;
     public TextMeshProUGUI highScore;
     public TextMeshProUGUI perfects;
@@ -22,7 +22,8 @@ public class ScoreScreen : MonoBehaviour {
     public TextMeshProUGUI misses;
     public TextMeshProUGUI notesHit;
     public TextMeshProUGUI maxCombo;
-    public GameObject scoreRank;
+
+    public Transform scoreRank;
 
     string song;
     string difficulty;
@@ -40,12 +41,6 @@ public class ScoreScreen : MonoBehaviour {
         // Fade in scene
         float fadeTime = FindObjectOfType<Fade>().BeginFade(-1);
         yield return new WaitForSeconds(fadeTime);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void LoadMainMenu()
@@ -84,25 +79,32 @@ public class ScoreScreen : MonoBehaviour {
         notesHit.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.notesHit)) + "/" + AddLeadingComboZeros(noteCount);
         maxCombo.text = AddLeadingComboZeros(PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo));
 
-        switch (PlayerPrefs.GetString(Constants.scoreRank))
+        SetRank();
+    }
+
+    void SetRank()
+    {
+        string rank = PlayerPrefs.GetString(Constants.scoreRank);
+
+        switch (rank)
         {
             case "SS":
-                scoreRank.transform.Find("RankSS").gameObject.SetActive(true);
+                scoreRank.Find("RankSS").gameObject.SetActive(true);
                 break;
             case "S":
-                scoreRank.transform.Find("RankS").gameObject.SetActive(true);
+                scoreRank.Find("RankS").gameObject.SetActive(true);
                 break;
             case "A":
-                scoreRank.transform.Find("RankA").gameObject.SetActive(true);
+                scoreRank.Find("RankA").gameObject.SetActive(true);
                 break;
             case "B":
-                scoreRank.transform.Find("RankB").gameObject.SetActive(true);
+                scoreRank.Find("RankB").gameObject.SetActive(true);
                 break;
             case "C":
-                scoreRank.transform.Find("RankC").gameObject.SetActive(true);
+                scoreRank.Find("RankC").gameObject.SetActive(true);
                 break;
             case "F":
-                scoreRank.transform.Find("RankF").gameObject.SetActive(true);
+                scoreRank.Find("RankF").gameObject.SetActive(true);
                 break;
             default:
                 break;
@@ -117,7 +119,7 @@ public class ScoreScreen : MonoBehaviour {
         int numZeros = Constants.scoreDigits - scoreString.Length;
         for (int i = 0; i < numZeros; i++)
         {
-            zeros += "<color=#808080>0</color>";
+            zeros += "<color=#808080>0</color>"; // grey
         }
         scoreString = zeros + scoreString;
         return scoreString;
@@ -131,7 +133,7 @@ public class ScoreScreen : MonoBehaviour {
         int numZeros = Constants.comboDigits - comboString.Length;
         for (int i = 0; i < numZeros; i++)
         {
-            zeros += "<color=#808080>0</color>";
+            zeros += "<color=#808080>0</color>"; // grey
         }
         comboString = zeros + comboString;
         return comboString;
@@ -142,16 +144,16 @@ public class ScoreScreen : MonoBehaviour {
         switch (difficulty)
         {
             case Constants.easy:
-                difficultyBar.GetComponent<Image>().color = Constants.easyColor;
+                difficultyBar.color = Constants.easyColor;
                 break;
             case Constants.normal:
-                difficultyBar.GetComponent<Image>().color = Constants.normalColor;
+                difficultyBar.color = Constants.normalColor;
                 break;
             case Constants.hard:
-                difficultyBar.GetComponent<Image>().color = Constants.hardColor;
+                difficultyBar.color = Constants.hardColor;
                 break;
             case Constants.expert:
-                difficultyBar.GetComponent<Image>().color = Constants.expertColor;
+                difficultyBar.color = Constants.expertColor;
                 break;
             default:
                 break;

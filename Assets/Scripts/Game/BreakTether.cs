@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakTether : MonoBehaviour {
 
-	// Update is called once per frame
+	// Break if at least one sibling dies
 	void Update () {
         if (transform.parent.childCount < 3)
         {

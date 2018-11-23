@@ -427,7 +427,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 890758294}
         m_MethodName: ButtonAudio3
         m_Mode: 1
         m_Arguments:
@@ -1033,7 +1033,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 890758294}
         m_MethodName: ButtonAudio3
         m_Mode: 1
         m_Arguments:
@@ -1612,7 +1612,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 271635133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3d061c03edb13774a8b1ed3570f1d39a, type: 2}
   m_CullingMode: 0
@@ -1630,7 +1630,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 271635133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1643,7 +1643,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 271635133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1957,7 +1957,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 386997632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3d061c03edb13774a8b1ed3570f1d39a, type: 2}
   m_CullingMode: 0
@@ -1975,7 +1975,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 386997632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1988,7 +1988,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 386997632}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3833,9 +3833,10 @@ GameObject:
   - component: {fileID: 890758289}
   - component: {fileID: 890758288}
   - component: {fileID: 890758287}
-  - component: {fileID: 890758291}
   - component: {fileID: 890758292}
   - component: {fileID: 890758293}
+  - component: {fileID: 890758294}
+  - component: {fileID: 890758291}
   m_Layer: 5
   m_Name: SongSelectCanvas
   m_TagString: Untagged
@@ -3914,11 +3915,12 @@ RectTransform:
   - {fileID: 1976020657}
   - {fileID: 1423901078}
   - {fileID: 1266810167}
+  - {fileID: 1208680525}
   - {fileID: 1056906159}
   - {fileID: 1754964272}
   - {fileID: 1598010563}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3968,6 +3970,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasTapParticle: {fileID: 4953554541548902, guid: 56104531242150f4392b91aa964c33ca,
     type: 2}
+--- !u!114 &890758294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890758286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7485978e4381284694f396d82397466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &891595782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,7 +4300,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 890758294}
         m_MethodName: ButtonAudio3
         m_Mode: 1
         m_Arguments:
@@ -4938,7 +4951,7 @@ RectTransform:
   m_Children:
   - {fileID: 1545207740}
   m_Father: {fileID: 890758290}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -5433,12 +5446,12 @@ RectTransform:
   - {fileID: 1614915592}
   - {fileID: 1477159400}
   - {fileID: 1526847629}
-  m_Father: {fileID: 1266810167}
-  m_RootOrder: 1
+  m_Father: {fileID: 890758290}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -80}
+  m_AnchoredPosition: {x: 506.5, y: -5}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208680526
@@ -5582,7 +5595,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1398508634}
-  - {fileID: 1208680525}
   m_Father: {fileID: 890758290}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5758,7 +5770,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304758785}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3d061c03edb13774a8b1ed3570f1d39a, type: 2}
   m_CullingMode: 0
@@ -5776,7 +5788,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304758785}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5789,7 +5801,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304758785}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -7648,7 +7660,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1526847628
 GameObject:
@@ -8189,7 +8201,7 @@ RectTransform:
   - {fileID: 1578905788}
   - {fileID: 1680809974}
   m_Father: {fileID: 890758290}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -8268,7 +8280,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 890758294}
         m_MethodName: ButtonAudio1
         m_Mode: 1
         m_Arguments:
@@ -8903,7 +8915,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1722081101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3d061c03edb13774a8b1ed3570f1d39a, type: 2}
   m_CullingMode: 0
@@ -8921,7 +8933,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1722081101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -8934,7 +8946,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1722081101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -9000,7 +9012,7 @@ RectTransform:
   - {fileID: 2104759723}
   - {fileID: 238216927}
   m_Father: {fileID: 890758290}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -9079,7 +9091,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 890758294}
         m_MethodName: ButtonAudio2
         m_Mode: 1
         m_Arguments:
@@ -10853,7 +10865,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 890758294}
         m_MethodName: ButtonAudio3
         m_Mode: 1
         m_Arguments:

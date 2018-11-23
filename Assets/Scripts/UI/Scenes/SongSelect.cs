@@ -9,6 +9,7 @@ public class SongSelect : MonoBehaviour {
     AudioManager audioManager;
 
     public GameObject difficultyPanel;
+
     public GameObject RankSS;
     public GameObject RankS;
     public GameObject RankA;
@@ -16,10 +17,10 @@ public class SongSelect : MonoBehaviour {
     public GameObject RankC;
     public GameObject RankF;
 
-    // Use this for initialization
     IEnumerator Start()
     {
         InitDifficultyPanel();
+        InitNoteCounts();
         audioManager = FindObjectOfType<AudioManager>();
 
         // Fade in scene
@@ -27,13 +28,14 @@ public class SongSelect : MonoBehaviour {
         yield return new WaitForSeconds(fadeTime);
     }
 
-    // Update is called once per frame
+    // Display the corresponding obtained rank of the selected song at the selected difficulty
     void Update()
     {
         string song = PlayerPrefs.GetString(Constants.selectedSong);
         string difficulty = PlayerPrefs.GetString(Constants.difficulty);
+        string rank = PlayerPrefs.GetString(song + difficulty + Constants.highRank);
 
-        switch (PlayerPrefs.GetString(song + difficulty + Constants.highRank))
+        switch (rank)
         {
             case "SS":
                 RankSS.SetActive(true);
@@ -148,6 +150,23 @@ public class SongSelect : MonoBehaviour {
             default:
                 break;
         }
+
         difficultyPanel.GetComponent<AnimatePanel>().PlayAnimator();
+    }
+
+    void InitNoteCounts()
+    {
+        PlayerPrefs.SetInt("soundscapeEasyNoteCount", Constants.soundscapeEasyNoteCount);
+        PlayerPrefs.SetInt("soundscapeNormalNoteCount", Constants.soundscapeNormalNoteCount);
+        PlayerPrefs.SetInt("soundscapeHardNoteCount", Constants.soundscapeHardNoteCount);
+        PlayerPrefs.SetInt("soundscapeExpertNoteCount", Constants.soundscapeExpertNoteCount);
+        PlayerPrefs.SetInt("takarajimaEasyNoteCount", Constants.takarajimaEasyNoteCount);
+        PlayerPrefs.SetInt("takarajimaNormalNoteCount", Constants.takarajimaNormalNoteCount);
+        PlayerPrefs.SetInt("takarajimaHardNoteCount", Constants.takarajimaHardNoteCount);
+        PlayerPrefs.SetInt("takarajimaExpertNoteCount", Constants.takarajimaExpertNoteCount);
+        PlayerPrefs.SetInt("tuttiEasyNoteCount", Constants.tuttiEasyNoteCount);
+        PlayerPrefs.SetInt("tuttiNormalNoteCount", Constants.tuttiNormalNoteCount);
+        PlayerPrefs.SetInt("tuttiHardNoteCount", Constants.tuttiHardNoteCount);
+        PlayerPrefs.SetInt("tuttiExpertNoteCount", Constants.tuttiExpertNoteCount);
     }
 }

@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class NoteSpeed : MonoBehaviour {
 
-    float noteSpeed;
     Vector3 initPosition;
     Vector3 followThroughPosition;
+    float noteSpeed;
     float distance;
-
     float songTimer;
     float dspStart;
 
-    // Use this for initialization
     void Start()
     {
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
@@ -22,7 +20,7 @@ public class NoteSpeed : MonoBehaviour {
         dspStart = (float)AudioSettings.dspTime;
     }
 
-    // Update is called once per frame
+    // Interpolate position based on audio time and note speed
     void Update()
     {
         songTimer = (float)(AudioSettings.dspTime - dspStart);
@@ -32,10 +30,5 @@ public class NoteSpeed : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-    }
-
-    public void Stop()
-    {
-        enabled = false;
     }
 }

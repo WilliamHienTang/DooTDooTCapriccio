@@ -8,10 +8,10 @@ public class Dissolve : MonoBehaviour {
     float noteSpeed;
     float length;
     float duration;
-
     float songTimer;
     float startTime;
-
+    
+    // Begin dissolve upon entering the dissolve collider
     void OnTriggerEnter(Collider other)
     {
         if (other.transform.name == "DissolveCollider")
@@ -22,7 +22,6 @@ public class Dissolve : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
     void Start () {
         enabled = false;
         material = GetComponent<Renderer>().material;
@@ -31,7 +30,7 @@ public class Dissolve : MonoBehaviour {
         duration = length / noteSpeed;
     }
 	
-	// Update is called once per frame
+	// Dissolve amount based on audio time and note speed
 	void Update () {
         songTimer = (float)(AudioSettings.dspTime - startTime);
         material.SetFloat("_DissolveAmount", (songTimer + Time.deltaTime) / duration);
