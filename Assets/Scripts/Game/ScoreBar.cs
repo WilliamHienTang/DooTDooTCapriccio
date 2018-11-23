@@ -20,7 +20,7 @@ public class ScoreBar : MonoBehaviour {
 
 	void Start () {
         scoreBarSlider = transform.GetComponent<Slider>();
-        fill = transform.Find("Fill Area").Find("Fill").GetComponent<Image>();
+        fill = transform.Find("FillArea").Find("Fill").GetComponent<Image>();
         colorA = new Color(1, 0, 0);
         colorB = new Color(0, 1, 0);
         colorC = new Color(1, 50f/255f, 0);

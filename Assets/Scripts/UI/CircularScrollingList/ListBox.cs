@@ -1,9 +1,4 @@
-﻿/* The basic component of scrolling list.
- * Control the position and the contents of the list element.
- *
- * Author: LanKuDot <airlanser@gmail.com>
- */
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ListBox : MonoBehaviour
@@ -35,7 +30,7 @@ public class ListBox : MonoBehaviour
 	public bool keepSliding { set { _keepSliding = value; } }
 	public bool needToAlignToCenter { set { _needToAlignToCenter = value; } }
 
-    public bool isCenter;
+    bool isCenter;
 
 	/* Notice: ListBox will initialize its variables from ListPositionCtrl.
 	 * Make sure that the execution order of script ListPositionCtrl is prior to

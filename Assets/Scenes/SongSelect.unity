@@ -438,7 +438,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 1056906165}
         m_MethodName: SetDifficulty
         m_Mode: 3
         m_Arguments:
@@ -1044,7 +1044,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 1056906165}
         m_MethodName: SetDifficulty
         m_Mode: 3
         m_Arguments:
@@ -3938,13 +3938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009150d9661bd34428b60a3e0e943a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyPanel: {fileID: 1056906158}
-  RankSS: {fileID: 503784735}
-  RankS: {fileID: 1936435941}
-  RankA: {fileID: 1990881606}
-  RankB: {fileID: 599398405}
-  RankC: {fileID: 1614915591}
-  RankF: {fileID: 1477159399}
 --- !u!114 &890758292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4311,7 +4304,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 1056906165}
         m_MethodName: SetDifficulty
         m_Mode: 3
         m_Arguments:
@@ -4931,6 +4924,7 @@ GameObject:
   - component: {fileID: 1056906161}
   - component: {fileID: 1056906162}
   - component: {fileID: 1056906160}
+  - component: {fileID: 1056906165}
   m_Layer: 5
   m_Name: DifficultyPanel
   m_TagString: Untagged
@@ -5039,6 +5033,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1056906158}
   m_CullTransparentMesh: 0
+--- !u!114 &1056906165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1056906158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85664df299c13ff41a3c2ea5d7a800b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1060033795
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,6 +5425,7 @@ GameObject:
   - component: {fileID: 1208680525}
   - component: {fileID: 1208680527}
   - component: {fileID: 1208680526}
+  - component: {fileID: 1208680528}
   m_Layer: 5
   m_Name: ScoreRank
   m_TagString: Untagged
@@ -5490,6 +5496,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1208680524}
   m_CullTransparentMesh: 0
+--- !u!114 &1208680528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208680524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3bdfacc7bc3124d8795dd5cc46295e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243673206
 GameObject:
   m_ObjectHideFlags: 0
@@ -10876,7 +10893,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 890758291}
+      - m_Target: {fileID: 1056906165}
         m_MethodName: SetDifficulty
         m_Mode: 3
         m_Arguments:

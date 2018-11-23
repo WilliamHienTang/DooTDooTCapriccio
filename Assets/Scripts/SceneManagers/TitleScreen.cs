@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -10,7 +8,6 @@ public class TitleScreen : MonoBehaviour {
 
     AudioManager audioManager;
     string BGM;
-    public TextMeshProUGUI tapText;
     bool isTouchingDevice;
 
     void Awake()
@@ -28,7 +25,6 @@ public class TitleScreen : MonoBehaviour {
 
     IEnumerator Start()
     {
-        //DefaultSettings();
         enabled = false;
 
         // Play BGM
@@ -67,6 +63,7 @@ public class TitleScreen : MonoBehaviour {
     // Load main menu after text blinks
     IEnumerator LoadMainMenu(int blinks)
     {
+        TextMeshProUGUI tapText = transform.Find("TapScreenBar").Find("TapScreenText").GetComponent<TextMeshProUGUI>();
         tapText.GetComponent<Animator>().enabled = false;
         audioManager.Play(Constants.tapScreenSFX);
 
@@ -82,14 +79,5 @@ public class TitleScreen : MonoBehaviour {
 
         audioManager.StopBGM();
         SceneManager.LoadScene(Constants.mainMenu);
-    }
-
-    // Reinit player prefs
-    void DefaultSettings()
-    {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat(Constants.noteSpeed, 7.5f);
-        PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
-        PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
     }
 }

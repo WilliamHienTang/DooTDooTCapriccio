@@ -1,21 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Pregame : MonoBehaviour {
 
-    float destroyTime = 5.0f;
+    readonly float destroyTime = 5.0f;
 
     // Song images
     public Sprite soundscape;
     public Sprite takarajima;
     public Sprite tutti;
 
-    // Set song image and difficulty bar color and start destroy coroutine
+    // Set song image, song name panel and start destroy coroutine
     void Start () {
         SetSongImage();
-        SetDifficultyColor();
+        SetSongNamePanel();
         Destroy(gameObject, destroyTime);
 	}
 
@@ -40,11 +39,14 @@ public class Pregame : MonoBehaviour {
         }
     }
 
-    void SetDifficultyColor()
+    void SetSongNamePanel()
     {
-        string difficulty = PlayerPrefs.GetString(Constants.difficulty);
-        Image difficultyBar = transform.Find("SongNamePanel").Find("DifficultyBar").GetComponent<Image>();
+        Transform songNamePanel = transform.Find("SongNamePanel");
+        Image difficultyBar = songNamePanel.Find("DifficultyBar").GetComponent<Image>();
 
+        string difficulty = PlayerPrefs.GetString(Constants.difficulty);
+
+        // Set difficulty color
         switch (difficulty)
         {
             case Constants.easy:
@@ -62,5 +64,13 @@ public class Pregame : MonoBehaviour {
             default:
                 break;
         }
+
+        // Set difficulty text
+        TextMeshProUGUI difficultyText = songNamePanel.Find("DifficultyBar").Find("DifficultyText").GetComponent<TextMeshProUGUI>();
+        difficultyText.text = difficulty.ToUpper();
+
+        // Set song name text
+        TextMeshProUGUI songNameText = songNamePanel.Find("SongNameText").GetComponent<TextMeshProUGUI>();
+        songNameText.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
     }
 }

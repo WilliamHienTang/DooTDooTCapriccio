@@ -26,7 +26,6 @@ public class ListPositionCtrl : MonoBehaviour
 	/* Containers */
 	public ListBox[] listBoxes;
 	public Button[] buttons;
-    public GameObject songPanel;
     public Image songImage;
 
     /* Song Images */

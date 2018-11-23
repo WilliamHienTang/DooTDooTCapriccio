@@ -1,17 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour {
 
     // Game objects
     public GameObject pauseButton;
-    public TextMeshProUGUI songName;
-    public TextMeshProUGUI difficultyText;
     public Transform gameCanvas;
     public GameObject notePlatform;
     AudioManager audioManager;
@@ -56,7 +52,7 @@ public class GameManager : MonoBehaviour {
     {
         FindObjectOfType<Fade>().BeginFade(-1);
         InitPlayerPrefs();
-        InitSongInfo();
+        StartCoroutine(EnablePauseButton());
 
         // load the note chart from the json file
         jsonPath = Application.dataPath + "/Notecharts/" + song + "_" + difficulty + ".json";
@@ -897,13 +893,6 @@ public class GameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(8.0f);
         pauseButton.SetActive(true);
-    }
-
-    void InitSongInfo()
-    {
-        difficultyText.text = difficulty.ToUpper();
-        songName.text = PlayerPrefs.GetString(Constants.selectedSongTitle);
-        StartCoroutine(EnablePauseButton());
     }
 
     void InitPlayerPrefs()

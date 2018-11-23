@@ -4333,8 +4333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 1754404631}
-  songName: {fileID: 4049858}
-  difficultyText: {fileID: 20620072}
   gameCanvas: {fileID: 932906020}
   notePlatform: {fileID: 744317974}
   noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
@@ -5322,7 +5320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1561905955480466, guid: 925a92cc111588442ac191735484354a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 925a92cc111588442ac191735484354a, type: 2}
@@ -6833,7 +6831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574254301}
   m_Layer: 5
-  m_Name: Fill Area
+  m_Name: FillArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7047,7 +7045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa50e5b19d5cded4ea27636d02bbb0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fill: {fileID: 1298955314}
 --- !u!1 &1657129981
 GameObject:
   m_ObjectHideFlags: 0

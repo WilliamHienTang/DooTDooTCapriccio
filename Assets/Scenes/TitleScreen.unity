@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 250136524}
   - component: {fileID: 250136526}
   - component: {fileID: 250136525}
+  - component: {fileID: 250136527}
   m_Layer: 5
   m_Name: TitleScreenCanvas
   m_TagString: Untagged
@@ -342,7 +343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1a237316dfb434a94b8f47856b4103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tapText: {fileID: 857540508}
 --- !u!114 &250136525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +368,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOutTexture: {fileID: 2800000, guid: c6dc0837de51ba54c86100a651992fd5, type: 3}
+--- !u!114 &250136527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 250136519}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8a3be15309aa542973dcccb8665aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &426516517
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.2476415, b: 0.2476415, a: 0.4117647}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4117647}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
