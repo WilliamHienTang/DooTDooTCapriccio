@@ -18,6 +18,7 @@ public class Pause : MonoBehaviour {
     {
         gameCanvas = transform;
         audioManager = FindObjectOfType<AudioManager>();
+        StartCoroutine(WaitEnablePauseButton());
     }
 
     public void PauseGame()
@@ -47,6 +48,17 @@ public class Pause : MonoBehaviour {
         AudioListener.pause = false;
         audioManager.Play(PlayerPrefs.GetString(Constants.selectedSong));
         pauseButton.SetActive(true);
+    }
+
+    IEnumerator WaitEnablePauseButton()
+    {
+        yield return new WaitForSeconds(8.0f);
+        pauseButton.SetActive(true);
+    }
+
+    public void SetPauseButtonActive(bool active)
+    {
+        pauseButton.SetActive(active);
     }
 
     public void LoadSongSelect()

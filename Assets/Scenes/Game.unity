@@ -4314,6 +4314,8 @@ GameObject:
   - component: {fileID: 984561330}
   - component: {fileID: 984561329}
   - component: {fileID: 984561332}
+  - component: {fileID: 984561333}
+  - component: {fileID: 984561331}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4332,26 +4334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28063b1e03b27b64a9ee24c7c2a8cc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseButton: {fileID: 1754404631}
   gameCanvas: {fileID: 932906020}
   notePlatform: {fileID: 744317974}
-  noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
-  holdNoteObject: {fileID: 4788656985797828, guid: eb348f378cf7e594caec5cf7679c5e38,
-    type: 2}
-  tailNoteObject: {fileID: 4020570833556650, guid: 1682cb2e304fa71469f45a37549c16c2,
-    type: 2}
-  doubleNoteObject: {fileID: 4183178135932062, guid: b8ea5e8d3fdd7454e8b5ce929d7de446,
-    type: 2}
-  doubleHoldObject: {fileID: 4156614658465016, guid: 19df108dd4cf6034aa829269a75b4618,
-    type: 2}
-  doubleTailObject: {fileID: 4900943778853544, guid: 3fd5d99b30332a84292310c8f7812baf,
-    type: 2}
-  oneNoteOneTailObject: {fileID: 4655383284598546, guid: 93c3513a97539bf459958b6165a88527,
-    type: 2}
-  oneNoteOneHoldObject: {fileID: 4153689188471008, guid: e8ce29e935909604c9505a5118289c1b,
-    type: 2}
-  oneHoldOneTailObject: {fileID: 4426406528394686, guid: dd5405cd02fc6344493bb1b4847e079d,
-    type: 2}
   fireworksParticle: {fileID: 1055455296818186, guid: e72ea83b236a2f14ca72b9e191c4f94b,
     type: 2}
   fireworksText: {fileID: 1843090105003852, guid: e534b3217b95e204ca221f0444115848,
@@ -4369,6 +4353,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &984561331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984561328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28063b1e03b27b64a9ee24c7c2a8cc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCanvas: {fileID: 932906020}
+  notePlatform: {fileID: 744317974}
+  fireworksParticle: {fileID: 1055455296818186, guid: e72ea83b236a2f14ca72b9e191c4f94b,
+    type: 2}
+  fireworksText: {fileID: 1843090105003852, guid: e534b3217b95e204ca221f0444115848,
+    type: 2}
 --- !u!114 &984561332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4389,6 +4390,34 @@ MonoBehaviour:
   badText: {fileID: 114123422414462994, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
   missText: {fileID: 114947327968310802, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
   increaseScoreText: {fileID: 114419505824678616, guid: ca0e6c4997880d744b87cba83ae41915,
+    type: 2}
+--- !u!114 &984561333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984561328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8504efee014c40146a6f6cdd55dcfc5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteObject: {fileID: 4373784676226406, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
+  holdNoteObject: {fileID: 4788656985797828, guid: eb348f378cf7e594caec5cf7679c5e38,
+    type: 2}
+  tailNoteObject: {fileID: 4020570833556650, guid: 1682cb2e304fa71469f45a37549c16c2,
+    type: 2}
+  doubleNoteObject: {fileID: 4183178135932062, guid: b8ea5e8d3fdd7454e8b5ce929d7de446,
+    type: 2}
+  doubleHoldObject: {fileID: 4156614658465016, guid: 19df108dd4cf6034aa829269a75b4618,
+    type: 2}
+  doubleTailObject: {fileID: 4900943778853544, guid: 3fd5d99b30332a84292310c8f7812baf,
+    type: 2}
+  oneNoteOneTailObject: {fileID: 4655383284598546, guid: 93c3513a97539bf459958b6165a88527,
+    type: 2}
+  oneNoteOneHoldObject: {fileID: 4153689188471008, guid: e8ce29e935909604c9505a5118289c1b,
+    type: 2}
+  oneHoldOneTailObject: {fileID: 4426406528394686, guid: dd5405cd02fc6344493bb1b4847e079d,
     type: 2}
 --- !u!1 &991475797
 GameObject:

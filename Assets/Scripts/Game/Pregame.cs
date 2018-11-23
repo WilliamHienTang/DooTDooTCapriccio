@@ -4,8 +4,6 @@ using TMPro;
 
 public class Pregame : MonoBehaviour {
 
-    readonly float destroyTime = 5.0f;
-
     // Song images
     public Sprite soundscape;
     public Sprite takarajima;
@@ -13,9 +11,12 @@ public class Pregame : MonoBehaviour {
 
     // Set song image, song name panel and start destroy coroutine
     void Start () {
+        // Fade in scene
+        FindObjectOfType<Fade>().BeginFade(-1);
+
         SetSongImage();
         SetSongNamePanel();
-        Destroy(gameObject, destroyTime);
+        Destroy(gameObject, Constants.songDelay);
 	}
 
     void SetSongImage()
