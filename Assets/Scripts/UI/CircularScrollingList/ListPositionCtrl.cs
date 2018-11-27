@@ -89,24 +89,25 @@ public class ListPositionCtrl : MonoBehaviour
     // If its value is NaN, the distance haven't been calcuated yet.
     private Vector3 _alignToCenterDistance;
 
-	void Awake()
-	{
-		Instance = this;
+    void Awake()
+    {
+        Instance = this;
 
-		switch (Application.platform) {
-		case RuntimePlatform.WindowsEditor:
-			_isTouchingDevice = false;
-			break;
-		case RuntimePlatform.Android:
-			_isTouchingDevice = true;
-			break;
-		}
-	}
+        switch (Application.platform)
+        {
+            case RuntimePlatform.OSXEditor:
+                _isTouchingDevice = false;
+                break;
+            default:
+                _isTouchingDevice = true;
+                break;
+        }
+    }
 
-	/* Notice: ListBox will initialize its variables from here, so ListPositionCtrl
+    /* Notice: ListBox will initialize its variables from here, so ListPositionCtrl
 	 * must be executed before ListBox. You have to set the execution order in the inspector.
 	 */
-	void Start()
+    void Start()
 	{
         audioManager = FindObjectOfType<AudioManager>();
 

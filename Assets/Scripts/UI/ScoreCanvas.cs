@@ -120,7 +120,7 @@ public class ScoreCanvas : MonoBehaviour {
 
     void SetScoreRank()
     {
-        Transform scoreRank = transform.Find("Content").Find("ScoreRank");
+        Transform scoreRank = transform.Find("Content").Find("ScorePanel").Find("ScoreRank");
         string rank = PlayerPrefs.GetString(Constants.scoreRank);
 
         switch (rank)

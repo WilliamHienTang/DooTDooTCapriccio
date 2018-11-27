@@ -14,7 +14,7 @@ public class TitleScreen : MonoBehaviour {
     {
         switch (Application.platform)
         {
-            case RuntimePlatform.WindowsEditor:
+            case RuntimePlatform.OSXEditor:
                 isTouchingDevice = false;
                 break;
             default:

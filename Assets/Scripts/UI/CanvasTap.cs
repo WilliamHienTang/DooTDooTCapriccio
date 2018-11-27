@@ -9,7 +9,7 @@ public class CanvasTap : MonoBehaviour {
     {
         switch (Application.platform)
         {
-            case RuntimePlatform.WindowsEditor:
+            case RuntimePlatform.OSXEditor:
                 isTouchingDevice = false;
                 break;
             default:
@@ -17,9 +17,9 @@ public class CanvasTap : MonoBehaviour {
                 break;
         }
     }
-	
-	// Instantiate canvas tap particle at touch position
-	void Update ()
+
+    // Instantiate canvas tap particle at touch position
+    void Update ()
     {
         if (isTouchingDevice)
         {

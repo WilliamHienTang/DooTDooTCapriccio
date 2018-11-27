@@ -26,7 +26,7 @@ public class HitCollider : MonoBehaviour {
     {
         switch (Application.platform)
         {
-            case RuntimePlatform.WindowsEditor:
+            case RuntimePlatform.OSXEditor:
                 isTouchingDevice = false;
                 break;
             default:
