@@ -294,7 +294,7 @@ public class ListBox : MonoBehaviour
 
     public void setCenterSize()
     {
-        transform.localScale = _originalLocalScale * 1.5f;
+        transform.localScale = _originalLocalScale * 1.25f;
     }
 
     public void updateColor()
