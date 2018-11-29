@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour {
         PlayerPrefs.SetInt(Constants.score, PlayerPrefs.GetInt(Constants.score) + points);
         PlayerPrefs.SetInt(Constants.notesHit, PlayerPrefs.GetInt(Constants.notesHit) + 1);
         PlayerPrefs.SetInt(scoreTypeCount, PlayerPrefs.GetInt(scoreTypeCount) + 1);
-        TextMeshProUGUI increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 130.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        TextMeshProUGUI increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 520.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         increaseScoreInstance.text = "+" + points.ToString();
     }
 

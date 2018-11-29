@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Imports\_MK\MKGlowFree\Editor\MKGlowFreeEditor.cs" />
     <Compile Include="Assets\Imports\HUD Skins\3rd Party Assets\Radial Menu Framework\Scripts\Editor\RFM_RadialMenu_Editor.cs" />
     <Compile Include="Assets\Imports\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
     <Compile Include="Assets\Imports\muip\Editor\ModernUI.cs" />

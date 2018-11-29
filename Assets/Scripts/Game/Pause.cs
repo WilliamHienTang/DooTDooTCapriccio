@@ -37,11 +37,11 @@ public class Pause : MonoBehaviour {
     // Resume game after 3s countdown
     public IEnumerator CountdownResume()
     {
-        Instantiate(countdown3, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 50.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        Instantiate(countdown3, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         yield return new WaitForSeconds(1);
-        Instantiate(countdown2, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 50.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        Instantiate(countdown2, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         yield return new WaitForSeconds(1);
-        Instantiate(countdown1, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 50.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        Instantiate(countdown1, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         yield return new WaitForSeconds(1);
 
         isPaused = false;
