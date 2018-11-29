@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{FCEA43D7-9A25-F521-B829-2D3D9993F843}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/ScoreManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Other/DefaultSettings.cs">
     <Files>
-      <File FileName="Assets/Scripts/Game/ScoreManager.cs" Line="51" Column="62" />
+      <File FileName="Assets/Scripts/Game/ScoreManager.cs" Line="188" Column="119" />
       <File FileName="Assets/Scripts/Game/Pause.cs" Line="55" Column="47" />
-      <File FileName="Assets/Scripts/Game/Postgame.cs" Line="53" Column="10" />
+      <File FileName="Assets/Scripts/Game/Postgame.cs" Line="59" Column="75" />
+      <File FileName="Assets/Scripts/Other/DefaultSettings.cs" Line="11" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

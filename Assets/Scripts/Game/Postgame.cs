@@ -56,7 +56,7 @@ public class Postgame : MonoBehaviour {
         float duration = fireworksParticle.GetComponent<ParticleSystem>().main.duration / 4.0f;
         for (int i = 0; i < numOfParticles; i++)
         {
-            Instantiate(fireworksParticle, new Vector3(Random.Range(-2f, 2f), Random.Range(-1f, 0.5f), fireworksParticle.transform.localPosition.z), fireworksParticle.transform.rotation);
+            Instantiate(fireworksParticle, new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 0.5f), fireworksParticle.transform.localPosition.z), fireworksParticle.transform.rotation);
             yield return new WaitForSeconds(duration);
         }
     }

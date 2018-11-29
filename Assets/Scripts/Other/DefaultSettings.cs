@@ -3,9 +3,17 @@
 public class DefaultSettings : MonoBehaviour {
 
 	void Start () {
-        ResetPlayerPrefs();
-        InitNoteCount();
+        FirstLoad();
 	}
+
+    // Only occurs for the first time the player loads the game
+    void FirstLoad(){
+        if(!PlayerPrefs.HasKey(Constants.firstLoad)){
+            PlayerPrefs.SetInt(Constants.firstLoad, 1);
+            ResetPlayerPrefs();
+            InitNoteCount();
+        }
+    }
 
     // Reinit player prefs
     void ResetPlayerPrefs()

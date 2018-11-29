@@ -173,19 +173,19 @@ public class ScoreManager : MonoBehaviour {
         switch (scoreTypeCount)
         {
             case Constants.perfects:
-                floatingTexts.Add(Instantiate(perfectText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(Instantiate(perfectText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
                 break;
             case Constants.greats:
-                floatingTexts.Add(Instantiate(greatText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(Instantiate(greatText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
                 break;
             case Constants.goods:
-                floatingTexts.Add(Instantiate(goodText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(Instantiate(goodText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
                 break;
             case Constants.bads:
-                floatingTexts.Add(Instantiate(badText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(Instantiate(badText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
                 break;
             case Constants.misses:
-                floatingTexts.Add(Instantiate(missText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(Instantiate(missText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
                 break;
             default:
                 break;

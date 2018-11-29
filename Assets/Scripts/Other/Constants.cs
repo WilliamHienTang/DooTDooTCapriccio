@@ -68,6 +68,7 @@ public class Constants : MonoBehaviour {
     public static Color gold = new Color(1, 200f/255f, 0);
 
     // PlayerPrefs
+    public const string firstLoad = "FirstLoad";
     public const string noteSpeed = "NoteSpeed";
     public const string songVolume = "SongVolume";
     public const string gameSFXVolume = "GameSFXVolume";
