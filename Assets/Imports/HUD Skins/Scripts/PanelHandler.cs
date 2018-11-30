@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PanelHandler : MonoBehaviour {
 
@@ -28,6 +28,7 @@ public class PanelHandler : MonoBehaviour {
     [Header("SETTINGS")]
     public int currentPanelIndex = 0;
     public int currentButtonIndex = 0;
+    int newIndex;
 
     private Animator currentPanelAnimator;
     private Animator nextPanelAnimator;
@@ -42,13 +43,19 @@ public class PanelHandler : MonoBehaviour {
         currentButtonAnimator.Play(buttonFadeIn);
     }
 
-    public void PanelAnim (int newPanel)
+    public void PanelAnim (int newIndex)
     {
-        if (newPanel != currentPanelIndex)
+        this.newIndex = newIndex;
+    }
+
+    void Update()
+    {
+        if (newIndex != currentPanelIndex)
         {
+            // panel anim
             currentPanel = panels[currentPanelIndex];
 
-            currentPanelIndex = newPanel;
+            currentPanelIndex = newIndex;
             nextPanel = panels[currentPanelIndex];
 
             currentPanelAnimator = currentPanel.GetComponent<Animator>();
@@ -57,9 +64,10 @@ public class PanelHandler : MonoBehaviour {
             currentPanelAnimator.Play(panelFadeOut);
             nextPanelAnimator.Play(panelFadeIn);
 
+            // button anim
             currentButton = buttons[currentButtonIndex];
 
-            currentButtonIndex = newPanel;
+            currentButtonIndex = newIndex;
             nextButton = buttons[currentButtonIndex];
 
             currentButtonAnimator = currentButton.GetComponent<Animator>();

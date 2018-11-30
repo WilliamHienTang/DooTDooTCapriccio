@@ -51,29 +51,32 @@ public class HitCollider : MonoBehaviour {
 
         if (isTouchingDevice)
         {
-            for (int i = 0; i < Input.touchCount; i++)
+            if (Input.touchCount > 0)
             {
-                Touch touch = Input.touches[i];
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    if (hit.transform.name == colliderName)
-                    {
-                        if (touch.phase == TouchPhase.Began)
-                        {
-                            OnPress();
-                        }
-                        else if (touch.phase == TouchPhase.Ended)
-                        {
-                            OnRelease();
-                        }
-                    }
+                    Touch touch = Input.touches[i];
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    RaycastHit hit;
 
-                    else
+                    if (Physics.Raycast(ray, out hit))
                     {
-                        OutOfBound();
+                        if (hit.transform.name == colliderName)
+                        {
+                            if (touch.phase == TouchPhase.Began)
+                            {
+                                OnPress();
+                            }
+                            else if (touch.phase == TouchPhase.Ended)
+                            {
+                                OnRelease();
+                            }
+                        }
+
+                        else
+                        {
+                            OutOfBound();
+                        }
                     }
                 }
             }

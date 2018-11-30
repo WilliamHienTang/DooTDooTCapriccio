@@ -23,11 +23,15 @@ public class CanvasTap : MonoBehaviour {
     {
         if (isTouchingDevice)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            if(Input.touchCount > 0)
             {
-                Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 10));
-                Instantiate(canvasTapParticle, touchPosition, canvasTapParticle.rotation);
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 10));
+                    Instantiate(canvasTapParticle, touchPosition, canvasTapParticle.rotation);
+                }
             }
+
         }
         else
         {

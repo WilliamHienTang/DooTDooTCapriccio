@@ -245,32 +245,37 @@ public class ListPositionCtrl : MonoBehaviour
 	 */
 	void storeFingerPosition()
 	{
-        if (Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x >= leftBoundary && Input.GetTouch(0).position.x <= rightBoundary)
+        if(Input.touchCount > 0)
         {
-            idle = false;
-            _lastInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
-            _lastInputPos_L /= _parentCanvas.scaleFactor;
-            _startInputPos_L = _lastInputPos_L;
-            _numofSlideFrames = 0;
-            // When the user starts to drag the list, all listBoxes stop free sliding.
-            foreach (ListBox listBox in listBoxes)
-                listBox.keepSliding = false;
-        }
-        else if (Input.GetTouch(0).phase == TouchPhase.Moved && !idle)
-        {
-            _currentInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
-            _currentInputPos_L /= _parentCanvas.scaleFactor;
-            _deltaInputPos_L = _currentInputPos_L - _lastInputPos_L;
-            foreach (ListBox listbox in listBoxes)
-                listbox.updatePosition(_deltaInputPos_L);
+            if (Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(0).position.x >= leftBoundary && Input.GetTouch(0).position.x <= rightBoundary)
+            {
+                idle = false;
+                _lastInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+                _lastInputPos_L /= _parentCanvas.scaleFactor;
+                _startInputPos_L = _lastInputPos_L;
+                _numofSlideFrames = 0;
+                // When the user starts to drag the list, all listBoxes stop free sliding.
+                foreach (ListBox listBox in listBoxes)
+                    listBox.keepSliding = false;
+            }
 
-            _lastInputPos_L = _currentInputPos_L;
-            ++_numofSlideFrames;
-        }
-        else if (Input.GetTouch(0).phase == TouchPhase.Ended && !idle)
-        {
-            idle = true;
-            setSlidingEffect();
+            else if (Input.GetTouch(0).phase == TouchPhase.Moved && !idle)
+            {
+                _currentInputPos_L = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+                _currentInputPos_L /= _parentCanvas.scaleFactor;
+                _deltaInputPos_L = _currentInputPos_L - _lastInputPos_L;
+                foreach (ListBox listbox in listBoxes)
+                    listbox.updatePosition(_deltaInputPos_L);
+
+                _lastInputPos_L = _currentInputPos_L;
+                ++_numofSlideFrames;
+            }
+
+            else if (Input.GetTouch(0).phase == TouchPhase.Ended && !idle)
+            {
+                idle = true;
+                setSlidingEffect();
+            }
         }
 	}
 

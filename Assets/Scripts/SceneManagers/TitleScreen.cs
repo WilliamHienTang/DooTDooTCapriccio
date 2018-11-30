@@ -44,10 +44,13 @@ public class TitleScreen : MonoBehaviour {
     {
         if (isTouchingDevice)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            if (Input.touchCount > 0)
             {
-                enabled = false;
-                StartCoroutine(LoadMainMenu(6));
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    enabled = false;
+                    StartCoroutine(LoadMainMenu(6));
+                }
             }
         }
         else
