@@ -6,6 +6,7 @@ public class HitCollider : MonoBehaviour {
     public ScoreManager scoreManager;
     public Transform gameCanvas;
     AudioManager audioManager;
+    Pause pause;
 
     // Particles
     public Transform tapParticle;
@@ -20,7 +21,7 @@ public class HitCollider : MonoBehaviour {
     Transform heldNoteInstance;
     public Transform heldNote;
 
-    string colliderName;
+    bool holding;
 
     void Awake()
     {
@@ -38,13 +39,13 @@ public class HitCollider : MonoBehaviour {
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        colliderName = gameObject.name;
+        pause = FindObjectOfType<Pause>();
     }
 
     // Determine collider presses, holds, and releases
     void Update()
     {
-        if (FindObjectOfType<Pause>().IsPaused())
+        if (pause.IsPaused())
         {
             return;
         }
@@ -53,6 +54,12 @@ public class HitCollider : MonoBehaviour {
         {
             if (Input.touchCount > 0)
             {
+                // initially holding = false if note instance is a hold lane
+                if(noteInstance != null){
+                    holding &= !noteInstance.CompareTag(Constants.holdLaneTag);
+                }
+
+
                 for (int i = 0; i < Input.touchCount; i++)
                 {
                     Touch touch = Input.touches[i];
@@ -61,35 +68,52 @@ public class HitCollider : MonoBehaviour {
 
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.transform.name == colliderName)
+                        if (hit.transform == transform)
                         {
-                            if (touch.phase == TouchPhase.Began)
+                            switch (touch.phase)
                             {
-                                OnPress();
-                            }
-                            else if (touch.phase == TouchPhase.Ended)
-                            {
-                                OnRelease();
-                            }
-                        }
+                                case TouchPhase.Began:
+                                    OnPress();
+                                    break;
 
-                        else
-                        {
-                            OutOfBound();
+                                case TouchPhase.Ended:
+                                    OnRelease();
+                                    break;
+                            }
+
+                            // holding = true if note instance is a hold lane
+                            if(noteInstance != null){
+                                holding |= noteInstance.CompareTag(Constants.holdLaneTag);
+                            }
                         }
                     }
                 }
+
+                // If not holding on to hold note, treat as a hold note release
+                if(noteInstance != null && noteInstance.CompareTag(Constants.holdLaneTag))
+                {
+                    if(!holding)
+                    {
+                        OnRelease();
+                    }
+                }
+
             }
         }
 
         else
         {
+            // initially holding = false if note instance is a hold lane
+            if(noteInstance != null){
+                holding &= !noteInstance.CompareTag(Constants.holdLaneTag);
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.name == colliderName)
+                if (hit.transform == transform)
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -99,11 +123,20 @@ public class HitCollider : MonoBehaviour {
                     {
                         OnRelease();
                     }
-                }
 
-                else
+                    // holding = true if note instance is a hold lane
+                    if(noteInstance != null){
+                        holding |= noteInstance.CompareTag(Constants.holdLaneTag);
+                    }
+                }
+            }
+
+            // If not holding on to hold note, treat as a hold note release
+            if (noteInstance != null && noteInstance.CompareTag(Constants.holdLaneTag))
+            {
+                if (!holding)
                 {
-                    OutOfBound();
+                    OnRelease();
                 }
             }
         }
@@ -120,7 +153,7 @@ public class HitCollider : MonoBehaviour {
         // Destroy the hold lane
         else if (other.CompareTag(Constants.tailNoteTag))
         {
-            Destroy(heldNoteInstance.gameObject);
+            DestroyHeldNote();
             StopLoopingParticle();
             noteInstance = other.transform;
         }
@@ -145,7 +178,7 @@ public class HitCollider : MonoBehaviour {
     }
 
     // Score notes pressed
-    public void OnPress()
+    void OnPress()
     {
         audioManager.Play(Constants.tapSFX);
         Instantiate(tapParticle, transform.position, tapParticle.transform.rotation);
@@ -155,7 +188,7 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
-        else if (noteInstance.CompareTag(Constants.noteTag))
+        if (noteInstance.CompareTag(Constants.noteTag))
         {
             Instantiate(hitParticle, transform.position, hitParticle.rotation);
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
@@ -174,14 +207,14 @@ public class HitCollider : MonoBehaviour {
     }
 
     // Score tail releases and destroy hold note releases
-    public void OnRelease()
+    void OnRelease()
     {
         if (noteInstance == null)
         {
             return;
         }
 
-        else if (noteInstance.CompareTag(Constants.tailNoteTag))
+        if (noteInstance.CompareTag(Constants.tailNoteTag))
         {
             Instantiate(headTailParticle, transform.position, headTailParticle.rotation);
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
@@ -189,23 +222,7 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            Destroy(heldNoteInstance.gameObject);
-            Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
-            DestroyHoldNote();
-        }
-    }
-    
-    // Miss for leaving collider bounds during hold note
-    public void OutOfBound()
-    {
-        if (noteInstance == null)
-        {
-            return;
-        }
-
-        else if (noteInstance.CompareTag(Constants.holdLaneTag))
-        {
-            Destroy(heldNoteInstance.gameObject);
+            DestroyHeldNote();
             Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
             DestroyHoldNote();
         }
@@ -218,12 +235,18 @@ public class HitCollider : MonoBehaviour {
             return;
         }
 
-        else if (noteInstance.CompareTag(Constants.headNoteTag) || noteInstance.CompareTag(Constants.holdLaneTag))
+        if (noteInstance.CompareTag(Constants.headNoteTag) || noteInstance.CompareTag(Constants.holdLaneTag))
         {
             noteInstance.parent.GetComponent<HoldNote>().DestroyTail();
             Destroy(noteInstance.parent.gameObject);
             StopLoopingParticle();
             MissNote();
+        }
+    }
+
+    void DestroyHeldNote(){
+        if(heldNoteInstance != null){
+            Destroy(heldNoteInstance.gameObject);
         }
     }
 
