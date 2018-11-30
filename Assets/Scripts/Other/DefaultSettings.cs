@@ -10,7 +10,6 @@ public class DefaultSettings : MonoBehaviour {
     void FirstLoad(){
         if(!PlayerPrefs.HasKey(Constants.firstLoad)){
             ResetPlayerPrefs();
-            InitNoteCount();
         }
     }
 
@@ -22,6 +21,7 @@ public class DefaultSettings : MonoBehaviour {
         PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
         PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
         PlayerPrefs.SetInt(Constants.firstLoad, 1);
+        InitNoteCount();
     }
 
     void InitNoteCount()

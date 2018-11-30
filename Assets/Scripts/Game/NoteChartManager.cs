@@ -35,7 +35,7 @@ public class NoteChartManager : MonoBehaviour {
         // load the note chart from the json file
         string song = PlayerPrefs.GetString(Constants.selectedSong);
         string difficulty = PlayerPrefs.GetString(Constants.difficulty);
-        jsonPath = Application.dataPath + "/Notecharts/" + song + "_" + difficulty + ".json";
+        jsonPath = Application.streamingAssetsPath + "/Notecharts/" + song.ToLower() + "_" + difficulty.ToLower() + ".json";
         json = File.ReadAllText(jsonPath);
         noteChart = JsonHelper.FromJson<NoteSpawn>(json);
 
