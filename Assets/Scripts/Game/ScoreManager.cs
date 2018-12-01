@@ -5,6 +5,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour {
 
     public Transform gameCanvas;
+    UIText UIText;
 
     // Floating text
     public TextMeshProUGUI perfectText;
@@ -20,6 +21,7 @@ public class ScoreManager : MonoBehaviour {
 
     void Start()
     {
+        UIText = FindObjectOfType<UIText>();
         floatingTexts = new List<TextMeshProUGUI>();
         song = PlayerPrefs.GetString(Constants.selectedSong);
         difficulty = PlayerPrefs.GetString(Constants.difficulty);
@@ -49,11 +51,13 @@ public class ScoreManager : MonoBehaviour {
         PlayerPrefs.SetInt(scoreTypeCount, PlayerPrefs.GetInt(scoreTypeCount) + 1);
         TextMeshProUGUI increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 520.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
         increaseScoreInstance.text = "+" + points.ToString();
+        UIText.UpdateScoreText();
     }
 
     public void IncreaseCombo()
     {
         PlayerPrefs.SetInt(Constants.combo, PlayerPrefs.GetInt(Constants.combo) + 1);
+        UIText.UpdateComboText();
     }
 
     public void ResetCombo()
@@ -64,6 +68,7 @@ public class ScoreManager : MonoBehaviour {
         }
 
         PlayerPrefs.SetInt(Constants.combo, 0);
+        UIText.UpdateComboText();
     }
 
     // Instantiates miss floating text

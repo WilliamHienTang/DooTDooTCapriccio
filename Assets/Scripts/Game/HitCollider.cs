@@ -7,13 +7,14 @@ public class HitCollider : MonoBehaviour {
     public Transform gameCanvas;
     AudioManager audioManager;
     Pause pause;
+    Camera mainCamera;
 
     // Particles
     public Transform tapParticle;
     public Transform hitParticle;
     public Transform holdParticle;
     public Transform missHoldParticle;
-    public Transform headTailParticle;
+    public Transform tailParticle;
 
     // Note and particle instances
     Transform noteInstance;
@@ -40,6 +41,7 @@ public class HitCollider : MonoBehaviour {
     {
         audioManager = FindObjectOfType<AudioManager>();
         pause = FindObjectOfType<Pause>();
+        mainCamera = Camera.main;
     }
 
     // Determine collider presses, holds, and releases
@@ -62,8 +64,8 @@ public class HitCollider : MonoBehaviour {
 
                 for (int i = 0; i < Input.touchCount; i++)
                 {
-                    Touch touch = Input.touches[i];
-                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    Touch touch = Input.GetTouch(i);
+                    Ray ray = mainCamera.ScreenPointToRay(touch.position);
                     RaycastHit hit;
 
                     if (Physics.Raycast(ray, out hit))
@@ -108,7 +110,7 @@ public class HitCollider : MonoBehaviour {
                 holding &= !noteInstance.CompareTag(Constants.holdLaneTag);
             }
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
@@ -181,10 +183,10 @@ public class HitCollider : MonoBehaviour {
     void OnPress()
     {
         audioManager.Play(Constants.tapSFX);
-        Instantiate(tapParticle, transform.position, tapParticle.transform.rotation);
 
         if (noteInstance == null)
         {
+            Instantiate(tapParticle, transform.position, tapParticle.transform.rotation);
             return;
         }
 
@@ -197,7 +199,6 @@ public class HitCollider : MonoBehaviour {
         // Activate hold note
         else if (noteInstance.CompareTag(Constants.headNoteTag))
         {
-            Instantiate(headTailParticle, transform.position, headTailParticle.rotation);
             holdParticleInstance = Instantiate(holdParticle, transform.position, holdParticle.rotation);
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
             Transform holdLane = noteInstance.parent.Find("HoldLane");
@@ -216,7 +217,7 @@ public class HitCollider : MonoBehaviour {
 
         if (noteInstance.CompareTag(Constants.tailNoteTag))
         {
-            Instantiate(headTailParticle, transform.position, headTailParticle.rotation);
+            Instantiate(tailParticle, transform.position, tailParticle.rotation);
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
         }
 

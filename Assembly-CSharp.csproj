@@ -141,8 +141,8 @@
     <Compile Include="Assets\Scripts\Game\Postgame.cs" />
     <Compile Include="Assets\Scripts\Game\Pregame.cs" />
     <Compile Include="Assets\Scripts\Game\ScoreBar.cs" />
-    <Compile Include="Assets\Scripts\Game\ScoreComboText.cs" />
     <Compile Include="Assets\Scripts\Game\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Game\UIText.cs" />
     <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Other\ButtonAudio.cs" />
     <Compile Include="Assets\Scripts\Other\Constants.cs" />

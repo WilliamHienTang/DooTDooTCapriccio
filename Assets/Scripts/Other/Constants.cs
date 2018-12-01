@@ -105,7 +105,7 @@ public class Constants : MonoBehaviour {
     // Timing and game object positions
     public const float activatorZ = 1.0f;
     public const float spawnZ = 50.0f;
-    public const float followThroughZ = -50.0f;
+    public const float followThroughZ = -10.0f;
     public const float songDelay = 10.0f;
     public const float maxNoteSpeed = 10.0f;
     public const float minNoteSpeed = 5.0f;

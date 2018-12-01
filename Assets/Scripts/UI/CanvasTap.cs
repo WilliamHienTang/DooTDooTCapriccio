@@ -4,6 +4,7 @@ public class CanvasTap : MonoBehaviour {
 
     bool isTouchingDevice;
     public Transform canvasTapParticle;
+    Camera mainCamera;
 
     void Awake()
     {
@@ -18,6 +19,11 @@ public class CanvasTap : MonoBehaviour {
         }
     }
 
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     // Instantiate canvas tap particle at touch position
     void Update ()
     {
@@ -27,7 +33,7 @@ public class CanvasTap : MonoBehaviour {
             {
                 if (Input.GetTouch(0).phase == TouchPhase.Began)
                 {
-                    Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 10));
+                    Vector3 touchPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y, 10));
                     Instantiate(canvasTapParticle, touchPosition, canvasTapParticle.rotation);
                 }
             }
@@ -38,7 +44,7 @@ public class CanvasTap : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+                Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
                 Instantiate(canvasTapParticle, mousePosition, canvasTapParticle.rotation);
             }
         }

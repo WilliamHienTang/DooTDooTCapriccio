@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 114687853040922056}
   - component: {fileID: 212711022439718952}
   - component: {fileID: 54712057235215876}
-  - component: {fileID: 114791281547915722}
+  - component: {fileID: 114158576717650612}
   m_Layer: 0
   m_Name: Tether
   m_TagString: Untagged
@@ -720,6 +720,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb3ca67f7deb1a3409b506ba430344f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114158576717650612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592726978611428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114175729431114814
@@ -1336,17 +1347,6 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
---- !u!114 &114791281547915722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592726978611428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114881978767155908
 MonoBehaviour:
   m_ObjectHideFlags: 1

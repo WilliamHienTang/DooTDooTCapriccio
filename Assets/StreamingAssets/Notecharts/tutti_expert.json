@@ -2496,8 +2496,8 @@
             "laneIndex": 4
         },
         {
-            "headHitTime": 83.55000305175781,
-            "tailHitTime": 0.0,
+            "headHitTime": 0,
+            "tailHitTime": 83.55000305175781,
             "laneIndex": 2
         },
         {
