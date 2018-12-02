@@ -199,7 +199,7 @@ public class HitCollider : MonoBehaviour
         // Activate hold note
         else if (noteInstance.CompareTag(Constants.headNoteTag))
         {
-            holdParticleInstance = particleSystemPooler.PlayParticle(Constants.holdParticle, transform.position, Quaternion.identity).transform;
+            holdParticleInstance = particleSystemPooler.PlayParticle(Constants.holdParticle, transform.position, Quaternion.identity, true).transform;
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
             Transform holdLane = noteInstance.parent.Find("HoldLane");
             noteInstance = holdLane;

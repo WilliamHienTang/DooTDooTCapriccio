@@ -60,4 +60,35 @@ public class ParticleSystemPooler : MonoBehaviour {
 
         return spawnObject;
     }
+
+    public ParticleSystem PlayParticle(string tag, Vector3 position, Quaternion rotation, bool loop)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            return null;
+        }
+
+        ParticleSystem spawnObject = poolDictionary[tag].Dequeue();
+
+        // requeue
+        poolDictionary[tag].Enqueue(spawnObject);
+
+        // set active, position, and rotation
+        spawnObject.transform.position = position;
+        spawnObject.transform.rotation = rotation;
+
+        // Set particle system and its children to loop
+        if(loop){
+            spawnObject.loop = true;
+
+            for (int i = 0; i < spawnObject.transform.childCount; i++)
+            {
+                spawnObject.transform.GetChild(i).GetComponent<ParticleSystem>().loop = true;
+            }
+        }
+        spawnObject.Play();
+
+
+        return spawnObject;
+    }
 }
