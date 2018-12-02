@@ -6,6 +6,7 @@ public class Pause : MonoBehaviour {
 
     Transform gameCanvas;
     AudioManager audioManager;
+    ScoreManager scoreManager;
     CanvasObjectPooler canvasObjectPooler;
     public GameObject pauseButton;
 
@@ -15,6 +16,7 @@ public class Pause : MonoBehaviour {
     {
         gameCanvas = transform;
         audioManager = FindObjectOfType<AudioManager>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         canvasObjectPooler = FindObjectOfType<CanvasObjectPooler>();
         StartCoroutine(WaitEnablePauseButton());
         isPaused = false;
@@ -26,6 +28,8 @@ public class Pause : MonoBehaviour {
         audioManager.Pause(PlayerPrefs.GetString(Constants.selectedSong));
         isPaused = true;
         pauseButton.SetActive(false);
+        scoreManager.ClearFloatingText();
+
     }
 
     public void ResumeGame()

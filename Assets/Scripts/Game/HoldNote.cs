@@ -9,18 +9,11 @@ public class HoldNote : MonoBehaviour {
         this.tail = tail;
     }
 
-    void OnEnable()
-    {
-        if(tail != null){
-            tail.SetActive(true);
-        }
-    }
-
-    public void DeactivateTail()
+    public void DestroyTail()
     {
         if (tail)
         {
-            tail.SetActive(false);
+            Destroy(tail);
         }
     }
 }

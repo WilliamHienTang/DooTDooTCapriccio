@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.IO;
 
-public class NoteChartManager : MonoBehaviour {
+public class NoteChartManager : MonoBehaviour
+{
 
     // Note chart variables
     string jsonPath;
@@ -10,7 +11,6 @@ public class NoteChartManager : MonoBehaviour {
     int chartIndex = 0;
 
     // Note objects
-    ObjectPooler objectPooler;
     public Transform noteObject;
     public Transform holdNoteObject;
     public Transform tailNoteObject;
@@ -32,10 +32,8 @@ public class NoteChartManager : MonoBehaviour {
     float songTimer;
     float dspStart;
 
-    void Start() 
+    void Start()
     {
-        objectPooler = FindObjectOfType<ObjectPooler>();
-
         // load the note chart from the json file
         string song = PlayerPrefs.GetString(Constants.selectedSong);
         string difficulty = PlayerPrefs.GetString(Constants.difficulty);
@@ -53,7 +51,7 @@ public class NoteChartManager : MonoBehaviour {
         dspStart = (float)AudioSettings.dspTime;
     }
 
-    // Update is called once per frame
+    // Instantiate notes when needed
     void Update()
     {
         songTimer = (float)(AudioSettings.dspTime - dspStart);
@@ -93,7 +91,7 @@ public class NoteChartManager : MonoBehaviour {
 
         if (chartIndex >= noteChart.Length)
         {
-            SpawnNotes(lane1, 0, length1, 0, tail1, false);
+            InstantiateNotes(lane1, 0, length1, 0, tail1, false);
             Postgame postgame = transform.GetComponent<Postgame>();
             enabled = false;
             StartCoroutine(postgame.EndGame(speedOffset));
@@ -121,11 +119,11 @@ public class NoteChartManager : MonoBehaviour {
             chartIndex++;
         }
 
-        SpawnNotes(lane1, lane2, length1, length2, tail1, tail2);
+        InstantiateNotes(lane1, lane2, length1, length2, tail1, tail2);
     }
 
-    // Determines the type of instantiation to make given teh parameters
-    void SpawnNotes(int lane1, int lane2, float length1, float length2, bool tail1, bool tail2)
+    // Determines the type of instantiation to make given the parameters
+    void InstantiateNotes(int lane1, int lane2, float length1, float length2, bool tail1, bool tail2)
     {
         if (lane1 == 0)
         {
@@ -138,16 +136,16 @@ public class NoteChartManager : MonoBehaviour {
             {
                 if (!tail1)
                 {
-                    SpawnNote(lane1);
+                    InstantiateNote(lane1);
                 }
                 else
                 {
-                    SpawnTail(lane1);
+                    InstantiateTail(lane1);
                 }
             }
             else
             {
-                SpawnHold(lane1, length1);
+                InstantiateHold(lane1, length1);
             }
         }
 
@@ -157,52 +155,52 @@ public class NoteChartManager : MonoBehaviour {
             {
                 if (tail1 && tail2)
                 {
-                    SpawnDoubleTail(lane1, lane2);
+                    InstantiateDoubleTail(lane1, lane2);
                 }
                 else if (tail1)
                 {
-                    SpawnOneNoteOneTail(lane2, lane1);
+                    InstantiateOneNoteOneTail(lane2, lane1);
                 }
                 else if (tail2)
                 {
-                    SpawnOneNoteOneTail(lane1, lane2);
+                    InstantiateOneNoteOneTail(lane1, lane2);
                 }
                 else
                 {
-                    SpawnDoubleNote(lane1, lane2);
+                    InstantiateDoubleNote(lane1, lane2);
                 }
             }
             else if (length1 == 0)
             {
                 if (tail1)
                 {
-                    SpawnOneHoldOneTail(lane2, lane1, length2);
+                    InstantiateOneHoldOneTail(lane2, lane1, length2);
                 }
                 else
                 {
-                    SpawnOneNoteOneHold(lane1, lane2, length2);
+                    InstantiateOneNoteOneHold(lane1, lane2, length2);
                 }
             }
             else if (length2 == 0)
             {
                 if (tail2)
                 {
-                    SpawnOneHoldOneTail(lane1, lane2, length1);
+                    InstantiateOneHoldOneTail(lane1, lane2, length1);
                 }
                 else
                 {
-                    SpawnOneNoteOneHold(lane2, lane1, length1);
+                    InstantiateOneNoteOneHold(lane2, lane1, length1);
                 }
             }
             else
             {
-                SpawnDoubleHold(lane1, lane2, length1, length2);
+                InstantiateDoubleHold(lane1, lane2, length1, length2);
             }
         }
     }
 
     // Below are the types of note prefab instantiations
-    void SpawnNote(int laneIndex)
+    void InstantiateNote(int laneIndex)
     {
         float xPosition;
         switch (laneIndex)
@@ -226,10 +224,10 @@ public class NoteChartManager : MonoBehaviour {
                 return;
         }
 
-        objectPooler.SpawnFromPool(Constants.note, new Vector3(xPosition, noteObject.localPosition.y, Constants.spawnZ), noteObject.rotation);
+        Instantiate(noteObject, new Vector3(xPosition, noteObject.localPosition.y, Constants.spawnZ), noteObject.rotation);
     }
 
-    void SpawnTail(int laneIndex)
+    void InstantiateTail(int laneIndex)
     {
         float xPosition;
         switch (laneIndex)
@@ -253,31 +251,31 @@ public class NoteChartManager : MonoBehaviour {
                 return;
         }
 
-        GameObject tail = objectPooler.SpawnFromPool(Constants.tailNote, new Vector3(xPosition, tailNoteObject.localPosition.y, Constants.spawnZ), tailNoteObject.rotation);
+        Transform tail = Instantiate(tailNoteObject, new Vector3(xPosition, tailNoteObject.localPosition.y, Constants.spawnZ), tailNoteObject.rotation);
 
         switch (laneIndex)
         {
             case 1:
-                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail);
+                holdNoteInstance1.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 2:
-                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail);
+                holdNoteInstance2.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 3:
-                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail);
+                holdNoteInstance3.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 4:
-                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail);
+                holdNoteInstance4.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             case 5:
-                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail);
+                holdNoteInstance5.GetComponent<HoldNote>().SetTail(tail.gameObject);
                 break;
             default:
                 return;
         }
     }
 
-    void SpawnHold(int laneIndex, float length)
+    void InstantiateHold(int laneIndex, float length)
     {
         float xPosition;
         switch (laneIndex)
@@ -301,7 +299,7 @@ public class NoteChartManager : MonoBehaviour {
                 return;
         }
 
-        Transform holdNote = objectPooler.SpawnFromPool(Constants.holdNote, new Vector3(xPosition, holdNoteObject.localPosition.y, Constants.spawnZ), holdNoteObject.rotation).transform;
+        Transform holdNote = Instantiate(holdNoteObject, new Vector3(xPosition, holdNoteObject.localPosition.y, Constants.spawnZ), holdNoteObject.rotation);
         Transform holdLane = holdNote.Find("HoldLane");
         holdLane.localPosition = new Vector3(holdLane.localPosition.x, holdLane.localPosition.y, length / 2.0f);
         holdLane.localScale = new Vector3(holdLane.localScale.x, holdLane.localScale.y, length);
@@ -328,7 +326,7 @@ public class NoteChartManager : MonoBehaviour {
         }
     }
 
-    void SpawnDoubleNote(int lane1, int lane2)
+    void InstantiateDoubleNote(int lane1, int lane2)
     {
         float xPosition1;
         switch (lane1)
@@ -376,7 +374,7 @@ public class NoteChartManager : MonoBehaviour {
                 break;
         }
 
-        Transform doubleNote = objectPooler.SpawnFromPool(Constants.doubleNote, new Vector3(doubleNoteObject.localPosition.x, doubleNoteObject.localPosition.y, Constants.spawnZ), doubleNoteObject.rotation).transform;
+        Transform doubleNote = Instantiate(doubleNoteObject, new Vector3(doubleNoteObject.localPosition.x, doubleNoteObject.localPosition.y, Constants.spawnZ), doubleNoteObject.rotation);
 
         Transform note1 = doubleNote.Find("Note1");
         note1.localPosition = new Vector3(xPosition1, note1.localPosition.y, note1.localPosition.z);
@@ -389,7 +387,7 @@ public class NoteChartManager : MonoBehaviour {
         tether.localScale = new Vector3(Mathf.Abs(xPosition2 - xPosition1), tether.localScale.y, tether.localScale.z);
     }
 
-    void SpawnDoubleTail(int lane1, int lane2)
+    void InstantiateDoubleTail(int lane1, int lane2)
     {
         float xPosition1;
         switch (lane1)
@@ -437,7 +435,7 @@ public class NoteChartManager : MonoBehaviour {
                 break;
         }
 
-        Transform doubleTail = objectPooler.SpawnFromPool(Constants.doubleTail, new Vector3(doubleTailObject.localPosition.x, doubleTailObject.localPosition.y, Constants.spawnZ), doubleTailObject.rotation).transform;
+        Transform doubleTail = Instantiate(doubleTailObject, new Vector3(doubleTailObject.localPosition.x, doubleTailObject.localPosition.y, Constants.spawnZ), doubleTailObject.rotation);
 
         Transform tail1 = doubleTail.Find("Tail1");
         tail1.localPosition = new Vector3(xPosition1, tail1.localPosition.y, tail1.localPosition.z);
@@ -492,7 +490,7 @@ public class NoteChartManager : MonoBehaviour {
         }
     }
 
-    void SpawnDoubleHold(int lane1, int lane2, float length1, float length2)
+    void InstantiateDoubleHold(int lane1, int lane2, float length1, float length2)
     {
         float xPosition1;
         switch (lane1)
@@ -540,7 +538,7 @@ public class NoteChartManager : MonoBehaviour {
                 break;
         }
 
-        Transform doubleHead = objectPooler.SpawnFromPool(Constants.doubleHold, new Vector3(doubleHoldObject.localPosition.x, doubleHoldObject.localPosition.y, Constants.spawnZ), doubleHoldObject.rotation).transform;
+        Transform doubleHead = Instantiate(doubleHoldObject, new Vector3(doubleHoldObject.localPosition.x, doubleHoldObject.localPosition.y, Constants.spawnZ), doubleHoldObject.rotation);
 
         Transform holdNote1 = doubleHead.Find("HoldNote1");
         holdNote1.localPosition = new Vector3(xPosition1, holdNote1.localPosition.y, holdNote1.localPosition.z);
@@ -603,7 +601,7 @@ public class NoteChartManager : MonoBehaviour {
         }
     }
 
-    void SpawnOneNoteOneTail(int noteLane, int tailLane)
+    void InstantiateOneNoteOneTail(int noteLane, int tailLane)
     {
         float noteXPosition;
         switch (noteLane)
@@ -651,7 +649,7 @@ public class NoteChartManager : MonoBehaviour {
                 break;
         }
 
-        Transform oneNoteOneTail = objectPooler.SpawnFromPool(Constants.oneNoteOneTail, new Vector3(oneNoteOneTailObject.localPosition.x, oneNoteOneTailObject.localPosition.y, Constants.spawnZ), oneNoteOneTailObject.rotation).transform;
+        Transform oneNoteOneTail = Instantiate(oneNoteOneTailObject, new Vector3(oneNoteOneTailObject.localPosition.x, oneNoteOneTailObject.localPosition.y, Constants.spawnZ), oneNoteOneTailObject.rotation);
 
         Transform note = oneNoteOneTail.Find("Note");
         note.localPosition = new Vector3(noteXPosition, note.localPosition.y, note.localPosition.z);
@@ -685,7 +683,7 @@ public class NoteChartManager : MonoBehaviour {
         }
     }
 
-    void SpawnOneNoteOneHold(int noteLane, int holdNoteLane, float length)
+    void InstantiateOneNoteOneHold(int noteLane, int holdNoteLane, float length)
     {
         float noteXPosition;
         switch (noteLane)
@@ -733,7 +731,7 @@ public class NoteChartManager : MonoBehaviour {
                 break;
         }
 
-        Transform oneNoteOneHold = objectPooler.SpawnFromPool(Constants.oneNoteOneHold, new Vector3(oneNoteOneHoldObject.localPosition.x, oneNoteOneHoldObject.localPosition.y, Constants.spawnZ), oneNoteOneHoldObject.rotation).transform;
+        Transform oneNoteOneHold = Instantiate(oneNoteOneHoldObject, new Vector3(oneNoteOneHoldObject.localPosition.x, oneNoteOneHoldObject.localPosition.y, Constants.spawnZ), oneNoteOneHoldObject.rotation);
 
         Transform note = oneNoteOneHold.Find("Note");
         note.localPosition = new Vector3(noteXPosition, note.localPosition.y, note.localPosition.z);
@@ -771,7 +769,7 @@ public class NoteChartManager : MonoBehaviour {
         }
     }
 
-    void SpawnOneHoldOneTail(int holdNoteLane, int tailLane, float length)
+    void InstantiateOneHoldOneTail(int holdNoteLane, int tailLane, float length)
     {
         float holdXPosition;
         switch (holdNoteLane)
@@ -819,7 +817,7 @@ public class NoteChartManager : MonoBehaviour {
                 break;
         }
 
-        Transform oneHoldOneTail = objectPooler.SpawnFromPool(Constants.oneHoldOneTail, new Vector3(oneHoldOneTailObject.localPosition.x, oneHoldOneTailObject.localPosition.y, Constants.spawnZ), oneHoldOneTailObject.rotation).transform;
+        Transform oneHoldOneTail = Instantiate(oneHoldOneTailObject, new Vector3(oneHoldOneTailObject.localPosition.x, oneHoldOneTailObject.localPosition.y, Constants.spawnZ), oneHoldOneTailObject.rotation);
 
         Transform tail = oneHoldOneTail.Find("Tail");
         tail.localPosition = new Vector3(tailXPosition, tail.localPosition.y, tail.localPosition.z);

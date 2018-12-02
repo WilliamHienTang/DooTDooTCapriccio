@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class HitCollider : MonoBehaviour {
+public class HitCollider : MonoBehaviour
+{
 
     bool isTouchingDevice;
     public ScoreManager scoreManager;
@@ -57,7 +58,8 @@ public class HitCollider : MonoBehaviour {
             if (Input.touchCount > 0)
             {
                 // initially holding = false if note instance is a hold lane
-                if(noteInstance != null){
+                if (noteInstance != null)
+                {
                     holding &= !noteInstance.CompareTag(Constants.holdLaneTag);
                 }
 
@@ -84,7 +86,8 @@ public class HitCollider : MonoBehaviour {
                             }
 
                             // holding = true if note instance is a hold lane
-                            if(noteInstance != null){
+                            if (noteInstance != null)
+                            {
                                 holding |= noteInstance.CompareTag(Constants.holdLaneTag);
                             }
                         }
@@ -92,9 +95,9 @@ public class HitCollider : MonoBehaviour {
                 }
 
                 // If not holding on to hold note, treat as a hold note release
-                if(noteInstance != null && noteInstance.CompareTag(Constants.holdLaneTag))
+                if (noteInstance != null && noteInstance.CompareTag(Constants.holdLaneTag))
                 {
-                    if(!holding)
+                    if (!holding)
                     {
                         OnRelease();
                     }
@@ -106,7 +109,8 @@ public class HitCollider : MonoBehaviour {
         else
         {
             // initially holding = false if note instance is a hold lane
-            if(noteInstance != null){
+            if (noteInstance != null)
+            {
                 holding &= !noteInstance.CompareTag(Constants.holdLaneTag);
             }
 
@@ -127,7 +131,8 @@ public class HitCollider : MonoBehaviour {
                     }
 
                     // holding = true if note instance is a hold lane
-                    if(noteInstance != null){
+                    if (noteInstance != null)
+                    {
                         holding |= noteInstance.CompareTag(Constants.holdLaneTag);
                     }
                 }
@@ -152,10 +157,10 @@ public class HitCollider : MonoBehaviour {
             noteInstance = other.transform;
         }
 
-        // Deactivate the hold lane
+        // Destroy the hold lane
         else if (other.CompareTag(Constants.tailNoteTag))
         {
-            DeactivateHeldNote();
+            DestroyHeldNote();
             StopLoopingParticle();
             noteInstance = other.transform;
         }
@@ -166,15 +171,15 @@ public class HitCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
             MissNote();
         }
 
-        // Deactivate the hold note altogether
+        // Destroy the hold note altogether
         else if (other.CompareTag(Constants.headNoteTag))
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
-            DeactivateHoldNote();
+            DestroyHoldNote();
             MissNote();
         }
     }
@@ -207,7 +212,7 @@ public class HitCollider : MonoBehaviour {
         }
     }
 
-    // Score tail releases and deactivate hold note releases
+    // Score tail releases and destroy hold note releases
     void OnRelease()
     {
         if (noteInstance == null)
@@ -223,13 +228,13 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            DeactivateHeldNote();
+            DestroyHeldNote();
             Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
-            DeactivateHoldNote();
+            DestroyHoldNote();
         }
     }
 
-    void DeactivateHoldNote()
+    void DestroyHoldNote()
     {
         if (noteInstance == null)
         {
@@ -238,16 +243,18 @@ public class HitCollider : MonoBehaviour {
 
         if (noteInstance.CompareTag(Constants.headNoteTag) || noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            noteInstance.parent.GetComponent<HoldNote>().DeactivateTail();
-            noteInstance.parent.gameObject.SetActive(false);
+            noteInstance.parent.GetComponent<HoldNote>().DestroyTail();
+            Destroy(noteInstance.parent.gameObject);
             StopLoopingParticle();
             MissNote();
         }
     }
 
-    void DeactivateHeldNote(){
-        if(heldNoteInstance != null){
-            heldNoteInstance.gameObject.SetActive(false);
+    void DestroyHeldNote()
+    {
+        if (heldNoteInstance != null)
+        {
+            Destroy(heldNoteInstance.gameObject);
         }
     }
 
@@ -273,7 +280,7 @@ public class HitCollider : MonoBehaviour {
     void HandleNote(string scoreType)
     {
         audioManager.Play(scoreType);
-        noteInstance.gameObject.SetActive(false);
+        Destroy(noteInstance.gameObject);
 
         if (scoreType == Constants.perfect)
         {

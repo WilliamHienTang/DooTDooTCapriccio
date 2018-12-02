@@ -9,15 +9,11 @@ public class NoteSpeed : MonoBehaviour {
     float songTimer;
     float dspStart;
 
-    void Awake()
+    void Start()
     {
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
-        followThroughPosition = new Vector3(initPosition.x, initPosition.y, Constants.followThroughZ);
-    }
-
-    void OnEnable()
-    {
         initPosition = transform.position;
+        followThroughPosition = new Vector3(initPosition.x, initPosition.y, Constants.followThroughZ);
         distance = initPosition.z - Constants.followThroughZ;
         dspStart = (float)AudioSettings.dspTime;
     }
@@ -29,7 +25,7 @@ public class NoteSpeed : MonoBehaviour {
         transform.position = Vector3.Lerp(initPosition, followThroughPosition, (noteSpeed * songTimer / distance));
 
         if(songTimer * noteSpeed > distance){
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FloatingText : MonoBehaviour {
 
-    readonly float destroyTime = 1.0f;
+    readonly float deactivateTime = 1.0f;
 
 	void OnEnable () {
         StartCoroutine(SetInactiveCoroutine());
@@ -11,7 +11,7 @@ public class FloatingText : MonoBehaviour {
 
     IEnumerator SetInactiveCoroutine()
     {
-        yield return new WaitForSeconds(destroyTime);
+        yield return new WaitForSeconds(deactivateTime);
         gameObject.SetActive(false);
     }
 }
