@@ -1,12 +1,9 @@
 ﻿<Properties StartupConfiguration="{FCEA43D7-9A25-F521-B829-2D3D9993F843}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/BreakTether.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StreamingAssets/Notecharts/tutti_expert.json">
     <Files>
-      <File FileName="Assets/Scripts/Game/HitCollider.cs" Line="201" Column="10" />
-      <File FileName="Assets/Scripts/Game/NoteChartManager.cs" Line="38" Column="125" />
-      <File FileName="Assets/Scripts/Game/BreakTether.cs" Line="9" Column="33" />
-      <File FileName="Assets/Scripts/Game/Pause.cs" Line="34" Column="43" />
-      <File FileName="Assets/Scripts/Game/NoteSpeed.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Other/Constants.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Other/Constants.cs" Line="108" Column="44" />
+      <File FileName="Assets/Scripts/Game/NoteSpeed.cs" Line="28" Column="41" />
+      <File FileName="Assets/StreamingAssets/Notecharts/tutti_expert.json" Line="27" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

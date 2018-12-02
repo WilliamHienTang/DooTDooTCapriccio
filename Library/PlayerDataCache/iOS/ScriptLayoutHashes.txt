@@ -172,6 +172,7 @@ c38d4f93b10fbc8870723718c1b9983d Assembly-CSharp.dll:.CFX_Demo_RotateCamera
 30e3871b14c0d1591ce4d5626664df03 Assembly-CSharp.dll:.PhoneWallpaper
 63d6098b02803ba4e2ecc02dc40ad975 Assembly-CSharp.dll:.CustomInputField
 044d82bc5b727741f9b970c553267620 Assembly-CSharp.dll:.Shapes2DPrefs
+b26c379abc819278d5b3a8c00d0e25e0 Assembly-CSharp.dll:.UIText
 276a536df9576d99b4b78d9325d4d4f5 Assembly-CSharp.dll:.CFX_AutoDestructShuriken
 93adbec1eb8a511bbf0ca1b8bb70f1a6 Assembly-CSharp.dll:.SwitchAnim
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -186,7 +187,6 @@ bd1e9ef58438f577497c159b14f8c5b6 Assembly-CSharp.dll:.CFX_LightIntensityFade
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 f6d235f86f79f9d86be4dfc932d41f06 Assembly-CSharp.dll:.PBFilled
 f6289a1fc4ad0f6886c40a7d59c9fa83 Assembly-CSharp.dll:.TakeItem
-b26c379abc819278d5b3a8c00d0e25e0 Assembly-CSharp.dll:.ScoreComboText
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 0f27c39183b9eb95eba0a228bea28273 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -230,7 +230,7 @@ bccc55e269f2338b951a59799b3fa364 Assembly-CSharp.dll:.AnimatePanel
 ff19a1cb87f3708bcea97634c0443de8 Assembly-CSharp.dll:.SideMenu
 e03d11cb3989c953a1dcdf0da7db0520 Assembly-CSharp.dll:.NotificationExample
 1b40373378b2ae57cb4864cbecafc191 Assembly-CSharp.dll:.DestroyObject
-5de85eb69590e447dcdf77d83a72ea24 Assembly-CSharp.dll:.HitCollider
+d1bbe8c7d6625b118e8c2958199da3ba Assembly-CSharp.dll:.HitCollider
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule

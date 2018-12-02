@@ -16,8 +16,6 @@ public class NoteSpeed : MonoBehaviour {
         followThroughPosition = new Vector3(initPosition.x, initPosition.y, Constants.followThroughZ);
         distance = initPosition.z - Constants.followThroughZ;
         dspStart = (float)AudioSettings.dspTime;
-
-        Destroy(gameObject, distance / noteSpeed);
     }
 
     // Interpolate position based on audio time and note speed
@@ -25,5 +23,9 @@ public class NoteSpeed : MonoBehaviour {
     {
         songTimer = (float)(AudioSettings.dspTime - dspStart);
         transform.position = Vector3.Lerp(initPosition, followThroughPosition, (noteSpeed * songTimer / distance));
+
+        if(songTimer * noteSpeed > distance){
+            Destroy(transform.gameObject);
+        }
     }
 }
