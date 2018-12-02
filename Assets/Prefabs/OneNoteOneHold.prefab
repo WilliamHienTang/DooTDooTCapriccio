@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4153689188471008}
   - component: {fileID: 114031347235806182}
+  - component: {fileID: 114127289253008108}
   m_Layer: 0
   m_Name: OneNoteOneHold
   m_TagString: Untagged
@@ -196,7 +197,6 @@ GameObject:
   - component: {fileID: 114687853040922056}
   - component: {fileID: 212711022439718952}
   - component: {fileID: 54712057235215876}
-  - component: {fileID: 114158576717650612}
   m_Layer: 0
   m_Name: Tether
   m_TagString: Untagged
@@ -722,12 +722,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3ca67f7deb1a3409b506ba430344f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114158576717650612
+--- !u!114 &114127289253008108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1592726978611428}
+  m_GameObject: {fileID: 1246294558068814}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}

@@ -152,10 +152,10 @@ public class HitCollider : MonoBehaviour {
             noteInstance = other.transform;
         }
 
-        // Destroy the hold lane
+        // Deactivate the hold lane
         else if (other.CompareTag(Constants.tailNoteTag))
         {
-            DestroyHeldNote();
+            DeactivateHeldNote();
             StopLoopingParticle();
             noteInstance = other.transform;
         }
@@ -166,15 +166,15 @@ public class HitCollider : MonoBehaviour {
     {
         if (other.CompareTag(Constants.noteTag) || other.CompareTag(Constants.tailNoteTag))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             MissNote();
         }
 
-        // Destroy the hold note altogether
+        // Deactivate the hold note altogether
         else if (other.CompareTag(Constants.headNoteTag))
         {
             Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
-            DestroyHoldNote();
+            DeactivateHoldNote();
             MissNote();
         }
     }
@@ -207,7 +207,7 @@ public class HitCollider : MonoBehaviour {
         }
     }
 
-    // Score tail releases and destroy hold note releases
+    // Score tail releases and deactivate hold note releases
     void OnRelease()
     {
         if (noteInstance == null)
@@ -223,13 +223,13 @@ public class HitCollider : MonoBehaviour {
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            DestroyHeldNote();
+            DeactivateHeldNote();
             Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
-            DestroyHoldNote();
+            DeactivateHoldNote();
         }
     }
 
-    void DestroyHoldNote()
+    void DeactivateHoldNote()
     {
         if (noteInstance == null)
         {
@@ -238,16 +238,16 @@ public class HitCollider : MonoBehaviour {
 
         if (noteInstance.CompareTag(Constants.headNoteTag) || noteInstance.CompareTag(Constants.holdLaneTag))
         {
-            noteInstance.parent.GetComponent<HoldNote>().DestroyTail();
-            Destroy(noteInstance.parent.gameObject);
+            noteInstance.parent.GetComponent<HoldNote>().DeactivateTail();
+            noteInstance.parent.gameObject.SetActive(false);
             StopLoopingParticle();
             MissNote();
         }
     }
 
-    void DestroyHeldNote(){
+    void DeactivateHeldNote(){
         if(heldNoteInstance != null){
-            Destroy(heldNoteInstance.gameObject);
+            heldNoteInstance.gameObject.SetActive(false);
         }
     }
 
@@ -273,7 +273,7 @@ public class HitCollider : MonoBehaviour {
     void HandleNote(string scoreType)
     {
         audioManager.Play(scoreType);
-        Destroy(noteInstance.gameObject);
+        noteInstance.gameObject.SetActive(false);
 
         if (scoreType == Constants.perfect)
         {

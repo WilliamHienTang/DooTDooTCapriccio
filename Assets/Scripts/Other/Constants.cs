@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Constants : MonoBehaviour {
+public static class Constants 
+{
     // Scenes
     public const string titleScreen = "TitleScreen";
     public const string mainMenu = "MainMenu";
@@ -128,4 +129,25 @@ public class Constants : MonoBehaviour {
     public const int greatScore = 750;
     public const int goodScore = 500;
     public const int badScore = 250;
+
+    // Object pooling prefabs
+    public const string note = "Note";
+    public const string holdNote = "HoldNote";
+    public const string tailNote = "TailNote";
+    public const string doubleNote = "DoubleNote";
+    public const string doubleHold = "DoubleHold";
+    public const string doubleTail = "DoubleTail";
+    public const string oneHoldOneTail = "OneHoldOneTail";
+    public const string oneNoteOneHold = "OneNoteOneHold";
+    public const string oneNoteOneTail = "OneNoteOneTail";
+    public const string heldNote = "HeldNote";
+    public const string perfectText = "PerfectText";
+    public const string greatText = "GreatText";
+    public const string goodText = "GoodText";
+    public const string badText = "BadText";
+    public const string missText = "MissText";
+    public const string increaseScoreText = "IncreaseScoreText";
+    public const string countdownText1 = "CountdownText1";
+    public const string countdownText2 = "CountdownText2";
+    public const string countdownText3 = "CountdownText3";
 }

@@ -5,24 +5,23 @@ using TMPro;
 public class ScoreManager : MonoBehaviour {
 
     public Transform gameCanvas;
+    CanvasObjectPooler canvasObjectPooler;
+    ScoreBar scoreBar;
     UIText UIText;
 
     // Floating text
-    public TextMeshProUGUI perfectText;
-    public TextMeshProUGUI greatText;
-    public TextMeshProUGUI goodText;
-    public TextMeshProUGUI badText;
-    public TextMeshProUGUI missText;
     public TextMeshProUGUI increaseScoreText;
-    List<TextMeshProUGUI> floatingTexts;
+    List<GameObject> floatingTexts;
 
     string song;
     string difficulty;
 
     void Start()
     {
+        canvasObjectPooler = FindObjectOfType<CanvasObjectPooler>();
+        scoreBar = FindObjectOfType<ScoreBar>();
         UIText = FindObjectOfType<UIText>();
-        floatingTexts = new List<TextMeshProUGUI>();
+        floatingTexts = new List<GameObject>();
         song = PlayerPrefs.GetString(Constants.selectedSong);
         difficulty = PlayerPrefs.GetString(Constants.difficulty);
         InitPlayerPrefs();
@@ -45,13 +44,13 @@ public class ScoreManager : MonoBehaviour {
     // Increases score and instantiates score type floating text and increase score floating text
     public void IncreaseScore(int points, string scoreTypeCount)
     {
-        InstantiateFloatingText(scoreTypeCount);
+        SpawnFloatingText(scoreTypeCount);
         PlayerPrefs.SetInt(Constants.score, PlayerPrefs.GetInt(Constants.score) + points);
         PlayerPrefs.SetInt(Constants.notesHit, PlayerPrefs.GetInt(Constants.notesHit) + 1);
         PlayerPrefs.SetInt(scoreTypeCount, PlayerPrefs.GetInt(scoreTypeCount) + 1);
-        TextMeshProUGUI increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 520.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
-        increaseScoreInstance.text = "+" + points.ToString();
+        SpawnIncreaseScoreText(points);
         UIText.UpdateScoreText();
+        scoreBar.FillScoreBar();
     }
 
     public void IncreaseCombo()
@@ -74,7 +73,7 @@ public class ScoreManager : MonoBehaviour {
     // Instantiates miss floating text
     public void MissNote()
     {
-        InstantiateFloatingText(Constants.misses);
+        SpawnFloatingText(Constants.misses);
         PlayerPrefs.SetInt(Constants.misses, PlayerPrefs.GetInt(Constants.misses) + 1);
     }
 
@@ -137,8 +136,6 @@ public class ScoreManager : MonoBehaviour {
             case "F":
                 scoreRank = 1;
                 break;
-            default:
-                break;
         }
 
         switch (PlayerPrefs.GetString(song + difficulty + Constants.highRank))
@@ -161,8 +158,6 @@ public class ScoreManager : MonoBehaviour {
             case "F":
                 scoreRank = 1;
                 break;
-            default:
-                break;
         }
 
         if (scoreRank > highRank)
@@ -171,39 +166,45 @@ public class ScoreManager : MonoBehaviour {
         }
     }
 
-    void InstantiateFloatingText(string scoreTypeCount)
+    // Score type text
+    void SpawnFloatingText(string scoreTypeCount)
     {
         ClearFloatingText();
 
         switch (scoreTypeCount)
         {
             case Constants.perfects:
-                floatingTexts.Add(Instantiate(perfectText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(canvasObjectPooler.SpawnFromPool(Constants.perfectText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity));
                 break;
             case Constants.greats:
-                floatingTexts.Add(Instantiate(greatText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(canvasObjectPooler.SpawnFromPool(Constants.greatText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity));
                 break;
             case Constants.goods:
-                floatingTexts.Add(Instantiate(goodText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(canvasObjectPooler.SpawnFromPool(Constants.goodText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity));
                 break;
             case Constants.bads:
-                floatingTexts.Add(Instantiate(badText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
+                floatingTexts.Add(canvasObjectPooler.SpawnFromPool(Constants.badText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity));
                 break;
             case Constants.misses:
-                floatingTexts.Add(Instantiate(missText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas));
-                break;
-            default:
+                floatingTexts.Add(canvasObjectPooler.SpawnFromPool(Constants.missText, new Vector3(gameCanvas.position.x, gameCanvas.position.y - 150.0f, gameCanvas.position.z), Quaternion.identity));
                 break;
         }
     }
 
-    void ClearFloatingText()
+
+    // Score bar side text
+    void SpawnIncreaseScoreText(int points){
+        TextMeshProUGUI increaseScoreInstance = Instantiate(increaseScoreText, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 520.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        increaseScoreInstance.text = "+" + points.ToString();
+    }
+
+    public void ClearFloatingText()
     {
-        foreach (TextMeshProUGUI floatingText in floatingTexts)
+        foreach (GameObject floatingText in floatingTexts)
         {
             if (floatingText != null)
             {
-                Destroy(floatingText.gameObject);
+                floatingText.SetActive(false);
             }
         }
     }

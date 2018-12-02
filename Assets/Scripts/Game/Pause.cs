@@ -6,19 +6,18 @@ public class Pause : MonoBehaviour {
 
     Transform gameCanvas;
     AudioManager audioManager;
-
-    public GameObject countdown1;
-    public GameObject countdown2;
-    public GameObject countdown3;
+    CanvasObjectPooler canvasObjectPooler;
     public GameObject pauseButton;
 
-    bool isPaused = false;
+    bool isPaused;
 
     void Start()
     {
         gameCanvas = transform;
         audioManager = FindObjectOfType<AudioManager>();
+        canvasObjectPooler = FindObjectOfType<CanvasObjectPooler>();
         StartCoroutine(WaitEnablePauseButton());
+        isPaused = false;
     }
 
     public void PauseGame()
@@ -37,11 +36,11 @@ public class Pause : MonoBehaviour {
     // Resume game after 3s countdown
     public IEnumerator CountdownResume()
     {
-        Instantiate(countdown3, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        canvasObjectPooler.SpawnFromPool(Constants.countdownText3, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity);
         yield return new WaitForSeconds(1);
-        Instantiate(countdown2, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        canvasObjectPooler.SpawnFromPool(Constants.countdownText2, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity);
         yield return new WaitForSeconds(1);
-        Instantiate(countdown1, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity, gameCanvas);
+        canvasObjectPooler.SpawnFromPool(Constants.countdownText1, new Vector3(gameCanvas.position.x, gameCanvas.position.y + 100.0f, gameCanvas.position.z), Quaternion.identity);
         yield return new WaitForSeconds(1);
 
         isPaused = false;

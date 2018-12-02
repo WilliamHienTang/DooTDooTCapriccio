@@ -2,7 +2,7 @@
 
 public class NoteScore : MonoBehaviour {
 
-    string scoreType = null;
+    string scoreType;
 
     public void SetScoreType(string type)
     {

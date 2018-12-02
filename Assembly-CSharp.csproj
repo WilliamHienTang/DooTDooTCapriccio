@@ -126,6 +126,7 @@
     <Compile Include="Assets\Scripts\Game\AutoDestroyParticleSystem.cs" />
     <Compile Include="Assets\Scripts\Game\BadCollider.cs" />
     <Compile Include="Assets\Scripts\Game\BreakTether.cs" />
+    <Compile Include="Assets\Scripts\Game\CanvasObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Game\Dissolve.cs" />
     <Compile Include="Assets\Scripts\Game\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Game\GoodCollider.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Assets\Scripts\Game\NoteScore.cs" />
     <Compile Include="Assets\Scripts\Game\NoteSpawn.cs" />
     <Compile Include="Assets\Scripts\Game\NoteSpeed.cs" />
+    <Compile Include="Assets\Scripts\Game\ObjectPooler.cs" />
     <Compile Include="Assets\Scripts\Game\Pause.cs" />
     <Compile Include="Assets\Scripts\Game\PerfectCollider.cs" />
     <Compile Include="Assets\Scripts\Game\Postgame.cs" />

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4655383284598546}
   - component: {fileID: 114433040339878306}
+  - component: {fileID: 114394207768624190}
   m_Layer: 0
   m_Name: OneNoteOneTail
   m_TagString: Untagged
@@ -108,7 +109,6 @@ GameObject:
   - component: {fileID: 114653875931426856}
   - component: {fileID: 212524796019012350}
   - component: {fileID: 54045570747927972}
-  - component: {fileID: 114202112434473478}
   m_Layer: 0
   m_Name: Tether
   m_TagString: Untagged
@@ -817,17 +817,6 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
---- !u!114 &114202112434473478
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1376016143966714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114202432437502370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -953,6 +942,17 @@ MonoBehaviour:
     _usePolygonMap: 0
   wasConverted: 0
   preConvertedScale: {x: 0, y: 0, z: 0}
+--- !u!114 &114394207768624190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1050539446737646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78a6a6cf20a1a645ac00f278794f515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114433040339878306
 MonoBehaviour:
   m_ObjectHideFlags: 1

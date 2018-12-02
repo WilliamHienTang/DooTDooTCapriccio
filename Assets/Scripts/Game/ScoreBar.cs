@@ -32,26 +32,11 @@ public class ScoreBar : MonoBehaviour {
     }
 	
 	// Fill the score bar based on the score
-	void Update () {
-        score = (float)PlayerPrefs.GetInt(Constants.score);
+	public void FillScoreBar () {
+        score = PlayerPrefs.GetInt(Constants.score);
         scoreRank = score / maxScore;
         scoreBarSlider.value = scoreRank;
 
-        if (scoreRank > Constants.rankA)
-        {
-            fill.GetComponent<Image>().color = colorA;
-        }
-        else if (scoreRank > Constants.rankB)
-        {
-            fill.GetComponent<Image>().color = colorB;
-        }
-        else if (scoreRank > Constants.rankC)
-        {
-            fill.GetComponent<Image>().color = colorC;
-        }
-        else
-        {
-            fill.GetComponent<Image>().color = colorF;
-        }
+        fill.color = scoreRank > Constants.rankA ? colorA : scoreRank > Constants.rankB ? colorB : scoreRank > Constants.rankC ? colorC : colorF;
     }
 }

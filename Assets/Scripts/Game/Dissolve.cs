@@ -20,16 +20,23 @@ public class Dissolve : MonoBehaviour {
         }
     }
 
-    void Start () {
+    void Awake()
+    {
         enabled = false;
         material = GetComponent<Renderer>().material;
         noteSpeed = PlayerPrefs.GetFloat(Constants.noteSpeed);
+    }
+
+    void OnEnable()
+    {
+        enabled = false;
         length = GetComponent<Renderer>().bounds.size.z;
         duration = length / noteSpeed;
+        material.SetFloat("_DissolveAmount", 0f);
     }
-	
-	// Dissolve amount based on audio time and note speed
-	void Update () {
+
+    // Dissolve amount based on audio time and note speed
+    void Update () {
         songTimer = (float)(AudioSettings.dspTime - startTime);
         material.SetFloat("_DissolveAmount", (songTimer + Time.deltaTime) / duration);
     }

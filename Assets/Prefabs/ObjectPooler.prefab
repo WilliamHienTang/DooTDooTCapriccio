@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1832924920924332}
+  m_IsPrefabAsset: 1
+--- !u!1 &1832924920924332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4390454231430600}
+  - component: {fileID: 114196355756775688}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4390454231430600
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832924920924332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114196355756775688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832924920924332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03bf86eff1e54bb2bce27485645dacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Note
+    prefab: {fileID: 1121373108933248, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
+    size: 50
+  - tag: HoldNote
+    prefab: {fileID: 1326928706223688, guid: eb348f378cf7e594caec5cf7679c5e38, type: 2}
+    size: 25
+  - tag: TailNote
+    prefab: {fileID: 1133493215569620, guid: 1682cb2e304fa71469f45a37549c16c2, type: 2}
+    size: 25
+  - tag: DoubleNote
+    prefab: {fileID: 1028967428904728, guid: b8ea5e8d3fdd7454e8b5ce929d7de446, type: 2}
+    size: 25
+  - tag: DoubleHold
+    prefab: {fileID: 1302098058137746, guid: 19df108dd4cf6034aa829269a75b4618, type: 2}
+    size: 25
+  - tag: DoubleTail
+    prefab: {fileID: 1424471176404160, guid: 3fd5d99b30332a84292310c8f7812baf, type: 2}
+    size: 25
+  - tag: OneHoldOneTail
+    prefab: {fileID: 1037090314563134, guid: dd5405cd02fc6344493bb1b4847e079d, type: 2}
+    size: 25
+  - tag: OneNoteOneHold
+    prefab: {fileID: 1246294558068814, guid: e8ce29e935909604c9505a5118289c1b, type: 2}
+    size: 25
+  - tag: OneNoteOneHold
+    prefab: {fileID: 1050539446737646, guid: 93c3513a97539bf459958b6165a88527, type: 2}
+    size: 25
+  - tag: HeldNote
+    prefab: {fileID: 1809083260745496, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
+    size: 2
+  - tag: PerfectText
+    prefab: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a, type: 2}
+    size: 1
+  - tag: GreatText
+    prefab: {fileID: 1040597632908226, guid: e06caa5f76e76464ba1621b9014de6c8, type: 2}
+    size: 1
+  - tag: GoodText
+    prefab: {fileID: 1543817043152352, guid: 7521e45b4558c3b47beaf27f1a38de0b, type: 2}
+    size: 1
+  - tag: BadText
+    prefab: {fileID: 1641513153004910, guid: ffe03e9aa4c72ae40b256f714217599c, type: 2}
+    size: 1
+  - tag: MissText
+    prefab: {fileID: 1702987686404792, guid: 3bc0447bd7ea91a47a1b60cb035f58dd, type: 2}
+    size: 1
+  - tag: IncreaseScoreText
+    prefab: {fileID: 1741994676640072, guid: ca0e6c4997880d744b87cba83ae41915, type: 2}
+    size: 5

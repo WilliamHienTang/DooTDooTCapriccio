@@ -2,11 +2,23 @@
 
 public class BreakTether : MonoBehaviour {
 
+    GameObject tether;
+
+    void Awake()
+    {
+        tether = transform.Find("Tether").gameObject;
+    }
+
+    void OnEnable()
+    {
+        tether.SetActive(true);
+    }
+
     // Break if at least one sibling dies
     void Update () {
-        if (transform.parent.childCount < 3 || transform.position.z <= Constants.activatorZ)
+        if (GetComponentsInChildren<Transform>().GetLength(0) < 3 || tether.transform.position.z <= Constants.activatorZ)
         {
-            Destroy(gameObject);
+            tether.SetActive(false);
         }
 	}
 }
