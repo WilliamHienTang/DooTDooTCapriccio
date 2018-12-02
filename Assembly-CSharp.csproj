@@ -134,10 +134,11 @@
     <Compile Include="Assets\Scripts\Game\HitCollider.cs" />
     <Compile Include="Assets\Scripts\Game\HoldNote.cs" />
     <Compile Include="Assets\Scripts\Game\NoteChartManager.cs" />
+    <Compile Include="Assets\Scripts\Game\NotePooler.cs" />
     <Compile Include="Assets\Scripts\Game\NoteScore.cs" />
     <Compile Include="Assets\Scripts\Game\NoteSpawn.cs" />
     <Compile Include="Assets\Scripts\Game\NoteSpeed.cs" />
-    <Compile Include="Assets\Scripts\Game\ObjectPooler.cs" />
+    <Compile Include="Assets\Scripts\Game\ParticleSystemPooler.cs" />
     <Compile Include="Assets\Scripts\Game\Pause.cs" />
     <Compile Include="Assets\Scripts\Game\PerfectCollider.cs" />
     <Compile Include="Assets\Scripts\Game\Postgame.cs" />

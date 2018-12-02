@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4390454231430600}
-  - component: {fileID: 114196355756775688}
+  - component: {fileID: 114799758601719294}
+  - component: {fileID: 114017988679860280}
   m_Layer: 0
   m_Name: ObjectPooler
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114196355756775688
+--- !u!114 &114017988679860280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,40 +49,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1832924920924332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03bf86eff1e54bb2bce27485645dacc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1845045535e2a43029f72822c481b7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - tag: Note
-    prefab: {fileID: 1121373108933248, guid: 00fd8aed987d94042808e8ae3c823867, type: 2}
-    size: 50
-  - tag: HoldNote
-    prefab: {fileID: 1326928706223688, guid: eb348f378cf7e594caec5cf7679c5e38, type: 2}
-    size: 25
-  - tag: TailNote
-    prefab: {fileID: 1133493215569620, guid: 1682cb2e304fa71469f45a37549c16c2, type: 2}
-    size: 25
-  - tag: DoubleNote
-    prefab: {fileID: 1028967428904728, guid: b8ea5e8d3fdd7454e8b5ce929d7de446, type: 2}
-    size: 25
-  - tag: DoubleHold
-    prefab: {fileID: 1302098058137746, guid: 19df108dd4cf6034aa829269a75b4618, type: 2}
-    size: 25
-  - tag: DoubleTail
-    prefab: {fileID: 1424471176404160, guid: 3fd5d99b30332a84292310c8f7812baf, type: 2}
-    size: 25
-  - tag: OneHoldOneTail
-    prefab: {fileID: 1037090314563134, guid: dd5405cd02fc6344493bb1b4847e079d, type: 2}
-    size: 25
-  - tag: OneNoteOneHold
-    prefab: {fileID: 1246294558068814, guid: e8ce29e935909604c9505a5118289c1b, type: 2}
-    size: 25
-  - tag: OneNoteOneHold
-    prefab: {fileID: 1050539446737646, guid: 93c3513a97539bf459958b6165a88527, type: 2}
-    size: 25
-  - tag: HeldNote
-    prefab: {fileID: 1809083260745496, guid: b73c649c7a575414c8ac8f1381bda963, type: 2}
+  - tag: TapParticle
+    prefab: {fileID: 1519928617991668, guid: f400a0c08aee75a44975ab169a9291e9, type: 2}
+    size: 5
+  - tag: HitParticle
+    prefab: {fileID: 1394019601413726, guid: e3a7abbaefb495f448fefd17d8db7a6d, type: 2}
+    size: 5
+  - tag: TailParticle
+    prefab: {fileID: 1214079566104950, guid: 516f686be4a20c8408a7f3aae0dbed6a, type: 2}
     size: 2
+  - tag: HoldParticle
+    prefab: {fileID: 1319864835215450, guid: 40deebf4540cf46439298018544fef7b, type: 2}
+    size: 2
+  - tag: MissHoldParticle
+    prefab: {fileID: 1522289914191944, guid: fe3bb93b151364d4b83c915e44f11337, type: 2}
+    size: 2
+--- !u!114 &114799758601719294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832924920924332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b295401d9307b48de8b81aa472075d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
   - tag: PerfectText
     prefab: {fileID: 1991869035122534, guid: 6f53e4872be3b904cb2f8dbf59dd2c8a, type: 2}
     size: 1
@@ -100,3 +98,13 @@ MonoBehaviour:
   - tag: IncreaseScoreText
     prefab: {fileID: 1741994676640072, guid: ca0e6c4997880d744b87cba83ae41915, type: 2}
     size: 5
+  - tag: CountdownText1
+    prefab: {fileID: 1702987686404792, guid: fbf6979bf53285b48bfb36335a587a1f, type: 2}
+    size: 1
+  - tag: CountdownText2
+    prefab: {fileID: 1702987686404792, guid: b9500a793f9981d4fb96821cafdbe3f1, type: 2}
+    size: 1
+  - tag: CountdownText3
+    prefab: {fileID: 1702987686404792, guid: 9073a04b1bd8c3b47b9a36cee50f5bcd, type: 2}
+    size: 1
+  canvas: {fileID: 0}

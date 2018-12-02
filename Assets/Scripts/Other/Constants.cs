@@ -150,4 +150,9 @@ public static class Constants
     public const string countdownText1 = "CountdownText1";
     public const string countdownText2 = "CountdownText2";
     public const string countdownText3 = "CountdownText3";
+    public const string tapParticle = "TapParticle";
+    public const string hitParticle = "HitParticle";
+    public const string tailParticle = "TailParticle";
+    public const string holdParticle = "HoldParticle";
+    public const string missHoldParticle = "MissHoldParticle";
 }

@@ -7,15 +7,9 @@ public class HitCollider : MonoBehaviour
     public ScoreManager scoreManager;
     public Transform gameCanvas;
     AudioManager audioManager;
+    ParticleSystemPooler particleSystemPooler;
     Pause pause;
     Camera mainCamera;
-
-    // Particles
-    public Transform tapParticle;
-    public Transform hitParticle;
-    public Transform holdParticle;
-    public Transform missHoldParticle;
-    public Transform tailParticle;
 
     // Note and particle instances
     Transform noteInstance;
@@ -41,6 +35,7 @@ public class HitCollider : MonoBehaviour
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        particleSystemPooler = FindObjectOfType<ParticleSystemPooler>();
         pause = FindObjectOfType<Pause>();
         mainCamera = Camera.main;
     }
@@ -178,7 +173,7 @@ public class HitCollider : MonoBehaviour
         // Destroy the hold note altogether
         else if (other.CompareTag(Constants.headNoteTag))
         {
-            Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
+            particleSystemPooler.PlayParticle(Constants.missHoldParticle, transform.position, Quaternion.identity);
             DestroyHoldNote();
             MissNote();
         }
@@ -191,20 +186,20 @@ public class HitCollider : MonoBehaviour
 
         if (noteInstance == null)
         {
-            Instantiate(tapParticle, transform.position, tapParticle.transform.rotation);
+            particleSystemPooler.PlayParticle(Constants.tapParticle, transform.position, Quaternion.identity);
             return;
         }
 
         if (noteInstance.CompareTag(Constants.noteTag))
         {
-            Instantiate(hitParticle, transform.position, hitParticle.rotation);
+            particleSystemPooler.PlayParticle(Constants.hitParticle, transform.position, Quaternion.identity);
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
         }
 
         // Activate hold note
         else if (noteInstance.CompareTag(Constants.headNoteTag))
         {
-            holdParticleInstance = Instantiate(holdParticle, transform.position, holdParticle.rotation);
+            holdParticleInstance = particleSystemPooler.PlayParticle(Constants.holdParticle, transform.position, Quaternion.identity).transform;
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
             Transform holdLane = noteInstance.parent.Find("HoldLane");
             noteInstance = holdLane;
@@ -222,14 +217,14 @@ public class HitCollider : MonoBehaviour
 
         if (noteInstance.CompareTag(Constants.tailNoteTag))
         {
-            Instantiate(tailParticle, transform.position, tailParticle.rotation);
+            particleSystemPooler.PlayParticle(Constants.tailParticle, transform.position, Quaternion.identity);
             HandleNote(noteInstance.GetComponent<NoteScore>().GetScoreType());
         }
 
         else if (noteInstance.CompareTag(Constants.holdLaneTag))
         {
             DestroyHeldNote();
-            Instantiate(missHoldParticle, transform.position, missHoldParticle.rotation);
+            particleSystemPooler.PlayParticle(Constants.missHoldParticle, transform.position, Quaternion.identity);
             DestroyHoldNote();
         }
     }
@@ -261,7 +256,7 @@ public class HitCollider : MonoBehaviour
     // Stop the looping particle of a hold note
     void StopLoopingParticle()
     {
-        if (holdParticleInstance)
+        if (holdParticleInstance != null)
         {
             for (int i = 0; i < holdParticleInstance.childCount; i++)
             {

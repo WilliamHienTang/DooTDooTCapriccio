@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4614583498985026}
   - component: {fileID: 198830731097568078}
   - component: {fileID: 199882411014780080}
-  - component: {fileID: 114019623220475730}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4837305564211528}
   - component: {fileID: 198765624613322006}
   - component: {fileID: 199144132407526042}
-  - component: {fileID: 114515691755313702}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -57,7 +55,6 @@ GameObject:
   - component: {fileID: 4528259628246048}
   - component: {fileID: 198152844911787630}
   - component: {fileID: 199020847502167006}
-  - component: {fileID: 114375478733010818}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -75,7 +72,6 @@ GameObject:
   - component: {fileID: 4025225195791232}
   - component: {fileID: 198545592284480032}
   - component: {fileID: 199476419025752178}
-  - component: {fileID: 114489714329773360}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -93,7 +89,6 @@ GameObject:
   - component: {fileID: 4891933771385038}
   - component: {fileID: 198514400614801116}
   - component: {fileID: 199861062434413378}
-  - component: {fileID: 114699218991396738}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -111,7 +106,6 @@ GameObject:
   - component: {fileID: 4548488571811008}
   - component: {fileID: 198526451225360410}
   - component: {fileID: 199279907465390556}
-  - component: {fileID: 114848457610109612}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -129,7 +123,6 @@ GameObject:
   - component: {fileID: 4744950139407724}
   - component: {fileID: 198585900817444496}
   - component: {fileID: 199992101821659796}
-  - component: {fileID: 114165281541761786}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -147,7 +140,6 @@ GameObject:
   - component: {fileID: 4187559745322188}
   - component: {fileID: 198164703600457962}
   - component: {fileID: 199508200537473018}
-  - component: {fileID: 114984878342842280}
   m_Layer: 0
   m_Name: MissHoldParticle
   m_TagString: Untagged
@@ -165,7 +157,6 @@ GameObject:
   - component: {fileID: 4259742887622652}
   - component: {fileID: 198701222005461376}
   - component: {fileID: 199608973800703500}
-  - component: {fileID: 114152300029006318}
   m_Layer: 0
   m_Name: Smoke Bulk
   m_TagString: Untagged
@@ -183,7 +174,6 @@ GameObject:
   - component: {fileID: 4917833752261460}
   - component: {fileID: 198476964805733486}
   - component: {fileID: 199211794448016964}
-  - component: {fileID: 114504819335991158}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -201,7 +191,6 @@ GameObject:
   - component: {fileID: 4051646666758550}
   - component: {fileID: 198908352528114154}
   - component: {fileID: 199201570688839324}
-  - component: {fileID: 114719366287585810}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -219,7 +208,6 @@ GameObject:
   - component: {fileID: 4280156417504962}
   - component: {fileID: 198592189721496928}
   - component: {fileID: 199045159891913870}
-  - component: {fileID: 114438087069823326}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -237,7 +225,6 @@ GameObject:
   - component: {fileID: 4728090535250932}
   - component: {fileID: 198877474236563630}
   - component: {fileID: 199621963495800954}
-  - component: {fileID: 114271528295400664}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -255,7 +242,6 @@ GameObject:
   - component: {fileID: 4713822451023294}
   - component: {fileID: 198059580970982446}
   - component: {fileID: 199730172432776000}
-  - component: {fileID: 114751019794361474}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -273,7 +259,6 @@ GameObject:
   - component: {fileID: 4051026867797746}
   - component: {fileID: 198462812737616094}
   - component: {fileID: 199602688441131020}
-  - component: {fileID: 114260081472768540}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -291,7 +276,6 @@ GameObject:
   - component: {fileID: 4194980548991230}
   - component: {fileID: 198542935489213384}
   - component: {fileID: 199084117112076950}
-  - component: {fileID: 114159516043030628}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -309,7 +293,6 @@ GameObject:
   - component: {fileID: 4973193678717296}
   - component: {fileID: 198129322382485552}
   - component: {fileID: 199895298621202580}
-  - component: {fileID: 114610186248206998}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -327,7 +310,6 @@ GameObject:
   - component: {fileID: 4076436928583326}
   - component: {fileID: 198253101716653194}
   - component: {fileID: 199454102290635888}
-  - component: {fileID: 114823561166073132}
   m_Layer: 0
   m_Name: SmokeCircle
   m_TagString: Untagged
@@ -586,204 +568,6 @@ Transform:
   m_Father: {fileID: 4187559745322188}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114019623220475730
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1092084060267888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114152300029006318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1579426313318918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114159516043030628
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1842290119200864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114165281541761786
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1355949572610488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114260081472768540
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1840446271013266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114271528295400664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1770308747705390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114375478733010818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1156521464276556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114438087069823326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668143511508252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114489714329773360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1233214477120206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114504819335991158
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1602256618219056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114515691755313702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1124150392209690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114610186248206998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1870877279294056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114699218991396738
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1238047862085076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114719366287585810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654666547338040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114751019794361474
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1831626438862420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114823561166073132
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949008277851884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114848457610109612
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1355949519375164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114984878342842280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522289914191944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55fc9f822bd742c4fa71f5436250b177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &198059580970982446
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -796,7 +580,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -5224,7 +5008,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9652,7 +9436,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14080,7 +13864,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -18508,7 +18292,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -22936,7 +22720,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -27364,7 +27148,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -31792,7 +31576,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -36220,7 +36004,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -40648,7 +40432,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -45076,7 +44860,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -49504,7 +49288,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -53932,7 +53716,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -58360,7 +58144,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -62680,7 +62464,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -67108,7 +66892,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -71536,7 +71320,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -75964,7 +75748,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
