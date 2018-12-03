@@ -48,9 +48,7 @@ public class ScoreCanvas : MonoBehaviour {
 
     void SetScorePanel()
     {
-        SetHighScore();
-        SetMaxCombo();
-        int noteCount = PlayerPrefs.GetInt(Constants.perfects) + PlayerPrefs.GetInt(Constants.greats) + PlayerPrefs.GetInt(Constants.goods) + PlayerPrefs.GetInt(Constants.bads) + PlayerPrefs.GetInt(Constants.misses);
+        int noteCount = PlayerPrefs.GetInt(song + difficulty + Constants.noteCount);
 
         Transform scorePanel = transform.Find("Content").Find("ScorePanel");
         TextMeshProUGUI score = scorePanel.Find("ScoreText").Find("Score").GetComponent<TextMeshProUGUI>();
@@ -71,23 +69,7 @@ public class ScoreCanvas : MonoBehaviour {
         bads.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.bads));
         misses.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.misses));
         notesHit.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.notesHit)) + "/" + AddLeadingComboZeros(noteCount);
-        maxCombo.text = AddLeadingComboZeros(PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo));
-    }
-
-    void SetHighScore()
-    {
-        if (PlayerPrefs.GetInt(Constants.score) > PlayerPrefs.GetInt(song + difficulty + Constants.highScore))
-        {
-            PlayerPrefs.SetInt(song + difficulty + Constants.highScore, PlayerPrefs.GetInt(Constants.score));
-        }
-    }
-
-    void SetMaxCombo()
-    {
-        if (PlayerPrefs.GetInt(Constants.combo) > PlayerPrefs.GetInt(song + difficulty + Constants.maxCombo))
-        {
-            PlayerPrefs.SetInt(song + difficulty + Constants.maxCombo, PlayerPrefs.GetInt(Constants.combo));
-        }
+        maxCombo.text = AddLeadingComboZeros(PlayerPrefs.GetInt(Constants.maxCombo));
     }
 
     string AddLeadingScoreZeros(int score)
@@ -142,8 +124,6 @@ public class ScoreCanvas : MonoBehaviour {
                 break;
             case "F":
                 scoreRank.Find("RankF").gameObject.SetActive(true);
-                break;
-            default:
                 break;
         }
     }

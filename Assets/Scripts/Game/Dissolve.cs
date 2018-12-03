@@ -32,6 +32,6 @@ public class Dissolve : MonoBehaviour {
     // Dissolve amount based on audio time and note speed
     void Update () {
         songTimer = (float)(AudioSettings.dspTime - startTime);
-        material.SetFloat("_DissolveAmount", (songTimer + Time.deltaTime) / duration);
+        material.SetFloat("_DissolveAmount", (songTimer + 3*Time.deltaTime) / duration);
     }
 }

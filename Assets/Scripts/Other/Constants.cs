@@ -79,7 +79,6 @@ public static class Constants
     public const string selectedSongTitle = "SelectedSongTitle";
     public const string difficulty = "Difficulty";
     public const string score = "Score";
-    public const string combo = "Combo";
     public const string highScore = "HighScore";
     public const string maxCombo = "MaxCombo";
     public const string noteCount = "NoteCount";

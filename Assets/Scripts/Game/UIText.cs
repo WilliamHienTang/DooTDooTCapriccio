@@ -7,12 +7,12 @@ public class UIText : MonoBehaviour {
     public TextMeshProUGUI combo;
 
 	// Update the score and combo
-	public void UpdateScoreText () {
-        score.text = AddLeadingScoreZeros(PlayerPrefs.GetInt(Constants.score));
+	public void UpdateScoreText (int score) {
+        this.score.text = AddLeadingScoreZeros(score);
     }
 
-    public void UpdateComboText(){
-        combo.text = PlayerPrefs.GetInt(Constants.combo).ToString();
+    public void UpdateComboText(int combo){
+        this.combo.text = combo.ToString();
     }
 
     string AddLeadingScoreZeros(int scoreInt)

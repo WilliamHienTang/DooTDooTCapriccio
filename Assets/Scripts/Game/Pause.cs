@@ -10,6 +10,7 @@ public class Pause : MonoBehaviour {
     CanvasObjectPooler canvasObjectPooler;
     public GameObject pauseButton;
 
+    string song;
     bool isPaused;
 
     void Start()
@@ -18,6 +19,7 @@ public class Pause : MonoBehaviour {
         audioManager = FindObjectOfType<AudioManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         canvasObjectPooler = FindObjectOfType<CanvasObjectPooler>();
+        song = PlayerPrefs.GetString(Constants.selectedSong);
         StartCoroutine(WaitEnablePauseButton());
         isPaused = false;
     }
@@ -25,7 +27,7 @@ public class Pause : MonoBehaviour {
     public void PauseGame()
     {
         AudioListener.pause = true;
-        audioManager.Pause(PlayerPrefs.GetString(Constants.selectedSong));
+        audioManager.Pause(song);
         isPaused = true;
         pauseButton.SetActive(false);
         scoreManager.ClearFloatingText();
@@ -68,7 +70,7 @@ public class Pause : MonoBehaviour {
     {
         isPaused = false;
         AudioListener.pause = false;
-        audioManager.Stop(PlayerPrefs.GetString(Constants.selectedSong));
+        audioManager.Stop(song);
         SceneManager.LoadScene(Constants.songSelect);
     }
 

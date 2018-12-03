@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{FCEA43D7-9A25-F521-B829-2D3D9993F843}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/ParticleSystemPooler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/NotePooler.cs">
     <Files>
-      <File FileName="Assets/Scripts/Other/Constants.cs" Line="157" Column="46" />
-      <File FileName="Assets/Scripts/Game/HitCollider.cs" Line="120" Column="22" />
-      <File FileName="Assets/Scripts/Game/Dissolve.cs" Line="35" Column="87" />
-      <File FileName="Assets/Scripts/Game/ParticleSystemPooler.cs" Line="36" Column="40" />
+      <File FileName="Assets/Scripts/Other/Constants.cs" Line="81" Column="41" />
+      <File FileName="Assets/Scripts/Game/NoteChartManager.cs" Line="49" Column="63" />
+      <File FileName="Assets/Scripts/Game/HitCollider.cs" Line="301" Column="2" />
+      <File FileName="Assets/Scripts/Game/NotePooler.cs" Line="4" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

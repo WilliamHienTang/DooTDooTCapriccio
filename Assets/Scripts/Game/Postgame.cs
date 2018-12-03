@@ -20,13 +20,13 @@ public class Postgame : MonoBehaviour {
         pause.SetPauseButtonActive(false);
         yield return new WaitForSeconds(speedOffset + 3.0f);
 
+        // Set score rank
+        ScoreManager scoreManager = transform.GetComponent<ScoreManager>();
+        scoreManager.SetPlayerPrefs();
+
         // Set off firework particles
         StartCoroutine(SetOffFireworks(10));
         yield return new WaitForSeconds(3.0f);
-
-        // Set score rank
-        ScoreManager scoreManager = transform.GetComponent<ScoreManager>();
-        scoreManager.SetScoreRank();
 
         // Load score screen scene
         SceneManager.LoadScene(Constants.scoreScreen);
