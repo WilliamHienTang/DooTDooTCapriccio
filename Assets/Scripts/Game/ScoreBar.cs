@@ -32,8 +32,7 @@ public class ScoreBar : MonoBehaviour {
     }
 	
 	// Fill the score bar based on the score
-	public void FillScoreBar () {
-        score = PlayerPrefs.GetInt(Constants.score);
+	public void FillScoreBar (float score) {
         scoreRank = score / maxScore;
         scoreBarSlider.value = scoreRank;
 

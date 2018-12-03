@@ -4,11 +4,12 @@ public class DefaultSettings : MonoBehaviour {
 
 	void Start () {
         FirstLoad();
-	}
+        ResetPlayerPrefs();
+    }
 
     // Only occurs for the first time the player loads the game
     void FirstLoad(){
-        if(!PlayerPrefs.HasKey(Constants.firstLoad)){
+        if (!PlayerPrefs.HasKey(Constants.firstLoad)){
             ResetPlayerPrefs();
         }
     }
@@ -20,7 +21,7 @@ public class DefaultSettings : MonoBehaviour {
         PlayerPrefs.SetFloat(Constants.noteSpeed, 7.5f);
         PlayerPrefs.SetString(Constants.difficulty, Constants.easy);
         PlayerPrefs.SetString(Constants.selectedSong, Constants.soundscapeSong);
-        PlayerPrefs.SetInt(Constants.firstLoad, 1);
+        //PlayerPrefs.SetInt(Constants.firstLoad, 1);
         InitNoteCount();
     }
 

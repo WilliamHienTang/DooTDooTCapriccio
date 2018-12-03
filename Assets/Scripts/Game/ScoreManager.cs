@@ -32,6 +32,7 @@ public class ScoreManager : MonoBehaviour {
         scoreBar = FindObjectOfType<ScoreBar>();
         UIText = FindObjectOfType<UIText>();
         floatingTexts = new List<GameObject>();
+        InitPlayerPrefs();
     }
 
     // Reset score, combo, and note related player prefs
@@ -76,7 +77,7 @@ public class ScoreManager : MonoBehaviour {
         SpawnFloatingText(scoreTypeCount);
         SpawnIncreaseScoreText(points);
         UIText.UpdateScoreText(score);
-        scoreBar.FillScoreBar();
+        scoreBar.FillScoreBar(score);
     }
 
     public void IncreaseCombo()
@@ -106,7 +107,6 @@ public class ScoreManager : MonoBehaviour {
     // To be used after the end of the song
     public void SetPlayerPrefs(){
         PlayerPrefs.SetInt(Constants.score, score);
-        PlayerPrefs.SetInt(Constants.maxCombo, maxCombo);
         PlayerPrefs.SetInt(Constants.perfects, perfects);
         PlayerPrefs.SetInt(Constants.greats, greats);
         PlayerPrefs.SetInt(Constants.goods, goods);
@@ -114,9 +114,18 @@ public class ScoreManager : MonoBehaviour {
         PlayerPrefs.SetInt(Constants.misses, misses);
         PlayerPrefs.SetInt(Constants.notesHit, notesHit);
 
+        SetMaxCombo();
         SetHighScore();
         SetScoreRank();
         SetHighRank();
+    }
+
+    void SetMaxCombo(){
+        if (combo > maxCombo)
+        {
+            maxCombo = combo;
+        }
+        PlayerPrefs.SetInt(Constants.maxCombo, maxCombo);
     }
 
     void SetHighScore()

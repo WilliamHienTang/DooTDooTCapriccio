@@ -267,3 +267,5 @@ a83b38de2a4bc003b865aee38c5fff44 Assembly-CSharp.dll:.NoteChartManager
 e83e3a9cb8a4793d0e408eba8d4b4d32 Assembly-CSharp.dll:.AudioManager
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.NoteSpeed
 781ecd49c20ed5d16046b6b75b121513 Assembly-CSharp.dll:.PieMenuAnim
+11d77e1db930f1a53576ca4d275ed5f0 Assembly-CSharp.dll:.FPS
+4605763da2f9826b990b3e6845dc5e73 Assembly-CSharp.dll:.TargetFPS

@@ -150,8 +150,10 @@
     <Compile Include="Assets\Scripts\Other\ButtonAudio.cs" />
     <Compile Include="Assets\Scripts\Other\Constants.cs" />
     <Compile Include="Assets\Scripts\Other\DefaultSettings.cs" />
+    <Compile Include="Assets\Scripts\Other\FPS.cs" />
     <Compile Include="Assets\Scripts\Other\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\Other\Sound.cs" />
+    <Compile Include="Assets\Scripts\Other\TargetFPS.cs" />
     <Compile Include="Assets\Scripts\SceneManagers\MainMenu.cs" />
     <Compile Include="Assets\Scripts\SceneManagers\ScoreScreen.cs" />
     <Compile Include="Assets\Scripts\SceneManagers\SongSelect.cs" />
