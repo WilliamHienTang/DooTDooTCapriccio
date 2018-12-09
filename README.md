@@ -1,2 +1,2 @@
 # doot doot
-need to build with unity editor + xcode
+build with unity editor + xcode 
