@@ -4,7 +4,6 @@ public class DefaultSettings : MonoBehaviour {
 
 	void Start () {
         FirstLoad();
-        ResetPlayerPrefs(); // Right now I want to reset every time
     }
 
     // Only occurs for the first time the player loads the game
