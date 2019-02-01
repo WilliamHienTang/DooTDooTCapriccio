@@ -37,17 +37,17 @@ public static class Constants
 
     // Note counts
     public const int soundscapeEasyNoteCount = 131;
-    public const int soundscapeNormalNoteCount = 246;
-    public const int soundscapeHardNoteCount = 381;
+    public const int soundscapeNormalNoteCount = 256;
+    public const int soundscapeHardNoteCount = 383;
     public const int soundscapeExpertNoteCount = 526;
     public const int takarajimaEasyNoteCount = 193;
-    public const int takarajimaNormalNoteCount = 363;
+    public const int takarajimaNormalNoteCount = 364;
     public const int takarajimaHardNoteCount = 487;
     public const int takarajimaExpertNoteCount = 647;
     public const int tuttiEasyNoteCount = 135;
-    public const int tuttiNormalNoteCount = 264;
+    public const int tuttiNormalNoteCount = 263;
     public const int tuttiHardNoteCount = 413;
-    public const int tuttiExpertNoteCount = 597;
+    public const int tuttiExpertNoteCount = 596;
 
     // Score ranks
     public const float rankA = 0.85f;
